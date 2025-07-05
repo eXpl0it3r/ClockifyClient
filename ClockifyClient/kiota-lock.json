@@ -1,0 +1,31 @@
+{
+  "descriptionHash": "20D2632AE9E7BB19BE6E8A845392205F708BFDA06A1AC5D240D48C62A67638CEED2F081C6C60755DF088A2A79FFBCF9C61566DA1FD751DC5AEBABA80625F1E0B",
+  "descriptionLocation": "../clockify-openapi.json",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.27.0",
+  "clientClassName": "ClockifyApiClient",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "ClockifyClient",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}
