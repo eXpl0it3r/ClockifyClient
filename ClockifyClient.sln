@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectFiles", "ProjectFile
 		clockify-openapi.json = clockify-openapi.json
 		LICENSE = LICENSE
 		README.md = README.md
+		version.json = version.json
+		.github\workflows\build-and-publish.yml = .github\workflows\build-and-publish.yml
 	EndProjectSection
 EndProject
 Global
