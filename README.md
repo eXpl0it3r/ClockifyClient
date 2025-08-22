@@ -69,7 +69,7 @@ The client is generated using Microsoft Kiota. To regenerate the client:
 dotnet tool install --global Microsoft.OpenApi.Kiota
 
 # Download the latest OpenAPI specification
-curl -o clockify-openapi.json https://docs.clockify.me/openapi.json
+curl -o clockify-openapi.json https://docs.developer.clockify.me/openapi.json
 
 # Apply modifications, see below
 
@@ -80,6 +80,22 @@ kiota generate --language CSharp --openapi clockify-openapi.json --class-name Cl
 ### Modifications
 
 The OpenAPI specification provided by Clockify doesn't work out of the box with Kiota and requires some modifications.
+
+#### Fixing API URLs
+
+With switching to the OpenAPI spec from the developer docs, some URLs in the spec need to be updated.
+
+Replace any occurrence of
+
+```
+https://developer.clockify.me/api
+```
+
+with
+
+```
+https://api.clockify.me/api
+```
 
 #### Fixing Enum Types
 

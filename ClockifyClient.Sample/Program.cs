@@ -42,7 +42,7 @@ public class ClockifyCommands
         }
     }
 
-    private async static Task GetUserInfoAsync(ClockifyApiClient client)
+    private static async Task GetUserInfoAsync(ClockifyApiClient client)
     {
         var user = await client.V1.User.GetAsync();
 
@@ -56,7 +56,7 @@ public class ClockifyCommands
         }
     }
 
-    private async static Task GetWorkspacesInfoAsync(ClockifyApiClient client)
+    private static async Task GetWorkspacesInfoAsync(ClockifyApiClient client)
     {
         var workspaces = await client.V1.Workspaces.GetAsync();
 
@@ -74,18 +74,18 @@ public class ClockifyCommands
         }
     }
 
-    private async static Task GetTimersInfoAsync(ClockifyApiClient client)
+    private static async Task GetTimersInfoAsync(ClockifyApiClient client)
     {
         var user = await client.V1.User.GetAsync();
 
         if (user == null)
-        {            
+        {
             Console.WriteLine("⚠️ API returned no user information");
             return;
         }
 
         var timers = await client.V1.Workspaces[user.ActiveWorkspace].TimeEntries.Status.InProgress.GetAsync();
-        
+
         if (timers != null)
         {
             Console.WriteLine("Timers:");

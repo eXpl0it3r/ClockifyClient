@@ -29,8 +29,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.19.0" />
-    <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.143" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.19.1" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.7.115" PrivateAssets="All" />
   </ItemGroup>
   
   <ItemGroup>
