@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>13.0</LangVersion>
     <IsPackable>true</IsPackable>
-    
+
     <!-- NuGet Package Information -->
     <PackageId>ClockifyClient</PackageId>
     <Title>Clockify API Client</Title>
@@ -15,8 +15,8 @@
     <Product>ClockifyClient</Product>
     <Description>A up-to-date and strongly-typed Clockify API Client for .NET</Description>
     <PackageTags>clockify;api;client;time-tracking;kiota;openapi;rest;http</PackageTags>
-    <PackageProjectUrl>https://github.com/exxamalte/ClockifyClient</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/exxamalte/ClockifyClient</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/eXpl0it3r/ClockifyClient</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/eXpl0it3r/ClockifyClient</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright (c) 2025 Lukas Dürrenberger</Copyright>
@@ -32,7 +32,7 @@
     <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.19.1" />
     <PackageReference Include="Nerdbank.GitVersioning" Version="3.7.115" PrivateAssets="All" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <None Include="..\README.md" Pack="true" PackagePath="\" />
     <None Include="..\icon.png" Pack="true" PackagePath="\" />
