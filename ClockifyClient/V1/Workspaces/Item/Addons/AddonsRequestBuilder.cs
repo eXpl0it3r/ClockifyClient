@@ -16,7 +16,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Addons
     public partial class AddonsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.addons.item collection</summary>
-        /// <param name="position">Represents addon identifier across the system.</param>
+        /// <param name="position">Represents an addon identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Addons.Item.WithAddonItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Addons.Item.WithAddonItemRequestBuilder this[string position]
         {

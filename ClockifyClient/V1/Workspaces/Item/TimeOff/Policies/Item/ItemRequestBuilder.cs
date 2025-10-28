@@ -97,7 +97,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
         public async Task<global::ClockifyClient.Models.PolicyDtoV1> PatchAsync(global::ClockifyClient.Models.ChangePolicyStatusRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.PolicyDtoV1>(requestInfo, global::ClockifyClient.Models.PolicyDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -117,7 +117,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
         public async Task<global::ClockifyClient.Models.PolicyDtoV1> PutAsync(global::ClockifyClient.Models.UpdatePolicyRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.PolicyDtoV1>(requestInfo, global::ClockifyClient.Models.PolicyDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -173,7 +173,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
         public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.ChangePolicyStatusRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -195,7 +195,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
         public RequestInformation ToPutRequestInformation(global::ClockifyClient.Models.UpdatePolicyRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

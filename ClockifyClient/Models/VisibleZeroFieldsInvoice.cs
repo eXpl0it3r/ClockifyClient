@@ -35,7 +35,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.VisibleZeroFieldsInvoice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.VisibleZeroFieldsInvoice();
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::ClockifyClient.Models.VisibleZeroFieldsInvoice_DISCOUNT>("DISCOUNT", DISCOUNT);
             writer.WriteEnumValue<global::ClockifyClient.Models.VisibleZeroFieldsInvoice_TAX>("TAX", TAX);
             writer.WriteEnumValue<global::ClockifyClient.Models.VisibleZeroFieldsInvoice_TAX_2>("TAX_2", TAX2);

@@ -8,9 +8,41 @@ namespace ClockifyClient.Models
     public enum AttendanceFilterV1_sortColumn
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "NAME")]
+        [EnumMember(Value = "USER")]
         #pragma warning disable CS1591
-        NAME,
+        USER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DATE")]
+        #pragma warning disable CS1591
+        DATE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "START")]
+        #pragma warning disable CS1591
+        START,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "END")]
+        #pragma warning disable CS1591
+        END,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BREAK")]
+        #pragma warning disable CS1591
+        BREAK,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WORK")]
+        #pragma warning disable CS1591
+        WORK,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CAPACITY")]
+        #pragma warning disable CS1591
+        CAPACITY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OVERTIME")]
+        #pragma warning disable CS1591
+        OVERTIME,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TIME_OFF")]
+        #pragma warning disable CS1591
+        TIME_OFF,
         #pragma warning restore CS1591
     }
 }

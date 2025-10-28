@@ -14,7 +14,7 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents webhook name.</summary>
+        /// <summary>Represents a webhook name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -32,7 +32,7 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Represents a webhook event trigger source type.</summary>
         public global::ClockifyClient.Models.CreateWebhookRequestV1_triggerSourceType? TriggerSourceType { get; set; }
-        /// <summary>Represents webhook target url.</summary>
+        /// <summary>Represents a webhook target url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
@@ -40,7 +40,7 @@ namespace ClockifyClient.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>Represents webhook event type.</summary>
+        /// <summary>Represents a webhook event type.</summary>
         public global::ClockifyClient.Models.CreateWebhookRequestV1_webhookEvent? WebhookEvent { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.CreateWebhookRequestV1"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.CreateWebhookRequestV1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.CreateWebhookRequestV1();
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("triggerSource", TriggerSource);
             writer.WriteEnumValue<global::ClockifyClient.Models.CreateWebhookRequestV1_triggerSourceType>("triggerSourceType", TriggerSourceType);

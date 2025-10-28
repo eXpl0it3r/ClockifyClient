@@ -16,6 +16,14 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Setting this flag to &apos;true&apos; will remove the given users from the project.</summary>
         public bool? Remove { get; set; }
+        /// <summary>Provide list with user group ids and corresponding status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.UserGroupIdsSchema? UserGroups { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.UserGroupIdsSchema UserGroups { get; set; }
+#endif
         /// <summary>Represents array of user ids which should be added/removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,7 +46,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.AddUsersToProjectRequestV1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.AddUsersToProjectRequestV1();
         }
         /// <summary>
@@ -50,6 +58,7 @@ namespace ClockifyClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "remove", n => { Remove = n.GetBoolValue(); } },
+                { "userGroups", n => { UserGroups = n.GetObjectValue<global::ClockifyClient.Models.UserGroupIdsSchema>(global::ClockifyClient.Models.UserGroupIdsSchema.CreateFromDiscriminatorValue); } },
                 { "userIds", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -59,8 +68,9 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("remove", Remove);
+            writer.WriteObjectValue<global::ClockifyClient.Models.UserGroupIdsSchema>("userGroups", UserGroups);
             writer.WriteCollectionOfPrimitiveValues<string>("userIds", UserIds);
             writer.WriteAdditionalData(AdditionalData);
         }

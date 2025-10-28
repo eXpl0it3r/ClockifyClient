@@ -72,6 +72,14 @@ namespace ClockifyClient.Models
         public double? Tax2Percent { get; set; }
         /// <summary>Represents an invoice tax percent as double.</summary>
         public double? TaxPercent { get; set; }
+        /// <summary>Represents an invoice taxation type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.TaxType? TaxType { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.TaxType TaxType { get; set; }
+#endif
         /// <summary>Represents a list of zero value invoice fields that will be visible.</summary>
         public global::ClockifyClient.Models.UpdateInvoiceRequestV1_visibleZeroFields? VisibleZeroFields { get; set; }
         /// <summary>
@@ -88,7 +96,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.UpdateInvoiceRequestV1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.UpdateInvoiceRequestV1();
         }
         /// <summary>
@@ -110,6 +118,7 @@ namespace ClockifyClient.Models
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "tax2Percent", n => { Tax2Percent = n.GetDoubleValue(); } },
                 { "taxPercent", n => { TaxPercent = n.GetDoubleValue(); } },
+                { "taxType", n => { TaxType = n.GetObjectValue<global::ClockifyClient.Models.TaxType>(global::ClockifyClient.Models.TaxType.CreateFromDiscriminatorValue); } },
                 { "visibleZeroFields", n => { VisibleZeroFields = n.GetEnumValue<global::ClockifyClient.Models.UpdateInvoiceRequestV1_visibleZeroFields>(); } },
             };
         }
@@ -119,7 +128,7 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("companyId", CompanyId);
             writer.WriteStringValue("currency", Currency);
@@ -131,6 +140,7 @@ namespace ClockifyClient.Models
             writer.WriteStringValue("subject", Subject);
             writer.WriteDoubleValue("tax2Percent", Tax2Percent);
             writer.WriteDoubleValue("taxPercent", TaxPercent);
+            writer.WriteObjectValue<global::ClockifyClient.Models.TaxType>("taxType", TaxType);
             writer.WriteEnumValue<global::ClockifyClient.Models.UpdateInvoiceRequestV1_visibleZeroFields>("visibleZeroFields", VisibleZeroFields);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -35,7 +35,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user-groups{?name*,page*,page%2Dsize*,project%2Did*,sort%2Dcolumn*,sort%2Dorder*}", pathParameters)
+        public UserGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user-groups{?includeTeamManagers*,name*,page*,page%2Dsize*,project%2Did*,sort%2Dcolumn*,sort%2Dorder*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user-groups{?name*,page*,page%2Dsize*,project%2Did*,sort%2Dcolumn*,sort%2Dorder*}", rawUrl)
+        public UserGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user-groups{?includeTeamManagers*,name*,page*,page%2Dsize*,project%2Did*,sort%2Dcolumn*,sort%2Dorder*}", rawUrl)
         {
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups
         public async Task<global::ClockifyClient.Models.UserGroupDtoV1> PostAsync(global::ClockifyClient.Models.UserGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.UserGroupDtoV1>(requestInfo, global::ClockifyClient.Models.UserGroupDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -119,7 +119,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.UserGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -141,6 +141,9 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserGroupsRequestBuilderGetQueryParameters 
         {
+            /// <summary>If provided, you&apos;ll get a list of team managers assigned to this user group.</summary>
+            [QueryParameter("includeTeamManagers")]
+            public bool? IncludeTeamManagers { get; set; }
             /// <summary>If provided, you&apos;ll get a filtered list of groups that matches the string provided in their name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,25 +155,11 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups
             public string Name { get; set; }
 #endif
             /// <summary>Page number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
             /// <summary>Page size.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page%2Dsize")]
-            public string? PageSize { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page%2Dsize")]
-            public string PageSize { get; set; }
-#endif
+            public int? PageSize { get; set; }
             /// <summary>If provided, you&apos;ll get a filtered list of groups that matches the string provided in their project id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

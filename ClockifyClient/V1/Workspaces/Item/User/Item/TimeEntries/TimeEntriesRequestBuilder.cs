@@ -100,7 +100,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         public async Task<global::ClockifyClient.Models.TimeEntryDtoImplV1> PatchAsync(global::ClockifyClient.Models.StopTimeEntryRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeEntryDtoImplV1>(requestInfo, global::ClockifyClient.Models.TimeEntryDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -120,7 +120,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         public async Task<global::ClockifyClient.Models.TimeEntryDtoImplV1> PostAsync(global::ClockifyClient.Models.CreateTimeEntryRequest body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.TimeEntriesRequestBuilder.TimeEntriesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeEntryDtoImplV1>(requestInfo, global::ClockifyClient.Models.TimeEntryDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -140,7 +140,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         public async Task<List<global::ClockifyClient.Models.TimeEntryDtoV1>> PutAsync(List<global::ClockifyClient.Models.UpdateTimeEntryBulkRequest> body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.TimeEntriesRequestBuilder.TimeEntriesRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::ClockifyClient.Models.TimeEntryDtoV1>(requestInfo, global::ClockifyClient.Models.TimeEntryDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -198,7 +198,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.StopTimeEntryRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -220,7 +220,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateTimeEntryRequest body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.TimeEntriesRequestBuilder.TimeEntriesRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?from%2Dentry*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -242,7 +242,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         public RequestInformation ToPutRequestInformation(List<global::ClockifyClient.Models.UpdateTimeEntryBulkRequest> body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.TimeEntriesRequestBuilder.TimeEntriesRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?hydrated*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -268,11 +268,11 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("time%2Dentry%2Dids")]
-            public string? TimeEntryIds { get; set; }
+            public string[]? TimeEntryIds { get; set; }
 #nullable restore
 #else
             [QueryParameter("time%2Dentry%2Dids")]
-            public string TimeEntryIds { get; set; }
+            public string[] TimeEntryIds { get; set; }
 #endif
         }
         /// <summary>
@@ -320,38 +320,17 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             public string GetWeekBefore { get; set; }
 #endif
             /// <summary>Flag to set whether to include additional information on time entries or not.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("hydrated")]
-            public string? Hydrated { get; set; }
-#nullable restore
-#else
-            [QueryParameter("hydrated")]
-            public string Hydrated { get; set; }
-#endif
+            public bool? Hydrated { get; set; }
             /// <summary>Flag to set whether to filter only in progress time entries.</summary>
             [QueryParameter("in%2Dprogress")]
             public bool? InProgress { get; set; }
             /// <summary>Page number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
             /// <summary>Page size.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page%2Dsize")]
-            public string? PageSize { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page%2Dsize")]
-            public string PageSize { get; set; }
-#endif
+            public int? PageSize { get; set; }
             /// <summary>If provided, you&apos;ll get a filtered list of time entries that matches the provided string in their project id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -363,15 +342,8 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             public string Project { get; set; }
 #endif
             /// <summary>Flag to set whether to only get time entries which have a project.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("project%2Drequired")]
-            public string? ProjectRequired { get; set; }
-#nullable restore
-#else
-            [QueryParameter("project%2Drequired")]
-            public string ProjectRequired { get; set; }
-#endif
+            public bool? ProjectRequired { get; set; }
             /// <summary>Represents start date in yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -386,11 +358,11 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tags")]
-            public string? Tags { get; set; }
+            public string[]? Tags { get; set; }
 #nullable restore
 #else
             [QueryParameter("tags")]
-            public string Tags { get; set; }
+            public string[] Tags { get; set; }
 #endif
             /// <summary>If provided, you&apos;ll get a filtered list of time entries that matches the provided string in their task id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -403,15 +375,8 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             public string Task { get; set; }
 #endif
             /// <summary>Flag to set whether to only get time entries which have tasks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("task%2Drequired")]
-            public string? TaskRequired { get; set; }
-#nullable restore
-#else
-            [QueryParameter("task%2Drequired")]
-            public string TaskRequired { get; set; }
-#endif
+            public bool? TaskRequired { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -461,15 +426,8 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         public partial class TimeEntriesRequestBuilderPutQueryParameters 
         {
             /// <summary>If set to true, results will contain additional information about the time entry.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("hydrated")]
-            public string? Hydrated { get; set; }
-#nullable restore
-#else
-            [QueryParameter("hydrated")]
-            public string Hydrated { get; set; }
-#endif
+            public bool? Hydrated { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

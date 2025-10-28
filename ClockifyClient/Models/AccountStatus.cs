@@ -13,6 +13,8 @@ namespace ClockifyClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountStatus : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The active property</summary>
+        public bool? AccountStatusActive { get; set; }
         /// <summary>The ACTIVE property</summary>
         public global::ClockifyClient.Models.AccountStatus_ACTIVE? ACTIVE { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,7 +28,9 @@ namespace ClockifyClient.Models
         /// <summary>The LIMITED_DELETED property</summary>
         public global::ClockifyClient.Models.AccountStatus_LIMITED_DELETED? LIMITEDDELETED { get; set; }
         /// <summary>The NOT_REGISTERED property</summary>
-        public global::ClockifyClient.Models.AccountStatus_NOT_REGISTERED? NOTREGISTERED { get; set; }
+        public global::ClockifyClient.Models.AccountStatus_NOT_REGISTERED? NOT_REGISTERED { get; set; }
+        /// <summary>The notRegistered property</summary>
+        public bool? NotRegistered { get; set; }
         /// <summary>The PENDING_EMAIL_VERIFICATION property</summary>
         public global::ClockifyClient.Models.AccountStatus_PENDING_EMAIL_VERIFICATION? PENDINGEMAILVERIFICATION { get; set; }
         /// <summary>
@@ -43,7 +47,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.AccountStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.AccountStatus();
         }
         /// <summary>
@@ -55,11 +59,13 @@ namespace ClockifyClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ACTIVE", n => { ACTIVE = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_ACTIVE>(); } },
+                { "active", n => { AccountStatusActive = n.GetBoolValue(); } },
                 { "DELETED", n => { DELETED = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_DELETED>(); } },
                 { "LIMITED", n => { LIMITED = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_LIMITED>(); } },
                 { "LIMITED_DELETED", n => { LIMITEDDELETED = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_LIMITED_DELETED>(); } },
                 { "limitedAccount", n => { LimitedAccount = n.GetBoolValue(); } },
-                { "NOT_REGISTERED", n => { NOTREGISTERED = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_NOT_REGISTERED>(); } },
+                { "NOT_REGISTERED", n => { NOT_REGISTERED = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_NOT_REGISTERED>(); } },
+                { "notRegistered", n => { NotRegistered = n.GetBoolValue(); } },
                 { "PENDING_EMAIL_VERIFICATION", n => { PENDINGEMAILVERIFICATION = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_PENDING_EMAIL_VERIFICATION>(); } },
             };
         }
@@ -69,13 +75,15 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("active", AccountStatusActive);
             writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_ACTIVE>("ACTIVE", ACTIVE);
             writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_DELETED>("DELETED", DELETED);
             writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_LIMITED>("LIMITED", LIMITED);
             writer.WriteBoolValue("limitedAccount", LimitedAccount);
             writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_LIMITED_DELETED>("LIMITED_DELETED", LIMITEDDELETED);
-            writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_NOT_REGISTERED>("NOT_REGISTERED", NOTREGISTERED);
+            writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_NOT_REGISTERED>("NOT_REGISTERED", NOT_REGISTERED);
+            writer.WriteBoolValue("notRegistered", NotRegistered);
             writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_PENDING_EMAIL_VERIFICATION>("PENDING_EMAIL_VERIFICATION", PENDINGEMAILVERIFICATION);
             writer.WriteAdditionalData(AdditionalData);
         }

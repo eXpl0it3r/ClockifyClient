@@ -68,7 +68,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring.Ite
         public async Task<List<global::ClockifyClient.Models.AssignmentDtoV1>> PatchAsync(global::ClockifyClient.Models.AssignmentUpdateRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::ClockifyClient.Models.AssignmentDtoV1>(requestInfo, global::ClockifyClient.Models.AssignmentDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -107,7 +107,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring.Ite
         public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.AssignmentUpdateRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

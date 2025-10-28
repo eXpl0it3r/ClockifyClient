@@ -49,7 +49,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.UserFilter.To
         public async Task<List<global::ClockifyClient.Models.SchedulingUsersTotalsDtoV1>> PostAsync(global::ClockifyClient.Models.GetUserTotalsRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::ClockifyClient.Models.SchedulingUsersTotalsDtoV1>(requestInfo, global::ClockifyClient.Models.SchedulingUsersTotalsDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -69,7 +69,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.UserFilter.To
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.GetUserTotalsRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

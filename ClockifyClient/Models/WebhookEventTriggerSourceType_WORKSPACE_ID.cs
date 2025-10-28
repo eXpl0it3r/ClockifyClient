@@ -28,14 +28,6 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         WORKSPACE_ID,
         #pragma warning restore CS1591
-        [EnumMember(Value = "USER_GROUP_ID")]
-        #pragma warning disable CS1591
-        USER_GROUP_ID,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "INVOICE_ID")]
-        #pragma warning disable CS1591
-        INVOICE_ID,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ASSIGNMENT_ID")]
         #pragma warning disable CS1591
         ASSIGNMENT_ID,

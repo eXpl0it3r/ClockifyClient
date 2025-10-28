@@ -66,7 +66,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item
         public async Task PatchAsync(global::ClockifyClient.Models.ChangeBalanceRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
@@ -104,7 +104,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item
         public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.ChangeBalanceRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -125,24 +125,10 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPolicyItemRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public int? Page { get; set; }
             [QueryParameter("page%2Dsize")]
-            public string? PageSize { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page%2Dsize")]
-            public string PageSize { get; set; }
-#endif
+            public int? PageSize { get; set; }
             /// <summary>If provided, you&apos;ll get result sorted by sort column.</summary>
             [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

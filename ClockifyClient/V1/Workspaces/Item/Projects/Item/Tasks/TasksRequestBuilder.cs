@@ -81,7 +81,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
         public async Task<global::ClockifyClient.Models.TaskDtoV1> PostAsync(global::ClockifyClient.Models.TaskRequestV1 body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TaskDtoV1>(requestInfo, global::ClockifyClient.Models.TaskDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -119,7 +119,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.TaskRequestV1 body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -142,15 +142,8 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
         public partial class TasksRequestBuilderGetQueryParameters 
         {
             /// <summary>Filters search results whether task is active or not.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("is%2Dactive")]
-            public string? IsActive { get; set; }
-#nullable restore
-#else
-            [QueryParameter("is%2Dactive")]
-            public string IsActive { get; set; }
-#endif
+            public bool? IsActive { get; set; }
             /// <summary>If provided, you&apos;ll get a filtered list of tasks that matches the provided string in their name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -162,25 +155,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
             public string Name { get; set; }
 #endif
             /// <summary>Page number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
             /// <summary>Page size.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page%2Dsize")]
-            public string? PageSize { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page%2Dsize")]
-            public string PageSize { get; set; }
-#endif
+            public int? PageSize { get; set; }
             /// <summary>Represents the column as criteria for sorting tasks.</summary>
             [Obsolete("This property is deprecated, use SortColumnAsGetSortColumnQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -210,15 +189,8 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
             [QueryParameter("sort%2Dorder")]
             public global::ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.GetSortOrderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
             /// <summary>Flag to toggle on/off strict search mode. When set to true, search by name only will return tasks whose name exactly matches the string value given for the &apos;name&apos; parameter. When set to false, results will also include tasks whose name contain the string value, but could be longer than the string value itself. For example, if there is a task with the name &apos;applications&apos;, and the search value is &apos;app&apos;, setting strict-name-search to true will not return that task in the results, whereas setting it to false will.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("strict%2Dname%2Dsearch")]
-            public string? StrictNameSearch { get; set; }
-#nullable restore
-#else
-            [QueryParameter("strict%2Dname%2Dsearch")]
-            public string StrictNameSearch { get; set; }
-#endif
+            public bool? StrictNameSearch { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -235,15 +207,8 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
         public partial class TasksRequestBuilderPostQueryParameters 
         {
             /// <summary>Flag to set whether task will have assignee or none.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("contains%2Dassignee")]
-            public string? ContainsAssignee { get; set; }
-#nullable restore
-#else
-            [QueryParameter("contains%2Dassignee")]
-            public string ContainsAssignee { get; set; }
-#endif
+            public bool? ContainsAssignee { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

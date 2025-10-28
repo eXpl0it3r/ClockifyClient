@@ -121,7 +121,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
         public async Task<global::ClockifyClient.Models.ProjectDtoImplV1> PutAsync(global::ClockifyClient.Models.UpdateProjectRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ProjectDtoImplV1>(requestInfo, global::ClockifyClient.Models.ProjectDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -178,7 +178,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
         public RequestInformation ToPutRequestInformation(global::ClockifyClient.Models.UpdateProjectRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -229,25 +229,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
             public string ExpenseDate { get; set; }
 #endif
             /// <summary>Represents maximum number of expenses to fetch.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("expense%2Dlimit")]
-            public string? ExpenseLimit { get; set; }
-#nullable restore
-#else
-            [QueryParameter("expense%2Dlimit")]
-            public string ExpenseLimit { get; set; }
-#endif
+            public int? ExpenseLimit { get; set; }
             /// <summary>If set to true, results will contain additional information about the project</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("hydrated")]
-            public string? Hydrated { get; set; }
-#nullable restore
-#else
-            [QueryParameter("hydrated")]
-            public string Hydrated { get; set; }
-#endif
+            public bool? Hydrated { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

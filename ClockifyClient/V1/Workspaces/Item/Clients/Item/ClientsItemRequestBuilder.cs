@@ -85,7 +85,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Clients.Item
         public async Task<global::ClockifyClient.Models.ClientDtoV1> PutAsync(global::ClockifyClient.Models.UpdateClientRequestV1 body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Clients.Item.ClientsItemRequestBuilder.ClientsItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ClientDtoV1>(requestInfo, global::ClockifyClient.Models.ClientDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -142,7 +142,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Clients.Item
         public RequestInformation ToPutRequestInformation(global::ClockifyClient.Models.UpdateClientRequestV1 body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Clients.Item.ClientsItemRequestBuilder.ClientsItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

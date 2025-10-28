@@ -97,7 +97,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item
         public async Task<global::ClockifyClient.Models.TaskDtoV1> PutAsync(global::ClockifyClient.Models.UpdateTaskRequest body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item.ItemRequestBuilder.ItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TaskDtoV1>(requestInfo, global::ClockifyClient.Models.TaskDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -154,7 +154,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item
         public RequestInformation ToPutRequestInformation(global::ClockifyClient.Models.UpdateTaskRequest body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item.ItemRequestBuilder.ItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -193,15 +193,8 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item
         public partial class ItemRequestBuilderPutQueryParameters 
         {
             /// <summary>Flag to set whether task will have assignee or none.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("contains%2Dassignee")]
-            public string? ContainsAssignee { get; set; }
-#nullable restore
-#else
-            [QueryParameter("contains%2Dassignee")]
-            public string ContainsAssignee { get; set; }
-#endif
+            public bool? ContainsAssignee { get; set; }
             /// <summary>Represents a membership status.</summary>
             [Obsolete("This property is deprecated, use MembershipStatusAsPutMembershipStatusQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

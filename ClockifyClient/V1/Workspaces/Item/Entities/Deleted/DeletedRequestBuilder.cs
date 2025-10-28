@@ -127,11 +127,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Entities.Deleted
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
+            public string[]? Type { get; set; }
 #nullable restore
 #else
             [QueryParameter("type")]
-            public string Type { get; set; }
+            public string[] Type { get; set; }
 #endif
         }
         /// <summary>

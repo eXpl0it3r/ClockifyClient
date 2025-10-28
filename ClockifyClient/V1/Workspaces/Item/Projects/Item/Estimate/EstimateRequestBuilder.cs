@@ -49,7 +49,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Estimate
         public async Task<global::ClockifyClient.Models.ProjectDtoImplV1> PatchAsync(global::ClockifyClient.Models.ProjectEstimateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ProjectDtoImplV1>(requestInfo, global::ClockifyClient.Models.ProjectDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Estimate
         public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.ProjectEstimateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

@@ -7,17 +7,25 @@ namespace ClockifyClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ContainsUsersFilterV1_status
     {
+        [EnumMember(Value = "ALL")]
+        #pragma warning disable CS1591
+        ALL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ACTIVE_WITH_PENDING")]
+        #pragma warning disable CS1591
+        ACTIVE_WITH_PENDING,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ACTIVE")]
         #pragma warning disable CS1591
         ACTIVE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ARCHIVED")]
+        [EnumMember(Value = "PENDING")]
         #pragma warning disable CS1591
-        ARCHIVED,
+        PENDING,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ALL")]
+        [EnumMember(Value = "INACTIVE")]
         #pragma warning disable CS1591
-        ALL,
+        INACTIVE,
         #pragma warning restore CS1591
     }
 }
