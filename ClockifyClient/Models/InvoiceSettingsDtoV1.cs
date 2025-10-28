@@ -52,7 +52,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.InvoiceSettingsDtoV1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.InvoiceSettingsDtoV1();
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::ClockifyClient.Models.InvoiceDefaultSettingsDto>("defaults", Defaults);
             writer.WriteObjectValue<global::ClockifyClient.Models.InvoiceExportFields>("exportFields", ExportFields);
             writer.WriteObjectValue<global::ClockifyClient.Models.LabelsCustomization>("labels", Labels);

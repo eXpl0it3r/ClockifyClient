@@ -81,7 +81,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item.Payments
         public async Task<global::ClockifyClient.Models.InvoiceOverviewDtoV1> PostAsync(global::ClockifyClient.Models.CreateInvoicePaymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.InvoiceOverviewDtoV1>(requestInfo, global::ClockifyClient.Models.InvoiceOverviewDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -119,7 +119,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item.Payments
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateInvoicePaymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -142,25 +142,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item.Payments
         public partial class PaymentsRequestBuilderGetQueryParameters 
         {
             /// <summary>Page number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
             /// <summary>Page size.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page%2Dsize")]
-            public string? PageSize { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page%2Dsize")]
-            public string PageSize { get; set; }
-#endif
+            public int? PageSize { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

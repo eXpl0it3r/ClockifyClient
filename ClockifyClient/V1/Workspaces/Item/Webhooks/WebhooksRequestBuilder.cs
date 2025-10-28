@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks
     public partial class WebhooksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.webhooks.item collection</summary>
-        /// <param name="position">Represents webhook identifier across the system.</param>
+        /// <param name="position">Represents a webhook identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Webhooks.Item.WithWebhookItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Webhooks.Item.WithWebhookItemRequestBuilder this[string position]
         {
@@ -80,7 +80,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks
         public async Task<global::ClockifyClient.Models.WebhookDtoV1> PostAsync(global::ClockifyClient.Models.CreateWebhookRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.WebhookDtoV1>(requestInfo, global::ClockifyClient.Models.WebhookDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -118,7 +118,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateWebhookRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -140,7 +140,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WebhooksRequestBuilderGetQueryParameters 
         {
-            /// <summary>Represents webhook type.</summary>
+            /// <summary>Represents a webhook type.</summary>
             [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,7 +151,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks
             [QueryParameter("type")]
             public string Type { get; set; }
 #endif
-            /// <summary>Represents webhook type.</summary>
+            /// <summary>Represents a webhook type.</summary>
             [QueryParameter("type")]
             public global::ClockifyClient.V1.Workspaces.Item.Webhooks.GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
         }

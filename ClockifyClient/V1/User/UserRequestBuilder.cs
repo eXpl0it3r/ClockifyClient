@@ -86,15 +86,8 @@ namespace ClockifyClient.V1.User
         public partial class UserRequestBuilderGetQueryParameters 
         {
             /// <summary>If set to true, memberships will be included.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("include%2Dmemberships")]
-            public string? IncludeMemberships { get; set; }
-#nullable restore
-#else
-            [QueryParameter("include%2Dmemberships")]
-            public string IncludeMemberships { get; set; }
-#endif
+            public bool? IncludeMemberships { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

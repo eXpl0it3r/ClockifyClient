@@ -54,6 +54,8 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Indicates whether the policy is to be applied to future new users.</summary>
         public bool? EveryoneIncludingNew { get; set; }
+        /// <summary>Provide icon.</summary>
+        public global::ClockifyClient.Models.CreatePolicyRequestV1_icon? Icon { get; set; }
         /// <summary>Represents name of new policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +104,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.CreatePolicyRequestV1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.CreatePolicyRequestV1();
         }
         /// <summary>
@@ -121,6 +123,7 @@ namespace ClockifyClient.Models
                 { "automaticTimeEntryCreation", n => { AutomaticTimeEntryCreation = n.GetObjectValue<global::ClockifyClient.Models.AutomaticTimeEntryCreationRequest>(global::ClockifyClient.Models.AutomaticTimeEntryCreationRequest.CreateFromDiscriminatorValue); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "everyoneIncludingNew", n => { EveryoneIncludingNew = n.GetBoolValue(); } },
+                { "icon", n => { Icon = n.GetEnumValue<global::ClockifyClient.Models.CreatePolicyRequestV1_icon>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "negativeBalance", n => { NegativeBalance = n.GetObjectValue<global::ClockifyClient.Models.NegativeBalanceRequest>(global::ClockifyClient.Models.NegativeBalanceRequest.CreateFromDiscriminatorValue); } },
                 { "timeUnit", n => { TimeUnit = n.GetEnumValue<global::ClockifyClient.Models.CreatePolicyRequestV1_timeUnit>(); } },
@@ -134,7 +137,7 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowHalfDay", AllowHalfDay);
             writer.WriteBoolValue("allowNegativeBalance", AllowNegativeBalance);
             writer.WriteObjectValue<global::ClockifyClient.Models.ApproveDto>("approve", Approve);
@@ -143,6 +146,7 @@ namespace ClockifyClient.Models
             writer.WriteObjectValue<global::ClockifyClient.Models.AutomaticTimeEntryCreationRequest>("automaticTimeEntryCreation", AutomaticTimeEntryCreation);
             writer.WriteStringValue("color", Color);
             writer.WriteBoolValue("everyoneIncludingNew", EveryoneIncludingNew);
+            writer.WriteEnumValue<global::ClockifyClient.Models.CreatePolicyRequestV1_icon>("icon", Icon);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::ClockifyClient.Models.NegativeBalanceRequest>("negativeBalance", NegativeBalance);
             writer.WriteEnumValue<global::ClockifyClient.Models.CreatePolicyRequestV1_timeUnit>("timeUnit", TimeUnit);

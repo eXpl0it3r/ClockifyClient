@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.CustomFields
     public partial class CustomFieldsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.customFields.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Represents custom field identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.CustomFields.Item.WithCustomFieldItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.CustomFields.Item.WithCustomFieldItemRequestBuilder this[string position]
         {
@@ -81,7 +81,7 @@ namespace ClockifyClient.V1.Workspaces.Item.CustomFields
         public async Task<global::ClockifyClient.Models.CustomFieldDtoV1> PostAsync(global::ClockifyClient.Models.CustomFieldRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.CustomFieldDtoV1>(requestInfo, global::ClockifyClient.Models.CustomFieldDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -119,7 +119,7 @@ namespace ClockifyClient.V1.Workspaces.Item.CustomFields
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CustomFieldRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

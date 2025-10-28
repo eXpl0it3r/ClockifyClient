@@ -30,6 +30,14 @@ namespace ClockifyClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Represents a list of assigned team managers for this user group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ClockifyClient.Models.UserRedactedDtoV1>? TeamManagers { get; set; }
+#nullable restore
+#else
+        public List<global::ClockifyClient.Models.UserRedactedDtoV1> TeamManagers { get; set; }
+#endif
         /// <summary>Represents a list of users&apos; identifiers across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +68,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.UserGroupDtoV1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.UserGroupDtoV1();
         }
         /// <summary>
@@ -73,6 +81,7 @@ namespace ClockifyClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "teamManagers", n => { TeamManagers = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.UserRedactedDtoV1>(global::ClockifyClient.Models.UserRedactedDtoV1.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userIds", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "workspaceId", n => { WorkspaceId = n.GetStringValue(); } },
             };
@@ -83,9 +92,10 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.UserRedactedDtoV1>("teamManagers", TeamManagers);
             writer.WriteCollectionOfPrimitiveValues<string>("userIds", UserIds);
             writer.WriteStringValue("workspaceId", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);

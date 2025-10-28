@@ -49,7 +49,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Expenses.Detailed
         public async Task<global::ClockifyClient.Models.ExpenseDetailedReportDtoV1> PostAsync(global::ClockifyClient.Models.ExpenseReportFilterV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ExpenseDetailedReportDtoV1>(requestInfo, global::ClockifyClient.Models.ExpenseDetailedReportDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Expenses.Detailed
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.ExpenseReportFilterV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

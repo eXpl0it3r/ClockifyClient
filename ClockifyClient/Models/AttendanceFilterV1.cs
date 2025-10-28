@@ -77,7 +77,6 @@ namespace ClockifyClient.Models
         public AttendanceFilterV1()
         {
             AdditionalData = new Dictionary<string, object>();
-            SortColumn = global::ClockifyClient.Models.AttendanceFilterV1_sortColumn.NAME;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -86,7 +85,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.AttendanceFilterV1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.AttendanceFilterV1();
         }
         /// <summary>
@@ -115,7 +114,7 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareBreakFilter>("breakFilters", BreakFilters);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareCapacityFilter>("capacityFilters", CapacityFilters);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareEndFilter>("endFilters", EndFilters);

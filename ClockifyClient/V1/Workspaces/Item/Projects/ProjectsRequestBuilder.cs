@@ -35,7 +35,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/projects{?access*,archived*,billable*,client%2Dstatus*,clients*,contains%2Dclient*,contains%2Duser*,expense%2Ddate*,expense%2Dlimit*,hydrated*,is%2Dtemplate*,name*,page*,page%2Dsize*,sort%2Dcolumn*,sort%2Dorder*,strict%2Dname%2Dsearch*,user%2Dstatus*,users*}", pathParameters)
+        public ProjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/projects{?access*,archived*,billable*,client%2Dstatus*,clients*,contains%2Dclient*,contains%2Dgroup*,contains%2Duser*,expense%2Ddate*,expense%2Dlimit*,hydrated*,is%2Dtemplate*,name*,page*,page%2Dsize*,sort%2Dcolumn*,sort%2Dorder*,strict%2Dname%2Dsearch*,user%2Dstatus*,userGroups*,users*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/projects{?access*,archived*,billable*,client%2Dstatus*,clients*,contains%2Dclient*,contains%2Duser*,expense%2Ddate*,expense%2Dlimit*,hydrated*,is%2Dtemplate*,name*,page*,page%2Dsize*,sort%2Dcolumn*,sort%2Dorder*,strict%2Dname%2Dsearch*,user%2Dstatus*,users*}", rawUrl)
+        public ProjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/projects{?access*,archived*,billable*,client%2Dstatus*,clients*,contains%2Dclient*,contains%2Dgroup*,contains%2Duser*,expense%2Ddate*,expense%2Dlimit*,hydrated*,is%2Dtemplate*,name*,page*,page%2Dsize*,sort%2Dcolumn*,sort%2Dorder*,strict%2Dname%2Dsearch*,user%2Dstatus*,userGroups*,users*}", rawUrl)
         {
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects
         public async Task<global::ClockifyClient.Models.ProjectDtoImplV1> PostAsync(global::ClockifyClient.Models.ProjectRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ProjectDtoImplV1>(requestInfo, global::ClockifyClient.Models.ProjectDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -119,7 +119,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.ProjectRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -156,34 +156,20 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects
             [QueryParameter("access")]
             public global::ClockifyClient.V1.Workspaces.Item.Projects.GetAccessQueryParameterType? AccessAsGetAccessQueryParameterType { get; set; }
             /// <summary>If provided and set to true, you&apos;ll only get archived projects. If omitted, you&apos;ll get both archived and non-archived projects.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("archived")]
-            public string? Archived { get; set; }
-#nullable restore
-#else
-            [QueryParameter("archived")]
-            public string Archived { get; set; }
-#endif
+            public bool? Archived { get; set; }
             /// <summary>If provided and set to true, you&apos;ll only get billable projects. If omitted, you&apos;ll get both billable and non-billable projects.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("billable")]
-            public string? Billable { get; set; }
-#nullable restore
-#else
-            [QueryParameter("billable")]
-            public string Billable { get; set; }
-#endif
+            public bool? Billable { get; set; }
             /// <summary>If provided, you&apos;ll get a filtered list of projects that contain clients which match any of the provided ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("clients")]
-            public string? Clients { get; set; }
+            public string[]? Clients { get; set; }
 #nullable restore
 #else
             [QueryParameter("clients")]
-            public string Clients { get; set; }
+            public string[] Clients { get; set; }
 #endif
             /// <summary>Filters projects based on client status provided.</summary>
             [Obsolete("This property is deprecated, use ClientStatusAsGetClientStatusQueryParameterType instead")]
@@ -200,25 +186,14 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects
             [QueryParameter("client%2Dstatus")]
             public global::ClockifyClient.V1.Workspaces.Item.Projects.GetClientStatusQueryParameterType? ClientStatusAsGetClientStatusQueryParameterType { get; set; }
             /// <summary>If set to true, you&apos;ll get a filtered list of projects that contain clients which match the provided id(s) in &apos;clients&apos; field. If set to false, you&apos;ll get a filtered list of projects which do NOT contain clients that match the provided id(s) in &apos;clients&apos; field.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("contains%2Dclient")]
-            public string? ContainsClient { get; set; }
-#nullable restore
-#else
-            [QueryParameter("contains%2Dclient")]
-            public string ContainsClient { get; set; }
-#endif
+            public bool? ContainsClient { get; set; }
+            /// <summary>If set to true, you&apos;ll get a filtered list of projects that contain groups which match the provided id(s) in &apos;userGroups&apos; field. If set to false, you&apos;ll get a filtered list of projects which do NOT contain groups which match the provided id(s) in &apos;userGroups&apos; field.</summary>
+            [QueryParameter("contains%2Dgroup")]
+            public bool? ContainsGroup { get; set; }
             /// <summary>If set to true, you&apos;ll get a filtered list of projects that contain users which match the provided id(s) in &apos;users&apos; field. If set to false, you&apos;ll get a filtered list of projects which do NOT contain users which match the provided id(s) in &apos;users&apos; field.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("contains%2Duser")]
-            public string? ContainsUser { get; set; }
-#nullable restore
-#else
-            [QueryParameter("contains%2Duser")]
-            public string ContainsUser { get; set; }
-#endif
+            public bool? ContainsUser { get; set; }
             /// <summary>If provided, you will get expenses dated before the provided value in yyyy-MM-dd format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -230,35 +205,14 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects
             public string ExpenseDate { get; set; }
 #endif
             /// <summary>Represents maximum number of expenses to fetch.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("expense%2Dlimit")]
-            public string? ExpenseLimit { get; set; }
-#nullable restore
-#else
-            [QueryParameter("expense%2Dlimit")]
-            public string ExpenseLimit { get; set; }
-#endif
+            public int? ExpenseLimit { get; set; }
             /// <summary>If set to true, results will contain additional information about the project.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("hydrated")]
-            public string? Hydrated { get; set; }
-#nullable restore
-#else
-            [QueryParameter("hydrated")]
-            public string Hydrated { get; set; }
-#endif
+            public bool? Hydrated { get; set; }
             /// <summary>Filters projects based on whether they are used as a template or not.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("is%2Dtemplate")]
-            public string? IsTemplate { get; set; }
-#nullable restore
-#else
-            [QueryParameter("is%2Dtemplate")]
-            public string IsTemplate { get; set; }
-#endif
+            public bool? IsTemplate { get; set; }
             /// <summary>If provided, you&apos;ll get a filtered list of projects that contains the provided string in the project name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -270,25 +224,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects
             public string Name { get; set; }
 #endif
             /// <summary>Page number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
             /// <summary>Page size.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page%2Dsize")]
-            public string? PageSize { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page%2Dsize")]
-            public string PageSize { get; set; }
-#endif
+            public int? PageSize { get; set; }
             /// <summary>Sorts the results by the given column/field.</summary>
             [Obsolete("This property is deprecated, use SortColumnAsGetSortColumnQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -318,24 +258,27 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects
             [QueryParameter("sort%2Dorder")]
             public global::ClockifyClient.V1.Workspaces.Item.Projects.GetSortOrderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
             /// <summary>Flag to toggle on/off strict search mode. When set to true, search by name will only return projects whose name exactly matches the string value given for the &apos;name&apos; parameter. When set to false, results will also include projects whose name contain the string value, but could be longer than the string value itself. For example, if there is a project with the name &apos;applications&apos;, and the search value is &apos;app&apos;, setting strict-name-search to true will not return that project in the results, whereas setting it to false will.</summary>
+            [QueryParameter("strict%2Dname%2Dsearch")]
+            public bool? StrictNameSearch { get; set; }
+            /// <summary>If provided, you&apos;ll get a filtered list of projects that contain groups which match any of the provided ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("strict%2Dname%2Dsearch")]
-            public string? StrictNameSearch { get; set; }
+            [QueryParameter("userGroups")]
+            public string[]? UserGroups { get; set; }
 #nullable restore
 #else
-            [QueryParameter("strict%2Dname%2Dsearch")]
-            public string StrictNameSearch { get; set; }
+            [QueryParameter("userGroups")]
+            public string[] UserGroups { get; set; }
 #endif
             /// <summary>If provided, you&apos;ll get a filtered list of projects that contain users which match any of the provided ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("users")]
-            public string? Users { get; set; }
+            public string[]? Users { get; set; }
 #nullable restore
 #else
             [QueryParameter("users")]
-            public string Users { get; set; }
+            public string[] Users { get; set; }
 #endif
             /// <summary>Filters projects based on user status provided.</summary>
             [Obsolete("This property is deprecated, use UserStatusAsGetUserStatusQueryParameterType instead")]

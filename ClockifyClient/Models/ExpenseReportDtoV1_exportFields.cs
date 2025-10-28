@@ -223,6 +223,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         WORKING_DAYS,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TEAM_MANAGERS")]
+        #pragma warning disable CS1591
+        TEAM_MANAGERS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TEAM_MEMBERS")]
         #pragma warning disable CS1591
         TEAM_MEMBERS,

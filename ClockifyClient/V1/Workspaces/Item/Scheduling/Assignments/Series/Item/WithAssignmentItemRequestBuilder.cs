@@ -49,7 +49,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Series.Item
         public async Task<List<global::ClockifyClient.Models.AssignmentDtoV1>> PutAsync(global::ClockifyClient.Models.RecurringAssignmentRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::ClockifyClient.Models.AssignmentDtoV1>(requestInfo, global::ClockifyClient.Models.AssignmentDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -69,7 +69,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Series.Item
         public RequestInformation ToPutRequestInformation(global::ClockifyClient.Models.RecurringAssignmentRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

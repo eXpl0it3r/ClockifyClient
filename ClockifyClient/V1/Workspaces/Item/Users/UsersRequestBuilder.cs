@@ -87,7 +87,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users
         public async Task<global::ClockifyClient.Models.WorkspaceDtoV1> PostAsync(global::ClockifyClient.Models.AddUserToWorkspaceRequest body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Users.UsersRequestBuilder.UsersRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.WorkspaceDtoV1>(requestInfo, global::ClockifyClient.Models.WorkspaceDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -125,7 +125,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.AddUserToWorkspaceRequest body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Users.UsersRequestBuilder.UsersRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/v1/workspaces/{workspaceId}/users?send-email={send%2Demail}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -202,25 +202,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Users
             public string Name { get; set; }
 #endif
             /// <summary>Page number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
             /// <summary>Page size.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page%2Dsize")]
-            public string? PageSize { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page%2Dsize")]
-            public string PageSize { get; set; }
-#endif
+            public int? PageSize { get; set; }
             /// <summary>If provided, you&apos;ll get a list of users that have access to the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

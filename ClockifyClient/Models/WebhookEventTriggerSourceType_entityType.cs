@@ -104,6 +104,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         USER,
         #pragma warning restore CS1591
+        [EnumMember(Value = "WORKSPACE_USER")]
+        #pragma warning disable CS1591
+        WORKSPACE_USER,
+        #pragma warning restore CS1591
         [EnumMember(Value = "USER_GROUP")]
         #pragma warning disable CS1591
         USER_GROUP,
@@ -200,6 +204,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         LOG_BIN,
         #pragma warning restore CS1591
+        [EnumMember(Value = "BALANCE_ASSIGNMENT")]
+        #pragma warning disable CS1591
+        BALANCE_ASSIGNMENT,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CUSTOM_COLOR")]
         #pragma warning disable CS1591
         CUSTOM_COLOR,
@@ -207,6 +215,10 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "CUSTOM_COLORS_INDEX")]
         #pragma warning disable CS1591
         CUSTOM_COLORS_INDEX,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SAMPLE_DATA")]
+        #pragma warning disable CS1591
+        SAMPLE_DATA,
         #pragma warning restore CS1591
     }
 }

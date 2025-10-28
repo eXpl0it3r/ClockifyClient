@@ -49,7 +49,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Logs
         public async Task<List<global::ClockifyClient.Models.WebhookLogDtoV1>> PostAsync(global::ClockifyClient.Models.WebhookLogSearchRequestV1 body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Logs.LogsRequestBuilder.LogsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::ClockifyClient.Models.WebhookLogDtoV1>(requestInfo, global::ClockifyClient.Models.WebhookLogDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -69,7 +69,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Logs
         public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.WebhookLogSearchRequestV1 body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Logs.LogsRequestBuilder.LogsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -92,25 +92,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Logs
         public partial class LogsRequestBuilderPostQueryParameters 
         {
             /// <summary>Page number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
             /// <summary>Page size.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("size")]
-            public string? Size { get; set; }
-#nullable restore
-#else
-            [QueryParameter("size")]
-            public string Size { get; set; }
-#endif
+            public int? Size { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -49,7 +49,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Invoiced
         public async Task<Stream> PatchAsync(global::ClockifyClient.Models.UpdateInvoicedStatusRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Invoiced
         public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.UpdateInvoicedStatusRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

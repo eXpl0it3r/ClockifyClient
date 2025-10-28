@@ -21,16 +21,12 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.WebhookEventTriggerSourceType_entityType? EntityType { get; set; }
         /// <summary>The EXPENSE_ID property</summary>
         public global::ClockifyClient.Models.WebhookEventTriggerSourceType_EXPENSE_ID? EXPENSEID { get; set; }
-        /// <summary>The INVOICE_ID property</summary>
-        public global::ClockifyClient.Models.WebhookEventTriggerSourceType_INVOICE_ID? INVOICEID { get; set; }
         /// <summary>The PROJECT_ID property</summary>
         public global::ClockifyClient.Models.WebhookEventTriggerSourceType_PROJECT_ID? PROJECTID { get; set; }
         /// <summary>The TAG_ID property</summary>
         public global::ClockifyClient.Models.WebhookEventTriggerSourceType_TAG_ID? TAGID { get; set; }
         /// <summary>The TASK_ID property</summary>
         public global::ClockifyClient.Models.WebhookEventTriggerSourceType_TASK_ID? TASKID { get; set; }
-        /// <summary>The USER_GROUP_ID property</summary>
-        public global::ClockifyClient.Models.WebhookEventTriggerSourceType_USER_GROUP_ID? USERGROUPID { get; set; }
         /// <summary>The USER_ID property</summary>
         public global::ClockifyClient.Models.WebhookEventTriggerSourceType_USER_ID? USERID { get; set; }
         /// <summary>The WORKSPACE_ID property</summary>
@@ -49,7 +45,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.WebhookEventTriggerSourceType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.WebhookEventTriggerSourceType();
         }
         /// <summary>
@@ -63,11 +59,9 @@ namespace ClockifyClient.Models
                 { "ASSIGNMENT_ID", n => { ASSIGNMENTID = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_ASSIGNMENT_ID>(); } },
                 { "EXPENSE_ID", n => { EXPENSEID = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_EXPENSE_ID>(); } },
                 { "entityType", n => { EntityType = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_entityType>(); } },
-                { "INVOICE_ID", n => { INVOICEID = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_INVOICE_ID>(); } },
                 { "PROJECT_ID", n => { PROJECTID = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_PROJECT_ID>(); } },
                 { "TAG_ID", n => { TAGID = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_TAG_ID>(); } },
                 { "TASK_ID", n => { TASKID = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_TASK_ID>(); } },
-                { "USER_GROUP_ID", n => { USERGROUPID = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_USER_GROUP_ID>(); } },
                 { "USER_ID", n => { USERID = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_USER_ID>(); } },
                 { "WORKSPACE_ID", n => { WORKSPACEID = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_WORKSPACE_ID>(); } },
             };
@@ -78,15 +72,13 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_ASSIGNMENT_ID>("ASSIGNMENT_ID", ASSIGNMENTID);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_entityType>("entityType", EntityType);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_EXPENSE_ID>("EXPENSE_ID", EXPENSEID);
-            writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_INVOICE_ID>("INVOICE_ID", INVOICEID);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_PROJECT_ID>("PROJECT_ID", PROJECTID);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_TAG_ID>("TAG_ID", TAGID);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_TASK_ID>("TASK_ID", TASKID);
-            writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_USER_GROUP_ID>("USER_GROUP_ID", USERGROUPID);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_USER_ID>("USER_ID", USERID);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType_WORKSPACE_ID>("WORKSPACE_ID", WORKSPACEID);
             writer.WriteAdditionalData(AdditionalData);

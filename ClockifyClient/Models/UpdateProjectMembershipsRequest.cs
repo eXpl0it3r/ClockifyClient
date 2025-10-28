@@ -22,6 +22,14 @@ namespace ClockifyClient.Models
 #else
         public List<global::ClockifyClient.Models.UserIdWithRatesRequest> Memberships { get; set; }
 #endif
+        /// <summary>Provide list with user group ids and corresponding status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.UserGroupIdsSchema? UserGroups { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.UserGroupIdsSchema UserGroups { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.UpdateProjectMembershipsRequest"/> and sets the default values.
         /// </summary>
@@ -36,7 +44,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.UpdateProjectMembershipsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.UpdateProjectMembershipsRequest();
         }
         /// <summary>
@@ -48,6 +56,7 @@ namespace ClockifyClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "memberships", n => { Memberships = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.UserIdWithRatesRequest>(global::ClockifyClient.Models.UserIdWithRatesRequest.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "userGroups", n => { UserGroups = n.GetObjectValue<global::ClockifyClient.Models.UserGroupIdsSchema>(global::ClockifyClient.Models.UserGroupIdsSchema.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -56,8 +65,9 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.UserIdWithRatesRequest>("memberships", Memberships);
+            writer.WriteObjectValue<global::ClockifyClient.Models.UserGroupIdsSchema>("userGroups", UserGroups);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

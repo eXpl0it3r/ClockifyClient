@@ -112,5 +112,33 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         PROJECT_STATUS_FAILED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INVITED_USERS")]
+        #pragma warning disable CS1591
+        INVITED_USERS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ADDED_LIMITED_USERS")]
+        #pragma warning disable CS1591
+        ADDED_LIMITED_USERS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "RATE_UPDATED")]
+        #pragma warning disable CS1591
+        RATE_UPDATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "JIRA_INSTALLED_PAYLOAD_WITH_JWT")]
+        #pragma warning disable CS1591
+        JIRA_INSTALLED_PAYLOAD_WITH_JWT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "JIRA_UNINSTALLED_PAYLOAD_WITH_JWT")]
+        #pragma warning disable CS1591
+        JIRA_UNINSTALLED_PAYLOAD_WITH_JWT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "REMINDER_TO_START_TIMER")]
+        #pragma warning disable CS1591
+        REMINDER_TO_START_TIMER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "REMINDER_TO_STOP_TIMER")]
+        #pragma warning disable CS1591
+        REMINDER_TO_STOP_TIMER,
+        #pragma warning restore CS1591
     }
 }

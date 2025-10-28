@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace ClockifyClient.Models
 {
-    /// <summary>Represents webhook event type.</summary>
+    /// <summary>Represents a webhook event type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateWebhookRequestV1_webhookEvent
     {
@@ -95,6 +95,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         TIME_OFF_REQUESTED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TIME_OFF_REQUEST_UPDATED")]
+        #pragma warning disable CS1591
+        TIME_OFF_REQUEST_UPDATED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TIME_OFF_REQUEST_APPROVED")]
         #pragma warning disable CS1591
         TIME_OFF_REQUEST_APPROVED,
@@ -166,6 +170,42 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "EXPENSE_UPDATED")]
         #pragma warning disable CS1591
         EXPENSE_UPDATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROJECT_UPDATED")]
+        #pragma warning disable CS1591
+        PROJECT_UPDATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROJECT_DELETED")]
+        #pragma warning disable CS1591
+        PROJECT_DELETED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "USER_GROUP_CREATED")]
+        #pragma warning disable CS1591
+        USER_GROUP_CREATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "USER_GROUP_UPDATED")]
+        #pragma warning disable CS1591
+        USER_GROUP_UPDATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "USER_GROUP_DELETED")]
+        #pragma warning disable CS1591
+        USER_GROUP_DELETED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "USERS_INVITED_TO_WORKSPACE")]
+        #pragma warning disable CS1591
+        USERS_INVITED_TO_WORKSPACE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "LIMITED_USERS_ADDED_TO_WORKSPACE")]
+        #pragma warning disable CS1591
+        LIMITED_USERS_ADDED_TO_WORKSPACE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COST_RATE_UPDATED")]
+        #pragma warning disable CS1591
+        COST_RATE_UPDATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BILLABLE_RATE_UPDATED")]
+        #pragma warning disable CS1591
+        BILLABLE_RATE_UPDATED,
         #pragma warning restore CS1591
     }
 }

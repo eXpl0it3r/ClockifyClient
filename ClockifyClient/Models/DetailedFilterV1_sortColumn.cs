@@ -27,6 +27,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         DATE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ZONED_DATE")]
+        #pragma warning disable CS1591
+        ZONED_DATE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "NATURAL")]
         #pragma warning disable CS1591
         NATURAL,

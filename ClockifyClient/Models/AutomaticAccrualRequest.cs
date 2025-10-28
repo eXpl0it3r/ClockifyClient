@@ -17,8 +17,6 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents amount of automatic accrual.</summary>
         public double? Amount { get; set; }
-        /// <summary>The amountValidForTimeUnit property</summary>
-        public bool? AmountValidForTimeUnit { get; set; }
         /// <summary>Represents automatic accrual period.</summary>
         public global::ClockifyClient.Models.AutomaticAccrualRequest_period? Period { get; set; }
         /// <summary>Represents automatic accrual time unit.</summary>
@@ -37,7 +35,7 @@ namespace ClockifyClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::ClockifyClient.Models.AutomaticAccrualRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::ClockifyClient.Models.AutomaticAccrualRequest();
         }
         /// <summary>
@@ -49,7 +47,6 @@ namespace ClockifyClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
-                { "amountValidForTimeUnit", n => { AmountValidForTimeUnit = n.GetBoolValue(); } },
                 { "period", n => { Period = n.GetEnumValue<global::ClockifyClient.Models.AutomaticAccrualRequest_period>(); } },
                 { "timeUnit", n => { TimeUnit = n.GetEnumValue<global::ClockifyClient.Models.AutomaticAccrualRequest_timeUnit>(); } },
             };
@@ -60,9 +57,8 @@ namespace ClockifyClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
-            writer.WriteBoolValue("amountValidForTimeUnit", AmountValidForTimeUnit);
             writer.WriteEnumValue<global::ClockifyClient.Models.AutomaticAccrualRequest_period>("period", Period);
             writer.WriteEnumValue<global::ClockifyClient.Models.AutomaticAccrualRequest_timeUnit>("timeUnit", TimeUnit);
             writer.WriteAdditionalData(AdditionalData);
