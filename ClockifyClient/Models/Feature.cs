@@ -65,14 +65,20 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_HISTORIC_RATES? HISTORICRATES { get; set; }
         /// <summary>The INVOICE_EMAILS property</summary>
         public global::ClockifyClient.Models.Feature_INVOICE_EMAILS? INVOICEEMAILS { get; set; }
+        /// <summary>The INVOICE_REMINDERS property</summary>
+        public global::ClockifyClient.Models.Feature_INVOICE_REMINDERS? INVOICEREMINDERS { get; set; }
         /// <summary>The INVOICING property</summary>
         public global::ClockifyClient.Models.Feature_INVOICING? INVOICING { get; set; }
         /// <summary>The KIOSK property</summary>
         public global::ClockifyClient.Models.Feature_KIOSK? KIOSK { get; set; }
         /// <summary>The KIOSK_PIN_REQUIRED property</summary>
         public global::ClockifyClient.Models.Feature_KIOSK_PIN_REQUIRED? KIOSKPINREQUIRED { get; set; }
+        /// <summary>The KIOSK_QR_CODE property</summary>
+        public global::ClockifyClient.Models.Feature_KIOSK_QR_CODE? KIOSKQRCODE { get; set; }
         /// <summary>The KIOSK_SESSION_DURATION property</summary>
         public global::ClockifyClient.Models.Feature_KIOSK_SESSION_DURATION? KIOSKSESSIONDURATION { get; set; }
+        /// <summary>The KIOSK_SIX_DIGIT_PIN property</summary>
+        public global::ClockifyClient.Models.Feature_KIOSK_SIX_DIGIT_PIN? KIOSKSIXDIGITPIN { get; set; }
         /// <summary>The LABOR_COST property</summary>
         public global::ClockifyClient.Models.Feature_LABOR_COST? LABORCOST { get; set; }
         /// <summary>The LOCATIONS property</summary>
@@ -89,6 +95,8 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_QUICKBOOKS_INTEGRATION? QUICKBOOKSINTEGRATION { get; set; }
         /// <summary>The RECURRING_ESTIMATES property</summary>
         public global::ClockifyClient.Models.Feature_RECURRING_ESTIMATES? RECURRINGESTIMATES { get; set; }
+        /// <summary>The RECURRING_INVOICES property</summary>
+        public global::ClockifyClient.Models.Feature_RECURRING_INVOICES? RECURRINGINVOICES { get; set; }
         /// <summary>The REQUIRED_FIELDS property</summary>
         public global::ClockifyClient.Models.Feature_REQUIRED_FIELDS? REQUIREDFIELDS { get; set; }
         /// <summary>The SCHEDULED_REPORTS property</summary>
@@ -185,10 +193,13 @@ namespace ClockifyClient.Models
                 { "HIDE_PAGES", n => { HIDEPAGES = n.GetEnumValue<global::ClockifyClient.Models.Feature_HIDE_PAGES>(); } },
                 { "HISTORIC_RATES", n => { HISTORICRATES = n.GetEnumValue<global::ClockifyClient.Models.Feature_HISTORIC_RATES>(); } },
                 { "INVOICE_EMAILS", n => { INVOICEEMAILS = n.GetEnumValue<global::ClockifyClient.Models.Feature_INVOICE_EMAILS>(); } },
+                { "INVOICE_REMINDERS", n => { INVOICEREMINDERS = n.GetEnumValue<global::ClockifyClient.Models.Feature_INVOICE_REMINDERS>(); } },
                 { "INVOICING", n => { INVOICING = n.GetEnumValue<global::ClockifyClient.Models.Feature_INVOICING>(); } },
                 { "KIOSK", n => { KIOSK = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK>(); } },
                 { "KIOSK_PIN_REQUIRED", n => { KIOSKPINREQUIRED = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK_PIN_REQUIRED>(); } },
+                { "KIOSK_QR_CODE", n => { KIOSKQRCODE = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK_QR_CODE>(); } },
                 { "KIOSK_SESSION_DURATION", n => { KIOSKSESSIONDURATION = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK_SESSION_DURATION>(); } },
+                { "KIOSK_SIX_DIGIT_PIN", n => { KIOSKSIXDIGITPIN = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK_SIX_DIGIT_PIN>(); } },
                 { "LABOR_COST", n => { LABORCOST = n.GetEnumValue<global::ClockifyClient.Models.Feature_LABOR_COST>(); } },
                 { "LOCATIONS", n => { LOCATIONS = n.GetEnumValue<global::ClockifyClient.Models.Feature_LOCATIONS>(); } },
                 { "MANAGER_ROLE", n => { MANAGERROLE = n.GetEnumValue<global::ClockifyClient.Models.Feature_MANAGER_ROLE>(); } },
@@ -197,6 +208,7 @@ namespace ClockifyClient.Models
                 { "PROJECT_TEMPLATES", n => { PROJECTTEMPLATES = n.GetEnumValue<global::ClockifyClient.Models.Feature_PROJECT_TEMPLATES>(); } },
                 { "QUICKBOOKS_INTEGRATION", n => { QUICKBOOKSINTEGRATION = n.GetEnumValue<global::ClockifyClient.Models.Feature_QUICKBOOKS_INTEGRATION>(); } },
                 { "RECURRING_ESTIMATES", n => { RECURRINGESTIMATES = n.GetEnumValue<global::ClockifyClient.Models.Feature_RECURRING_ESTIMATES>(); } },
+                { "RECURRING_INVOICES", n => { RECURRINGINVOICES = n.GetEnumValue<global::ClockifyClient.Models.Feature_RECURRING_INVOICES>(); } },
                 { "REQUIRED_FIELDS", n => { REQUIREDFIELDS = n.GetEnumValue<global::ClockifyClient.Models.Feature_REQUIRED_FIELDS>(); } },
                 { "SCHEDULED_REPORTS", n => { SCHEDULEDREPORTS = n.GetEnumValue<global::ClockifyClient.Models.Feature_SCHEDULED_REPORTS>(); } },
                 { "SCHEDULING", n => { SCHEDULING = n.GetEnumValue<global::ClockifyClient.Models.Feature_SCHEDULING>(); } },
@@ -254,10 +266,13 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_HIDE_PAGES>("HIDE_PAGES", HIDEPAGES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_HISTORIC_RATES>("HISTORIC_RATES", HISTORICRATES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_INVOICE_EMAILS>("INVOICE_EMAILS", INVOICEEMAILS);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_INVOICE_REMINDERS>("INVOICE_REMINDERS", INVOICEREMINDERS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_INVOICING>("INVOICING", INVOICING);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK>("KIOSK", KIOSK);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK_PIN_REQUIRED>("KIOSK_PIN_REQUIRED", KIOSKPINREQUIRED);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK_QR_CODE>("KIOSK_QR_CODE", KIOSKQRCODE);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK_SESSION_DURATION>("KIOSK_SESSION_DURATION", KIOSKSESSIONDURATION);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK_SIX_DIGIT_PIN>("KIOSK_SIX_DIGIT_PIN", KIOSKSIXDIGITPIN);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_LABOR_COST>("LABOR_COST", LABORCOST);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_LOCATIONS>("LOCATIONS", LOCATIONS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_MANAGER_ROLE>("MANAGER_ROLE", MANAGERROLE);
@@ -266,6 +281,7 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_PROJECT_TEMPLATES>("PROJECT_TEMPLATES", PROJECTTEMPLATES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_QUICKBOOKS_INTEGRATION>("QUICKBOOKS_INTEGRATION", QUICKBOOKSINTEGRATION);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_RECURRING_ESTIMATES>("RECURRING_ESTIMATES", RECURRINGESTIMATES);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_RECURRING_INVOICES>("RECURRING_INVOICES", RECURRINGINVOICES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_REQUIRED_FIELDS>("REQUIRED_FIELDS", REQUIREDFIELDS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SCHEDULED_REPORTS>("SCHEDULED_REPORTS", SCHEDULEDREPORTS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SCHEDULING>("SCHEDULING", SCHEDULING);

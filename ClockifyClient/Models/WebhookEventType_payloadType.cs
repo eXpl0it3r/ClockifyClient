@@ -16,6 +16,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         TIME_ENTRY,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TIME_ENTRY_PLAKY_INTEGRATION")]
+        #pragma warning disable CS1591
+        TIME_ENTRY_PLAKY_INTEGRATION,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CLIENT")]
         #pragma warning disable CS1591
         CLIENT,
@@ -131,6 +135,18 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "JIRA_UNINSTALLED_PAYLOAD_WITH_JWT")]
         #pragma warning disable CS1591
         JIRA_UNINSTALLED_PAYLOAD_WITH_JWT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "JIRA_WORKLOG_PAYLOAD_WITH_JWT")]
+        #pragma warning disable CS1591
+        JIRA_WORKLOG_PAYLOAD_WITH_JWT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "JIRA_DATA_CENTER_INSTALLED_PAYLOAD_WITH_JWT")]
+        #pragma warning disable CS1591
+        JIRA_DATA_CENTER_INSTALLED_PAYLOAD_WITH_JWT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "JIRA_DATA_CENTER_UNINSTALLED_PAYLOAD_WITH_JWT")]
+        #pragma warning disable CS1591
+        JIRA_DATA_CENTER_UNINSTALLED_PAYLOAD_WITH_JWT,
         #pragma warning restore CS1591
         [EnumMember(Value = "REMINDER_TO_START_TIMER")]
         #pragma warning disable CS1591

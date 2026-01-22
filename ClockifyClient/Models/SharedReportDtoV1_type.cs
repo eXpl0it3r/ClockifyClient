@@ -47,6 +47,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         INVOICE_EXPENSE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INVOICE_TIME")]
+        #pragma warning disable CS1591
+        INVOICE_TIME,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PROJECT")]
         #pragma warning disable CS1591
         PROJECT,
@@ -66,6 +70,14 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "INVOICES")]
         #pragma warning disable CS1591
         INVOICES,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "KIOSK_PIN_LIST")]
+        #pragma warning disable CS1591
+        KIOSK_PIN_LIST,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "KIOSK_ASSIGNEES")]
+        #pragma warning disable CS1591
+        KIOSK_ASSIGNEES,
         #pragma warning restore CS1591
     }
 }

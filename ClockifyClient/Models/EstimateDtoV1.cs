@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents project estimate object.
+    /// Represents a project estimate object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EstimateDtoV1 : IAdditionalDataHolder, IParsable

@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents list of custom field filter objects.
+    /// Represents list of time entry custom field filter objects.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomFieldFilterV1 : IAdditionalDataHolder, IParsable

@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Entities.Deleted
         {
         }
         /// <summary>
-        /// This endpoint retrieves information of database collection(s) that have been deleted within the specified date range. The date range is determined by two parameters: start and end. Please note that deleted entities will be updated and reflected approximately one minute after deletion.
+        /// Retrieves a list of record(s) that were deleted within a specified date range.   The date range is determined by the two parameters start and end.  &gt; ### 💡 Note&gt; Deleted entities will be updated and reflected in this endpoint approximately one minute after the deletion occurs. Also, entities that are created and deleted within the request date range will not appear in the /deleted endpoint. 
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.PageableCollectionLogBinDocumentDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Entities.Deleted
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.PageableCollectionLogBinDocumentDto>(requestInfo, global::ClockifyClient.Models.PageableCollectionLogBinDocumentDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint retrieves information of database collection(s) that have been deleted within the specified date range. The date range is determined by two parameters: start and end. Please note that deleted entities will be updated and reflected approximately one minute after deletion.
+        /// Retrieves a list of record(s) that were deleted within a specified date range.   The date range is determined by the two parameters start and end.  &gt; ### 💡 Note&gt; Deleted entities will be updated and reflected in this endpoint approximately one minute after the deletion occurs. Also, entities that are created and deleted within the request date range will not appear in the /deleted endpoint. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Entities.Deleted
             return new global::ClockifyClient.V1.Workspaces.Item.Entities.Deleted.DeletedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This endpoint retrieves information of database collection(s) that have been deleted within the specified date range. The date range is determined by two parameters: start and end. Please note that deleted entities will be updated and reflected approximately one minute after deletion.
+        /// Retrieves a list of record(s) that were deleted within a specified date range.   The date range is determined by the two parameters start and end.  &gt; ### 💡 Note&gt; Deleted entities will be updated and reflected in this endpoint approximately one minute after the deletion occurs. Also, entities that are created and deleted within the request date range will not appear in the /deleted endpoint. 
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeletedRequestBuilderGetQueryParameters 

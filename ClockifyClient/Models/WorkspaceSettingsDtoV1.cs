@@ -107,6 +107,14 @@ namespace ClockifyClient.Models
 #else
         public string ProjectGroupingLabel { get; set; }
 #endif
+        /// <summary>Represents a project label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectLabel { get; set; }
+#nullable restore
+#else
+        public string ProjectLabel { get; set; }
+#endif
         /// <summary>Indicates whether project picker special filter is enabled.</summary>
         public bool? ProjectPickerSpecialFilter { get; set; }
         /// <summary>Represents a time rounding object.</summary>
@@ -117,6 +125,14 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.RoundDto Round { get; set; }
 #endif
+        /// <summary>Represents a task label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaskLabel { get; set; }
+#nullable restore
+#else
+        public string TaskLabel { get; set; }
+#endif
         /// <summary>Indicates whether time rounding is enabled in reports.</summary>
         public bool? TimeRoundingInReports { get; set; }
         /// <summary>Represents a time tracking mode enum.</summary>
@@ -124,6 +140,14 @@ namespace ClockifyClient.Models
         /// <summary>Indicates whether time tracking is seconds-accurate. This is now deprecated and durationFormat can now be used to manage Time Duration Format.</summary>
         [Obsolete("")]
         public bool? TrackTimeDownToSecond { get; set; }
+        /// <summary>Represents a list of working days.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_workingDays?>? WorkingDays { get; set; }
+#nullable restore
+#else
+        public List<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_workingDays?> WorkingDays { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.WorkspaceSettingsDtoV1"/> and sets the default values.
         /// </summary>
@@ -177,11 +201,14 @@ namespace ClockifyClient.Models
                 { "onlyAdminsSeePublicProjectsEntries", n => { OnlyAdminsSeePublicProjectsEntries = n.GetBoolValue(); } },
                 { "projectFavorites", n => { ProjectFavorites = n.GetBoolValue(); } },
                 { "projectGroupingLabel", n => { ProjectGroupingLabel = n.GetStringValue(); } },
+                { "projectLabel", n => { ProjectLabel = n.GetStringValue(); } },
                 { "projectPickerSpecialFilter", n => { ProjectPickerSpecialFilter = n.GetBoolValue(); } },
                 { "round", n => { Round = n.GetObjectValue<global::ClockifyClient.Models.RoundDto>(global::ClockifyClient.Models.RoundDto.CreateFromDiscriminatorValue); } },
+                { "taskLabel", n => { TaskLabel = n.GetStringValue(); } },
                 { "timeRoundingInReports", n => { TimeRoundingInReports = n.GetBoolValue(); } },
                 { "timeTrackingMode", n => { TimeTrackingMode = n.GetEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_timeTrackingMode>(); } },
                 { "trackTimeDownToSecond", n => { TrackTimeDownToSecond = n.GetBoolValue(); } },
+                { "workingDays", n => { WorkingDays = n.GetCollectionOfEnumValues<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_workingDays>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -219,11 +246,14 @@ namespace ClockifyClient.Models
             writer.WriteBoolValue("onlyAdminsSeePublicProjectsEntries", OnlyAdminsSeePublicProjectsEntries);
             writer.WriteBoolValue("projectFavorites", ProjectFavorites);
             writer.WriteStringValue("projectGroupingLabel", ProjectGroupingLabel);
+            writer.WriteStringValue("projectLabel", ProjectLabel);
             writer.WriteBoolValue("projectPickerSpecialFilter", ProjectPickerSpecialFilter);
             writer.WriteObjectValue<global::ClockifyClient.Models.RoundDto>("round", Round);
+            writer.WriteStringValue("taskLabel", TaskLabel);
             writer.WriteBoolValue("timeRoundingInReports", TimeRoundingInReports);
             writer.WriteEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_timeTrackingMode>("timeTrackingMode", TimeTrackingMode);
             writer.WriteBoolValue("trackTimeDownToSecond", TrackTimeDownToSecond);
+            writer.WriteCollectionOfEnumValues<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_workingDays>("workingDays", WorkingDays);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

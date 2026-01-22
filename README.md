@@ -86,7 +86,16 @@ The OpenAPI specification provided by Clockify doesn't work out of the box with 
 Replace the following part of the specification
 
 ```json
-"adminOnlyPages": { "type": "string", "description": "Represents a unique list of protected page enums.", "example": "[\"PROJECT\",\"TEAM\",\"REPORTS\"]", "enum": ["PROJECT", "TEAM", "REPORTS"] },
+"adminOnlyPages": {
+  "type": "string",
+  "description": "Represents a unique list of protected page enums.",
+  "example": "[\"PROJECT\",\"TEAM\",\"REPORTS\"]",
+  "enum": [
+    "PROJECT",
+    "TEAM",
+    "REPORTS"
+  ]
+},
 ```
 
 with this part instead

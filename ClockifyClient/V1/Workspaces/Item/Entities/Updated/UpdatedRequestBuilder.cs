@@ -33,7 +33,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Entities.Updated
         {
         }
         /// <summary>
-        /// This endpoint retrieves records from the database collection that have been updated within the specified date range. The date range is determined by two parameters: start and end.
+        /// Retrieves records that were updated within the specified date range.   The date range is determined by the two parameters: start and end.   &gt; ### 💡 Note&gt; If an entity is both created and updated within the requested date range, it will be excluded from the /updated endpoint results.  
         /// </summary>
         /// <returns>A List&lt;string&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Entities.Updated
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// This endpoint retrieves records from the database collection that have been updated within the specified date range. The date range is determined by two parameters: start and end.
+        /// Retrieves records that were updated within the specified date range.   The date range is determined by the two parameters: start and end.   &gt; ### 💡 Note&gt; If an entity is both created and updated within the requested date range, it will be excluded from the /updated endpoint results.  
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Entities.Updated
             return new global::ClockifyClient.V1.Workspaces.Item.Entities.Updated.UpdatedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This endpoint retrieves records from the database collection that have been updated within the specified date range. The date range is determined by two parameters: start and end.
+        /// Retrieves records that were updated within the specified date range.   The date range is determined by the two parameters: start and end.   &gt; ### 💡 Note&gt; If an entity is both created and updated within the requested date range, it will be excluded from the /updated endpoint results.  
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UpdatedRequestBuilderGetQueryParameters 

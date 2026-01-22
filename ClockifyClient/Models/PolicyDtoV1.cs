@@ -21,10 +21,10 @@ namespace ClockifyClient.Models
         /// <summary>Provide approval settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ClockifyClient.Models.ApproveDto? Approve { get; set; }
+        public global::ClockifyClient.Models.PolicyApprovalDto? Approve { get; set; }
 #nullable restore
 #else
-        public global::ClockifyClient.Models.ApproveDto Approve { get; set; }
+        public global::ClockifyClient.Models.PolicyApprovalDto Approve { get; set; }
 #endif
         /// <summary>Indicates whether the policy is archived.</summary>
         public bool? Archived { get; set; }
@@ -131,7 +131,7 @@ namespace ClockifyClient.Models
             {
                 { "allowHalfDay", n => { AllowHalfDay = n.GetBoolValue(); } },
                 { "allowNegativeBalance", n => { AllowNegativeBalance = n.GetBoolValue(); } },
-                { "approve", n => { Approve = n.GetObjectValue<global::ClockifyClient.Models.ApproveDto>(global::ClockifyClient.Models.ApproveDto.CreateFromDiscriminatorValue); } },
+                { "approve", n => { Approve = n.GetObjectValue<global::ClockifyClient.Models.PolicyApprovalDto>(global::ClockifyClient.Models.PolicyApprovalDto.CreateFromDiscriminatorValue); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "automaticAccrual", n => { AutomaticAccrual = n.GetObjectValue<global::ClockifyClient.Models.AutomaticAccrualDto>(global::ClockifyClient.Models.AutomaticAccrualDto.CreateFromDiscriminatorValue); } },
                 { "automaticTimeEntryCreation", n => { AutomaticTimeEntryCreation = n.GetObjectValue<global::ClockifyClient.Models.AutomaticTimeEntryCreationDto>(global::ClockifyClient.Models.AutomaticTimeEntryCreationDto.CreateFromDiscriminatorValue); } },
@@ -155,7 +155,7 @@ namespace ClockifyClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowHalfDay", AllowHalfDay);
             writer.WriteBoolValue("allowNegativeBalance", AllowNegativeBalance);
-            writer.WriteObjectValue<global::ClockifyClient.Models.ApproveDto>("approve", Approve);
+            writer.WriteObjectValue<global::ClockifyClient.Models.PolicyApprovalDto>("approve", Approve);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteObjectValue<global::ClockifyClient.Models.AutomaticAccrualDto>("automaticAccrual", AutomaticAccrual);
             writer.WriteObjectValue<global::ClockifyClient.Models.AutomaticTimeEntryCreationDto>("automaticTimeEntryCreation", AutomaticTimeEntryCreation);

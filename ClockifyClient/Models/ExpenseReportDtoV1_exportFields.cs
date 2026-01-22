@@ -167,6 +167,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         KIOSK,
         #pragma warning restore CS1591
+        [EnumMember(Value = "KIOSK_QR_CODE")]
+        #pragma warning disable CS1591
+        KIOSK_QR_CODE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TYPE")]
         #pragma warning disable CS1591
         TYPE,

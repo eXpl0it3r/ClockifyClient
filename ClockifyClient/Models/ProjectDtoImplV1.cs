@@ -18,7 +18,7 @@ namespace ClockifyClient.Models
         public bool? Archived { get; set; }
         /// <summary>Indicates whether project is billable or not.</summary>
         public bool? Billable { get; set; }
-        /// <summary>Represents project budget estimate object.</summary>
+        /// <summary>Represents a project budget estimate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.EstimateWithOptionsDto? BudgetEstimate { get; set; }
@@ -66,7 +66,7 @@ namespace ClockifyClient.Models
 #else
         public string Duration { get; set; }
 #endif
-        /// <summary>Represents project estimate object.</summary>
+        /// <summary>Represents a project estimate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.EstimateDtoV1? Estimate { get; set; }
@@ -128,9 +128,9 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Indicates whether project is public or not.</summary>
         public bool? Public { get; set; }
-        /// <summary>The template property</summary>
+        /// <summary>Indicates whether project is a template or not.</summary>
         public bool? Template { get; set; }
-        /// <summary>Represents project time estimate object.</summary>
+        /// <summary>Represents a project time estimate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.TimeEstimateDto? TimeEstimate { get; set; }
