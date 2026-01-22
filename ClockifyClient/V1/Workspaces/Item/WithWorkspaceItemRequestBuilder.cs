@@ -3,7 +3,6 @@
 using ClockifyClient.Models;
 using ClockifyClient.V1.Workspaces.Item.Addons;
 using ClockifyClient.V1.Workspaces.Item.ApprovalRequests;
-using ClockifyClient.V1.Workspaces.Item.Balance;
 using ClockifyClient.V1.Workspaces.Item.Clients;
 using ClockifyClient.V1.Workspaces.Item.CostRate;
 using ClockifyClient.V1.Workspaces.Item.CustomFields;
@@ -13,13 +12,12 @@ using ClockifyClient.V1.Workspaces.Item.Holidays;
 using ClockifyClient.V1.Workspaces.Item.HourlyRate;
 using ClockifyClient.V1.Workspaces.Item.Invoices;
 using ClockifyClient.V1.Workspaces.Item.MemberProfile;
-using ClockifyClient.V1.Workspaces.Item.Policies;
 using ClockifyClient.V1.Workspaces.Item.Projects;
 using ClockifyClient.V1.Workspaces.Item.Reports;
-using ClockifyClient.V1.Workspaces.Item.Requests;
 using ClockifyClient.V1.Workspaces.Item.Scheduling;
 using ClockifyClient.V1.Workspaces.Item.SharedReports;
 using ClockifyClient.V1.Workspaces.Item.Tags;
+using ClockifyClient.V1.Workspaces.Item.Templates;
 using ClockifyClient.V1.Workspaces.Item.TimeEntries;
 using ClockifyClient.V1.Workspaces.Item.TimeOff;
 using ClockifyClient.V1.Workspaces.Item.User;
@@ -51,11 +49,6 @@ namespace ClockifyClient.V1.Workspaces.Item
         public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ApprovalRequestsRequestBuilder ApprovalRequests
         {
             get => new global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ApprovalRequestsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The balance property</summary>
-        public global::ClockifyClient.V1.Workspaces.Item.Balance.BalanceRequestBuilder Balance
-        {
-            get => new global::ClockifyClient.V1.Workspaces.Item.Balance.BalanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clients property</summary>
         public global::ClockifyClient.V1.Workspaces.Item.Clients.ClientsRequestBuilder Clients
@@ -102,11 +95,6 @@ namespace ClockifyClient.V1.Workspaces.Item
         {
             get => new global::ClockifyClient.V1.Workspaces.Item.MemberProfile.MemberProfileRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The policies property</summary>
-        public global::ClockifyClient.V1.Workspaces.Item.Policies.PoliciesRequestBuilder Policies
-        {
-            get => new global::ClockifyClient.V1.Workspaces.Item.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The projects property</summary>
         public global::ClockifyClient.V1.Workspaces.Item.Projects.ProjectsRequestBuilder Projects
         {
@@ -116,11 +104,6 @@ namespace ClockifyClient.V1.Workspaces.Item
         public global::ClockifyClient.V1.Workspaces.Item.Reports.ReportsRequestBuilder Reports
         {
             get => new global::ClockifyClient.V1.Workspaces.Item.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The requests property</summary>
-        public global::ClockifyClient.V1.Workspaces.Item.Requests.RequestsRequestBuilder Requests
-        {
-            get => new global::ClockifyClient.V1.Workspaces.Item.Requests.RequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scheduling property</summary>
         public global::ClockifyClient.V1.Workspaces.Item.Scheduling.SchedulingRequestBuilder Scheduling
@@ -136,6 +119,11 @@ namespace ClockifyClient.V1.Workspaces.Item
         public global::ClockifyClient.V1.Workspaces.Item.Tags.TagsRequestBuilder Tags
         {
             get => new global::ClockifyClient.V1.Workspaces.Item.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The templates property</summary>
+        public global::ClockifyClient.V1.Workspaces.Item.Templates.TemplatesRequestBuilder Templates
+        {
+            get => new global::ClockifyClient.V1.Workspaces.Item.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeEntries property</summary>
         public global::ClockifyClient.V1.Workspaces.Item.TimeEntries.TimeEntriesRequestBuilder TimeEntries

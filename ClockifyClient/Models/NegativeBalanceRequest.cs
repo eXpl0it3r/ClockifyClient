@@ -21,6 +21,8 @@ namespace ClockifyClient.Models
         public bool? AmountValidForTimeUnit { get; set; }
         /// <summary>Represents negative balance period.</summary>
         public global::ClockifyClient.Models.NegativeBalanceRequest_period? Period { get; set; }
+        /// <summary>Indicates whether negative balance should be reset at the end of the negative balance period.</summary>
+        public bool? ShouldReset { get; set; }
         /// <summary>Represents negative balance time unit.</summary>
         public global::ClockifyClient.Models.NegativeBalanceRequest_timeUnit? TimeUnit { get; set; }
         /// <summary>
@@ -51,6 +53,7 @@ namespace ClockifyClient.Models
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "amountValidForTimeUnit", n => { AmountValidForTimeUnit = n.GetBoolValue(); } },
                 { "period", n => { Period = n.GetEnumValue<global::ClockifyClient.Models.NegativeBalanceRequest_period>(); } },
+                { "shouldReset", n => { ShouldReset = n.GetBoolValue(); } },
                 { "timeUnit", n => { TimeUnit = n.GetEnumValue<global::ClockifyClient.Models.NegativeBalanceRequest_timeUnit>(); } },
             };
         }
@@ -64,6 +67,7 @@ namespace ClockifyClient.Models
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteBoolValue("amountValidForTimeUnit", AmountValidForTimeUnit);
             writer.WriteEnumValue<global::ClockifyClient.Models.NegativeBalanceRequest_period>("period", Period);
+            writer.WriteBoolValue("shouldReset", ShouldReset);
             writer.WriteEnumValue<global::ClockifyClient.Models.NegativeBalanceRequest_timeUnit>("timeUnit", TimeUnit);
             writer.WriteAdditionalData(AdditionalData);
         }

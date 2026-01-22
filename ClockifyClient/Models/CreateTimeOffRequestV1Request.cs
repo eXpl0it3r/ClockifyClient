@@ -22,7 +22,7 @@ namespace ClockifyClient.Models
 #else
         public string Note { get; set; }
 #endif
-        /// <summary>Provide the period you would like to use for creating the time off request.</summary>
+        /// <summary>Provide the period you would like to use for creating the time off request. If `timeZone` isn&apos;t set, should be aligned with time zone for user in settings. Can be shifted from user time zone with explicit setting of `timeZone`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.TimeOffRequestPeriodV1Request? TimeOffPeriod { get; set; }

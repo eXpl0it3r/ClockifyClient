@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Provide the period you would like to use for creating the time off request.
+    /// Provide the period you would like to use for creating the time off request. If `timeZone` isn&apos;t set, should be aligned with time zone for user in settings. Can be shifted from user time zone with explicit setting of `timeZone`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TimeOffRequestPeriodV1Request : IAdditionalDataHolder, IParsable

@@ -26,6 +26,14 @@ namespace ClockifyClient.Models
 #else
         public string BillFrom { get; set; }
 #endif
+        /// <summary>Represents an enum if tax is calculated as item based or invoice based.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.CalculationType? CalculationType { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.CalculationType CalculationType { get; set; }
+#endif
         /// <summary>Represents client address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -184,6 +192,7 @@ namespace ClockifyClient.Models
                 { "amount", n => { Amount = n.GetLongValue(); } },
                 { "balance", n => { Balance = n.GetLongValue(); } },
                 { "billFrom", n => { BillFrom = n.GetStringValue(); } },
+                { "calculationType", n => { CalculationType = n.GetObjectValue<global::ClockifyClient.Models.CalculationType>(global::ClockifyClient.Models.CalculationType.CreateFromDiscriminatorValue); } },
                 { "clientAddress", n => { ClientAddress = n.GetStringValue(); } },
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "clientName", n => { ClientName = n.GetStringValue(); } },
@@ -222,6 +231,7 @@ namespace ClockifyClient.Models
             writer.WriteLongValue("amount", Amount);
             writer.WriteLongValue("balance", Balance);
             writer.WriteStringValue("billFrom", BillFrom);
+            writer.WriteObjectValue<global::ClockifyClient.Models.CalculationType>("calculationType", CalculationType);
             writer.WriteStringValue("clientAddress", ClientAddress);
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientName", ClientName);

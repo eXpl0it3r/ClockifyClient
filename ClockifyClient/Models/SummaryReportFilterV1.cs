@@ -160,6 +160,14 @@ namespace ClockifyClient.Models
 #else
         public string TimeZone { get; set; }
 #endif
+        /// <summary>The userCustomFields property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ClockifyClient.Models.CustomFieldFilterV1>? UserCustomFields { get; set; }
+#nullable restore
+#else
+        public List<global::ClockifyClient.Models.CustomFieldFilterV1> UserCustomFields { get; set; }
+#endif
         /// <summary>The userGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -248,6 +256,7 @@ namespace ClockifyClient.Models
                 { "tasks", n => { Tasks = n.GetObjectValue<global::ClockifyClient.Models.ContainsTaskFilterV1>(global::ClockifyClient.Models.ContainsTaskFilterV1.CreateFromDiscriminatorValue); } },
                 { "timeFormat", n => { TimeFormat = n.GetStringValue(); } },
                 { "timeZone", n => { TimeZone = n.GetStringValue(); } },
+                { "userCustomFields", n => { UserCustomFields = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.CustomFieldFilterV1>(global::ClockifyClient.Models.CustomFieldFilterV1.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userGroups", n => { UserGroups = n.GetObjectValue<global::ClockifyClient.Models.ContainsUsersFilterV1>(global::ClockifyClient.Models.ContainsUsersFilterV1.CreateFromDiscriminatorValue); } },
                 { "userLocale", n => { UserLocale = n.GetStringValue(); } },
                 { "users", n => { Users = n.GetObjectValue<global::ClockifyClient.Models.ContainsUsersFilterV1>(global::ClockifyClient.Models.ContainsUsersFilterV1.CreateFromDiscriminatorValue); } },
@@ -289,6 +298,7 @@ namespace ClockifyClient.Models
             writer.WriteObjectValue<global::ClockifyClient.Models.ContainsTaskFilterV1>("tasks", Tasks);
             writer.WriteStringValue("timeFormat", TimeFormat);
             writer.WriteStringValue("timeZone", TimeZone);
+            writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CustomFieldFilterV1>("userCustomFields", UserCustomFields);
             writer.WriteObjectValue<global::ClockifyClient.Models.ContainsUsersFilterV1>("userGroups", UserGroups);
             writer.WriteStringValue("userLocale", UserLocale);
             writer.WriteObjectValue<global::ClockifyClient.Models.ContainsUsersFilterV1>("users", Users);

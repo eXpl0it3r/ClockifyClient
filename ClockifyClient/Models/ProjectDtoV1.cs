@@ -14,6 +14,18 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates whether project is archived or not.</summary>
+        public bool? Archived { get; set; }
+        /// <summary>Indicates whether project is billable or not.</summary>
+        public bool? Billable { get; set; }
+        /// <summary>Represents a project budget estimate object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.EstimateWithOptionsDto? BudgetEstimate { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.EstimateWithOptionsDto BudgetEstimate { get; set; }
+#endif
         /// <summary>Color format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with &apos;#&apos; and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +34,14 @@ namespace ClockifyClient.Models
 #else
         public string Color { get; set; }
 #endif
+        /// <summary>Represents a cost rate object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.RateDtoV1? CostRate { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.RateDtoV1 CostRate { get; set; }
+#endif
         /// <summary>Represents project duration in milliseconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +49,22 @@ namespace ClockifyClient.Models
 #nullable restore
 #else
         public string Duration { get; set; }
+#endif
+        /// <summary>Represents a project estimate object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.EstimateDtoV1? Estimate { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.EstimateDtoV1 Estimate { get; set; }
+#endif
+        /// <summary>Represents a cost rate object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.RateDtoV1? HourlyRate { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.RateDtoV1 HourlyRate { get; set; }
 #endif
         /// <summary>Represents project identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,6 +100,16 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Indicates whether project is public or not.</summary>
         public bool? Public { get; set; }
+        /// <summary>Indicates whether project is a template or not.</summary>
+        public bool? Template { get; set; }
+        /// <summary>Represents a project time estimate object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.TimeEstimateDto? TimeEstimate { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.TimeEstimateDto TimeEstimate { get; set; }
+#endif
         /// <summary>Represents workspace identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,13 +143,21 @@ namespace ClockifyClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "archived", n => { Archived = n.GetBoolValue(); } },
+                { "billable", n => { Billable = n.GetBoolValue(); } },
+                { "budgetEstimate", n => { BudgetEstimate = n.GetObjectValue<global::ClockifyClient.Models.EstimateWithOptionsDto>(global::ClockifyClient.Models.EstimateWithOptionsDto.CreateFromDiscriminatorValue); } },
                 { "color", n => { Color = n.GetStringValue(); } },
+                { "costRate", n => { CostRate = n.GetObjectValue<global::ClockifyClient.Models.RateDtoV1>(global::ClockifyClient.Models.RateDtoV1.CreateFromDiscriminatorValue); } },
                 { "duration", n => { Duration = n.GetStringValue(); } },
+                { "estimate", n => { Estimate = n.GetObjectValue<global::ClockifyClient.Models.EstimateDtoV1>(global::ClockifyClient.Models.EstimateDtoV1.CreateFromDiscriminatorValue); } },
+                { "hourlyRate", n => { HourlyRate = n.GetObjectValue<global::ClockifyClient.Models.RateDtoV1>(global::ClockifyClient.Models.RateDtoV1.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "memberships", n => { Memberships = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.MembershipDtoV1>(global::ClockifyClient.Models.MembershipDtoV1.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "note", n => { Note = n.GetStringValue(); } },
                 { "public", n => { Public = n.GetBoolValue(); } },
+                { "template", n => { Template = n.GetBoolValue(); } },
+                { "timeEstimate", n => { TimeEstimate = n.GetObjectValue<global::ClockifyClient.Models.TimeEstimateDto>(global::ClockifyClient.Models.TimeEstimateDto.CreateFromDiscriminatorValue); } },
                 { "workspaceId", n => { WorkspaceId = n.GetStringValue(); } },
             };
         }
@@ -114,13 +168,21 @@ namespace ClockifyClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("archived", Archived);
+            writer.WriteBoolValue("billable", Billable);
+            writer.WriteObjectValue<global::ClockifyClient.Models.EstimateWithOptionsDto>("budgetEstimate", BudgetEstimate);
             writer.WriteStringValue("color", Color);
+            writer.WriteObjectValue<global::ClockifyClient.Models.RateDtoV1>("costRate", CostRate);
             writer.WriteStringValue("duration", Duration);
+            writer.WriteObjectValue<global::ClockifyClient.Models.EstimateDtoV1>("estimate", Estimate);
+            writer.WriteObjectValue<global::ClockifyClient.Models.RateDtoV1>("hourlyRate", HourlyRate);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.MembershipDtoV1>("memberships", Memberships);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("note", Note);
             writer.WriteBoolValue("public", Public);
+            writer.WriteBoolValue("template", Template);
+            writer.WriteObjectValue<global::ClockifyClient.Models.TimeEstimateDto>("timeEstimate", TimeEstimate);
             writer.WriteStringValue("workspaceId", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
         }

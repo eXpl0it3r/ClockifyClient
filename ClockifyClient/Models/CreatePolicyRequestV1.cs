@@ -21,10 +21,10 @@ namespace ClockifyClient.Models
         /// <summary>Provide approval settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ClockifyClient.Models.ApproveDto? Approve { get; set; }
+        public global::ClockifyClient.Models.PolicyApprovalDto? Approve { get; set; }
 #nullable restore
 #else
-        public global::ClockifyClient.Models.ApproveDto Approve { get; set; }
+        public global::ClockifyClient.Models.PolicyApprovalDto Approve { get; set; }
 #endif
         /// <summary>Indicates whether policy is archived.</summary>
         public bool? Archived { get; set; }
@@ -54,6 +54,8 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Indicates whether the policy is to be applied to future new users.</summary>
         public bool? EveryoneIncludingNew { get; set; }
+        /// <summary>Indicates whether the policy balance should have expiration</summary>
+        public bool? HasExpiration { get; set; }
         /// <summary>Provide icon.</summary>
         public global::ClockifyClient.Models.CreatePolicyRequestV1_icon? Icon { get; set; }
         /// <summary>Represents name of new policy.</summary>
@@ -117,12 +119,13 @@ namespace ClockifyClient.Models
             {
                 { "allowHalfDay", n => { AllowHalfDay = n.GetBoolValue(); } },
                 { "allowNegativeBalance", n => { AllowNegativeBalance = n.GetBoolValue(); } },
-                { "approve", n => { Approve = n.GetObjectValue<global::ClockifyClient.Models.ApproveDto>(global::ClockifyClient.Models.ApproveDto.CreateFromDiscriminatorValue); } },
+                { "approve", n => { Approve = n.GetObjectValue<global::ClockifyClient.Models.PolicyApprovalDto>(global::ClockifyClient.Models.PolicyApprovalDto.CreateFromDiscriminatorValue); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "automaticAccrual", n => { AutomaticAccrual = n.GetObjectValue<global::ClockifyClient.Models.AutomaticAccrualRequest>(global::ClockifyClient.Models.AutomaticAccrualRequest.CreateFromDiscriminatorValue); } },
                 { "automaticTimeEntryCreation", n => { AutomaticTimeEntryCreation = n.GetObjectValue<global::ClockifyClient.Models.AutomaticTimeEntryCreationRequest>(global::ClockifyClient.Models.AutomaticTimeEntryCreationRequest.CreateFromDiscriminatorValue); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "everyoneIncludingNew", n => { EveryoneIncludingNew = n.GetBoolValue(); } },
+                { "hasExpiration", n => { HasExpiration = n.GetBoolValue(); } },
                 { "icon", n => { Icon = n.GetEnumValue<global::ClockifyClient.Models.CreatePolicyRequestV1_icon>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "negativeBalance", n => { NegativeBalance = n.GetObjectValue<global::ClockifyClient.Models.NegativeBalanceRequest>(global::ClockifyClient.Models.NegativeBalanceRequest.CreateFromDiscriminatorValue); } },
@@ -140,12 +143,13 @@ namespace ClockifyClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowHalfDay", AllowHalfDay);
             writer.WriteBoolValue("allowNegativeBalance", AllowNegativeBalance);
-            writer.WriteObjectValue<global::ClockifyClient.Models.ApproveDto>("approve", Approve);
+            writer.WriteObjectValue<global::ClockifyClient.Models.PolicyApprovalDto>("approve", Approve);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteObjectValue<global::ClockifyClient.Models.AutomaticAccrualRequest>("automaticAccrual", AutomaticAccrual);
             writer.WriteObjectValue<global::ClockifyClient.Models.AutomaticTimeEntryCreationRequest>("automaticTimeEntryCreation", AutomaticTimeEntryCreation);
             writer.WriteStringValue("color", Color);
             writer.WriteBoolValue("everyoneIncludingNew", EveryoneIncludingNew);
+            writer.WriteBoolValue("hasExpiration", HasExpiration);
             writer.WriteEnumValue<global::ClockifyClient.Models.CreatePolicyRequestV1_icon>("icon", Icon);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::ClockifyClient.Models.NegativeBalanceRequest>("negativeBalance", NegativeBalance);

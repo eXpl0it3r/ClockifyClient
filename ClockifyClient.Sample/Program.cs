@@ -92,9 +92,21 @@ public class ClockifyCommands
 
             if (timers.Count > 0)
             {
+                var projects = await client.V1.Workspaces[user.ActiveWorkspace].Projects.GetAsync();
+                
                 foreach (var timer in timers)
                 {
-                    Console.WriteLine($"  {timer.Description} ({timer.Id})");
+                    var projectName = string.Empty;
+
+                    if (projects != null)
+                    {
+                        projectName = projects.FirstOrDefault(p => p.Id == timer.ProjectId)?.Name ?? string.Empty;
+                        projectName = $"[{projectName}] ";
+                    }
+
+                    var description = string.IsNullOrEmpty(timer.Description) ? "N/A" : timer.Description;
+
+                    Console.WriteLine($"  {projectName}{description} ({timer.Id})");
                 }
             }
             else

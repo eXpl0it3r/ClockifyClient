@@ -92,6 +92,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         INVOICE_EMAILS,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INVOICE_REMINDERS")]
+        #pragma warning disable CS1591
+        INVOICE_REMINDERS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "LABOR_COST")]
         #pragma warning disable CS1591
         LABOR_COST,
@@ -123,6 +127,10 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "RECURRING_ESTIMATES")]
         #pragma warning disable CS1591
         RECURRING_ESTIMATES,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "RECURRING_INVOICES")]
+        #pragma warning disable CS1591
+        RECURRING_INVOICES,
         #pragma warning restore CS1591
         [EnumMember(Value = "REQUIRED_FIELDS")]
         #pragma warning disable CS1591
@@ -215,6 +223,14 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "KIOSK")]
         #pragma warning disable CS1591
         KIOSK,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "KIOSK_SIX_DIGIT_PIN")]
+        #pragma warning disable CS1591
+        KIOSK_SIX_DIGIT_PIN,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "KIOSK_QR_CODE")]
+        #pragma warning disable CS1591
+        KIOSK_QR_CODE,
         #pragma warning restore CS1591
         [EnumMember(Value = "FORECASTING")]
         #pragma warning disable CS1591

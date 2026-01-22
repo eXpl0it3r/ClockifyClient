@@ -48,6 +48,18 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         INVOICE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INVOICE_RECURRING_SETTINGS")]
+        #pragma warning disable CS1591
+        INVOICE_RECURRING_SETTINGS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVOICE_REMINDERS")]
+        #pragma warning disable CS1591
+        INVOICE_REMINDERS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVOICE_REMINDERS_INTERVALS")]
+        #pragma warning disable CS1591
+        INVOICE_REMINDERS_INTERVALS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "INVOICE_ITEM_TYPE")]
         #pragma warning disable CS1591
         INVOICE_ITEM_TYPE,

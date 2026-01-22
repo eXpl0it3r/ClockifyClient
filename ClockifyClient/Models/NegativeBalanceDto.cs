@@ -25,6 +25,8 @@ namespace ClockifyClient.Models
 #else
         public string Period { get; set; }
 #endif
+        /// <summary>The shouldReset property</summary>
+        public bool? ShouldReset { get; set; }
         /// <summary>The timeUnit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +62,7 @@ namespace ClockifyClient.Models
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "period", n => { Period = n.GetStringValue(); } },
+                { "shouldReset", n => { ShouldReset = n.GetBoolValue(); } },
                 { "timeUnit", n => { TimeUnit = n.GetStringValue(); } },
             };
         }
@@ -72,6 +75,7 @@ namespace ClockifyClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteStringValue("period", Period);
+            writer.WriteBoolValue("shouldReset", ShouldReset);
             writer.WriteStringValue("timeUnit", TimeUnit);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -37,6 +37,8 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>The groupSimilarEntriesDisabled property</summary>
         public bool? GroupSimilarEntriesDisabled { get; set; }
+        /// <summary>The invoiceReminders property</summary>
+        public bool? InvoiceReminders { get; set; }
         /// <summary>The isCompactViewOn property</summary>
         public bool? IsCompactViewOn { get; set; }
         /// <summary>The lang property</summary>
@@ -136,6 +138,7 @@ namespace ClockifyClient.Models
                 { "dashboardViewType", n => { DashboardViewType = n.GetEnumValue<global::ClockifyClient.Models.UserSettingsDtoV1_dashboardViewType>(); } },
                 { "dateFormat", n => { DateFormat = n.GetStringValue(); } },
                 { "groupSimilarEntriesDisabled", n => { GroupSimilarEntriesDisabled = n.GetBoolValue(); } },
+                { "invoiceReminders", n => { InvoiceReminders = n.GetBoolValue(); } },
                 { "isCompactViewOn", n => { IsCompactViewOn = n.GetBoolValue(); } },
                 { "lang", n => { Lang = n.GetStringValue(); } },
                 { "longRunning", n => { LongRunning = n.GetBoolValue(); } },
@@ -174,6 +177,7 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.UserSettingsDtoV1_dashboardViewType>("dashboardViewType", DashboardViewType);
             writer.WriteStringValue("dateFormat", DateFormat);
             writer.WriteBoolValue("groupSimilarEntriesDisabled", GroupSimilarEntriesDisabled);
+            writer.WriteBoolValue("invoiceReminders", InvoiceReminders);
             writer.WriteBoolValue("isCompactViewOn", IsCompactViewOn);
             writer.WriteStringValue("lang", Lang);
             writer.WriteBoolValue("longRunning", LongRunning);

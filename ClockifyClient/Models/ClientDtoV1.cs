@@ -24,6 +24,14 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Represents whether a client is archived or not.</summary>
         public bool? Archived { get; set; }
+        /// <summary>Represents additional emails for sending invoices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CcEmails { get; set; }
+#nullable restore
+#else
+        public List<string> CcEmails { get; set; }
+#endif
         /// <summary>Represents currency identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,6 +107,7 @@ namespace ClockifyClient.Models
             {
                 { "address", n => { Address = n.GetStringValue(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
+                { "ccEmails", n => { CcEmails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "currencyId", n => { CurrencyId = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -116,6 +125,7 @@ namespace ClockifyClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
             writer.WriteBoolValue("archived", Archived);
+            writer.WriteCollectionOfPrimitiveValues<string>("ccEmails", CcEmails);
             writer.WriteStringValue("currencyId", CurrencyId);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("id", Id);
