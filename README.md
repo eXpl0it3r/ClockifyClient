@@ -58,6 +58,39 @@ catch (HttpRequestException ex)
 }
 ```
 
+### Inspect Request & Response Bodies
+
+Sometimes it's not enough to just know that the request failed, but you want to inspect the actual data sent or received.
+
+```csharp
+var timeEntryRequest = new CreateTimeEntryRequest
+{
+    Description = "Important Work!",
+    Start = DateTimeOffset.utcNow,
+};
+
+var inspectionOptions = new BodyInspectionHandlerOption
+{
+    InspectRequestBody = true,
+    InspectResponseBody = true
+};
+
+try
+{
+    await _clockifyClient.V1.Workspaces[workspaceId].TimeEntries.PostAsync(timeEntryRequest, c => c.Options.Add(inspectionOptions));
+}
+catch (ApiException ex)
+{
+    Console.WriteLine($"API Error: {ex.ResponseStatusCode} - {ex.Message}");
+    
+    using var streamRequestReader = new StreamReader(inspectionOptions.RequestBody);
+    Console.WriteLine(await streamRequestReader.ReadToEndAsync());
+    
+    using var streamResponseReader = new StreamReader(inspectionOptions.ResponseBody);
+    Console.WriteLine(await streamResponseReader.ReadToEndAsync());
+}
+```
+
 ## Development
 
 ### Generating the Client

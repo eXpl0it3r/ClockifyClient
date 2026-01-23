@@ -21,9 +21,8 @@ jobs:
       fail-fast: false
       matrix:
         platform:
-        - { name: Windows VS2022, os: windows-2025 }
+        - { name: Windows x64, os: windows-2025 }
         - { name: Ubuntu x64, os: ubuntu-24.04 }
-        - { name: macOS x64, os: macos-14 }
         - { name: macOS arm64, os: macos-15 }
         dotnet:
         - { name: .NET 9, version: '9.0.x' }
