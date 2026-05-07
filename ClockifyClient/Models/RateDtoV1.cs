@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents a cost rate object.
+    /// Represents cost rate object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RateDtoV1 : IAdditionalDataHolder, IParsable

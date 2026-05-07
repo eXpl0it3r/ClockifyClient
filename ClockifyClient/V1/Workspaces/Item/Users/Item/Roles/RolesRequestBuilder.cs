@@ -53,7 +53,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users.Item.Roles
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Give user manager role
+        /// Give manager role to a user
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.RoleDetailsDtoV1&gt;</returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users.Item.Roles
             return requestInfo;
         }
         /// <summary>
-        /// Give user manager role
+        /// Give manager role to a user
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

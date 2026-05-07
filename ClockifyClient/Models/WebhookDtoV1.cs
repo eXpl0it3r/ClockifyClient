@@ -22,6 +22,8 @@ namespace ClockifyClient.Models
 #else
         public string AuthToken { get; set; }
 #endif
+        /// <summary>Indicates whether webhook delivery is enabled or not. It can be disabled if delivery failed for too many times.</summary>
+        public bool? DeliveryEnabled { get; set; }
         /// <summary>Indicates whether webhook is enabled or not.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Represents webhook identifier across the system.</summary>
@@ -40,6 +42,8 @@ namespace ClockifyClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Indicates whether webhook is supported by current plan. It can be disabled if number of webhooks exceeds plan limit or if the feature is not supported on current plan.</summary>
+        public bool? PlanEnabled { get; set; }
         /// <summary>Represents a list of trigger sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,9 +118,11 @@ namespace ClockifyClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authToken", n => { AuthToken = n.GetStringValue(); } },
+                { "deliveryEnabled", n => { DeliveryEnabled = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "planEnabled", n => { PlanEnabled = n.GetBoolValue(); } },
                 { "triggerSource", n => { TriggerSource = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "triggerSourceType", n => { TriggerSourceType = n.GetObjectValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType>(global::ClockifyClient.Models.WebhookEventTriggerSourceType.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -133,9 +139,11 @@ namespace ClockifyClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authToken", AuthToken);
+            writer.WriteBoolValue("deliveryEnabled", DeliveryEnabled);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("planEnabled", PlanEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("triggerSource", TriggerSource);
             writer.WriteObjectValue<global::ClockifyClient.Models.WebhookEventTriggerSourceType>("triggerSourceType", TriggerSourceType);
             writer.WriteStringValue("url", Url);

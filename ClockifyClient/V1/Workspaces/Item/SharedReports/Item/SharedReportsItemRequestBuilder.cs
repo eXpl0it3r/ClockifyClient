@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.SharedReports.Item
         {
         }
         /// <summary>
-        /// Delete shared report
+        /// Delete a shared report
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +71,7 @@ namespace ClockifyClient.V1.Workspaces.Item.SharedReports.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.SharedReportV1>(requestInfo, global::ClockifyClient.Models.SharedReportV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete shared report
+        /// Delete a shared report
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

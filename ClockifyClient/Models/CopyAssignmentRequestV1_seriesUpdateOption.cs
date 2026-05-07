@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace ClockifyClient.Models
 {
-    /// <summary>Represents series update option.</summary>
+    /// <summary>Represents a series update option.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CopyAssignmentRequestV1_seriesUpdateOption
     {

@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Clients
     public partial class ClientsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.clients.item collection</summary>
-        /// <param name="position">Represents client identifier across the system.</param>
+        /// <param name="position">Represents a client identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Clients.Item.ClientsItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Clients.Item.ClientsItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Clients
         {
         }
         /// <summary>
-        /// Find clients on workspace
+        /// Find clients on a workspace
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.ClientWithCurrencyDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +86,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Clients
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ClientWithCurrencyDtoV1>(requestInfo, global::ClockifyClient.Models.ClientWithCurrencyDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Find clients on workspace
+        /// Find clients on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,14 +136,21 @@ namespace ClockifyClient.V1.Workspaces.Item.Clients
             return new global::ClockifyClient.V1.Workspaces.Item.Clients.ClientsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Find clients on workspace
+        /// Find clients on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ClientsRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter whether to include archived clients or not.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("archived")]
-            public bool? Archived { get; set; }
+            public string? Archived { get; set; }
+#nullable restore
+#else
+            [QueryParameter("archived")]
+            public string Archived { get; set; }
+#endif
             /// <summary>Filters client results that matches with the string provided in their client name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

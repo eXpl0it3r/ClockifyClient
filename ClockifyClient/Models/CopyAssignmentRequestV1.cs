@@ -14,9 +14,9 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents series update option.</summary>
+        /// <summary>Represents a series update option.</summary>
         public global::ClockifyClient.Models.CopyAssignmentRequestV1_seriesUpdateOption? SeriesUpdateOption { get; set; }
-        /// <summary>Represents user identifier across the system.</summary>
+        /// <summary>Represents a user identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

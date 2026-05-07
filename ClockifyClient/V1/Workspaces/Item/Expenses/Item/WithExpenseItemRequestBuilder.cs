@@ -40,7 +40,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Item
         {
         }
         /// <summary>
-        /// Delete expense
+        /// Delete an expense
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get expense by ID
+        /// Get an expense by ID
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ExpenseDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ExpenseDtoV1>(requestInfo, global::ClockifyClient.Models.ExpenseDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update expense
+        /// Update an expense
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ExpenseDtoV1"/></returns>
         /// <param name="body">Binary request body</param>
@@ -96,7 +96,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ExpenseDtoV1>(requestInfo, global::ClockifyClient.Models.ExpenseDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete expense
+        /// Delete an expense
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get expense by ID
+        /// Get an expense by ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update expense
+        /// Update an expense
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>

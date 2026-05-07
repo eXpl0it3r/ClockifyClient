@@ -14,7 +14,7 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents entity identifier across the system.</summary>
+        /// <summary>Represents an entity identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EntityId { get; set; }
@@ -22,9 +22,9 @@ namespace ClockifyClient.Models
 #else
         public string EntityId { get; set; }
 #endif
-        /// <summary>Represents valid role.</summary>
+        /// <summary>Represents a valid role.</summary>
         public global::ClockifyClient.Models.RoleRequestV1_role? Role { get; set; }
-        /// <summary>Represents the source type of this request.This helps the API to determine on where to select this &apos;entity&apos;, and applies a correspondingaction base on the endpoint.The entityId should be relative to this source, and can be used whenever the endpoint needs toaccess a certain resource. e.g. User group (USER_GROUP)</summary>
+        /// <summary>Optional field used to indicate that the target of the operation is auser group, in which case the value USER_GROUP should be used, alongside a valid user groupID for the entityId field. If omitted, a user ID should be used for the entityId field.</summary>
         public global::ClockifyClient.Models.RoleRequestV1_sourceType? SourceType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.RoleRequestV1"/> and sets the default values.

@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Series.Item
         {
         }
         /// <summary>
-        /// Change recurring period
+        /// Change the recurring period
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.AssignmentDtoV1&gt;</returns>
         /// <param name="body">The request body</param>
@@ -55,7 +55,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Series.Item
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Change recurring period
+        /// Change the recurring period
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

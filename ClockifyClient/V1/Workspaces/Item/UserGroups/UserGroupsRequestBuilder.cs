@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups
     public partial class UserGroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.userGroups.item collection</summary>
-        /// <param name="position">Represents user group identifier across the system.</param>
+        /// <param name="position">Represents a user group identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.UserGroups.Item.ItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.UserGroups.Item.ItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups
         {
         }
         /// <summary>
-        /// Find all groups on workspace
+        /// Find all groups on a workspace
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.UserGroupDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +86,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.UserGroupDtoV1>(requestInfo, global::ClockifyClient.Models.UserGroupDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Find all groups on workspace
+        /// Find all groups on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups
             return new global::ClockifyClient.V1.Workspaces.Item.UserGroups.UserGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Find all groups on workspace
+        /// Find all groups on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserGroupsRequestBuilderGetQueryParameters 

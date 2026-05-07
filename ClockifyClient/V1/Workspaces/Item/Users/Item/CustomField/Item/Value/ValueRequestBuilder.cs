@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users.Item.CustomField.Item.Value
         {
         }
         /// <summary>
-        /// Update user&apos;s custom field
+        /// Update a user&apos;s custom field
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.UserCustomFieldValueDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users.Item.CustomField.Item.Value
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.UserCustomFieldValueDtoV1>(requestInfo, global::ClockifyClient.Models.UserCustomFieldValueDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update user&apos;s custom field
+        /// Update a user&apos;s custom field
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

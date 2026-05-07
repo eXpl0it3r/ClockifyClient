@@ -25,7 +25,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users
             get => new global::ClockifyClient.V1.Workspaces.Item.Users.Info.InfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.users.item collection</summary>
-        /// <param name="position">Represents user identifier across the system.</param>
+        /// <param name="position">Represents a user identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Users.Item.WithUserItemRequestBuilder this[string position]
         {
@@ -53,7 +53,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users
         {
         }
         /// <summary>
-        /// Find all users on workspace
+        /// Find all users on a workspace
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.UserDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.WorkspaceDtoV1>(requestInfo, global::ClockifyClient.Models.WorkspaceDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Find all users on workspace
+        /// Find all users on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +142,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users
             return new global::ClockifyClient.V1.Workspaces.Item.Users.UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Find all users on workspace
+        /// Find all users on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 

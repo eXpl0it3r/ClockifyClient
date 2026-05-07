@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace ClockifyClient.Models
 {
-    /// <summary>Represents approval state</summary>
+    /// <summary>Represents an approval state</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExpenseReportFilterV1_approvalState
     {

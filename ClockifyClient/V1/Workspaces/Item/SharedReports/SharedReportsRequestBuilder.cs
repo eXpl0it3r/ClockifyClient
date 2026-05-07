@@ -65,7 +65,7 @@ namespace ClockifyClient.V1.Workspaces.Item.SharedReports
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.SharedReportsAndCountDtoV1>(requestInfo, global::ClockifyClient.Models.SharedReportsAndCountDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Saves shared report with name, options and report filter. Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+        /// Saves shared report with name, options and report filter. Shared report data on FREE subscription plan is limited to a maximum interval length of one month (31 days).
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.SharedReportV1"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace ClockifyClient.V1.Workspaces.Item.SharedReports
             return requestInfo;
         }
         /// <summary>
-        /// Saves shared report with name, options and report filter. Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+        /// Saves shared report with name, options and report filter. Shared report data on FREE subscription plan is limited to a maximum interval length of one month (31 days).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

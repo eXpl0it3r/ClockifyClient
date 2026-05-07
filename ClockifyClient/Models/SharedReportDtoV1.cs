@@ -17,7 +17,7 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the shared report has a fixed date range</summary>
         public bool? FixedDate { get; set; }
-        /// <summary>Represents shared report identifier across the system.</summary>
+        /// <summary>Represents a shared report identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Tota
     public partial class TotalsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.scheduling.assignments.projects.totals.item collection</summary>
-        /// <param name="position">Represents project identifier across the system.</param>
+        /// <param name="position">Represents a project identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Totals.Item.WithProjectItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Totals.Item.WithProjectItemRequestBuilder this[string position]
         {
@@ -144,7 +144,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Tota
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TotalsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Represents end date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+            /// <summary>Represents an end date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("end")]
@@ -160,7 +160,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Tota
             /// <summary>Page size.</summary>
             [QueryParameter("page%2Dsize")]
             public int? PageSize { get; set; }
-            /// <summary>Represents term for searching projects and clients by name.</summary>
+            /// <summary>Represents a term for searching projects and clients by name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -170,7 +170,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Tota
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>Represents start date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+            /// <summary>Represents a start date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("start")]

@@ -3,6 +3,7 @@
 using ClockifyClient.Models;
 using ClockifyClient.V1.Workspaces.Item.Invoices.Item.Duplicate;
 using ClockifyClient.V1.Workspaces.Item.Invoices.Item.Export;
+using ClockifyClient.V1.Workspaces.Item.Invoices.Item.Items;
 using ClockifyClient.V1.Workspaces.Item.Invoices.Item.Payments;
 using ClockifyClient.V1.Workspaces.Item.Invoices.Item.Status;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -31,6 +32,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item
         {
             get => new global::ClockifyClient.V1.Workspaces.Item.Invoices.Item.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The items property</summary>
+        public global::ClockifyClient.V1.Workspaces.Item.Invoices.Item.Items.ItemsRequestBuilder Items
+        {
+            get => new global::ClockifyClient.V1.Workspaces.Item.Invoices.Item.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The payments property</summary>
         public global::ClockifyClient.V1.Workspaces.Item.Invoices.Item.Payments.PaymentsRequestBuilder Payments
         {
@@ -58,7 +64,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item
         {
         }
         /// <summary>
-        /// Delete invoice
+        /// Delete an invoice
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +82,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get invoice by ID
+        /// Get an invoice by ID
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.InvoiceOverviewDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +100,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.InvoiceOverviewDtoV1>(requestInfo, global::ClockifyClient.Models.InvoiceOverviewDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send invoice
+        /// Update an invoice
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.InvoiceOverviewDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +120,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.InvoiceOverviewDtoV1>(requestInfo, global::ClockifyClient.Models.InvoiceOverviewDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete invoice
+        /// Delete an invoice
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +138,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get invoice by ID
+        /// Get an invoice by ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +157,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item
             return requestInfo;
         }
         /// <summary>
-        /// Send invoice
+        /// Update an invoice
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -27,7 +27,7 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.ExpenseHydratedDto_approvalStatus? ApprovalStatus { get; set; }
         /// <summary>Indicates whether expense is billable or not.</summary>
         public bool? Billable { get; set; }
-        /// <summary>Represents expense category object.</summary>
+        /// <summary>Represents an expense category object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.ExpenseCategoryDto? Category { get; set; }
@@ -51,6 +51,8 @@ namespace ClockifyClient.Models
 #else
         public string Date { get; set; }
 #endif
+        /// <summary>Represents a detailed approval status of the expense</summary>
+        public global::ClockifyClient.Models.ExpenseHydratedDto_detailedApprovalStatus? DetailedApprovalStatus { get; set; }
         /// <summary>Represents file identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,14 @@ namespace ClockifyClient.Models
 #nullable restore
 #else
         public string FileName { get; set; }
+#endif
+        /// <summary>Represents file URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FileUrl { get; set; }
+#nullable restore
+#else
+        public string FileUrl { get; set; }
 #endif
         /// <summary>Represents expense identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +97,7 @@ namespace ClockifyClient.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>Represents project info object.</summary>
+        /// <summary>Represents a project info object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.ProjectInfoDto? Project { get; set; }
@@ -97,7 +107,7 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Represents expense quantity as double data type.</summary>
         public double? Quantity { get; set; }
-        /// <summary>Represents task info object.</summary>
+        /// <summary>Represents a project info object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.TaskInfoDto? Task { get; set; }
@@ -154,8 +164,10 @@ namespace ClockifyClient.Models
                 { "category", n => { Category = n.GetObjectValue<global::ClockifyClient.Models.ExpenseCategoryDto>(global::ClockifyClient.Models.ExpenseCategoryDto.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "date", n => { Date = n.GetStringValue(); } },
+                { "detailedApprovalStatus", n => { DetailedApprovalStatus = n.GetEnumValue<global::ClockifyClient.Models.ExpenseHydratedDto_detailedApprovalStatus>(); } },
                 { "fileId", n => { FileId = n.GetStringValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
+                { "fileUrl", n => { FileUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isLocked", n => { IsLocked = n.GetBoolValue(); } },
                 { "locked", n => { Locked = n.GetBoolValue(); } },
@@ -181,8 +193,10 @@ namespace ClockifyClient.Models
             writer.WriteObjectValue<global::ClockifyClient.Models.ExpenseCategoryDto>("category", Category);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("date", Date);
+            writer.WriteEnumValue<global::ClockifyClient.Models.ExpenseHydratedDto_detailedApprovalStatus>("detailedApprovalStatus", DetailedApprovalStatus);
             writer.WriteStringValue("fileId", FileId);
             writer.WriteStringValue("fileName", FileName);
+            writer.WriteStringValue("fileUrl", FileUrl);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isLocked", IsLocked);
             writer.WriteBoolValue("locked", Locked);

@@ -40,7 +40,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Users.Item
         {
         }
         /// <summary>
-        /// Submit approval request for user
+        /// Submit an approval request for a user
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ApprovalRequestDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +60,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Users.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ApprovalRequestDtoV1>(requestInfo, global::ClockifyClient.Models.ApprovalRequestDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Submit approval request for user
+        /// Submit an approval request for a user
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

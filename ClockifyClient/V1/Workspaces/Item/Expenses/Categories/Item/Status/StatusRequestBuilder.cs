@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Categories.Item.Status
         {
         }
         /// <summary>
-        /// Archive expense category
+        /// Archive an expense category
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ExpenseCategoryDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Categories.Item.Status
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ExpenseCategoryDtoV1>(requestInfo, global::ClockifyClient.Models.ExpenseCategoryDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive expense category
+        /// Archive an expense category
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

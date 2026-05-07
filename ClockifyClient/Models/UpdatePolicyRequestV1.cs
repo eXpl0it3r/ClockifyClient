@@ -18,7 +18,7 @@ namespace ClockifyClient.Models
         public bool? AllowHalfDay { get; set; }
         /// <summary>Indicates whether policy allows negative balance.</summary>
         public bool? AllowNegativeBalance { get; set; }
-        /// <summary>Provide approval settings.</summary>
+        /// <summary>Represents approval settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.PolicyApprovalDto? Approve { get; set; }

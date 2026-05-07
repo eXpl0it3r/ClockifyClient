@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Attendance
         {
         }
         /// <summary>
-        /// Generate attendance report
+        /// Generate an attendance report
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.AttendanceReportDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Attendance
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.AttendanceReportDtoV1>(requestInfo, global::ClockifyClient.Models.AttendanceReportDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Generate attendance report
+        /// Generate an attendance report
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

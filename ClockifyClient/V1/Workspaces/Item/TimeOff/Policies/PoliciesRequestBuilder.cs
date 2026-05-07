@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies
     public partial class PoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.timeOff.policies.item collection</summary>
-        /// <param name="position">Represents policy identifier across the system.</param>
+        /// <param name="position">Represents a policy identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.ItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.ItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PoliciesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies{?name*,page*,page%2Dsize*,status*}", pathParameters)
+        public PoliciesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies{?name*,page*,page%2Dsize*,sort%2Dcolumn*,sort%2Dorder*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies{?name*,page*,page%2Dsize*,status*}", rawUrl)
+        public PoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies{?name*,page*,page%2Dsize*,sort%2Dcolumn*,sort%2Dorder*,status*}", rawUrl)
         {
         }
         /// <summary>
-        /// Get policies on workspace
+        /// Get policies on a workspace
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.PolicyDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create time off policy
+        /// Create a time off policy
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.PolicyDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.PolicyDtoV1>(requestInfo, global::ClockifyClient.Models.PolicyDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get policies on workspace
+        /// Get policies on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies
             return requestInfo;
         }
         /// <summary>
-        /// Create time off policy
+        /// Create a time off policy
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies
             return new global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get policies on workspace
+        /// Get policies on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderGetQueryParameters 
@@ -152,11 +152,36 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies
             public string Name { get; set; }
 #endif
             /// <summary>Page number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("page")]
-            public int? Page { get; set; }
+            public string? Page { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page")]
+            public string Page { get; set; }
+#endif
             /// <summary>Page size.</summary>
             [QueryParameter("page%2Dsize")]
             public int? PageSize { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sort%2Dcolumn")]
+            public string? SortColumn { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sort%2Dcolumn")]
+            public string SortColumn { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sort%2Dorder")]
+            public string? SortOrder { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sort%2Dorder")]
+            public string SortOrder { get; set; }
+#endif
             /// <summary>If provided, you&apos;ll get a filtered list of policies with the corresponding status.</summary>
             [Obsolete("This property is deprecated, use StatusAsGetStatusQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

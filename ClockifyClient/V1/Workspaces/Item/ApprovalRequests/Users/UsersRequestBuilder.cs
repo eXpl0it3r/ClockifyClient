@@ -16,7 +16,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Users
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.approvalRequests.users.item collection</summary>
-        /// <param name="position">Represents user identifier across the system.</param>
+        /// <param name="position">Represents a user identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Users.Item.WithUserItemRequestBuilder this[string position]
         {

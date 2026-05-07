@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays.Item
         {
         }
         /// <summary>
-        /// Delete holiday
+        /// Delete a holiday
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.HolidayDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.HolidayDto>(requestInfo, global::ClockifyClient.Models.HolidayDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update holiday
+        /// Update a holiday
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.HolidayDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.HolidayDtoV1>(requestInfo, global::ClockifyClient.Models.HolidayDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete holiday
+        /// Delete a holiday
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update holiday
+        /// Update a holiday
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags.Item
         {
         }
         /// <summary>
-        /// Delete tag
+        /// Delete a tag
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TagDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TagDtoV1>(requestInfo, global::ClockifyClient.Models.TagDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get tag by ID
+        /// Get a tag by ID
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TagDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TagDtoV1>(requestInfo, global::ClockifyClient.Models.TagDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update tag
+        /// Update a tag
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TagDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TagDtoV1>(requestInfo, global::ClockifyClient.Models.TagDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete tag
+        /// Delete a tag
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +109,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get tag by ID
+        /// Get a tag by ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update tag
+        /// Update a tag
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

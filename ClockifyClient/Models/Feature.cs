@@ -29,6 +29,8 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_AUDIT_LOG? AUDITLOG { get; set; }
         /// <summary>The AUTOMATIC_LOCK property</summary>
         public global::ClockifyClient.Models.Feature_AUTOMATIC_LOCK? AUTOMATICLOCK { get; set; }
+        /// <summary>The BILLABLE_HOURS property</summary>
+        public global::ClockifyClient.Models.Feature_BILLABLE_HOURS? BILLABLEHOURS { get; set; }
         /// <summary>The BRANDED_REPORTS property</summary>
         public global::ClockifyClient.Models.Feature_BRANDED_REPORTS? BRANDEDREPORTS { get; set; }
         /// <summary>The BREAKS property</summary>
@@ -37,6 +39,10 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_BULK_EDIT? BULKEDIT { get; set; }
         /// <summary>The CLIENT_CURRENCY property</summary>
         public global::ClockifyClient.Models.Feature_CLIENT_CURRENCY? CLIENTCURRENCY { get; set; }
+        /// <summary>The CREATION_PERMISSIONS property</summary>
+        public global::ClockifyClient.Models.Feature_CREATION_PERMISSIONS? CREATIONPERMISSIONS { get; set; }
+        /// <summary>The CSV_EXPORT property</summary>
+        public global::ClockifyClient.Models.Feature_CSV_EXPORT? CSVEXPORT { get; set; }
         /// <summary>The CUSTOM_FIELDS property</summary>
         public global::ClockifyClient.Models.Feature_CUSTOM_FIELDS? CUSTOMFIELDS { get; set; }
         /// <summary>The CUSTOM_REPORTING property</summary>
@@ -59,6 +65,8 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_FILE_IMPORT? FILEIMPORT { get; set; }
         /// <summary>The FORECASTING property</summary>
         public global::ClockifyClient.Models.Feature_FORECASTING? FORECASTING { get; set; }
+        /// <summary>The GRANT_PROJECT_MANAGER_ROLE property</summary>
+        public global::ClockifyClient.Models.Feature_GRANT_PROJECT_MANAGER_ROLE? GRANTPROJECTMANAGERROLE { get; set; }
         /// <summary>The HIDE_PAGES property</summary>
         public global::ClockifyClient.Models.Feature_HIDE_PAGES? HIDEPAGES { get; set; }
         /// <summary>The HISTORIC_RATES property</summary>
@@ -81,14 +89,24 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_KIOSK_SIX_DIGIT_PIN? KIOSKSIXDIGITPIN { get; set; }
         /// <summary>The LABOR_COST property</summary>
         public global::ClockifyClient.Models.Feature_LABOR_COST? LABORCOST { get; set; }
+        /// <summary>The LIMITED_USERS property</summary>
+        public global::ClockifyClient.Models.Feature_LIMITED_USERS? LIMITEDUSERS { get; set; }
         /// <summary>The LOCATIONS property</summary>
         public global::ClockifyClient.Models.Feature_LOCATIONS? LOCATIONS { get; set; }
         /// <summary>The MANAGER_ROLE property</summary>
         public global::ClockifyClient.Models.Feature_MANAGER_ROLE? MANAGERROLE { get; set; }
         /// <summary>The MULTI_FACTOR_AUTHENTICATION property</summary>
         public global::ClockifyClient.Models.Feature_MULTI_FACTOR_AUTHENTICATION? MULTIFACTORAUTHENTICATION { get; set; }
+        /// <summary>The ONE_MONTH_RANGE_REPORTS property</summary>
+        public global::ClockifyClient.Models.Feature_ONE_MONTH_RANGE_REPORTS? ONEMONTHRANGEREPORTS { get; set; }
+        /// <summary>The ONE_YEAR_RANGE_REPORTS property</summary>
+        public global::ClockifyClient.Models.Feature_ONE_YEAR_RANGE_REPORTS? ONEYEARRANGEREPORTS { get; set; }
+        /// <summary>The PRIVATE_PROJECT_ACCESS property</summary>
+        public global::ClockifyClient.Models.Feature_PRIVATE_PROJECT_ACCESS? PRIVATEPROJECTACCESS { get; set; }
         /// <summary>The PROJECT_BUDGET property</summary>
         public global::ClockifyClient.Models.Feature_PROJECT_BUDGET? PROJECTBUDGET { get; set; }
+        /// <summary>The PROJECT_ESTIMATE property</summary>
+        public global::ClockifyClient.Models.Feature_PROJECT_ESTIMATE? PROJECTESTIMATE { get; set; }
         /// <summary>The PROJECT_TEMPLATES property</summary>
         public global::ClockifyClient.Models.Feature_PROJECT_TEMPLATES? PROJECTTEMPLATES { get; set; }
         /// <summary>The QUICKBOOKS_INTEGRATION property</summary>
@@ -105,8 +123,12 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_SCHEDULING? SCHEDULING { get; set; }
         /// <summary>The SCHEDULING_FORECASTING property</summary>
         public global::ClockifyClient.Models.Feature_SCHEDULING_FORECASTING? SCHEDULINGFORECASTING { get; set; }
+        /// <summary>The SCIM property</summary>
+        public global::ClockifyClient.Models.Feature_SCIM? SCIM { get; set; }
         /// <summary>The SCREENSHOTS property</summary>
         public global::ClockifyClient.Models.Feature_SCREENSHOTS? SCREENSHOTS { get; set; }
+        /// <summary>The SHARED_REPORTS property</summary>
+        public global::ClockifyClient.Models.Feature_SHARED_REPORTS? SHAREDREPORTS { get; set; }
         /// <summary>The SPLIT_TIME_ENTRY property</summary>
         public global::ClockifyClient.Models.Feature_SPLIT_TIME_ENTRY? SPLITTIMEENTRY { get; set; }
         /// <summary>The SSO property</summary>
@@ -119,12 +141,18 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_TASK_RATES? TASKRATES { get; set; }
         /// <summary>The TIME_OFF property</summary>
         public global::ClockifyClient.Models.Feature_TIME_OFF? TIMEOFF { get; set; }
+        /// <summary>The TIMESHEET_IMPORT property</summary>
+        public global::ClockifyClient.Models.Feature_TIMESHEET_IMPORT? TIMESHEETIMPORT { get; set; }
         /// <summary>The TIME_TRACKING property</summary>
         public global::ClockifyClient.Models.Feature_TIME_TRACKING? TIMETRACKING { get; set; }
         /// <summary>The UNLIMITED_REPORTS property</summary>
         public global::ClockifyClient.Models.Feature_UNLIMITED_REPORTS? UNLIMITEDREPORTS { get; set; }
+        /// <summary>The UNLIMITED_USER_SEATS property</summary>
+        public global::ClockifyClient.Models.Feature_UNLIMITED_USER_SEATS? UNLIMITEDUSERSEATS { get; set; }
         /// <summary>The USER_CUSTOM_FIELDS property</summary>
         public global::ClockifyClient.Models.Feature_USER_CUSTOM_FIELDS? USERCUSTOMFIELDS { get; set; }
+        /// <summary>The USER_IMPORT property</summary>
+        public global::ClockifyClient.Models.Feature_USER_IMPORT? USERIMPORT { get; set; }
         /// <summary>The WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY property</summary>
         public global::ClockifyClient.Models.Feature_WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY? WHOCANCHANGETIMEENTRYBILLABILITY { get; set; }
         /// <summary>The WHO_CAN_SEE_ALL_TIME_ENTRIES property</summary>
@@ -143,6 +171,8 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_WORKSPACE_TIME_ROUNDING? WORKSPACETIMEROUNDING { get; set; }
         /// <summary>The WORKSPACE_TRANSFER property</summary>
         public global::ClockifyClient.Models.Feature_WORKSPACE_TRANSFER? WORKSPACETRANSFER { get; set; }
+        /// <summary>The XLSX_EXPORT property</summary>
+        public global::ClockifyClient.Models.Feature_XLSX_EXPORT? XLSXEXPORT { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.Feature"/> and sets the default values.
         /// </summary>
@@ -175,10 +205,13 @@ namespace ClockifyClient.Models
                 { "ATTENDANCE_REPORT", n => { ATTENDANCEREPORT = n.GetEnumValue<global::ClockifyClient.Models.Feature_ATTENDANCE_REPORT>(); } },
                 { "AUDIT_LOG", n => { AUDITLOG = n.GetEnumValue<global::ClockifyClient.Models.Feature_AUDIT_LOG>(); } },
                 { "AUTOMATIC_LOCK", n => { AUTOMATICLOCK = n.GetEnumValue<global::ClockifyClient.Models.Feature_AUTOMATIC_LOCK>(); } },
+                { "BILLABLE_HOURS", n => { BILLABLEHOURS = n.GetEnumValue<global::ClockifyClient.Models.Feature_BILLABLE_HOURS>(); } },
                 { "BRANDED_REPORTS", n => { BRANDEDREPORTS = n.GetEnumValue<global::ClockifyClient.Models.Feature_BRANDED_REPORTS>(); } },
                 { "BREAKS", n => { BREAKS = n.GetEnumValue<global::ClockifyClient.Models.Feature_BREAKS>(); } },
                 { "BULK_EDIT", n => { BULKEDIT = n.GetEnumValue<global::ClockifyClient.Models.Feature_BULK_EDIT>(); } },
                 { "CLIENT_CURRENCY", n => { CLIENTCURRENCY = n.GetEnumValue<global::ClockifyClient.Models.Feature_CLIENT_CURRENCY>(); } },
+                { "CREATION_PERMISSIONS", n => { CREATIONPERMISSIONS = n.GetEnumValue<global::ClockifyClient.Models.Feature_CREATION_PERMISSIONS>(); } },
+                { "CSV_EXPORT", n => { CSVEXPORT = n.GetEnumValue<global::ClockifyClient.Models.Feature_CSV_EXPORT>(); } },
                 { "CUSTOM_FIELDS", n => { CUSTOMFIELDS = n.GetEnumValue<global::ClockifyClient.Models.Feature_CUSTOM_FIELDS>(); } },
                 { "CUSTOM_REPORTING", n => { CUSTOMREPORTING = n.GetEnumValue<global::ClockifyClient.Models.Feature_CUSTOM_REPORTING>(); } },
                 { "CUSTOM_SUBDOMAIN", n => { CUSTOMSUBDOMAIN = n.GetEnumValue<global::ClockifyClient.Models.Feature_CUSTOM_SUBDOMAIN>(); } },
@@ -190,6 +223,7 @@ namespace ClockifyClient.Models
                 { "FAVORITE_ENTRIES", n => { FAVORITEENTRIES = n.GetEnumValue<global::ClockifyClient.Models.Feature_FAVORITE_ENTRIES>(); } },
                 { "FILE_IMPORT", n => { FILEIMPORT = n.GetEnumValue<global::ClockifyClient.Models.Feature_FILE_IMPORT>(); } },
                 { "FORECASTING", n => { FORECASTING = n.GetEnumValue<global::ClockifyClient.Models.Feature_FORECASTING>(); } },
+                { "GRANT_PROJECT_MANAGER_ROLE", n => { GRANTPROJECTMANAGERROLE = n.GetEnumValue<global::ClockifyClient.Models.Feature_GRANT_PROJECT_MANAGER_ROLE>(); } },
                 { "HIDE_PAGES", n => { HIDEPAGES = n.GetEnumValue<global::ClockifyClient.Models.Feature_HIDE_PAGES>(); } },
                 { "HISTORIC_RATES", n => { HISTORICRATES = n.GetEnumValue<global::ClockifyClient.Models.Feature_HISTORIC_RATES>(); } },
                 { "INVOICE_EMAILS", n => { INVOICEEMAILS = n.GetEnumValue<global::ClockifyClient.Models.Feature_INVOICE_EMAILS>(); } },
@@ -201,10 +235,15 @@ namespace ClockifyClient.Models
                 { "KIOSK_SESSION_DURATION", n => { KIOSKSESSIONDURATION = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK_SESSION_DURATION>(); } },
                 { "KIOSK_SIX_DIGIT_PIN", n => { KIOSKSIXDIGITPIN = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK_SIX_DIGIT_PIN>(); } },
                 { "LABOR_COST", n => { LABORCOST = n.GetEnumValue<global::ClockifyClient.Models.Feature_LABOR_COST>(); } },
+                { "LIMITED_USERS", n => { LIMITEDUSERS = n.GetEnumValue<global::ClockifyClient.Models.Feature_LIMITED_USERS>(); } },
                 { "LOCATIONS", n => { LOCATIONS = n.GetEnumValue<global::ClockifyClient.Models.Feature_LOCATIONS>(); } },
                 { "MANAGER_ROLE", n => { MANAGERROLE = n.GetEnumValue<global::ClockifyClient.Models.Feature_MANAGER_ROLE>(); } },
                 { "MULTI_FACTOR_AUTHENTICATION", n => { MULTIFACTORAUTHENTICATION = n.GetEnumValue<global::ClockifyClient.Models.Feature_MULTI_FACTOR_AUTHENTICATION>(); } },
+                { "ONE_MONTH_RANGE_REPORTS", n => { ONEMONTHRANGEREPORTS = n.GetEnumValue<global::ClockifyClient.Models.Feature_ONE_MONTH_RANGE_REPORTS>(); } },
+                { "ONE_YEAR_RANGE_REPORTS", n => { ONEYEARRANGEREPORTS = n.GetEnumValue<global::ClockifyClient.Models.Feature_ONE_YEAR_RANGE_REPORTS>(); } },
+                { "PRIVATE_PROJECT_ACCESS", n => { PRIVATEPROJECTACCESS = n.GetEnumValue<global::ClockifyClient.Models.Feature_PRIVATE_PROJECT_ACCESS>(); } },
                 { "PROJECT_BUDGET", n => { PROJECTBUDGET = n.GetEnumValue<global::ClockifyClient.Models.Feature_PROJECT_BUDGET>(); } },
+                { "PROJECT_ESTIMATE", n => { PROJECTESTIMATE = n.GetEnumValue<global::ClockifyClient.Models.Feature_PROJECT_ESTIMATE>(); } },
                 { "PROJECT_TEMPLATES", n => { PROJECTTEMPLATES = n.GetEnumValue<global::ClockifyClient.Models.Feature_PROJECT_TEMPLATES>(); } },
                 { "QUICKBOOKS_INTEGRATION", n => { QUICKBOOKSINTEGRATION = n.GetEnumValue<global::ClockifyClient.Models.Feature_QUICKBOOKS_INTEGRATION>(); } },
                 { "RECURRING_ESTIMATES", n => { RECURRINGESTIMATES = n.GetEnumValue<global::ClockifyClient.Models.Feature_RECURRING_ESTIMATES>(); } },
@@ -213,16 +252,21 @@ namespace ClockifyClient.Models
                 { "SCHEDULED_REPORTS", n => { SCHEDULEDREPORTS = n.GetEnumValue<global::ClockifyClient.Models.Feature_SCHEDULED_REPORTS>(); } },
                 { "SCHEDULING", n => { SCHEDULING = n.GetEnumValue<global::ClockifyClient.Models.Feature_SCHEDULING>(); } },
                 { "SCHEDULING_FORECASTING", n => { SCHEDULINGFORECASTING = n.GetEnumValue<global::ClockifyClient.Models.Feature_SCHEDULING_FORECASTING>(); } },
+                { "SCIM", n => { SCIM = n.GetEnumValue<global::ClockifyClient.Models.Feature_SCIM>(); } },
                 { "SCREENSHOTS", n => { SCREENSHOTS = n.GetEnumValue<global::ClockifyClient.Models.Feature_SCREENSHOTS>(); } },
+                { "SHARED_REPORTS", n => { SHAREDREPORTS = n.GetEnumValue<global::ClockifyClient.Models.Feature_SHARED_REPORTS>(); } },
                 { "SPLIT_TIME_ENTRY", n => { SPLITTIMEENTRY = n.GetEnumValue<global::ClockifyClient.Models.Feature_SPLIT_TIME_ENTRY>(); } },
                 { "SSO", n => { SSO = n.GetEnumValue<global::ClockifyClient.Models.Feature_SSO>(); } },
                 { "SUMMARY_ESTIMATE", n => { SUMMARYESTIMATE = n.GetEnumValue<global::ClockifyClient.Models.Feature_SUMMARY_ESTIMATE>(); } },
                 { "TARGETS_AND_REMINDERS", n => { TARGETSANDREMINDERS = n.GetEnumValue<global::ClockifyClient.Models.Feature_TARGETS_AND_REMINDERS>(); } },
                 { "TASK_RATES", n => { TASKRATES = n.GetEnumValue<global::ClockifyClient.Models.Feature_TASK_RATES>(); } },
                 { "TIME_OFF", n => { TIMEOFF = n.GetEnumValue<global::ClockifyClient.Models.Feature_TIME_OFF>(); } },
+                { "TIMESHEET_IMPORT", n => { TIMESHEETIMPORT = n.GetEnumValue<global::ClockifyClient.Models.Feature_TIMESHEET_IMPORT>(); } },
                 { "TIME_TRACKING", n => { TIMETRACKING = n.GetEnumValue<global::ClockifyClient.Models.Feature_TIME_TRACKING>(); } },
                 { "UNLIMITED_REPORTS", n => { UNLIMITEDREPORTS = n.GetEnumValue<global::ClockifyClient.Models.Feature_UNLIMITED_REPORTS>(); } },
+                { "UNLIMITED_USER_SEATS", n => { UNLIMITEDUSERSEATS = n.GetEnumValue<global::ClockifyClient.Models.Feature_UNLIMITED_USER_SEATS>(); } },
                 { "USER_CUSTOM_FIELDS", n => { USERCUSTOMFIELDS = n.GetEnumValue<global::ClockifyClient.Models.Feature_USER_CUSTOM_FIELDS>(); } },
+                { "USER_IMPORT", n => { USERIMPORT = n.GetEnumValue<global::ClockifyClient.Models.Feature_USER_IMPORT>(); } },
                 { "WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY", n => { WHOCANCHANGETIMEENTRYBILLABILITY = n.GetEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY>(); } },
                 { "WHO_CAN_SEE_ALL_TIME_ENTRIES", n => { WHOCANSEEALLTIMEENTRIES = n.GetEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_SEE_ALL_TIME_ENTRIES>(); } },
                 { "WHO_CAN_SEE_PROJECT_STATUS", n => { WHOCANSEEPROJECTSTATUS = n.GetEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_SEE_PROJECT_STATUS>(); } },
@@ -232,6 +276,7 @@ namespace ClockifyClient.Models
                 { "WORKSPACE_TIME_AUDIT", n => { WORKSPACETIMEAUDIT = n.GetEnumValue<global::ClockifyClient.Models.Feature_WORKSPACE_TIME_AUDIT>(); } },
                 { "WORKSPACE_TIME_ROUNDING", n => { WORKSPACETIMEROUNDING = n.GetEnumValue<global::ClockifyClient.Models.Feature_WORKSPACE_TIME_ROUNDING>(); } },
                 { "WORKSPACE_TRANSFER", n => { WORKSPACETRANSFER = n.GetEnumValue<global::ClockifyClient.Models.Feature_WORKSPACE_TRANSFER>(); } },
+                { "XLSX_EXPORT", n => { XLSXEXPORT = n.GetEnumValue<global::ClockifyClient.Models.Feature_XLSX_EXPORT>(); } },
             };
         }
         /// <summary>
@@ -248,10 +293,13 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_ATTENDANCE_REPORT>("ATTENDANCE_REPORT", ATTENDANCEREPORT);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_AUDIT_LOG>("AUDIT_LOG", AUDITLOG);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_AUTOMATIC_LOCK>("AUTOMATIC_LOCK", AUTOMATICLOCK);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_BILLABLE_HOURS>("BILLABLE_HOURS", BILLABLEHOURS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_BRANDED_REPORTS>("BRANDED_REPORTS", BRANDEDREPORTS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_BREAKS>("BREAKS", BREAKS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_BULK_EDIT>("BULK_EDIT", BULKEDIT);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_CLIENT_CURRENCY>("CLIENT_CURRENCY", CLIENTCURRENCY);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_CREATION_PERMISSIONS>("CREATION_PERMISSIONS", CREATIONPERMISSIONS);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_CSV_EXPORT>("CSV_EXPORT", CSVEXPORT);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_CUSTOM_FIELDS>("CUSTOM_FIELDS", CUSTOMFIELDS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_CUSTOM_REPORTING>("CUSTOM_REPORTING", CUSTOMREPORTING);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_CUSTOM_SUBDOMAIN>("CUSTOM_SUBDOMAIN", CUSTOMSUBDOMAIN);
@@ -263,6 +311,7 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_FAVORITE_ENTRIES>("FAVORITE_ENTRIES", FAVORITEENTRIES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_FILE_IMPORT>("FILE_IMPORT", FILEIMPORT);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_FORECASTING>("FORECASTING", FORECASTING);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_GRANT_PROJECT_MANAGER_ROLE>("GRANT_PROJECT_MANAGER_ROLE", GRANTPROJECTMANAGERROLE);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_HIDE_PAGES>("HIDE_PAGES", HIDEPAGES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_HISTORIC_RATES>("HISTORIC_RATES", HISTORICRATES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_INVOICE_EMAILS>("INVOICE_EMAILS", INVOICEEMAILS);
@@ -274,10 +323,15 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK_SESSION_DURATION>("KIOSK_SESSION_DURATION", KIOSKSESSIONDURATION);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK_SIX_DIGIT_PIN>("KIOSK_SIX_DIGIT_PIN", KIOSKSIXDIGITPIN);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_LABOR_COST>("LABOR_COST", LABORCOST);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_LIMITED_USERS>("LIMITED_USERS", LIMITEDUSERS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_LOCATIONS>("LOCATIONS", LOCATIONS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_MANAGER_ROLE>("MANAGER_ROLE", MANAGERROLE);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_MULTI_FACTOR_AUTHENTICATION>("MULTI_FACTOR_AUTHENTICATION", MULTIFACTORAUTHENTICATION);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_ONE_MONTH_RANGE_REPORTS>("ONE_MONTH_RANGE_REPORTS", ONEMONTHRANGEREPORTS);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_ONE_YEAR_RANGE_REPORTS>("ONE_YEAR_RANGE_REPORTS", ONEYEARRANGEREPORTS);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_PRIVATE_PROJECT_ACCESS>("PRIVATE_PROJECT_ACCESS", PRIVATEPROJECTACCESS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_PROJECT_BUDGET>("PROJECT_BUDGET", PROJECTBUDGET);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_PROJECT_ESTIMATE>("PROJECT_ESTIMATE", PROJECTESTIMATE);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_PROJECT_TEMPLATES>("PROJECT_TEMPLATES", PROJECTTEMPLATES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_QUICKBOOKS_INTEGRATION>("QUICKBOOKS_INTEGRATION", QUICKBOOKSINTEGRATION);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_RECURRING_ESTIMATES>("RECURRING_ESTIMATES", RECURRINGESTIMATES);
@@ -286,16 +340,21 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SCHEDULED_REPORTS>("SCHEDULED_REPORTS", SCHEDULEDREPORTS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SCHEDULING>("SCHEDULING", SCHEDULING);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SCHEDULING_FORECASTING>("SCHEDULING_FORECASTING", SCHEDULINGFORECASTING);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SCIM>("SCIM", SCIM);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SCREENSHOTS>("SCREENSHOTS", SCREENSHOTS);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SHARED_REPORTS>("SHARED_REPORTS", SHAREDREPORTS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SPLIT_TIME_ENTRY>("SPLIT_TIME_ENTRY", SPLITTIMEENTRY);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SSO>("SSO", SSO);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_SUMMARY_ESTIMATE>("SUMMARY_ESTIMATE", SUMMARYESTIMATE);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_TARGETS_AND_REMINDERS>("TARGETS_AND_REMINDERS", TARGETSANDREMINDERS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_TASK_RATES>("TASK_RATES", TASKRATES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_TIME_OFF>("TIME_OFF", TIMEOFF);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_TIMESHEET_IMPORT>("TIMESHEET_IMPORT", TIMESHEETIMPORT);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_TIME_TRACKING>("TIME_TRACKING", TIMETRACKING);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_UNLIMITED_REPORTS>("UNLIMITED_REPORTS", UNLIMITEDREPORTS);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_UNLIMITED_USER_SEATS>("UNLIMITED_USER_SEATS", UNLIMITEDUSERSEATS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_USER_CUSTOM_FIELDS>("USER_CUSTOM_FIELDS", USERCUSTOMFIELDS);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_USER_IMPORT>("USER_IMPORT", USERIMPORT);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY>("WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY", WHOCANCHANGETIMEENTRYBILLABILITY);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_SEE_ALL_TIME_ENTRIES>("WHO_CAN_SEE_ALL_TIME_ENTRIES", WHOCANSEEALLTIMEENTRIES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_SEE_PROJECT_STATUS>("WHO_CAN_SEE_PROJECT_STATUS", WHOCANSEEPROJECTSTATUS);
@@ -305,6 +364,7 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_WORKSPACE_TIME_AUDIT>("WORKSPACE_TIME_AUDIT", WORKSPACETIMEAUDIT);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_WORKSPACE_TIME_ROUNDING>("WORKSPACE_TIME_ROUNDING", WORKSPACETIMEROUNDING);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_WORKSPACE_TRANSFER>("WORKSPACE_TRANSFER", WORKSPACETRANSFER);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_XLSX_EXPORT>("XLSX_EXPORT", XLSXEXPORT);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

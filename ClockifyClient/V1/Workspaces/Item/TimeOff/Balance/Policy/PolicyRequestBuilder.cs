@@ -16,7 +16,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy
     public partial class PolicyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.timeOff.balance.policy.item collection</summary>
-        /// <param name="position">Represents policy identifier across the system.</param>
+        /// <param name="position">Represents a policy identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item.WithPolicyItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item.WithPolicyItemRequestBuilder this[string position]
         {

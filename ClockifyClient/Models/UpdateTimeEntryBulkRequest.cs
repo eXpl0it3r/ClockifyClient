@@ -24,7 +24,7 @@ namespace ClockifyClient.Models
 #else
         public List<global::ClockifyClient.Models.UpdateCustomFieldRequest> CustomFields { get; set; }
 #endif
-        /// <summary>Represents time entry description.</summary>
+        /// <summary>Represents a time entry description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -32,9 +32,9 @@ namespace ClockifyClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Represents an end date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+        /// <summary>Represents an end date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
         public DateTimeOffset? End { get; set; }
-        /// <summary>Represents time entry identifier across the system.</summary>
+        /// <summary>Represents a time entry identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -42,7 +42,7 @@ namespace ClockifyClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Represents project identifier across the system.</summary>
+        /// <summary>Represents a project identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -50,7 +50,7 @@ namespace ClockifyClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>Represents a start date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+        /// <summary>Represents a start date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
         public DateTimeOffset? Start { get; set; }
         /// <summary>Represents a list of tag ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,7 +60,7 @@ namespace ClockifyClient.Models
 #else
         public List<string> TagIds { get; set; }
 #endif
-        /// <summary>Represents task identifier across the system.</summary>
+        /// <summary>Represents a task identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaskId { get; set; }

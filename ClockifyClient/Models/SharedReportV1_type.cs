@@ -80,5 +80,9 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         KIOSK_ASSIGNEES,
         #pragma warning restore CS1591
+        [EnumMember(Value = "USER_DATA_EXPORT")]
+        #pragma warning disable CS1591
+        USER_DATA_EXPORT,
+        #pragma warning restore CS1591
     }
 }

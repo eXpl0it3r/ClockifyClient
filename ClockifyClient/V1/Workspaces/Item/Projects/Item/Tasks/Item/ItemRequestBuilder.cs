@@ -46,7 +46,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item
         {
         }
         /// <summary>
-        /// Delete task from project
+        /// Delete a task from a project
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TaskDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TaskDtoV1>(requestInfo, global::ClockifyClient.Models.TaskDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get task by id
+        /// Get a task by id
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TaskDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TaskDtoV1>(requestInfo, global::ClockifyClient.Models.TaskDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update task on project
+        /// Update a task on a project
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TaskDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TaskDtoV1>(requestInfo, global::ClockifyClient.Models.TaskDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete task from project
+        /// Delete a task from a project
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get task by id
+        /// Get a task by id
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +140,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update task on project
+        /// Update a task on a project
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +187,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item
         {
         }
         /// <summary>
-        /// Update task on project
+        /// Update a task on a project
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemRequestBuilderPutQueryParameters 

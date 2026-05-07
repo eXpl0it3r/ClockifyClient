@@ -16,7 +16,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.User
     public partial class UserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.timeOff.balance.user.item collection</summary>
-        /// <param name="position">Represents user identifier across the system.</param>
+        /// <param name="position">Represents a user identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.User.Item.WithUserItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.User.Item.WithUserItemRequestBuilder this[string position]
         {

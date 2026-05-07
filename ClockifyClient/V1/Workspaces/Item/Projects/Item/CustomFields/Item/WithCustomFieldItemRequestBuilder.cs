@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields.Item
         {
         }
         /// <summary>
-        /// Remove custom field from project
+        /// Remove custom field from a project
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.CustomFieldDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.CustomFieldDtoV1>(requestInfo, global::ClockifyClient.Models.CustomFieldDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update custom field on project
+        /// Update custom field on a project
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.CustomFieldDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.CustomFieldDtoV1>(requestInfo, global::ClockifyClient.Models.CustomFieldDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove custom field from project
+        /// Remove custom field from a project
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update custom field on project
+        /// Update custom field on a project
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

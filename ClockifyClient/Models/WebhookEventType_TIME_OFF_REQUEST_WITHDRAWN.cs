@@ -108,6 +108,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         TIME_OFF_REQUEST_REJECTED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TIME_OFF_REQUEST_STARTED")]
+        #pragma warning disable CS1591
+        TIME_OFF_REQUEST_STARTED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TIME_OFF_REQUEST_WITHDRAWN")]
         #pragma warning disable CS1591
         TIME_OFF_REQUEST_WITHDRAWN,

@@ -65,7 +65,7 @@ namespace ClockifyClient.Models
 #else
         public string TaskId { get; set; }
 #endif
-        /// <summary>The timeInterval property</summary>
+        /// <summary>Represents a time interval object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.TimeIntervalDto? TimeInterval { get; set; }

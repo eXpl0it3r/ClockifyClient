@@ -70,7 +70,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
         {
         }
         /// <summary>
-        /// Delete project from workspace
+        /// Delete a project from a workspace
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ProjectDtoImplV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ProjectDtoImplV1>(requestInfo, global::ClockifyClient.Models.ProjectDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Find project by ID
+        /// Find a project by ID
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ProjectDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +106,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ProjectDtoV1>(requestInfo, global::ClockifyClient.Models.ProjectDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update project on workspace
+        /// Update a project on a workspace
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ProjectDtoImplV1"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +126,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ProjectDtoImplV1>(requestInfo, global::ClockifyClient.Models.ProjectDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete project from workspace
+        /// Delete a project from a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
             return requestInfo;
         }
         /// <summary>
-        /// Find project by ID
+        /// Find a project by ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +164,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update project on workspace
+        /// Update a project on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -203,7 +203,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
         {
         }
         /// <summary>
-        /// Find project by ID
+        /// Find a project by ID
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithProjectItemRequestBuilderGetQueryParameters 
@@ -228,7 +228,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item
             [QueryParameter("expense%2Ddate")]
             public string ExpenseDate { get; set; }
 #endif
-            /// <summary>Represents maximum number of expenses to fetch.</summary>
+            /// <summary>Represents the maximum number of expenses to fetch.</summary>
             [QueryParameter("expense%2Dlimit")]
             public int? ExpenseLimit { get; set; }
             /// <summary>If set to true, results will contain additional information about the project</summary>

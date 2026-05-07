@@ -48,6 +48,14 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Represents response status code.</summary>
         public int? StatusCode { get; set; }
+        /// <summary>Represents webhook event status identifier across the system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebhookEventStatusId { get; set; }
+#nullable restore
+#else
+        public string WebhookEventStatusId { get; set; }
+#endif
         /// <summary>Represents webhook identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +94,7 @@ namespace ClockifyClient.Models
                 { "respondedAt", n => { RespondedAt = n.GetStringValue(); } },
                 { "responseBody", n => { ResponseBody = n.GetStringValue(); } },
                 { "statusCode", n => { StatusCode = n.GetIntValue(); } },
+                { "webhookEventStatusId", n => { WebhookEventStatusId = n.GetStringValue(); } },
                 { "webhookId", n => { WebhookId = n.GetStringValue(); } },
             };
         }
@@ -101,6 +110,7 @@ namespace ClockifyClient.Models
             writer.WriteStringValue("respondedAt", RespondedAt);
             writer.WriteStringValue("responseBody", ResponseBody);
             writer.WriteIntValue("statusCode", StatusCode);
+            writer.WriteStringValue("webhookEventStatusId", WebhookEventStatusId);
             writer.WriteStringValue("webhookId", WebhookId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,7 +14,7 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents a client filter object. If provided, you&apos;ll get a filtered list of invoices that matches the specified client filter.</summary>
+        /// <summary>Represents a project filter for imported items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.ContainsArchivedFilterRequest? Clients { get; set; }

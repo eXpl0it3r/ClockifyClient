@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays.InPeriod
         {
         }
         /// <summary>
-        /// Get holiday in specific period
+        /// Get holidays in a specific period
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.HolidayDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays.InPeriod
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Get holiday in specific period
+        /// Get holidays in a specific period
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays.InPeriod
             return new global::ClockifyClient.V1.Workspaces.Item.Holidays.InPeriod.InPeriodRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get holiday in specific period
+        /// Get holidays in a specific period
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InPeriodRequestBuilderGetQueryParameters 
         {
-            /// <summary>If provided, you&apos;ll get a filtered list of holidays assigned to user.</summary>
+            /// <summary>Filter list of holidays assigned to user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("assigned%2Dto")]
@@ -96,7 +96,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays.InPeriod
             [QueryParameter("assigned%2Dto")]
             public string AssignedTo { get; set; }
 #endif
-            /// <summary>If provided, you&apos;ll get a filtered list of holidays ending by end date. Expected date format yyyy-mm-dd</summary>
+            /// <summary>Filter list of holidays ending by end date. Expected date format yyyy-MM-ddThh:mm:ssZ</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("end")]
@@ -106,7 +106,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays.InPeriod
             [QueryParameter("end")]
             public string End { get; set; }
 #endif
-            /// <summary>If provided, you&apos;ll get a filtered list of holidays starting from start date. Expected date format yyyy-mm-dd</summary>
+            /// <summary>Filter list of holidays starting from start date. Expected date format yyyy-MM-ddThh:mm:ssZ</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("start")]

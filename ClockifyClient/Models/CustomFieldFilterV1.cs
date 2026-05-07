@@ -15,7 +15,7 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents custom field identifier across the system.</summary>
+        /// <summary>Represents a custom field identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -25,11 +25,11 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Indicates whether the custom field is empty.</summary>
         public bool? IsEmpty { get; set; }
-        /// <summary>Represents custom field number condition.</summary>
+        /// <summary>Represents a custom field number condition.</summary>
         public global::ClockifyClient.Models.CustomFieldFilterV1_numberCondition? NumberCondition { get; set; }
-        /// <summary>Represents type of custom field.</summary>
+        /// <summary>Represents a type of custom field.</summary>
         public global::ClockifyClient.Models.CustomFieldFilterV1_type? Type { get; set; }
-        /// <summary>Represents custom field value.</summary>
+        /// <summary>Represents a custom field value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.CustomFieldFilterV1_value? Value { get; set; }

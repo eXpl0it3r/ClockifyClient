@@ -22,7 +22,7 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.CustomFieldProjectDefaultValuesRequest_defaultValue DefaultValue { get; set; }
 #endif
-        /// <summary>Represents custom field status.</summary>
+        /// <summary>Represents a custom field status.</summary>
         public global::ClockifyClient.Models.CustomFieldProjectDefaultValuesRequest_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.CustomFieldProjectDefaultValuesRequest"/> and sets the default values.

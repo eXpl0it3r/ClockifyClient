@@ -16,7 +16,7 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether a tag will be archived or not.</summary>
         public bool? Archived { get; set; }
-        /// <summary>Represents tag name.</summary>
+        /// <summary>Represents a tag name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

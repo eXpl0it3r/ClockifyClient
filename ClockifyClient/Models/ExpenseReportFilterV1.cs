@@ -14,7 +14,7 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents approval state</summary>
+        /// <summary>Represents an approval state</summary>
         public global::ClockifyClient.Models.ExpenseReportFilterV1_approvalState? ApprovalState { get; set; }
         /// <summary>Indicates whether report is billable</summary>
         public bool? Billable { get; set; }
@@ -42,7 +42,7 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.ContainsArchivedFilterV1 Currency { get; set; }
 #endif
-        /// <summary>Provide date in format YYYY-MM-DDTHH:MM:SS.ssssssZ</summary>
+        /// <summary>Provide date in format YYYY-MM-DDTHH:MM:SS.ssssss. The system interprets this value based on the user&apos;s timezone (provided in the timeZone request parameter or the timezone configured in the user profile)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateRangeEnd { get; set; }
@@ -50,7 +50,7 @@ namespace ClockifyClient.Models
 #else
         public string DateRangeEnd { get; set; }
 #endif
-        /// <summary>Provide date in format YYYY-MM-DDTHH:MM:SS.ssssssZ</summary>
+        /// <summary>Provide date in format YYYY-MM-DDTHH:MM:SS.ssssss. The system interprets this value based on the user&apos;s timezone (provided in the timeZone request parameter or the timezone configured in the user profile)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateRangeStart { get; set; }
@@ -60,11 +60,11 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Represents date range type of expense report</summary>
         public global::ClockifyClient.Models.ExpenseReportFilterV1_dateRangeType? DateRangeType { get; set; }
-        /// <summary>Represents export type</summary>
+        /// <summary>Represents an export type</summary>
         public global::ClockifyClient.Models.ExpenseReportFilterV1_exportType? ExportType { get; set; }
-        /// <summary>Represents invoicing state</summary>
+        /// <summary>Represents an invoicing state</summary>
         public global::ClockifyClient.Models.ExpenseReportFilterV1_invoicingState? InvoicingState { get; set; }
-        /// <summary>Represents search term for filtering report entries by note</summary>
+        /// <summary>Represents a search term for filtering report entries by note</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Note { get; set; }
@@ -86,7 +86,7 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Represents expenses sort column</summary>
         public global::ClockifyClient.Models.ExpenseReportFilterV1_sortColumn? SortColumn { get; set; }
-        /// <summary>Represents sort order</summary>
+        /// <summary>Represents a sort order</summary>
         public global::ClockifyClient.Models.ExpenseReportFilterV1_sortOrder? SortOrder { get; set; }
         /// <summary>Represents filter criteria for expenses associated with tasks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.ContainsTaskFilterV1 Tasks { get; set; }
 #endif
-        /// <summary>Represents time zone</summary>
+        /// <summary>Represents a time zone</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeZone { get; set; }
@@ -112,7 +112,7 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.ContainsUsersFilterV1 UserGroups { get; set; }
 #endif
-        /// <summary>Represents user locale</summary>
+        /// <summary>Represents a user locale</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserLocale { get; set; }
@@ -132,7 +132,7 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.ExpenseReportFilterV1_weekStart? WeekStart { get; set; }
         /// <summary>If set to &apos;true&apos;, report will only include entries with empty note</summary>
         public bool? WithoutNote { get; set; }
-        /// <summary>Represents zoom level</summary>
+        /// <summary>Represents a zoom level</summary>
         public global::ClockifyClient.Models.ExpenseReportFilterV1_zoomLevel? ZoomLevel { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.ExpenseReportFilterV1"/> and sets the default values.

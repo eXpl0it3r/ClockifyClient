@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Item
         {
         }
         /// <summary>
-        /// Delete time entry from workspace
+        /// Delete a time entry from a workspace
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a specific time entry on workspace
+        /// Get a specific time entry on a workspace
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeEntryWithRatesDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeEntryWithRatesDtoV1>(requestInfo, global::ClockifyClient.Models.TimeEntryWithRatesDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update time entry on workspace
+        /// Update time entry on a workspace
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeEntryDtoImplV1"/></returns>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeEntryDtoImplV1>(requestInfo, global::ClockifyClient.Models.TimeEntryDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete time entry from workspace
+        /// Delete a time entry from a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get a specific time entry on workspace
+        /// Get a specific time entry on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update time entry on workspace
+        /// Update time entry on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -165,7 +165,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Item
         {
         }
         /// <summary>
-        /// Get a specific time entry on workspace
+        /// Get a specific time entry on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimeEntriesItemRequestBuilderGetQueryParameters 

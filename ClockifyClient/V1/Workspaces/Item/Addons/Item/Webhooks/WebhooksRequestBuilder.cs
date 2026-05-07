@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Addons.Item.Webhooks
         {
         }
         /// <summary>
-        /// Get all webhooks for addon on workspace
+        /// Get all webhooks for addon on a workspace
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.WebhooksDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Addons.Item.Webhooks
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.WebhooksDtoV1>(requestInfo, global::ClockifyClient.Models.WebhooksDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all webhooks for addon on workspace
+        /// Get all webhooks for addon on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

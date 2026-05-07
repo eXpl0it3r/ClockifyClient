@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
         {
         }
         /// <summary>
-        /// Delete request
+        /// Delete a time off request
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeOffRequestV1Dto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeOffRequestV1Dto>(requestInfo, global::ClockifyClient.Models.TimeOffRequestV1Dto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change time off request status
+        /// Change a time off request status
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeOffRequestV1Dto"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeOffRequestV1Dto>(requestInfo, global::ClockifyClient.Models.TimeOffRequestV1Dto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete request
+        /// Delete a time off request
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
             return requestInfo;
         }
         /// <summary>
-        /// Change time off request status
+        /// Change a time off request status
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

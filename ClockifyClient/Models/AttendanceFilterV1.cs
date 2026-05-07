@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents attendance report filter.
+    /// Represents an attendance report filter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttendanceFilterV1 : IAdditionalDataHolder, IParsable

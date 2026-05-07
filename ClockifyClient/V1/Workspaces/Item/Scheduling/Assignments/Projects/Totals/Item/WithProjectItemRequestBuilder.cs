@@ -85,7 +85,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Tota
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithProjectItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Represents end date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+            /// <summary>Represents an end date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("end")]
@@ -95,7 +95,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Tota
             [QueryParameter("end")]
             public string End { get; set; }
 #endif
-            /// <summary>Represents start date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+            /// <summary>Represents a start date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("start")]

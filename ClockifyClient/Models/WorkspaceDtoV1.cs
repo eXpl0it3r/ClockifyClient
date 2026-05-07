@@ -22,7 +22,7 @@ namespace ClockifyClient.Models
 #else
         public string CakeOrganizationId { get; set; }
 #endif
-        /// <summary>Represents a cost rate object.</summary>
+        /// <summary>Represents cost rate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.RateDtoV1? CostRate { get; set; }
@@ -46,13 +46,13 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.Feature Features { get; set; }
 #endif
-        /// <summary>Represents a feature subscription type enum.</summary>
+        /// <summary>Represents a feature plan type enum.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ClockifyClient.Models.FeatureSubscriptionType? FeatureSubscriptionType { get; set; }
+        public global::ClockifyClient.Models.FeaturePlan? FeatureSubscriptionType { get; set; }
 #nullable restore
 #else
-        public global::ClockifyClient.Models.FeatureSubscriptionType FeatureSubscriptionType { get; set; }
+        public global::ClockifyClient.Models.FeaturePlan FeatureSubscriptionType { get; set; }
 #endif
         /// <summary>Represents an hourly rate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +138,7 @@ namespace ClockifyClient.Models
                 { "cakeOrganizationId", n => { CakeOrganizationId = n.GetStringValue(); } },
                 { "costRate", n => { CostRate = n.GetObjectValue<global::ClockifyClient.Models.RateDtoV1>(global::ClockifyClient.Models.RateDtoV1.CreateFromDiscriminatorValue); } },
                 { "currencies", n => { Currencies = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.CurrencyWithDefaultInfoDtoV1>(global::ClockifyClient.Models.CurrencyWithDefaultInfoDtoV1.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "featureSubscriptionType", n => { FeatureSubscriptionType = n.GetObjectValue<global::ClockifyClient.Models.FeatureSubscriptionType>(global::ClockifyClient.Models.FeatureSubscriptionType.CreateFromDiscriminatorValue); } },
+                { "featureSubscriptionType", n => { FeatureSubscriptionType = n.GetObjectValue<global::ClockifyClient.Models.FeaturePlan>(global::ClockifyClient.Models.FeaturePlan.CreateFromDiscriminatorValue); } },
                 { "features", n => { Features = n.GetObjectValue<global::ClockifyClient.Models.Feature>(global::ClockifyClient.Models.Feature.CreateFromDiscriminatorValue); } },
                 { "hourlyRate", n => { HourlyRate = n.GetObjectValue<global::ClockifyClient.Models.HourlyRateDtoV1>(global::ClockifyClient.Models.HourlyRateDtoV1.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -160,7 +160,7 @@ namespace ClockifyClient.Models
             writer.WriteObjectValue<global::ClockifyClient.Models.RateDtoV1>("costRate", CostRate);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CurrencyWithDefaultInfoDtoV1>("currencies", Currencies);
             writer.WriteObjectValue<global::ClockifyClient.Models.Feature>("features", Features);
-            writer.WriteObjectValue<global::ClockifyClient.Models.FeatureSubscriptionType>("featureSubscriptionType", FeatureSubscriptionType);
+            writer.WriteObjectValue<global::ClockifyClient.Models.FeaturePlan>("featureSubscriptionType", FeatureSubscriptionType);
             writer.WriteObjectValue<global::ClockifyClient.Models.HourlyRateDtoV1>("hourlyRate", HourlyRate);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("imageUrl", ImageUrl);

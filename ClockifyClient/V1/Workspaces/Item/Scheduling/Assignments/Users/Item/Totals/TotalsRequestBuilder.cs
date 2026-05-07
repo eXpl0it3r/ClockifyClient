@@ -85,7 +85,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Users.Item.To
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TotalsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Represents end date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+            /// <summary>Represents an end date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("end")]
@@ -101,7 +101,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Users.Item.To
             /// <summary>Page size.</summary>
             [QueryParameter("page%2Dsize")]
             public int? PageSize { get; set; }
-            /// <summary>Represents start date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+            /// <summary>Represents a start date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("start")]

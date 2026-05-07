@@ -40,7 +40,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups.Item
         {
         }
         /// <summary>
-        /// Delete group
+        /// Delete a group
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.UserGroupDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.UserGroupDtoV1>(requestInfo, global::ClockifyClient.Models.UserGroupDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update group
+        /// Update a group
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.UserGroupDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -78,7 +78,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.UserGroupDtoV1>(requestInfo, global::ClockifyClient.Models.UserGroupDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete group
+        /// Delete a group
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,7 +97,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update group
+        /// Update a group
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

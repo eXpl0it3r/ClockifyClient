@@ -22,7 +22,7 @@ namespace ClockifyClient.Models
 #else
         public List<string> AllowedValues { get; set; }
 #endif
-        /// <summary>Represents custom field description.</summary>
+        /// <summary>Represents a custom field description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -30,7 +30,7 @@ namespace ClockifyClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Represents custom field name.</summary>
+        /// <summary>Represents a custom field name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -50,9 +50,9 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Flag to set whether custom field is mandatory or not.</summary>
         public bool? Required { get; set; }
-        /// <summary>Represents custom field status</summary>
+        /// <summary>Represents a custom field status</summary>
         public global::ClockifyClient.Models.UpdateCustomFieldRequestV1_status? Status { get; set; }
-        /// <summary>Represents custom field type.</summary>
+        /// <summary>Represents a custom field type.</summary>
         public global::ClockifyClient.Models.UpdateCustomFieldRequestV1_type? Type { get; set; }
         /// <summary>Represents a custom field&apos;s default value in the workspace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -46,7 +46,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks.Item
         {
         }
         /// <summary>
-        /// Delete webhook
+        /// Delete a webhook
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.WebhookDtoV1>(requestInfo, global::ClockifyClient.Models.WebhookDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete webhook
+        /// Delete a webhook
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

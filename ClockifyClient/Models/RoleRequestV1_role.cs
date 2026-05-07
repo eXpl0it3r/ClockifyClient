@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace ClockifyClient.Models
 {
-    /// <summary>Represents valid role.</summary>
+    /// <summary>Represents a valid role.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RoleRequestV1_role
     {

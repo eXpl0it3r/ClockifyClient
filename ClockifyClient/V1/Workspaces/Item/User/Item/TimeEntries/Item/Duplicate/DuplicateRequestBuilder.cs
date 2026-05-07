@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate
         {
         }
         /// <summary>
-        /// Duplicate time entry
+        /// Duplicate a time entry
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeEntryDtoImplV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeEntryDtoImplV1>(requestInfo, global::ClockifyClient.Models.TimeEntryDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Duplicate time entry
+        /// Duplicate a time entry
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

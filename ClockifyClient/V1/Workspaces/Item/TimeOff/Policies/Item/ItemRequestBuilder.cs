@@ -46,7 +46,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
         {
         }
         /// <summary>
-        /// Delete policy
+        /// Delete a policy
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get time off policy
+        /// Get a time off policy
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.PolicyDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.PolicyDtoV1>(requestInfo, global::ClockifyClient.Models.PolicyDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change policy status
+        /// Change a policy status
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.PolicyDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.PolicyDtoV1>(requestInfo, global::ClockifyClient.Models.PolicyDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update policy
+        /// Update a policy
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.PolicyDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -122,7 +122,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.PolicyDtoV1>(requestInfo, global::ClockifyClient.Models.PolicyDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete policy
+        /// Delete a policy
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +140,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get time off policy
+        /// Get a time off policy
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Change policy status
+        /// Change a policy status
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +181,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update policy
+        /// Update a policy
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

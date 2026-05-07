@@ -232,5 +232,9 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         SAMPLE_DATA,
         #pragma warning restore CS1591
+        [EnumMember(Value = "WEBHOOK_EVENT_STATUS")]
+        #pragma warning disable CS1591
+        WEBHOOK_EVENT_STATUS,
+        #pragma warning restore CS1591
     }
 }

@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups.Item.Users.Item
         {
         }
         /// <summary>
-        /// Remove user from group
+        /// Remove a user from a group
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.UserGroupDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups.Item.Users.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.UserGroupDtoV1>(requestInfo, global::ClockifyClient.Models.UserGroupDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove user from group
+        /// Remove a user from a group
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

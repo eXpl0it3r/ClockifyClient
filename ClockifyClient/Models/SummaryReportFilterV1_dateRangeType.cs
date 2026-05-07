@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace ClockifyClient.Models
 {
-    /// <summary>Provide date range type</summary>
+    /// <summary>Provide the date range type</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SummaryReportFilterV1_dateRangeType
     {

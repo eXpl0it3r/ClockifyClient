@@ -16,7 +16,7 @@ namespace ClockifyClient.V1.Workspaces.Item.MemberProfile
     public partial class MemberProfileRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.memberProfile.item collection</summary>
-        /// <param name="position">Represents user identifier across the system.</param>
+        /// <param name="position">Represents a user identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.MemberProfile.Item.WithUserItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.MemberProfile.Item.WithUserItemRequestBuilder this[string position]
         {

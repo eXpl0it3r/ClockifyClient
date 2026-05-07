@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents a date range object.
+    /// Represents date range object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DateRangeDto : IAdditionalDataHolder, IParsable

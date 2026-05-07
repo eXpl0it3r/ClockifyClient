@@ -3,6 +3,7 @@
 using ClockifyClient.Models;
 using ClockifyClient.V1.Workspaces.Item.Addons;
 using ClockifyClient.V1.Workspaces.Item.ApprovalRequests;
+using ClockifyClient.V1.Workspaces.Item.AuditLog;
 using ClockifyClient.V1.Workspaces.Item.Clients;
 using ClockifyClient.V1.Workspaces.Item.CostRate;
 using ClockifyClient.V1.Workspaces.Item.CustomFields;
@@ -49,6 +50,11 @@ namespace ClockifyClient.V1.Workspaces.Item
         public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ApprovalRequestsRequestBuilder ApprovalRequests
         {
             get => new global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ApprovalRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The auditLog property</summary>
+        public global::ClockifyClient.V1.Workspaces.Item.AuditLog.AuditLogRequestBuilder AuditLog
+        {
+            get => new global::ClockifyClient.V1.Workspaces.Item.AuditLog.AuditLogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clients property</summary>
         public global::ClockifyClient.V1.Workspaces.Item.Clients.ClientsRequestBuilder Clients

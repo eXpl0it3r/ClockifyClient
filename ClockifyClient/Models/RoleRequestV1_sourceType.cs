@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace ClockifyClient.Models
 {
-    /// <summary>Represents the source type of this request.This helps the API to determine on where to select this &apos;entity&apos;, and applies a correspondingaction base on the endpoint.The entityId should be relative to this source, and can be used whenever the endpoint needs toaccess a certain resource. e.g. User group (USER_GROUP)</summary>
+    /// <summary>Optional field used to indicate that the target of the operation is auser group, in which case the value USER_GROUP should be used, alongside a valid user groupID for the entityId field. If omitted, a user ID should be used for the entityId field.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RoleRequestV1_sourceType
     {

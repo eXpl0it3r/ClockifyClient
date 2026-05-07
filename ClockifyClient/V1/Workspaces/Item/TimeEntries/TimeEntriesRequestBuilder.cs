@@ -31,7 +31,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries
             get => new global::ClockifyClient.V1.Workspaces.Item.TimeEntries.Status.StatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.timeEntries.item collection</summary>
-        /// <param name="position">Represents time entry identifier across the system.</param>
+        /// <param name="position">Represents a time entry identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.TimeEntries.Item.TimeEntriesItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.TimeEntries.Item.TimeEntriesItemRequestBuilder this[string position]
         {

@@ -25,7 +25,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays
             get => new global::ClockifyClient.V1.Workspaces.Item.Holidays.InPeriod.InPeriodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.holidays.item collection</summary>
-        /// <param name="position">Represents holiday identifier across the system.</param>
+        /// <param name="position">Represents a holiday identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Holidays.Item.WithHolidayItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Holidays.Item.WithHolidayItemRequestBuilder this[string position]
         {
@@ -53,7 +53,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays
         {
         }
         /// <summary>
-        /// Get holidays on workspace
+        /// Get holidays on a workspace
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.HolidayDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,7 +72,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create holiday
+        /// Create a holiday
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.HolidayDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -92,7 +92,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.HolidayDtoV1>(requestInfo, global::ClockifyClient.Models.HolidayDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get holidays on workspace
+        /// Get holidays on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays
             return requestInfo;
         }
         /// <summary>
-        /// Create holiday
+        /// Create a holiday
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -142,7 +142,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Holidays
             return new global::ClockifyClient.V1.Workspaces.Item.Holidays.HolidaysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get holidays on workspace
+        /// Get holidays on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HolidaysRequestBuilderGetQueryParameters 
