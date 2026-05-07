@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests
     public partial class RequestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.timeOff.policies.item.requests.item collection</summary>
-        /// <param name="position">Represents time off request identifier across the system.</param>
+        /// <param name="position">Represents a time off request identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests
         {
         }
         /// <summary>
-        /// Create time off request
+        /// Create a time off request
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeOffRequestFullV1Dto"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeOffRequestFullV1Dto>(requestInfo, global::ClockifyClient.Models.TimeOffRequestFullV1Dto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create time off request
+        /// Create a time off request
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

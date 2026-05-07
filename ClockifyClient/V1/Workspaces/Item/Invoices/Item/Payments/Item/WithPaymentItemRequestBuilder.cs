@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item.Payments.Item
         {
         }
         /// <summary>
-        /// Delete payment from invoice
+        /// Delete payment from an invoice
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.InvoiceOverviewDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item.Payments.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.InvoiceOverviewDtoV1>(requestInfo, global::ClockifyClient.Models.InvoiceOverviewDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete payment from invoice
+        /// Delete payment from an invoice
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

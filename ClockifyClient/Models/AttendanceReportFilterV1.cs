@@ -28,7 +28,7 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.AttendanceReportFilterV1_approvalState? ApprovalState { get; set; }
         /// <summary>Indicates whether the report is archived</summary>
         public bool? Archived { get; set; }
-        /// <summary>Represents attendance report filter.</summary>
+        /// <summary>Represents an attendance report filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.AttendanceFilterV1? AttendanceFilter { get; set; }
@@ -70,7 +70,7 @@ namespace ClockifyClient.Models
 #else
         public string DateFormat { get; set; }
 #endif
-        /// <summary>Provide date in format YYYY-MM-DDTHH:MM:SS.ssssssZ</summary>
+        /// <summary>Provide date in format YYYY-MM-DDTHH:MM:SS.ssssss. The system interprets this value based on the user&apos;s timezone (provided in the timeZone request parameter or the timezone configured in the user profile)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateRangeEnd { get; set; }
@@ -78,7 +78,7 @@ namespace ClockifyClient.Models
 #else
         public string DateRangeEnd { get; set; }
 #endif
-        /// <summary>Provide date in format YYYY-MM-DDTHH:MM:SS.ssssssZ</summary>
+        /// <summary>Provide date in format YYYY-MM-DDTHH:MM:SS.ssssss. The system interprets this value based on the user&apos;s timezone (provided in the timeZone request parameter or the timezone configured in the user profile)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateRangeStart { get; set; }
@@ -86,7 +86,7 @@ namespace ClockifyClient.Models
 #else
         public string DateRangeStart { get; set; }
 #endif
-        /// <summary>Provide date range type</summary>
+        /// <summary>Provide the date range type</summary>
         public global::ClockifyClient.Models.AttendanceReportFilterV1_dateRangeType? DateRangeType { get; set; }
         /// <summary>Represents search term for filtering report entries by description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace ClockifyClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Represents detailed report filter.</summary>
+        /// <summary>Represents a detailed report filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.DetailedFilterV1? DetailedFilter { get; set; }
@@ -120,7 +120,7 @@ namespace ClockifyClient.Models
         public bool? Rounding { get; set; }
         /// <summary>If provided, you&apos;ll get sorted result by provided sort order.</summary>
         public global::ClockifyClient.Models.AttendanceReportFilterV1_sortOrder? SortOrder { get; set; }
-        /// <summary>Represents summary report filter.</summary>
+        /// <summary>Represents a summary report filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.SummaryFilterV1? SummaryFilter { get; set; }
@@ -128,7 +128,7 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.SummaryFilterV1 SummaryFilter { get; set; }
 #endif
-        /// <summary>Represents object for filtering entries by tags.</summary>
+        /// <summary>Represents an object for filtering entries by tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.ContainsTagFilterV1? Tags { get; set; }
@@ -184,7 +184,7 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.ContainsUsersFilterV1 Users { get; set; }
 #endif
-        /// <summary>Represents weekly report filter.</summary>
+        /// <summary>Represents a weekly report filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.WeeklyFilterV1? WeeklyFilter { get; set; }

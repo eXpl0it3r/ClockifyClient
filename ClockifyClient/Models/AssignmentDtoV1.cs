@@ -44,7 +44,7 @@ namespace ClockifyClient.Models
 #else
         public string Note { get; set; }
 #endif
-        /// <summary>Represents a date range object.</summary>
+        /// <summary>Represents date range object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.DateRangeDto? Period { get; set; }
@@ -77,6 +77,14 @@ namespace ClockifyClient.Models
 #nullable restore
 #else
         public string StartTime { get; set; }
+#endif
+        /// <summary>Represents task identifier across the system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaskId { get; set; }
+#nullable restore
+#else
+        public string TaskId { get; set; }
 #endif
         /// <summary>Represents user identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,6 +138,7 @@ namespace ClockifyClient.Models
                 { "published", n => { Published = n.GetBoolValue(); } },
                 { "recurring", n => { Recurring = n.GetObjectValue<global::ClockifyClient.Models.RecurringAssignmentDto>(global::ClockifyClient.Models.RecurringAssignmentDto.CreateFromDiscriminatorValue); } },
                 { "startTime", n => { StartTime = n.GetStringValue(); } },
+                { "taskId", n => { TaskId = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "workspaceId", n => { WorkspaceId = n.GetStringValue(); } },
             };
@@ -152,6 +161,7 @@ namespace ClockifyClient.Models
             writer.WriteBoolValue("published", Published);
             writer.WriteObjectValue<global::ClockifyClient.Models.RecurringAssignmentDto>("recurring", Recurring);
             writer.WriteStringValue("startTime", StartTime);
+            writer.WriteStringValue("taskId", TaskId);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("workspaceId", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);

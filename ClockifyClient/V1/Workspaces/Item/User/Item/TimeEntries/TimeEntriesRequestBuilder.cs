@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
     public partial class TimeEntriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.user.item.timeEntries.item collection</summary>
-        /// <param name="position">Represents time entry identifier across the system.</param>
+        /// <param name="position">Represents a time entry identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.TimeEntriesItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.TimeEntriesItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         {
         }
         /// <summary>
-        /// Delete all time entries for user on workspace
+        /// Delete all time entries for a user on a workspace
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.TimeEntryDtoImplV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Get time entries for a user on workspace
+        /// Get time entries for a user on a workspace
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.TimeEntryWithRatesDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Stop currently running timer on workspace for user
+        /// Stop a currently running timer on a workspace for a user
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeEntryDtoImplV1"/></returns>
         /// <param name="body">The request body</param>
@@ -146,7 +146,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Delete all time entries for user on workspace
+        /// Delete all time entries for a user on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             return requestInfo;
         }
         /// <summary>
-        /// Get time entries for a user on workspace
+        /// Get time entries for a user on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +184,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             return requestInfo;
         }
         /// <summary>
-        /// Stop currently running timer on workspace for user
+        /// Stop a currently running timer on a workspace for a user
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -259,7 +259,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             return new global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.TimeEntriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete all time entries for user on workspace
+        /// Delete all time entries for a user on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimeEntriesRequestBuilderDeleteQueryParameters 
@@ -284,12 +284,12 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         {
         }
         /// <summary>
-        /// Get time entries for a user on workspace
+        /// Get time entries for a user on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimeEntriesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Represents term for searching time entries by description.</summary>
+            /// <summary>Represents a term for searching time entries by description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("description")]
@@ -299,7 +299,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             [QueryParameter("description")]
             public string Description { get; set; }
 #endif
-            /// <summary>Represents end date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+            /// <summary>Represents an end date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("end")]
@@ -323,8 +323,15 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             [QueryParameter("hydrated")]
             public bool? Hydrated { get; set; }
             /// <summary>Flag to set whether to filter only in progress time entries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("in%2Dprogress")]
-            public bool? InProgress { get; set; }
+            public string? InProgress { get; set; }
+#nullable restore
+#else
+            [QueryParameter("in%2Dprogress")]
+            public string InProgress { get; set; }
+#endif
             /// <summary>Page number.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -344,7 +351,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             /// <summary>Flag to set whether to only get time entries which have a project.</summary>
             [QueryParameter("project%2Drequired")]
             public bool? ProjectRequired { get; set; }
-            /// <summary>Represents start date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+            /// <summary>Represents a start date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("start")]
@@ -400,7 +407,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimeEntriesRequestBuilderPostQueryParameters 
         {
-            /// <summary>Represents time entry identifier across the system.</summary>
+            /// <summary>Represents a time entry identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("from%2Dentry")]

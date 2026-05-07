@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Categories
     public partial class CategoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.expenses.categories.item collection</summary>
-        /// <param name="position">Represents category identifier across the system.</param>
+        /// <param name="position">Represents a category identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Expenses.Categories.Item.WithCategoryItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Expenses.Categories.Item.WithCategoryItemRequestBuilder this[string position]
         {
@@ -65,7 +65,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Categories
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ExpenseCategoriesWithCountDtoV1>(requestInfo, global::ClockifyClient.Models.ExpenseCategoriesWithCountDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add expense category
+        /// Add an expense category
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ExpenseCategoryDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Categories
             return requestInfo;
         }
         /// <summary>
-        /// Add expense category
+        /// Add an expense category
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

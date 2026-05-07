@@ -52,6 +52,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         CUSTOM_SUBDOMAIN,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CREATION_PERMISSIONS")]
+        #pragma warning disable CS1591
+        CREATION_PERMISSIONS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DECIMAL_FORMAT")]
         #pragma warning disable CS1591
         DECIMAL_FORMAT,
@@ -75,6 +79,14 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "FILE_IMPORT")]
         #pragma warning disable CS1591
         FILE_IMPORT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TIMESHEET_IMPORT")]
+        #pragma warning disable CS1591
+        TIMESHEET_IMPORT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "USER_IMPORT")]
+        #pragma warning disable CS1591
+        USER_IMPORT,
         #pragma warning restore CS1591
         [EnumMember(Value = "HIDE_PAGES")]
         #pragma warning disable CS1591
@@ -119,6 +131,14 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "PROJECT_TEMPLATES")]
         #pragma warning disable CS1591
         PROJECT_TEMPLATES,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "GRANT_PROJECT_MANAGER_ROLE")]
+        #pragma warning disable CS1591
+        GRANT_PROJECT_MANAGER_ROLE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PRIVATE_PROJECT_ACCESS")]
+        #pragma warning disable CS1591
+        PRIVATE_PROJECT_ACCESS,
         #pragma warning restore CS1591
         [EnumMember(Value = "QUICKBOOKS_INTEGRATION")]
         #pragma warning disable CS1591
@@ -232,6 +252,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         KIOSK_QR_CODE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "LIMITED_USERS")]
+        #pragma warning disable CS1591
+        LIMITED_USERS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "FORECASTING")]
         #pragma warning disable CS1591
         FORECASTING,
@@ -263,6 +287,42 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "SCHEDULING_FORECASTING")]
         #pragma warning disable CS1591
         SCHEDULING_FORECASTING,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SCIM")]
+        #pragma warning disable CS1591
+        SCIM,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UNLIMITED_USER_SEATS")]
+        #pragma warning disable CS1591
+        UNLIMITED_USER_SEATS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BILLABLE_HOURS")]
+        #pragma warning disable CS1591
+        BILLABLE_HOURS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROJECT_ESTIMATE")]
+        #pragma warning disable CS1591
+        PROJECT_ESTIMATE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CSV_EXPORT")]
+        #pragma warning disable CS1591
+        CSV_EXPORT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "XLSX_EXPORT")]
+        #pragma warning disable CS1591
+        XLSX_EXPORT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ONE_MONTH_RANGE_REPORTS")]
+        #pragma warning disable CS1591
+        ONE_MONTH_RANGE_REPORTS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ONE_YEAR_RANGE_REPORTS")]
+        #pragma warning disable CS1591
+        ONE_YEAR_RANGE_REPORTS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SHARED_REPORTS")]
+        #pragma warning disable CS1591
+        SHARED_REPORTS,
         #pragma warning restore CS1591
     }
 }

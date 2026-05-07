@@ -18,7 +18,7 @@ namespace ClockifyClient.Models
         public bool? AllowHalfDay { get; set; }
         /// <summary>Indicates whether policy allows negative balances.</summary>
         public bool? AllowNegativeBalance { get; set; }
-        /// <summary>Provide approval settings.</summary>
+        /// <summary>Represents approval settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.PolicyApprovalDto? Approve { get; set; }
@@ -58,7 +58,7 @@ namespace ClockifyClient.Models
         public bool? HasExpiration { get; set; }
         /// <summary>Provide icon.</summary>
         public global::ClockifyClient.Models.CreatePolicyRequestV1_icon? Icon { get; set; }
-        /// <summary>Represents name of new policy.</summary>
+        /// <summary>Represents a name of new policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

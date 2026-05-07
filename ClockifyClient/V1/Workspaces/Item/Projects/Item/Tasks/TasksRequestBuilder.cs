@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
     public partial class TasksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.projects.item.tasks.item collection</summary>
-        /// <param name="position">Represents task identifier across the system.</param>
+        /// <param name="position">Represents a task identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item.ItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item.ItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
         {
         }
         /// <summary>
-        /// Find tasks on project
+        /// Find tasks on a project
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.TaskDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Add a new task on project
+        /// Add a new task on a project
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TaskDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TaskDtoV1>(requestInfo, global::ClockifyClient.Models.TaskDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Find tasks on project
+        /// Find tasks on a project
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
             return requestInfo;
         }
         /// <summary>
-        /// Add a new task on project
+        /// Add a new task on a project
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
             return new global::ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Find tasks on project
+        /// Find tasks on a project
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TasksRequestBuilderGetQueryParameters 
@@ -201,7 +201,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks
         {
         }
         /// <summary>
-        /// Add a new task on project
+        /// Add a new task on a project
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TasksRequestBuilderPostQueryParameters 

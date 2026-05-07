@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.CustomFields
         {
         }
         /// <summary>
-        /// Get custom fields on workspace
+        /// Get custom fields on a workspace
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.CustomFieldDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace ClockifyClient.V1.Workspaces.Item.CustomFields
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create custom fields on workspace
+        /// Create custom fields on a workspace
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.CustomFieldDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace ClockifyClient.V1.Workspaces.Item.CustomFields
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.CustomFieldDtoV1>(requestInfo, global::ClockifyClient.Models.CustomFieldDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get custom fields on workspace
+        /// Get custom fields on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace ClockifyClient.V1.Workspaces.Item.CustomFields
             return requestInfo;
         }
         /// <summary>
-        /// Create custom fields on workspace
+        /// Create custom fields on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace ClockifyClient.V1.Workspaces.Item.CustomFields
             return new global::ClockifyClient.V1.Workspaces.Item.CustomFields.CustomFieldsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get custom fields on workspace
+        /// Get custom fields on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomFieldsRequestBuilderGetQueryParameters 

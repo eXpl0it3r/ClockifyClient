@@ -16,14 +16,6 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The deletedAt property</summary>
         public DateTimeOffset? DeletedAt { get; set; }
-        /// <summary>The deletionBinId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeletionBinId { get; set; }
-#nullable restore
-#else
-        public string DeletionBinId { get; set; }
-#endif
         /// <summary>The document property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,10 +24,14 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.LogBinDocumentDto_document Document { get; set; }
 #endif
-        /// <summary>The documentType property</summary>
-        public global::ClockifyClient.Models.LogBinDocumentDto_documentType? DocumentType { get; set; }
-        /// <summary>The eligibleForRestore property</summary>
-        public bool? EligibleForRestore { get; set; }
+        /// <summary>The documentCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentCode { get; set; }
+#nullable restore
+#else
+        public string DocumentCode { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,10 +66,8 @@ namespace ClockifyClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "deletedAt", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
-                { "deletionBinId", n => { DeletionBinId = n.GetStringValue(); } },
                 { "document", n => { Document = n.GetObjectValue<global::ClockifyClient.Models.LogBinDocumentDto_document>(global::ClockifyClient.Models.LogBinDocumentDto_document.CreateFromDiscriminatorValue); } },
-                { "documentType", n => { DocumentType = n.GetEnumValue<global::ClockifyClient.Models.LogBinDocumentDto_documentType>(); } },
-                { "eligibleForRestore", n => { EligibleForRestore = n.GetBoolValue(); } },
+                { "documentCode", n => { DocumentCode = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
             };
         }
@@ -85,10 +79,8 @@ namespace ClockifyClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("deletedAt", DeletedAt);
-            writer.WriteStringValue("deletionBinId", DeletionBinId);
             writer.WriteObjectValue<global::ClockifyClient.Models.LogBinDocumentDto_document>("document", Document);
-            writer.WriteEnumValue<global::ClockifyClient.Models.LogBinDocumentDto_documentType>("documentType", DocumentType);
-            writer.WriteBoolValue("eligibleForRestore", EligibleForRestore);
+            writer.WriteStringValue("documentCode", DocumentCode);
             writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }

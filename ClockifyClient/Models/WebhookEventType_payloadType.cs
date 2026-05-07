@@ -44,10 +44,6 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         NO_PAYLOAD,
         #pragma warning restore CS1591
-        [EnumMember(Value = "WORKSPACE_PAYMENT_DETAILS")]
-        #pragma warning disable CS1591
-        WORKSPACE_PAYMENT_DETAILS,
-        #pragma warning restore CS1591
         [EnumMember(Value = "DOMAIN_DETAILS")]
         #pragma warning disable CS1591
         DOMAIN_DETAILS,
@@ -147,6 +143,10 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "JIRA_DATA_CENTER_UNINSTALLED_PAYLOAD_WITH_JWT")]
         #pragma warning disable CS1591
         JIRA_DATA_CENTER_UNINSTALLED_PAYLOAD_WITH_JWT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "JIRA_PLUGIN_CONFIG_SAVE_PAYLOAD_WITH_JWT")]
+        #pragma warning disable CS1591
+        JIRA_PLUGIN_CONFIG_SAVE_PAYLOAD_WITH_JWT,
         #pragma warning restore CS1591
         [EnumMember(Value = "REMINDER_TO_START_TIMER")]
         #pragma warning disable CS1591

@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups.Item.Users
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.userGroups.item.users.item collection</summary>
-        /// <param name="position">Represents user identifier across the system.</param>
+        /// <param name="position">Represents a user identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.UserGroups.Item.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.UserGroups.Item.Users.Item.WithUserItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups.Item.Users
         {
         }
         /// <summary>
-        /// Add users to group
+        /// Add users to a group
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.UserGroupDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace ClockifyClient.V1.Workspaces.Item.UserGroups.Item.Users
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.UserGroupDtoV1>(requestInfo, global::ClockifyClient.Models.UserGroupDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add users to group
+        /// Add users to a group
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

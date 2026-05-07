@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.SharedReports.Item
         {
         }
         /// <summary>
-        /// Response depends on report type and export type. Given example is for SUMMARY report and JSON exportType. Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+        /// Response depends on report type and export type. Given example is for SUMMARY report and JSON exportType. Shared report data on FREE subscription plan is limited to a maximum interval length of one month (31 days).
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeEntrySummaryReportDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.SharedReports.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeEntrySummaryReportDto>(requestInfo, global::ClockifyClient.Models.TimeEntrySummaryReportDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Response depends on report type and export type. Given example is for SUMMARY report and JSON exportType. Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+        /// Response depends on report type and export type. Given example is for SUMMARY report and JSON exportType. Shared report data on FREE subscription plan is limited to a maximum interval length of one month (31 days).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace ClockifyClient.V1.SharedReports.Item
             return new global::ClockifyClient.V1.SharedReports.Item.SharedReportsItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Response depends on report type and export type. Given example is for SUMMARY report and JSON exportType. Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+        /// Response depends on report type and export type. Given example is for SUMMARY report and JSON exportType. Shared report data on FREE subscription plan is limited to a maximum interval length of one month (31 days).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharedReportsItemRequestBuilderGetQueryParameters 

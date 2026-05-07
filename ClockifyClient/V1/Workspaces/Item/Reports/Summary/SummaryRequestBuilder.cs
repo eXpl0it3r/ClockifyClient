@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Summary
         {
         }
         /// <summary>
-        /// Summary report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+        /// Summary report data on FREE subscription plan is limited to a maximum interval length of one month (31 days).
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeEntrySummaryReportDto"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Summary
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeEntrySummaryReportDto>(requestInfo, global::ClockifyClient.Models.TimeEntrySummaryReportDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Summary report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+        /// Summary report data on FREE subscription plan is limited to a maximum interval length of one month (31 days).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

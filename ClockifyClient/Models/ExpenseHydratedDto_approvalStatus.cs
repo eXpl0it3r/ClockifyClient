@@ -19,5 +19,17 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         UNSUBMITTED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "REJECTED")]
+        #pragma warning disable CS1591
+        REJECTED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WITHDRAWN_APPROVAL")]
+        #pragma warning disable CS1591
+        WITHDRAWN_APPROVAL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WITHDRAWN_SUBMISSION")]
+        #pragma warning disable CS1591
+        WITHDRAWN_SUBMISSION,
+        #pragma warning restore CS1591
     }
 }

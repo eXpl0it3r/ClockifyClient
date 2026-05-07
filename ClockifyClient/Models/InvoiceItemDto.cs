@@ -33,6 +33,16 @@ namespace ClockifyClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>Represents a list of imported expense ids.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExpenseIds { get; set; }
+#nullable restore
+#else
+        public List<string> ExpenseIds { get; set; }
+#endif
+        /// <summary>Represents the invoice item import type.</summary>
+        public global::ClockifyClient.Models.InvoiceItemDto_importType? ImportType { get; set; }
         /// <summary>Represents item type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,7 +55,7 @@ namespace ClockifyClient.Models
         public int? Order { get; set; }
         /// <summary>Represents item quantity.</summary>
         public long? Quantity { get; set; }
-        /// <summary>Represents a list of time entrry IDs.</summary>
+        /// <summary>Represents a list of imported time entry ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TimeEntryIds { get; set; }
@@ -83,6 +93,8 @@ namespace ClockifyClient.Models
                 { "amount", n => { Amount = n.GetLongValue(); } },
                 { "applyTaxes", n => { ApplyTaxes = n.GetObjectValue<global::ClockifyClient.Models.ApplyTaxes>(global::ClockifyClient.Models.ApplyTaxes.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "expenseIds", n => { ExpenseIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "importType", n => { ImportType = n.GetEnumValue<global::ClockifyClient.Models.InvoiceItemDto_importType>(); } },
                 { "itemType", n => { ItemType = n.GetStringValue(); } },
                 { "order", n => { Order = n.GetIntValue(); } },
                 { "quantity", n => { Quantity = n.GetLongValue(); } },
@@ -100,6 +112,8 @@ namespace ClockifyClient.Models
             writer.WriteLongValue("amount", Amount);
             writer.WriteObjectValue<global::ClockifyClient.Models.ApplyTaxes>("applyTaxes", ApplyTaxes);
             writer.WriteStringValue("description", Description);
+            writer.WriteCollectionOfPrimitiveValues<string>("expenseIds", ExpenseIds);
+            writer.WriteEnumValue<global::ClockifyClient.Models.InvoiceItemDto_importType>("importType", ImportType);
             writer.WriteStringValue("itemType", ItemType);
             writer.WriteIntValue("order", Order);
             writer.WriteLongValue("quantity", Quantity);

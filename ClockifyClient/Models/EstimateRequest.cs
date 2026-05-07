@@ -18,10 +18,10 @@ namespace ClockifyClient.Models
         /// <summary>Represents a time duration in ISO-8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ClockifyClient.Models.EstimateRequest_estimate? Estimate { get; set; }
+        public string? Estimate { get; set; }
 #nullable restore
 #else
-        public global::ClockifyClient.Models.EstimateRequest_estimate Estimate { get; set; }
+        public string Estimate { get; set; }
 #endif
         /// <summary>Represents an estimate type enum.</summary>
         public global::ClockifyClient.Models.EstimateRequest_type? Type { get; set; }
@@ -50,7 +50,7 @@ namespace ClockifyClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "estimate", n => { Estimate = n.GetObjectValue<global::ClockifyClient.Models.EstimateRequest_estimate>(global::ClockifyClient.Models.EstimateRequest_estimate.CreateFromDiscriminatorValue); } },
+                { "estimate", n => { Estimate = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::ClockifyClient.Models.EstimateRequest_type>(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace ClockifyClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::ClockifyClient.Models.EstimateRequest_estimate>("estimate", Estimate);
+            writer.WriteStringValue("estimate", Estimate);
             writer.WriteEnumValue<global::ClockifyClient.Models.EstimateRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

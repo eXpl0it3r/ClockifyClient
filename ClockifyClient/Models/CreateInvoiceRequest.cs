@@ -14,7 +14,7 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents client identifier across the system.</summary>
+        /// <summary>Represents a client identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientId { get; set; }
@@ -42,6 +42,8 @@ namespace ClockifyClient.Models
 #else
         public string Number { get; set; }
 #endif
+        /// <summary>The timeViewMode property</summary>
+        public global::ClockifyClient.Models.CreateInvoiceRequest_timeViewMode? TimeViewMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.CreateInvoiceRequest"/> and sets the default values.
         /// </summary>
@@ -72,6 +74,7 @@ namespace ClockifyClient.Models
                 { "dueDate", n => { DueDate = n.GetDateTimeOffsetValue(); } },
                 { "issuedDate", n => { IssuedDate = n.GetDateTimeOffsetValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
+                { "timeViewMode", n => { TimeViewMode = n.GetEnumValue<global::ClockifyClient.Models.CreateInvoiceRequest_timeViewMode>(); } },
             };
         }
         /// <summary>
@@ -86,6 +89,7 @@ namespace ClockifyClient.Models
             writer.WriteDateTimeOffsetValue("dueDate", DueDate);
             writer.WriteDateTimeOffsetValue("issuedDate", IssuedDate);
             writer.WriteStringValue("number", Number);
+            writer.WriteEnumValue<global::ClockifyClient.Models.CreateInvoiceRequest_timeViewMode>("timeViewMode", TimeViewMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

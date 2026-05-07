@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring.Ite
         {
         }
         /// <summary>
-        /// Delete recurring assignment
+        /// Delete a recurring assignment
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.AssignmentDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring.Ite
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Update recurring assignment
+        /// Update a recurring assignment
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.AssignmentDtoV1&gt;</returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring.Ite
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Delete recurring assignment
+        /// Delete a recurring assignment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update recurring assignment
+        /// Update a recurring assignment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -124,7 +124,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring.Ite
             return new global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring.Item.WithAssignmentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete recurring assignment
+        /// Delete a recurring assignment
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithAssignmentItemRequestBuilderDeleteQueryParameters 

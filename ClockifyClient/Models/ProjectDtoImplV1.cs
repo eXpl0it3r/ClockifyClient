@@ -50,7 +50,7 @@ namespace ClockifyClient.Models
 #else
         public string Color { get; set; }
 #endif
-        /// <summary>Represents a cost rate object.</summary>
+        /// <summary>Represents cost rate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.RateDtoV1? CostRate { get; set; }
@@ -82,7 +82,7 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.EstimateResetDto EstimateReset { get; set; }
 #endif
-        /// <summary>Represents a cost rate object.</summary>
+        /// <summary>Represents cost rate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.RateDtoV1? HourlyRate { get; set; }

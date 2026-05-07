@@ -58,7 +58,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments
             get => new global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.scheduling.assignments.item collection</summary>
-        /// <param name="position">Represents assignment identifier across the system.</param>
+        /// <param name="position">Represents an assignment identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Item.WithAssignmentItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Item.WithAssignmentItemRequestBuilder this[string position]
         {

@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users.Info
         {
         }
         /// <summary>
-        ///  Filter workspace users
+        /// Filter workspace users
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.UserDtoV1&gt;</returns>
         /// <param name="body">The request body</param>
@@ -55,7 +55,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users.Info
             return collectionResult?.AsList();
         }
         /// <summary>
-        ///  Filter workspace users
+        /// Filter workspace users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item
         {
         }
         /// <summary>
-        /// Get balance by policy
+        /// Get balances for a policy
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.BalancesWithCountDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,18 +52,18 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.BalancesWithCountDtoV1>(requestInfo, global::ClockifyClient.Models.BalancesWithCountDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update balance
+        /// Update a balance
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PatchAsync(global::ClockifyClient.Models.ChangeBalanceRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PatchAsync(global::ClockifyClient.Models.UpdateBalanceRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PatchAsync(global::ClockifyClient.Models.ChangeBalanceRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PatchAsync(global::ClockifyClient.Models.UpdateBalanceRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -71,7 +71,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get balance by policy
+        /// Get balances for a policy
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,18 +90,18 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update balance
+        /// Update a balance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.ChangeBalanceRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.UpdateBalanceRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.ChangeBalanceRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.UpdateBalanceRequestV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -120,7 +120,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item
             return new global::ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item.WithPolicyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get balance by policy
+        /// Get balances for a policy
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPolicyItemRequestBuilderGetQueryParameters 

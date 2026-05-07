@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.CustomFields.Item
         {
         }
         /// <summary>
-        /// Delete custom field
+        /// Delete a custom field
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +71,7 @@ namespace ClockifyClient.V1.Workspaces.Item.CustomFields.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.CustomFieldDtoV1>(requestInfo, global::ClockifyClient.Models.CustomFieldDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete custom field
+        /// Delete a custom field
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

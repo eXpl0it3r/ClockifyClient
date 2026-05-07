@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents a client filter object. If provided, you&apos;ll get a filtered list of invoices that matches the specified client filter.
+    /// Represents a project filter for imported items.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContainsArchivedFilterRequest : IAdditionalDataHolder, IParsable

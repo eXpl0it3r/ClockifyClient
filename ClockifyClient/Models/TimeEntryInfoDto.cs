@@ -67,7 +67,7 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Indicates whether time entry is locked or not.</summary>
         public bool? IsLocked { get; set; }
-        /// <summary>Represents project info object.</summary>
+        /// <summary>Represents a project info object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.ProjectInfoDto? Project { get; set; }
@@ -83,7 +83,7 @@ namespace ClockifyClient.Models
 #else
         public List<global::ClockifyClient.Models.TagDto> Tags { get; set; }
 #endif
-        /// <summary>Represents task info object.</summary>
+        /// <summary>Represents a project info object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.TaskInfoDto? Task { get; set; }
@@ -91,7 +91,7 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.TaskInfoDto Task { get; set; }
 #endif
-        /// <summary>The timeInterval property</summary>
+        /// <summary>Represents a time interval object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.TimeIntervalDto? TimeInterval { get; set; }

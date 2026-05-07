@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.MemberProfile.Item
         {
         }
         /// <summary>
-        /// Get member&apos;s profile
+        /// Get a member&apos;s profile
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.MemberProfileDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.MemberProfile.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.MemberProfileDtoV1>(requestInfo, global::ClockifyClient.Models.MemberProfileDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update member&apos;s profile
+        /// Update a member&apos;s profile
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.MemberProfileDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace ClockifyClient.V1.Workspaces.Item.MemberProfile.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.MemberProfileDtoV1>(requestInfo, global::ClockifyClient.Models.MemberProfileDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get member&apos;s profile
+        /// Get a member&apos;s profile
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace ClockifyClient.V1.Workspaces.Item.MemberProfile.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update member&apos;s profile
+        /// Update a member&apos;s profile
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -66,6 +66,22 @@ namespace ClockifyClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
+        /// <summary>Represents task identifier across the system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaskId { get; set; }
+#nullable restore
+#else
+        public string TaskId { get; set; }
+#endif
+        /// <summary>Represents task name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaskName { get; set; }
+#nullable restore
+#else
+        public string TaskName { get; set; }
+#endif
         /// <summary>Represents project total hours as double.</summary>
         public double? TotalHours { get; set; }
         /// <summary>Represents workspace identifier across the system.</summary>
@@ -109,6 +125,8 @@ namespace ClockifyClient.Models
                 { "projectColor", n => { ProjectColor = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "taskId", n => { TaskId = n.GetStringValue(); } },
+                { "taskName", n => { TaskName = n.GetStringValue(); } },
                 { "totalHours", n => { TotalHours = n.GetDoubleValue(); } },
                 { "workspaceId", n => { WorkspaceId = n.GetStringValue(); } },
             };
@@ -128,6 +146,8 @@ namespace ClockifyClient.Models
             writer.WriteStringValue("projectColor", ProjectColor);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("taskId", TaskId);
+            writer.WriteStringValue("taskName", TaskName);
             writer.WriteDoubleValue("totalHours", TotalHours);
             writer.WriteStringValue("workspaceId", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);

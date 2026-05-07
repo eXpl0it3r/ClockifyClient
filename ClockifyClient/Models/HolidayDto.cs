@@ -66,6 +66,14 @@ namespace ClockifyClient.Models
 #else
         public List<string> UserGroupIds { get; set; }
 #endif
+        /// <summary>Contains names of user groups that are assigned to holiday.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ClockifyClient.Models.EntityIdNameDto>? UserGroups { get; set; }
+#nullable restore
+#else
+        public List<global::ClockifyClient.Models.EntityIdNameDto> UserGroups { get; set; }
+#endif
         /// <summary>Indicates which users are included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +81,14 @@ namespace ClockifyClient.Models
 #nullable restore
 #else
         public List<string> UserIds { get; set; }
+#endif
+        /// <summary>Contains names of users that are assigned to holiday.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ClockifyClient.Models.EntityIdNameDto>? Users { get; set; }
+#nullable restore
+#else
+        public List<global::ClockifyClient.Models.EntityIdNameDto> Users { get; set; }
 #endif
         /// <summary>Represents workspace identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +131,9 @@ namespace ClockifyClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "occursAnnually", n => { OccursAnnually = n.GetBoolValue(); } },
                 { "userGroupIds", n => { UserGroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "userGroups", n => { UserGroups = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.EntityIdNameDto>(global::ClockifyClient.Models.EntityIdNameDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userIds", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.EntityIdNameDto>(global::ClockifyClient.Models.EntityIdNameDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "workspaceId", n => { WorkspaceId = n.GetStringValue(); } },
             };
         }
@@ -134,7 +152,9 @@ namespace ClockifyClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("occursAnnually", OccursAnnually);
             writer.WriteCollectionOfPrimitiveValues<string>("userGroupIds", UserGroupIds);
+            writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.EntityIdNameDto>("userGroups", UserGroups);
             writer.WriteCollectionOfPrimitiveValues<string>("userIds", UserIds);
+            writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.EntityIdNameDto>("users", Users);
             writer.WriteStringValue("workspaceId", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
         }

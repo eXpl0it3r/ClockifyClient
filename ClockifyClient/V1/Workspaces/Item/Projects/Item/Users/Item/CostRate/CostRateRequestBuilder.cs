@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Users.Item.CostRate
         {
         }
         /// <summary>
-        /// Update project user cost rate
+        /// Update project user&apos;s cost rate
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ProjectDtoImplV1"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Users.Item.CostRate
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ProjectDtoImplV1>(requestInfo, global::ClockifyClient.Models.ProjectDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update project user cost rate
+        /// Update project user&apos;s cost rate
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

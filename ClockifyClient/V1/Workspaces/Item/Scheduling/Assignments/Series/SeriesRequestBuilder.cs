@@ -16,7 +16,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Series
     public partial class SeriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.scheduling.assignments.series.item collection</summary>
-        /// <param name="position">Represents assignment identifier across the system.</param>
+        /// <param name="position">Represents an assignment identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Series.Item.WithAssignmentItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Series.Item.WithAssignmentItemRequestBuilder this[string position]
         {

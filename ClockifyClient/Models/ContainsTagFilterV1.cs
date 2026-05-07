@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents object for filtering entries by tags.
+    /// Represents an object for filtering entries by tags.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContainsTagFilterV1 : IAdditionalDataHolder, IParsable
@@ -17,7 +17,7 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If provided, you&apos;ll get result filtered by value of contained in time entry.</summary>
         public global::ClockifyClient.Models.ContainsTagFilterV1_containedInTimeentry? ContainedInTimeentry { get; set; }
-        /// <summary>Represents contains type.</summary>
+        /// <summary>Represents a contains type.</summary>
         public global::ClockifyClient.Models.ContainsTagFilterV1_contains? Contains { get; set; }
         /// <summary>Filter includes provided list of ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

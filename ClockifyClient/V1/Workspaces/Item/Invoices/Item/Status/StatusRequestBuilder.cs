@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item.Status
         {
         }
         /// <summary>
-        /// Change invoice status
+        /// Change an invoice status
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Item.Status
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change invoice status
+        /// Change an invoice status
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

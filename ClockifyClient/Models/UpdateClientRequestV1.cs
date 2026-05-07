@@ -14,7 +14,7 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents client&apos;s address.</summary>
+        /// <summary>Represents a client&apos;s address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Address { get; set; }
@@ -32,7 +32,7 @@ namespace ClockifyClient.Models
 #else
         public List<string> CcEmails { get; set; }
 #endif
-        /// <summary>Represents currency identifier across the system.</summary>
+        /// <summary>Represents a currency identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrencyId { get; set; }
@@ -40,7 +40,7 @@ namespace ClockifyClient.Models
 #else
         public string CurrencyId { get; set; }
 #endif
-        /// <summary>Represents client email.</summary>
+        /// <summary>Represents a client email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -48,7 +48,7 @@ namespace ClockifyClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>Represents client name.</summary>
+        /// <summary>Represents a client name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

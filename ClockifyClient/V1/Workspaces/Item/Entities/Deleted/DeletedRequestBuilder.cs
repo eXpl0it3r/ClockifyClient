@@ -123,7 +123,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Entities.Deleted
             [QueryParameter("start")]
             public string Start { get; set; }
 #endif
-            /// <summary>Specifies the type of document to be retrieved. Expected values are TIME_ENTRY, TIME_ENTRY_CUSTOM_FIELD_VALUE and TIME_ENTRY_RATE.This parameter can accept multiple values, and at least one option must be provided. Based on the input, the application will return results corresponding to the selected document types.</summary>
+            /// <summary>Specifies the type of document to be retrieved. Expected values are CLIENTS, PROJECTS, TAGS, TASKS, SCHEDULED_ASSIGNMENT, TIME_ENTRY, TIME_ENTRY_RATE, TIME_ENTRY_CUSTOM_FIELD_VALUE.This parameter can accept multiple values, and at least one option must be provided. Based on the input, the application will return results corresponding to the selected document types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]

@@ -26,7 +26,7 @@ namespace ClockifyClient.Models
         public bool? FixedDate { get; set; }
         /// <summary>Indicates whether the shared report is public or not</summary>
         public bool? IsPublic { get; set; }
-        /// <summary>Represents shared report&apos;s name</summary>
+        /// <summary>Represents a shared report&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

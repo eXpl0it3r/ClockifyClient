@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags
     public partial class TagsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.tags.item collection</summary>
-        /// <param name="position">Represents tag identifier across the system.</param>
+        /// <param name="position">Represents a tag identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Tags.Item.TagsItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Tags.Item.TagsItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags
         {
         }
         /// <summary>
-        /// Find tags on workspace
+        /// Find tags on a workspace
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.TagDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +86,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TagDtoV1>(requestInfo, global::ClockifyClient.Models.TagDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Find tags on workspace
+        /// Find tags on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags
             return new global::ClockifyClient.V1.Workspaces.Item.Tags.TagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Find tags on workspace
+        /// Find tags on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TagsRequestBuilderGetQueryParameters 
@@ -170,7 +170,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags
             /// <summary>Page size.</summary>
             [QueryParameter("page%2Dsize")]
             public int? PageSize { get; set; }
-            /// <summary>Represents column to be used as sorting criteria.</summary>
+            /// <summary>Represents a column to be used as sorting criteria.</summary>
             [Obsolete("This property is deprecated, use SortColumnAsGetSortColumnQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -181,10 +181,10 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags
             [QueryParameter("sort%2Dcolumn")]
             public string SortColumn { get; set; }
 #endif
-            /// <summary>Represents column to be used as sorting criteria.</summary>
+            /// <summary>Represents a column to be used as sorting criteria.</summary>
             [QueryParameter("sort%2Dcolumn")]
             public global::ClockifyClient.V1.Workspaces.Item.Tags.GetSortColumnQueryParameterType? SortColumnAsGetSortColumnQueryParameterType { get; set; }
-            /// <summary>Represents sorting mode.</summary>
+            /// <summary>Represents a sorting mode.</summary>
             [Obsolete("This property is deprecated, use SortOrderAsGetSortOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -195,7 +195,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Tags
             [QueryParameter("sort%2Dorder")]
             public string SortOrder { get; set; }
 #endif
-            /// <summary>Represents sorting mode.</summary>
+            /// <summary>Represents a sorting mode.</summary>
             [QueryParameter("sort%2Dorder")]
             public global::ClockifyClient.V1.Workspaces.Item.Tags.GetSortOrderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
             /// <summary>Flag to toggle on/off strict search mode. When set to true, search by name will only return tags whose name exactly matches the string value given for the &apos;name&apos; parameter. When set to false, results will also include tags whose name contain the string value, but could be longer than the string value itself. For example, if there is a tag with the name &apos;applications&apos;, and the search value is &apos;app&apos;, setting strict-name-search to true will not return that tag in the results, whereas setting it to false will.</summary>

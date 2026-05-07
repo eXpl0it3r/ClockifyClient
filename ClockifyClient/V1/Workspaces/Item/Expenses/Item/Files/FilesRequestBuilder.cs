@@ -16,7 +16,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Item.Files
     public partial class FilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.expenses.item.files.item collection</summary>
-        /// <param name="position">Represents file identifier across the system.</param>
+        /// <param name="position">Represents a file identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Expenses.Item.Files.Item.WithFileItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Expenses.Item.Files.Item.WithFileItemRequestBuilder this[string position]
         {

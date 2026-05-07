@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.FileNamespace.Image
         {
         }
         /// <summary>
-        /// Add photo
+        /// Add a photo
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.UploadFileResponseV1"/></returns>
         /// <param name="body">Binary request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.FileNamespace.Image
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.UploadFileResponseV1>(requestInfo, global::ClockifyClient.Models.UploadFileResponseV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add photo
+        /// Add a photo
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>

@@ -35,7 +35,7 @@ namespace ClockifyClient.Models
         public bool? Billable { get; set; }
         /// <summary>Represents a task budget estimate as long.</summary>
         public long? BudgetEstimate { get; set; }
-        /// <summary>Represents a cost rate object.</summary>
+        /// <summary>Represents cost rate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.RateDtoV1? CostRate { get; set; }
@@ -59,7 +59,7 @@ namespace ClockifyClient.Models
 #else
         public string Estimate { get; set; }
 #endif
-        /// <summary>Represents a cost rate object.</summary>
+        /// <summary>Represents cost rate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.RateDtoV1? HourlyRate { get; set; }

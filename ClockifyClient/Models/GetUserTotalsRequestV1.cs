@@ -14,13 +14,13 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents end date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+        /// <summary>Represents an end date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
         public DateTimeOffset? End { get; set; }
         /// <summary>Page number.</summary>
         public int? Page { get; set; }
         /// <summary>Page size.</summary>
         public int? PageSize { get; set; }
-        /// <summary>Represents keyword for searching users by name or email.</summary>
+        /// <summary>Represents the keyword for searching users by name or email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Search { get; set; }
@@ -28,7 +28,7 @@ namespace ClockifyClient.Models
 #else
         public string Search { get; set; }
 #endif
-        /// <summary>Represents start date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+        /// <summary>Represents a start date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
         public DateTimeOffset? Start { get; set; }
         /// <summary>Filters assignments by status.</summary>
         public global::ClockifyClient.Models.GetUserTotalsRequestV1_statusFilter? StatusFilter { get; set; }

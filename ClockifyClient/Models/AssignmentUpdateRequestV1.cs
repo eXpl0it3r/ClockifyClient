@@ -16,7 +16,7 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether assignment is billable or not.</summary>
         public bool? Billable { get; set; }
-        /// <summary>Represents end date in yyyy-MM-ddThh:mm:ssZ format.</summary>
+        /// <summary>Represents an end date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? End { get; set; }
@@ -28,7 +28,7 @@ namespace ClockifyClient.Models
         public double? HoursPerDay { get; set; }
         /// <summary>Indicates whether to include non-working days or not.</summary>
         public bool? IncludeNonWorkingDays { get; set; }
-        /// <summary>Represents assignment note.</summary>
+        /// <summary>Represents an assignment note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Note { get; set; }
@@ -46,7 +46,7 @@ namespace ClockifyClient.Models
 #else
         public string Start { get; set; }
 #endif
-        /// <summary>Represents start time in hh:mm:ss format.</summary>
+        /// <summary>Represents a start time in the hh:mm:ss format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StartTime { get; set; }

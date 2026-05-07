@@ -83,7 +83,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.WorkspaceDtoV1>(requestInfo, global::ClockifyClient.Models.WorkspaceDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update user&apos;s status
+        /// Update a user&apos;s status
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.WorkspaceDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +123,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Users.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update user&apos;s status
+        /// Update a user&apos;s status
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

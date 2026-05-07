@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Template
         {
         }
         /// <summary>
-        /// Update project template
+        /// Update a project template
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ProjectDtoImplV1"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Template
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ProjectDtoImplV1>(requestInfo, global::ClockifyClient.Models.ProjectDtoImplV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update project template
+        /// Update a project template
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

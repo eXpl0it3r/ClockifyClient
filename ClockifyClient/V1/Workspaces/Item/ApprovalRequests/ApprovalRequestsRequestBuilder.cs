@@ -31,7 +31,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests
             get => new global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.approvalRequests.item collection</summary>
-        /// <param name="position">Represents approval request identifier across the system.</param>
+        /// <param name="position">Represents an approval request identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Item.WithApprovalRequestItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Item.WithApprovalRequestItemRequestBuilder this[string position]
         {
@@ -187,7 +187,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests
             /// <summary>Represents the sorting order.</summary>
             [QueryParameter("sort%2Dorder")]
             public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.GetSortOrderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
-            /// <summary>Filters results based from the provided approval state.</summary>
+            /// <summary>Filters results based on the provided approval state.</summary>
             [Obsolete("This property is deprecated, use StatusAsGetStatusQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -198,7 +198,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests
             [QueryParameter("status")]
             public string Status { get; set; }
 #endif
-            /// <summary>Filters results based from the provided approval state.</summary>
+            /// <summary>Filters results based on the provided approval state.</summary>
             [QueryParameter("status")]
             public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.GetStatusQueryParameterType? StatusAsGetStatusQueryParameterType { get; set; }
         }

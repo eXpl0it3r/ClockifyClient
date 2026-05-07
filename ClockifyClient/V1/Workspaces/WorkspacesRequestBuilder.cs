@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces
     public partial class WorkspacesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item collection</summary>
-        /// <param name="position">Represents workspace identifier across the system.</param>
+        /// <param name="position">Represents a workspace identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.WithWorkspaceItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.WithWorkspaceItemRequestBuilder this[string position]
         {
@@ -66,7 +66,7 @@ namespace ClockifyClient.V1.Workspaces
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Add workspace
+        /// Add a workspace
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.WorkspaceDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace ClockifyClient.V1.Workspaces
             return requestInfo;
         }
         /// <summary>
-        /// Add workspace
+        /// Add a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

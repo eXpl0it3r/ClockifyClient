@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Status.InProgress
         {
         }
         /// <summary>
-        /// Get all in progress time entries on workspace
+        /// Get all in progress time entries on a workspace
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.TimeEntryWithRatesDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Status.InProgress
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Get all in progress time entries on workspace
+        /// Get all in progress time entries on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeEntries.Status.InProgress
             return new global::ClockifyClient.V1.Workspaces.Item.TimeEntries.Status.InProgress.InProgressRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all in progress time entries on workspace
+        /// Get all in progress time entries on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InProgressRequestBuilderGetQueryParameters 

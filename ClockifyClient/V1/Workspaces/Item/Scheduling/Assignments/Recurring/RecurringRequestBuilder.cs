@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring
     public partial class RecurringRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.scheduling.assignments.recurring.item collection</summary>
-        /// <param name="position">Represents assignment identifier across the system.</param>
+        /// <param name="position">Represents an assignment identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring.Item.WithAssignmentItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring.Item.WithAssignmentItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring
         {
         }
         /// <summary>
-        /// Create recurring assignment
+        /// Create a recurring assignment
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.AssignmentDtoV1&gt;</returns>
         /// <param name="body">The request body</param>
@@ -68,7 +68,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create recurring assignment
+        /// Create a recurring assignment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

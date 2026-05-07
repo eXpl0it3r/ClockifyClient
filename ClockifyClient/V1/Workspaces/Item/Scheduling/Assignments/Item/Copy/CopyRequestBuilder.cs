@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Item.Copy
         {
         }
         /// <summary>
-        /// Copy scheduled assignment
+        /// Copy a scheduled assignment
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.AssignmentDtoV1&gt;</returns>
         /// <param name="body">The request body</param>
@@ -55,7 +55,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Item.Copy
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Copy scheduled assignment
+        /// Copy a scheduled assignment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

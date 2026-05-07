@@ -31,7 +31,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices
             get => new global::ClockifyClient.V1.Workspaces.Item.Invoices.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.invoices.item collection</summary>
-        /// <param name="position">Represents invoice identifier across the system.</param>
+        /// <param name="position">Represents an invoice identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Invoices.Item.WithInvoiceItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Invoices.Item.WithInvoiceItemRequestBuilder this[string position]
         {
@@ -59,7 +59,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices
         {
         }
         /// <summary>
-        /// Get all invoices on workspace
+        /// Get all invoices on a workspace
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.InvoicesListDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.InvoicesListDtoV1>(requestInfo, global::ClockifyClient.Models.InvoicesListDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add invoice
+        /// Add an invoice
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.CreateInvoiceDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -97,7 +97,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.CreateInvoiceDtoV1>(requestInfo, global::ClockifyClient.Models.CreateInvoiceDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all invoices on workspace
+        /// Get all invoices on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices
             return requestInfo;
         }
         /// <summary>
-        /// Add invoice
+        /// Add an invoice
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +147,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices
             return new global::ClockifyClient.V1.Workspaces.Item.Invoices.InvoicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all invoices on workspace
+        /// Get all invoices on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InvoicesRequestBuilderGetQueryParameters 

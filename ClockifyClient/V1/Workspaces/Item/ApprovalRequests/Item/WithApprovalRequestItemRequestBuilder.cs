@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Item
         {
         }
         /// <summary>
-        /// Update approval request
+        /// Update an approval request
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ApprovalRequestDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ApprovalRequestDtoV1>(requestInfo, global::ClockifyClient.Models.ApprovalRequestDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update approval request
+        /// Update an approval request
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

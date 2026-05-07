@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ResubmitEntriesForA
         {
         }
         /// <summary>
-        /// Re-submit rejected/withdrawn entries/expenses for approval
+        /// Submit non pending/approved entries/expenses for approval to an existing approval request
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ApprovalRequestDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ResubmitEntriesForA
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ApprovalRequestDtoV1>(requestInfo, global::ClockifyClient.Models.ApprovalRequestDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Re-submit rejected/withdrawn entries/expenses for approval
+        /// Submit non pending/approved entries/expenses for approval to an existing approval request
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

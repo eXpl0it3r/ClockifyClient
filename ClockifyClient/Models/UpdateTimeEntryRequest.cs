@@ -34,7 +34,7 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Represents an end date in yyyy-MM-ddThh:mm:ssZ format.</summary>
         public DateTimeOffset? End { get; set; }
-        /// <summary>Represents project identifier across the system.</summary>
+        /// <summary>Represents a project identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -52,7 +52,7 @@ namespace ClockifyClient.Models
 #else
         public List<string> TagIds { get; set; }
 #endif
-        /// <summary>Represents task identifier across the system.</summary>
+        /// <summary>Represents a task identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaskId { get; set; }

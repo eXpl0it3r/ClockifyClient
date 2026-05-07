@@ -17,7 +17,7 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether expense is billable or not.</summary>
         public bool? Billable { get; set; }
-        /// <summary>Represents expense category object.</summary>
+        /// <summary>Represents an expense category object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.ExpenseCategoryDto? Category { get; set; }
@@ -69,7 +69,7 @@ namespace ClockifyClient.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>Represents project info object.</summary>
+        /// <summary>Represents a project info object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.ProjectInfoDto? Project { get; set; }
@@ -79,7 +79,7 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Represents expense quantity as double data type.</summary>
         public double? Quantity { get; set; }
-        /// <summary>Represents task info object.</summary>
+        /// <summary>Represents a project info object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.TaskInfoDto? Task { get; set; }

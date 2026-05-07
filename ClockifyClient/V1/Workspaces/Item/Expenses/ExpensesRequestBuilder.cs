@@ -25,7 +25,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses
             get => new global::ClockifyClient.V1.Workspaces.Item.Expenses.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.expenses.item collection</summary>
-        /// <param name="position">Represents expense identifier across the system.</param>
+        /// <param name="position">Represents an expense identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Expenses.Item.WithExpenseItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Expenses.Item.WithExpenseItemRequestBuilder this[string position]
         {
@@ -53,7 +53,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses
         {
         }
         /// <summary>
-        /// Get all expenses on workspace
+        /// Get all expenses on a workspace
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ExpensesAndTotalsDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ExpensesAndTotalsDtoV1>(requestInfo, global::ClockifyClient.Models.ExpensesAndTotalsDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create expense
+        /// Create an expense
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ExpenseDtoV1"/></returns>
         /// <param name="body">Binary request body</param>
@@ -91,7 +91,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ExpenseDtoV1>(requestInfo, global::ClockifyClient.Models.ExpenseDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all expenses on workspace
+        /// Get all expenses on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses
             return requestInfo;
         }
         /// <summary>
-        /// Create expense
+        /// Create an expense
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>
@@ -141,7 +141,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses
             return new global::ClockifyClient.V1.Workspaces.Item.Expenses.ExpensesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all expenses on workspace
+        /// Get all expenses on a workspace
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExpensesRequestBuilderGetQueryParameters 

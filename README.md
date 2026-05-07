@@ -114,6 +114,29 @@ kiota generate --language CSharp --openapi clockify-openapi.json --class-name Cl
 
 The OpenAPI specification provided by Clockify doesn't work out of the box with Kiota and requires some modifications.
 
+#### Fix Cyclic Dependency
+
+Remove a cyclic dependency, by deleting the self-reference from
+
+```json
+"FeaturePlan": {
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "#/components/schemas/FeaturePlan"
+    }
+  ],
+  ...
+```
+
+to
+
+```json
+"FeaturePlan": {
+  "type": "object",
+  ...
+```
+
 #### Fixing Enum Types
 
 Replace the following part of the specification
@@ -144,6 +167,8 @@ with this part instead
     "example": "[\"PROJECT\", \"TEAM\", \"REPORTS\"]"
 },
 ```
+
+Remove the (outer) default property value for `ImportTimeEntriesAndExpensesRequestV1.expenseFieldsForDetailedGroup`.
 
 #### Fixing Media Types
 

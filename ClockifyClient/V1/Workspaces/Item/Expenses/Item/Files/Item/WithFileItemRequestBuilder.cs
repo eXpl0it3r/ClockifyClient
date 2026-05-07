@@ -33,7 +33,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Item.Files.Item
         {
         }
         /// <summary>
-        /// Download receipt
+        /// Download a receipt
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Item.Files.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Download receipt
+        /// Download a receipt
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

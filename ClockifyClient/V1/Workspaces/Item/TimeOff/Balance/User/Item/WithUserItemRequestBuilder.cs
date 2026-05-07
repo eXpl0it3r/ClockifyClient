@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.User.Item
         {
         }
         /// <summary>
-        /// Get balance by user
+        /// Get balance for a user
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.BalancesWithCountDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.User.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.BalancesWithCountDtoV1>(requestInfo, global::ClockifyClient.Models.BalancesWithCountDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get balance by user
+        /// Get balance for a user
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,17 +80,31 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.User.Item
             return new global::ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.User.Item.WithUserItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get balance by user
+        /// Get balance for a user
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUserItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Page number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("page")]
-            public int? Page { get; set; }
+            public string? Page { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page")]
+            public string Page { get; set; }
+#endif
             /// <summary>Page size.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("page%2Dsize")]
-            public int? PageSize { get; set; }
+            public string? PageSize { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page%2Dsize")]
+            public string PageSize { get; set; }
+#endif
             /// <summary>Sort result based on given criteria</summary>
             [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

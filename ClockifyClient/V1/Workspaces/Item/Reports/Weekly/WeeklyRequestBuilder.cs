@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Weekly
         {
         }
         /// <summary>
-        /// Weekly report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+        /// Weekly report data on FREE subscription plan is limited to a maximum interval length of one month (31 days).
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeEntryWeeklyReportDto"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Weekly
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeEntryWeeklyReportDto>(requestInfo, global::ClockifyClient.Models.TimeEntryWeeklyReportDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Weekly report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+        /// Weekly report data on FREE subscription plan is limited to a maximum interval length of one month (31 days).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

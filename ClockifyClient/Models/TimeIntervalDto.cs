@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace ClockifyClient.Models
 {
+    /// <summary>
+    /// Represents a time interval object.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class TimeIntervalDto : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -33,10 +34,10 @@ namespace ClockifyClient.Models
         /// <summary>The timeZone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ClockifyClient.Models.TimeIntervalDto_timeZone? TimeZone { get; set; }
+        public string? TimeZone { get; set; }
 #nullable restore
 #else
-        public global::ClockifyClient.Models.TimeIntervalDto_timeZone TimeZone { get; set; }
+        public string TimeZone { get; set; }
 #endif
         /// <summary>The zonedEnd property</summary>
         public DateTimeOffset? ZonedEnd { get; set; }
@@ -72,7 +73,7 @@ namespace ClockifyClient.Models
                 { "offsetEnd", n => { OffsetEnd = n.GetIntValue(); } },
                 { "offsetStart", n => { OffsetStart = n.GetIntValue(); } },
                 { "start", n => { Start = n.GetDateTimeOffsetValue(); } },
-                { "timeZone", n => { TimeZone = n.GetObjectValue<global::ClockifyClient.Models.TimeIntervalDto_timeZone>(global::ClockifyClient.Models.TimeIntervalDto_timeZone.CreateFromDiscriminatorValue); } },
+                { "timeZone", n => { TimeZone = n.GetStringValue(); } },
                 { "zonedEnd", n => { ZonedEnd = n.GetDateTimeOffsetValue(); } },
                 { "zonedStart", n => { ZonedStart = n.GetDateTimeOffsetValue(); } },
             };
@@ -89,7 +90,7 @@ namespace ClockifyClient.Models
             writer.WriteIntValue("offsetEnd", OffsetEnd);
             writer.WriteIntValue("offsetStart", OffsetStart);
             writer.WriteDateTimeOffsetValue("start", Start);
-            writer.WriteObjectValue<global::ClockifyClient.Models.TimeIntervalDto_timeZone>("timeZone", TimeZone);
+            writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteDateTimeOffsetValue("zonedEnd", ZonedEnd);
             writer.WriteDateTimeOffsetValue("zonedStart", ZonedStart);
             writer.WriteAdditionalData(AdditionalData);

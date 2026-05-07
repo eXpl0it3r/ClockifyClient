@@ -93,6 +93,8 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUESTED? TIMEOFFREQUESTED { get; set; }
         /// <summary>The TIME_OFF_REQUEST_REJECTED property</summary>
         public global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_REJECTED? TIMEOFFREQUESTREJECTED { get; set; }
+        /// <summary>The TIME_OFF_REQUEST_STARTED property</summary>
+        public global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_STARTED? TIMEOFFREQUESTSTARTED { get; set; }
         /// <summary>The TIME_OFF_REQUEST_UPDATED property</summary>
         public global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_UPDATED? TIMEOFFREQUESTUPDATED { get; set; }
         /// <summary>The TIME_OFF_REQUEST_WITHDRAWN property</summary>
@@ -191,6 +193,7 @@ namespace ClockifyClient.Models
                 { "TIME_OFF_REQUEST_APPROVED", n => { TIMEOFFREQUESTAPPROVED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_APPROVED>(); } },
                 { "TIME_OFF_REQUESTED", n => { TIMEOFFREQUESTED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUESTED>(); } },
                 { "TIME_OFF_REQUEST_REJECTED", n => { TIMEOFFREQUESTREJECTED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_REJECTED>(); } },
+                { "TIME_OFF_REQUEST_STARTED", n => { TIMEOFFREQUESTSTARTED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_STARTED>(); } },
                 { "TIME_OFF_REQUEST_UPDATED", n => { TIMEOFFREQUESTUPDATED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_UPDATED>(); } },
                 { "TIME_OFF_REQUEST_WITHDRAWN", n => { TIMEOFFREQUESTWITHDRAWN = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_WITHDRAWN>(); } },
                 { "TIMER_STOPPED", n => { TIMERSTOPPED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_TIMER_STOPPED>(); } },
@@ -253,6 +256,7 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_APPROVED>("TIME_OFF_REQUEST_APPROVED", TIMEOFFREQUESTAPPROVED);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUESTED>("TIME_OFF_REQUESTED", TIMEOFFREQUESTED);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_REJECTED>("TIME_OFF_REQUEST_REJECTED", TIMEOFFREQUESTREJECTED);
+            writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_STARTED>("TIME_OFF_REQUEST_STARTED", TIMEOFFREQUESTSTARTED);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_UPDATED>("TIME_OFF_REQUEST_UPDATED", TIMEOFFREQUESTUPDATED);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_TIME_OFF_REQUEST_WITHDRAWN>("TIME_OFF_REQUEST_WITHDRAWN", TIMEOFFREQUESTWITHDRAWN);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_TIMER_STOPPED>("TIMER_STOPPED", TIMERSTOPPED);

@@ -35,21 +35,20 @@ namespace ClockifyClient.V1.Workspaces.Item.Entities.Created
         /// <summary>
         /// Retrieves records from the database collection that were created within a specified date range.  The date range is determined by two parameters: start and end.  
         /// </summary>
-        /// <returns>A List&lt;string&gt;</returns>
+        /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<string>?> GetAsync(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Entities.Created.CreatedRequestBuilder.CreatedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string?> GetAsync(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Entities.Created.CreatedRequestBuilder.CreatedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<string>> GetAsync(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Entities.Created.CreatedRequestBuilder.CreatedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string> GetAsync(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Entities.Created.CreatedRequestBuilder.CreatedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves records from the database collection that were created within a specified date range.  The date range is determined by two parameters: start and end.  
@@ -123,7 +122,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Entities.Created
             [QueryParameter("start")]
             public string Start { get; set; }
 #endif
-            /// <summary>Specifies the type of document to be retrieved. Expected values are TIME_ENTRY, TIME_ENTRY_CUSTOM_FIELD_VALUE and TIME_ENTRY_RATE.This parameter can accept multiple values, and at least one option must be provided. Based on the input, the application will return results corresponding to the selected document types.</summary>
+            /// <summary>Specifies the type of document to be retrieved. Expected values are CLIENTS, PROJECTS, TAGS, TASKS, SCHEDULED_ASSIGNMENT, TIME_ENTRY, TIME_ENTRY_RATE, TIME_ENTRY_CUSTOM_FIELD_VALUE.This parameter can accept multiple values, and at least one option must be provided. Based on the input, the application will return results corresponding to the selected document types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]

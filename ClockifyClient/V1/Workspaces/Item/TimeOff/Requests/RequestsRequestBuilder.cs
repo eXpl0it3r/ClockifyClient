@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Requests
         {
         }
         /// <summary>
-        /// Get all time off requests on workspace
+        /// Get all time off requests on a workspace
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TimeOffRequestsWithCountV1Dto"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Requests
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TimeOffRequestsWithCountV1Dto>(requestInfo, global::ClockifyClient.Models.TimeOffRequestsWithCountV1Dto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all time off requests on workspace
+        /// Get all time off requests on a workspace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

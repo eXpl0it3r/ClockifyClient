@@ -19,7 +19,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields
     public partial class CustomFieldsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.projects.item.customFields.item collection</summary>
-        /// <param name="position">Represents custom field identifier across the system.</param>
+        /// <param name="position">Represents a custom field identifier across the system.</param>
         /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields.Item.WithCustomFieldItemRequestBuilder"/></returns>
         public global::ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields.Item.WithCustomFieldItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields
         {
         }
         /// <summary>
-        /// Get custom fields on project
+        /// Get custom fields on a project
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.CustomFieldDtoV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Get custom fields on project
+        /// Get custom fields on a project
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,7 +94,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields
             return new global::ClockifyClient.V1.Workspaces.Item.Projects.Item.CustomFields.CustomFieldsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get custom fields on project
+        /// Get custom fields on a project
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomFieldsRequestBuilderGetQueryParameters 

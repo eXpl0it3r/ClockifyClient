@@ -50,7 +50,7 @@ namespace ClockifyClient.Models
 #else
         public string Note { get; set; }
 #endif
-        /// <summary>Represents a date range object.</summary>
+        /// <summary>Represents date range object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.DateRangeDto? Period { get; set; }
@@ -93,6 +93,22 @@ namespace ClockifyClient.Models
 #nullable restore
 #else
         public string StartTime { get; set; }
+#endif
+        /// <summary>Represents task identifier across the system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaskId { get; set; }
+#nullable restore
+#else
+        public string TaskId { get; set; }
+#endif
+        /// <summary>Represents task name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaskName { get; set; }
+#nullable restore
+#else
+        public string TaskName { get; set; }
 #endif
         /// <summary>Represents user identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,6 +172,8 @@ namespace ClockifyClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "startTime", n => { StartTime = n.GetStringValue(); } },
+                { "taskId", n => { TaskId = n.GetStringValue(); } },
+                { "taskName", n => { TaskName = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
                 { "workspaceId", n => { WorkspaceId = n.GetStringValue(); } },
@@ -181,6 +199,8 @@ namespace ClockifyClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("startTime", StartTime);
+            writer.WriteStringValue("taskId", TaskId);
+            writer.WriteStringValue("taskName", TaskName);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userName", UserName);
             writer.WriteStringValue("workspaceId", WorkspaceId);

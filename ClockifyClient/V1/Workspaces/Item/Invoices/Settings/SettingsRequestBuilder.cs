@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Settings
         {
         }
         /// <summary>
-        /// Get invoice in another language
+        /// Get an invoice in another language
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.InvoiceSettingsDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Settings
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.InvoiceSettingsDtoV1>(requestInfo, global::ClockifyClient.Models.InvoiceSettingsDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change invoice language
+        /// Change an invoice language
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Settings
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get invoice in another language
+        /// Get an invoice in another language
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Settings
             return requestInfo;
         }
         /// <summary>
-        /// Change invoice language
+        /// Change an invoice language
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

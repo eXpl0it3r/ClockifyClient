@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item.HourlyRate
         {
         }
         /// <summary>
-        /// Update task billable rate
+        /// Update a task&apos;s billable rate
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.TaskDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Projects.Item.Tasks.Item.HourlyRate
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.TaskDtoV1>(requestInfo, global::ClockifyClient.Models.TaskDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update task billable rate
+        /// Update a task&apos;s billable rate
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

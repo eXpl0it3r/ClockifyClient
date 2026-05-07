@@ -40,7 +40,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Categories.Item
         {
         }
         /// <summary>
-        /// Delete expense category
+        /// Delete an expense category
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +57,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Categories.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update expense category
+        /// Update an expense category
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.ExpenseCategoryDtoV1"/></returns>
         /// <param name="body">The request body</param>
@@ -77,7 +77,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Categories.Item
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.ExpenseCategoryDtoV1>(requestInfo, global::ClockifyClient.Models.ExpenseCategoryDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete expense category
+        /// Delete an expense category
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Expenses.Categories.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update expense category
+        /// Update an expense category
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
