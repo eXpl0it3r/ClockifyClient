@@ -95,6 +95,22 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         APPROVAL,
         #pragma warning restore CS1591
+        [EnumMember(Value = "APPROVAL_SUBMISSION_DATE")]
+        #pragma warning disable CS1591
+        APPROVAL_SUBMISSION_DATE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "APPROVAL_SUBMISSION_TIME")]
+        #pragma warning disable CS1591
+        APPROVAL_SUBMISSION_TIME,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "APPROVAL_DATE")]
+        #pragma warning disable CS1591
+        APPROVAL_DATE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "APPROVAL_TIME")]
+        #pragma warning disable CS1591
+        APPROVAL_TIME,
+        #pragma warning restore CS1591
         [EnumMember(Value = "BAR_CHART")]
         #pragma warning disable CS1591
         BAR_CHART,

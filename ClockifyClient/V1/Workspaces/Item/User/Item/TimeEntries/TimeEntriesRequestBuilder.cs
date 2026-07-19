@@ -35,7 +35,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeEntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries?time-entry-ids={time%2Dentry%2Dids}{&description*,end*,from%2Dentry*,get%2Dweek%2Dbefore*,hydrated*,in%2Dprogress*,page*,page%2Dsize*,project*,project%2Drequired*,start*,tags*,task*,task%2Drequired*}", pathParameters)
+        public TimeEntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?description*,end*,from%2Dentry*,get%2Dweek%2Dbefore*,hydrated*,in%2Dprogress*,page*,page%2Dsize*,project*,project%2Drequired*,start*,tags*,task*,task%2Drequired*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeEntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries?time-entry-ids={time%2Dentry%2Dids}{&description*,end*,from%2Dentry*,get%2Dweek%2Dbefore*,hydrated*,in%2Dprogress*,page*,page%2Dsize*,project*,project%2Drequired*,start*,tags*,task*,task%2Drequired*}", rawUrl)
+        public TimeEntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?description*,end*,from%2Dentry*,get%2Dweek%2Dbefore*,hydrated*,in%2Dprogress*,page*,page%2Dsize*,project*,project%2Drequired*,start*,tags*,task*,task%2Drequired*}", rawUrl)
         {
         }
         /// <summary>
@@ -178,7 +178,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.TimeEntriesRequestBuilder.TimeEntriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?description*,end*,get%2Dweek%2Dbefore*,hydrated*,in%2Dprogress*,page*,page%2Dsize*,project*,project%2Drequired*,start*,tags*,task*,task%2Drequired*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -199,7 +199,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -221,7 +221,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?from%2Dentry*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -243,7 +243,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?hydrated*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

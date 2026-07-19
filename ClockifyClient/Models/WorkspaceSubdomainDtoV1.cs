@@ -31,6 +31,7 @@ namespace ClockifyClient.Models
         public WorkspaceSubdomainDtoV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

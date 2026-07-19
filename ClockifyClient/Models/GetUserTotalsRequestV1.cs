@@ -54,6 +54,8 @@ namespace ClockifyClient.Models
         public GetUserTotalsRequestV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Page = 1;
+            PageSize = 50;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

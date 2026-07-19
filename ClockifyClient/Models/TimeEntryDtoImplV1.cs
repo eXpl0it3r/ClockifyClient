@@ -106,6 +106,8 @@ namespace ClockifyClient.Models
         public TimeEntryDtoImplV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Billable = false;
+            IsLocked = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -90,6 +90,9 @@ namespace ClockifyClient.Models
         public HolidayDtoV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutomaticTimeEntryCreation = false;
+            EveryoneIncludingNew = false;
+            OccursAnnually = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring
         {
         }
         /// <summary>
-        /// Create a recurring assignment
+        /// Create assignment
         /// </summary>
         /// <returns>A List&lt;global::ClockifyClient.Models.AssignmentDtoV1&gt;</returns>
         /// <param name="body">The request body</param>
@@ -68,7 +68,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Recurring
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a recurring assignment
+        /// Create assignment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -72,6 +72,8 @@ namespace ClockifyClient.Models
         public CreateHolidayRequestV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            EveryoneIncludingNew = false;
+            OccursAnnually = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

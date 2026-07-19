@@ -33,6 +33,12 @@ namespace ClockifyClient.Models
         public InvoiceExportFieldsRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            ItemType = false;
+            Quantity = false;
+            Rtl = false;
+            Tax = false;
+            Tax2 = false;
+            UnitPrice = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

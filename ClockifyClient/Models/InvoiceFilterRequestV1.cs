@@ -82,6 +82,9 @@ namespace ClockifyClient.Models
         public InvoiceFilterRequestV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Page = 1;
+            PageSize = 50;
+            StrictSearch = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

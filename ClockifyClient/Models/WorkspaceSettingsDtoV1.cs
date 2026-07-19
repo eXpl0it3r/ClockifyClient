@@ -154,6 +154,27 @@ namespace ClockifyClient.Models
         public WorkspaceSettingsDtoV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            ActiveBillableHours = false;
+            CanSeeTimeSheet = false;
+            CanSeeTracker = false;
+            DefaultBillableProjects = false;
+            ForceDescription = false;
+            ForceProjects = false;
+            ForceTags = false;
+            ForceTasks = false;
+            MultiFactorEnabled = false;
+            OnlyAdminsCanChangeBillableStatus = false;
+            OnlyAdminsCreateProject = false;
+            OnlyAdminsCreateTag = false;
+            OnlyAdminsCreateTask = false;
+            OnlyAdminsSeeAllTimeEntries = false;
+            OnlyAdminsSeeBillableRates = false;
+            OnlyAdminsSeeDashboard = false;
+            OnlyAdminsSeePublicProjectsEntries = false;
+            ProjectFavorites = false;
+            ProjectPickerSpecialFilter = false;
+            TimeRoundingInReports = false;
+            TrackTimeDownToSecond = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

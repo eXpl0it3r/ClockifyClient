@@ -108,6 +108,9 @@ namespace ClockifyClient.Models
         public AssignmentDtoV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Billable = false;
+            IncludeNonWorkingDays = false;
+            Published = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,6 +12,7 @@ using ClockifyClient.V1.Workspaces.Item.Expenses;
 using ClockifyClient.V1.Workspaces.Item.Holidays;
 using ClockifyClient.V1.Workspaces.Item.HourlyRate;
 using ClockifyClient.V1.Workspaces.Item.Invoices;
+using ClockifyClient.V1.Workspaces.Item.LimitedUsers;
 using ClockifyClient.V1.Workspaces.Item.MemberProfile;
 using ClockifyClient.V1.Workspaces.Item.Projects;
 using ClockifyClient.V1.Workspaces.Item.Reports;
@@ -95,6 +96,11 @@ namespace ClockifyClient.V1.Workspaces.Item
         public global::ClockifyClient.V1.Workspaces.Item.Invoices.InvoicesRequestBuilder Invoices
         {
             get => new global::ClockifyClient.V1.Workspaces.Item.Invoices.InvoicesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The limitedUsers property</summary>
+        public global::ClockifyClient.V1.Workspaces.Item.LimitedUsers.LimitedUsersRequestBuilder LimitedUsers
+        {
+            get => new global::ClockifyClient.V1.Workspaces.Item.LimitedUsers.LimitedUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The memberProfile property</summary>
         public global::ClockifyClient.V1.Workspaces.Item.MemberProfile.MemberProfileRequestBuilder MemberProfile

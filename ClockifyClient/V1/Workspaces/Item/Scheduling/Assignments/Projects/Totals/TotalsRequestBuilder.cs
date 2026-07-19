@@ -35,7 +35,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Tota
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TotalsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/scheduling/assignments/projects/totals?end={end}&start={start}{&page*,page%2Dsize*,search*}", pathParameters)
+        public TotalsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/scheduling/assignments/projects/totals{?page*,page%2Dsize*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Tota
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TotalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/scheduling/assignments/projects/totals?end={end}&start={start}{&page*,page%2Dsize*,search*}", rawUrl)
+        public TotalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/scheduling/assignments/projects/totals{?page*,page%2Dsize*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Tota
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Totals.TotalsRequestBuilder.TotalsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/workspaces/{workspaceId}/scheduling/assignments/projects/totals?end={end}&start={start}{&page*,page%2Dsize*,search*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -123,7 +123,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Scheduling.Assignments.Projects.Tota
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/v1/workspaces/{workspaceId}/scheduling/assignments/projects/totals", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

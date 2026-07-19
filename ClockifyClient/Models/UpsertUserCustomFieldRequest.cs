@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents a list of upsert user custom field objects.
+    /// Represents a list of upsert user custom field request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpsertUserCustomFieldRequest : IAdditionalDataHolder, IParsable

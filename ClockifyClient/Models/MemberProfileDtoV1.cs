@@ -70,6 +70,8 @@ namespace ClockifyClient.Models
         public MemberProfileDtoV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            HasPassword = false;
+            HasPendingApprovalRequest = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

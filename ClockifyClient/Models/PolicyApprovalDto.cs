@@ -35,6 +35,9 @@ namespace ClockifyClient.Models
         public PolicyApprovalDto()
         {
             AdditionalData = new Dictionary<string, object>();
+            RequiresApproval = false;
+            SpecificMembers = false;
+            TeamManagers = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

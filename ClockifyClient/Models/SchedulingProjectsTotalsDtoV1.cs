@@ -98,6 +98,8 @@ namespace ClockifyClient.Models
         public SchedulingProjectsTotalsDtoV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            ProjectArchived = false;
+            ProjectBillable = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -22,6 +22,7 @@ namespace ClockifyClient.Models
         public PatchProjectTemplateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsTemplate = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

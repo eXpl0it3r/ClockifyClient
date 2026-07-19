@@ -252,6 +252,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         KIOSK_QR_CODE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "KIOSK_PHOTO_CAPTURE")]
+        #pragma warning disable CS1591
+        KIOSK_PHOTO_CAPTURE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "LIMITED_USERS")]
         #pragma warning disable CS1591
         LIMITED_USERS,
@@ -267,6 +271,14 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "ATTENDANCE_REPORT")]
         #pragma warning disable CS1591
         ATTENDANCE_REPORT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEEKLY_OVERTIME_CALCULATION_PERIOD")]
+        #pragma warning disable CS1591
+        WEEKLY_OVERTIME_CALCULATION_PERIOD,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MONTHLY_OVERTIME_CALCULATION_PERIOD")]
+        #pragma warning disable CS1591
+        MONTHLY_OVERTIME_CALCULATION_PERIOD,
         #pragma warning restore CS1591
         [EnumMember(Value = "WORKSPACE_TRANSFER")]
         #pragma warning disable CS1591

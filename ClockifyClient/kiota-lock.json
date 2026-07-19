@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "8FBC3918F8F52E7CD8BA48ECDA0C378BD6C615B8C3E060C4E5658CF33523F34C5301B7B4BD5172B8A0E150D7DFA01596C3B28EA81B96B6016DC5AD62E717CF60",
+  "descriptionHash": "361C5B0542ED7018A2838D448C6A153BDCFCCF4704710B8C6338D9AEC93D07F685975B7014B20152ED63E6B572C7229F105B247C2F2A4CBBD3F9B301ECBB712E",
   "descriptionLocation": "../clockify-openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.1",
+  "kiotaVersion": "1.34.1",
   "clientClassName": "ClockifyApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "ClockifyClient",
@@ -27,5 +27,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

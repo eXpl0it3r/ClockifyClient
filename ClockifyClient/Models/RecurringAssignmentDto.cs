@@ -33,6 +33,7 @@ namespace ClockifyClient.Models
         public RecurringAssignmentDto()
         {
             AdditionalData = new Dictionary<string, object>();
+            Repeat = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

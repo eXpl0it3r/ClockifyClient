@@ -30,6 +30,7 @@ namespace ClockifyClient.Models
         public UpdateTagRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Archived = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

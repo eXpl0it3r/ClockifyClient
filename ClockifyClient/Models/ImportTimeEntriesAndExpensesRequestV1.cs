@@ -76,6 +76,8 @@ namespace ClockifyClient.Models
             AdditionalData = new Dictionary<string, object>();
             ExpensesGroupBy = global::ClockifyClient.Models.ImportTimeEntriesAndExpensesRequestV1_expensesGroupBy.PROJECT;
             ExpensesGroupType = global::ClockifyClient.Models.ImportTimeEntriesAndExpensesRequestV1_expensesGroupType.DETAILED;
+            ImportExpenses = false;
+            RoundTimeEntryDuration = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

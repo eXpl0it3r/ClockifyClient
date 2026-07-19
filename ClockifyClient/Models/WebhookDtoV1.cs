@@ -98,6 +98,9 @@ namespace ClockifyClient.Models
         public WebhookDtoV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            DeliveryEnabled = false;
+            Enabled = false;
+            PlanEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

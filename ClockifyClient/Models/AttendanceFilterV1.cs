@@ -15,6 +15,14 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The balanceFilters property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ClockifyClient.Models.CompareBalanceFilter>? BalanceFilters { get; set; }
+#nullable restore
+#else
+        public List<global::ClockifyClient.Models.CompareBalanceFilter> BalanceFilters { get; set; }
+#endif
         /// <summary>The breakFilters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +46,14 @@ namespace ClockifyClient.Models
 #nullable restore
 #else
         public List<global::ClockifyClient.Models.CompareEndFilter> EndFilters { get; set; }
+#endif
+        /// <summary>The groups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Groups { get; set; }
+#nullable restore
+#else
+        public List<string> Groups { get; set; }
 #endif
         /// <summary>If set to true, report will include time off hours.</summary>
         public bool? HasTimeOff { get; set; }
@@ -63,6 +79,14 @@ namespace ClockifyClient.Models
 #else
         public List<global::ClockifyClient.Models.CompareStartFilter> StartFilters { get; set; }
 #endif
+        /// <summary>The undertimeFilters property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ClockifyClient.Models.CompareUndertimeFilter>? UndertimeFilters { get; set; }
+#nullable restore
+#else
+        public List<global::ClockifyClient.Models.CompareUndertimeFilter> UndertimeFilters { get; set; }
+#endif
         /// <summary>The workFilters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +101,7 @@ namespace ClockifyClient.Models
         public AttendanceFilterV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Page = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -96,15 +121,18 @@ namespace ClockifyClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "balanceFilters", n => { BalanceFilters = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.CompareBalanceFilter>(global::ClockifyClient.Models.CompareBalanceFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "breakFilters", n => { BreakFilters = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.CompareBreakFilter>(global::ClockifyClient.Models.CompareBreakFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "capacityFilters", n => { CapacityFilters = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.CompareCapacityFilter>(global::ClockifyClient.Models.CompareCapacityFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "endFilters", n => { EndFilters = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.CompareEndFilter>(global::ClockifyClient.Models.CompareEndFilter.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "hasTimeOff", n => { HasTimeOff = n.GetBoolValue(); } },
                 { "overtimeFilters", n => { OvertimeFilters = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.CompareOvertimeFilter>(global::ClockifyClient.Models.CompareOvertimeFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "pageSize", n => { PageSize = n.GetIntValue(); } },
                 { "sortColumn", n => { SortColumn = n.GetEnumValue<global::ClockifyClient.Models.AttendanceFilterV1_sortColumn>(); } },
                 { "startFilters", n => { StartFilters = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.CompareStartFilter>(global::ClockifyClient.Models.CompareStartFilter.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "undertimeFilters", n => { UndertimeFilters = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.CompareUndertimeFilter>(global::ClockifyClient.Models.CompareUndertimeFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "workFilters", n => { WorkFilters = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.CompareWorkFilter>(global::ClockifyClient.Models.CompareWorkFilter.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -115,15 +143,18 @@ namespace ClockifyClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareBalanceFilter>("balanceFilters", BalanceFilters);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareBreakFilter>("breakFilters", BreakFilters);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareCapacityFilter>("capacityFilters", CapacityFilters);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareEndFilter>("endFilters", EndFilters);
+            writer.WriteCollectionOfPrimitiveValues<string>("groups", Groups);
             writer.WriteBoolValue("hasTimeOff", HasTimeOff);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareOvertimeFilter>("overtimeFilters", OvertimeFilters);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("pageSize", PageSize);
             writer.WriteEnumValue<global::ClockifyClient.Models.AttendanceFilterV1_sortColumn>("sortColumn", SortColumn);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareStartFilter>("startFilters", StartFilters);
+            writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareUndertimeFilter>("undertimeFilters", UndertimeFilters);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.CompareWorkFilter>("workFilters", WorkFilters);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -96,6 +96,8 @@ namespace ClockifyClient.Models
         public ProjectRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Billable = false;
+            IsPublic = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

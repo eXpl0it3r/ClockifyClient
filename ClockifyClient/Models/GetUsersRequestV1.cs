@@ -82,7 +82,10 @@ namespace ClockifyClient.Models
         public GetUsersRequestV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            IncludeRoles = false;
             Memberships = global::ClockifyClient.Models.GetUsersRequestV1_memberships.NONE;
+            Page = 1;
+            PageSize = 50;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
