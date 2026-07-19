@@ -16,6 +16,8 @@ jobs:
   build:
     name: ${{ matrix.platform.name }} ${{ matrix.dotnet.name }}
     runs-on: ${{ matrix.platform.os }}
+    permissions:
+      id-token: write
 
     strategy:
       fail-fast: false
@@ -59,9 +61,16 @@ jobs:
         name: "ClockifyClient (${{ matrix.platform.name }} ${{ matrix.dotnet.name }})"
         path: ${{ env.NuGetDirectory }}/*.*nupkg
 
+    - name: NuGet Login
+      if: github.ref == 'refs/heads/master' && matrix.dotnet.name == '.NET 9' && runner.os == 'Windows'
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: eXpl0it3r
+
     - name: Publish to NuGet
       if: github.ref == 'refs/heads/master' && matrix.dotnet.name == '.NET 9' && runner.os == 'Windows'
       run: |
         foreach($file in (Get-ChildItem ${{ env.NuGetDirectory }} -Recurse -Include *.nupkg)) {
-          dotnet nuget push $file --api-key "${{ secrets.NUGET_APIKEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push $file --api-key "${{steps.login.outputs.NUGET_API_KEY}}" --source https://api.nuget.org/v3/index.json --skip-duplicate
         }
