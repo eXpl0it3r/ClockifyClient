@@ -28,6 +28,7 @@ namespace ClockifyClient.Models
         public WebhookLogSearchRequestV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            SortByNewest = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

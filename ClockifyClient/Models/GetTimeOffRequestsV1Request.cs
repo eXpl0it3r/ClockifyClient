@@ -14,13 +14,13 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Return time off requests created before the specified time in requester&apos;s time zone. Provide end in format YYYY-MM-DDTHH:MM:SS.ssssssZ</summary>
+        /// <summary>Provide the end of the filtering period. Used with `start` to filter for time-off requests periods that occur (fully or partially) within this range. Both parameters must be provided for filtering to take effect. Provide end in format YYYY-MM-DDTHH:MM:SS.ssssssZ</summary>
         public DateTimeOffset? End { get; set; }
         /// <summary>Page number.</summary>
         public int? Page { get; set; }
         /// <summary>Page size.</summary>
         public int? PageSize { get; set; }
-        /// <summary>Return time off requests created after the specified time in requester&apos;s time zone. Provide start in format YYYY-MM-DDTHH:MM:SS.ssssssZ</summary>
+        /// <summary>Provide the beginning of the filtering period. Used with `end` to filter for time-off requests periods that occur (fully or partially) within this range. Both parameters must be provided for filtering to take effect. Provide start in format YYYY-MM-DDTHH:MM:SS.ssssssZ</summary>
         public DateTimeOffset? Start { get; set; }
         /// <summary>Filters time off requests by status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,6 +52,8 @@ namespace ClockifyClient.Models
         public GetTimeOffRequestsV1Request()
         {
             AdditionalData = new Dictionary<string, object>();
+            Page = 1;
+            PageSize = 50;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

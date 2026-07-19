@@ -79,6 +79,8 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_INVOICING? INVOICING { get; set; }
         /// <summary>The KIOSK property</summary>
         public global::ClockifyClient.Models.Feature_KIOSK? KIOSK { get; set; }
+        /// <summary>The KIOSK_PHOTO_CAPTURE property</summary>
+        public global::ClockifyClient.Models.Feature_KIOSK_PHOTO_CAPTURE? KIOSKPHOTOCAPTURE { get; set; }
         /// <summary>The KIOSK_PIN_REQUIRED property</summary>
         public global::ClockifyClient.Models.Feature_KIOSK_PIN_REQUIRED? KIOSKPINREQUIRED { get; set; }
         /// <summary>The KIOSK_QR_CODE property</summary>
@@ -95,6 +97,8 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_LOCATIONS? LOCATIONS { get; set; }
         /// <summary>The MANAGER_ROLE property</summary>
         public global::ClockifyClient.Models.Feature_MANAGER_ROLE? MANAGERROLE { get; set; }
+        /// <summary>The MONTHLY_OVERTIME_CALCULATION_PERIOD property</summary>
+        public global::ClockifyClient.Models.Feature_MONTHLY_OVERTIME_CALCULATION_PERIOD? MONTHLYOVERTIMECALCULATIONPERIOD { get; set; }
         /// <summary>The MULTI_FACTOR_AUTHENTICATION property</summary>
         public global::ClockifyClient.Models.Feature_MULTI_FACTOR_AUTHENTICATION? MULTIFACTORAUTHENTICATION { get; set; }
         /// <summary>The ONE_MONTH_RANGE_REPORTS property</summary>
@@ -153,6 +157,8 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.Feature_USER_CUSTOM_FIELDS? USERCUSTOMFIELDS { get; set; }
         /// <summary>The USER_IMPORT property</summary>
         public global::ClockifyClient.Models.Feature_USER_IMPORT? USERIMPORT { get; set; }
+        /// <summary>The WEEKLY_OVERTIME_CALCULATION_PERIOD property</summary>
+        public global::ClockifyClient.Models.Feature_WEEKLY_OVERTIME_CALCULATION_PERIOD? WEEKLYOVERTIMECALCULATIONPERIOD { get; set; }
         /// <summary>The WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY property</summary>
         public global::ClockifyClient.Models.Feature_WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY? WHOCANCHANGETIMEENTRYBILLABILITY { get; set; }
         /// <summary>The WHO_CAN_SEE_ALL_TIME_ENTRIES property</summary>
@@ -230,6 +236,7 @@ namespace ClockifyClient.Models
                 { "INVOICE_REMINDERS", n => { INVOICEREMINDERS = n.GetEnumValue<global::ClockifyClient.Models.Feature_INVOICE_REMINDERS>(); } },
                 { "INVOICING", n => { INVOICING = n.GetEnumValue<global::ClockifyClient.Models.Feature_INVOICING>(); } },
                 { "KIOSK", n => { KIOSK = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK>(); } },
+                { "KIOSK_PHOTO_CAPTURE", n => { KIOSKPHOTOCAPTURE = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK_PHOTO_CAPTURE>(); } },
                 { "KIOSK_PIN_REQUIRED", n => { KIOSKPINREQUIRED = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK_PIN_REQUIRED>(); } },
                 { "KIOSK_QR_CODE", n => { KIOSKQRCODE = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK_QR_CODE>(); } },
                 { "KIOSK_SESSION_DURATION", n => { KIOSKSESSIONDURATION = n.GetEnumValue<global::ClockifyClient.Models.Feature_KIOSK_SESSION_DURATION>(); } },
@@ -238,6 +245,7 @@ namespace ClockifyClient.Models
                 { "LIMITED_USERS", n => { LIMITEDUSERS = n.GetEnumValue<global::ClockifyClient.Models.Feature_LIMITED_USERS>(); } },
                 { "LOCATIONS", n => { LOCATIONS = n.GetEnumValue<global::ClockifyClient.Models.Feature_LOCATIONS>(); } },
                 { "MANAGER_ROLE", n => { MANAGERROLE = n.GetEnumValue<global::ClockifyClient.Models.Feature_MANAGER_ROLE>(); } },
+                { "MONTHLY_OVERTIME_CALCULATION_PERIOD", n => { MONTHLYOVERTIMECALCULATIONPERIOD = n.GetEnumValue<global::ClockifyClient.Models.Feature_MONTHLY_OVERTIME_CALCULATION_PERIOD>(); } },
                 { "MULTI_FACTOR_AUTHENTICATION", n => { MULTIFACTORAUTHENTICATION = n.GetEnumValue<global::ClockifyClient.Models.Feature_MULTI_FACTOR_AUTHENTICATION>(); } },
                 { "ONE_MONTH_RANGE_REPORTS", n => { ONEMONTHRANGEREPORTS = n.GetEnumValue<global::ClockifyClient.Models.Feature_ONE_MONTH_RANGE_REPORTS>(); } },
                 { "ONE_YEAR_RANGE_REPORTS", n => { ONEYEARRANGEREPORTS = n.GetEnumValue<global::ClockifyClient.Models.Feature_ONE_YEAR_RANGE_REPORTS>(); } },
@@ -267,6 +275,7 @@ namespace ClockifyClient.Models
                 { "UNLIMITED_USER_SEATS", n => { UNLIMITEDUSERSEATS = n.GetEnumValue<global::ClockifyClient.Models.Feature_UNLIMITED_USER_SEATS>(); } },
                 { "USER_CUSTOM_FIELDS", n => { USERCUSTOMFIELDS = n.GetEnumValue<global::ClockifyClient.Models.Feature_USER_CUSTOM_FIELDS>(); } },
                 { "USER_IMPORT", n => { USERIMPORT = n.GetEnumValue<global::ClockifyClient.Models.Feature_USER_IMPORT>(); } },
+                { "WEEKLY_OVERTIME_CALCULATION_PERIOD", n => { WEEKLYOVERTIMECALCULATIONPERIOD = n.GetEnumValue<global::ClockifyClient.Models.Feature_WEEKLY_OVERTIME_CALCULATION_PERIOD>(); } },
                 { "WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY", n => { WHOCANCHANGETIMEENTRYBILLABILITY = n.GetEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY>(); } },
                 { "WHO_CAN_SEE_ALL_TIME_ENTRIES", n => { WHOCANSEEALLTIMEENTRIES = n.GetEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_SEE_ALL_TIME_ENTRIES>(); } },
                 { "WHO_CAN_SEE_PROJECT_STATUS", n => { WHOCANSEEPROJECTSTATUS = n.GetEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_SEE_PROJECT_STATUS>(); } },
@@ -318,6 +327,7 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_INVOICE_REMINDERS>("INVOICE_REMINDERS", INVOICEREMINDERS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_INVOICING>("INVOICING", INVOICING);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK>("KIOSK", KIOSK);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK_PHOTO_CAPTURE>("KIOSK_PHOTO_CAPTURE", KIOSKPHOTOCAPTURE);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK_PIN_REQUIRED>("KIOSK_PIN_REQUIRED", KIOSKPINREQUIRED);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK_QR_CODE>("KIOSK_QR_CODE", KIOSKQRCODE);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_KIOSK_SESSION_DURATION>("KIOSK_SESSION_DURATION", KIOSKSESSIONDURATION);
@@ -326,6 +336,7 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_LIMITED_USERS>("LIMITED_USERS", LIMITEDUSERS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_LOCATIONS>("LOCATIONS", LOCATIONS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_MANAGER_ROLE>("MANAGER_ROLE", MANAGERROLE);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_MONTHLY_OVERTIME_CALCULATION_PERIOD>("MONTHLY_OVERTIME_CALCULATION_PERIOD", MONTHLYOVERTIMECALCULATIONPERIOD);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_MULTI_FACTOR_AUTHENTICATION>("MULTI_FACTOR_AUTHENTICATION", MULTIFACTORAUTHENTICATION);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_ONE_MONTH_RANGE_REPORTS>("ONE_MONTH_RANGE_REPORTS", ONEMONTHRANGEREPORTS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_ONE_YEAR_RANGE_REPORTS>("ONE_YEAR_RANGE_REPORTS", ONEYEARRANGEREPORTS);
@@ -355,6 +366,7 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_UNLIMITED_USER_SEATS>("UNLIMITED_USER_SEATS", UNLIMITEDUSERSEATS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_USER_CUSTOM_FIELDS>("USER_CUSTOM_FIELDS", USERCUSTOMFIELDS);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_USER_IMPORT>("USER_IMPORT", USERIMPORT);
+            writer.WriteEnumValue<global::ClockifyClient.Models.Feature_WEEKLY_OVERTIME_CALCULATION_PERIOD>("WEEKLY_OVERTIME_CALCULATION_PERIOD", WEEKLYOVERTIMECALCULATIONPERIOD);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY>("WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY", WHOCANCHANGETIMEENTRYBILLABILITY);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_SEE_ALL_TIME_ENTRIES>("WHO_CAN_SEE_ALL_TIME_ENTRIES", WHOCANSEEALLTIMEENTRIES);
             writer.WriteEnumValue<global::ClockifyClient.Models.Feature_WHO_CAN_SEE_PROJECT_STATUS>("WHO_CAN_SEE_PROJECT_STATUS", WHOCANSEEPROJECTSTATUS);

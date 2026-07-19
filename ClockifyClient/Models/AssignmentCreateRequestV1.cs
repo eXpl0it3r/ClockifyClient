@@ -44,13 +44,13 @@ namespace ClockifyClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The recurringAssignment property</summary>
+        /// <summary>Represents a recurring assignment object. This parameter is optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ClockifyClient.Models.RecurringAssignmentRequestV1? RecurringAssignment { get; set; }
+        public global::ClockifyClient.Models.CreateRecurringAssignmentRequestV1? RecurringAssignment { get; set; }
 #nullable restore
 #else
-        public global::ClockifyClient.Models.RecurringAssignmentRequestV1 RecurringAssignment { get; set; }
+        public global::ClockifyClient.Models.CreateRecurringAssignmentRequestV1 RecurringAssignment { get; set; }
 #endif
         /// <summary>Represents a start date in the yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,6 +90,8 @@ namespace ClockifyClient.Models
         public AssignmentCreateRequestV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Billable = false;
+            IncludeNonWorkingDays = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -115,7 +117,7 @@ namespace ClockifyClient.Models
                 { "includeNonWorkingDays", n => { IncludeNonWorkingDays = n.GetBoolValue(); } },
                 { "note", n => { Note = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "recurringAssignment", n => { RecurringAssignment = n.GetObjectValue<global::ClockifyClient.Models.RecurringAssignmentRequestV1>(global::ClockifyClient.Models.RecurringAssignmentRequestV1.CreateFromDiscriminatorValue); } },
+                { "recurringAssignment", n => { RecurringAssignment = n.GetObjectValue<global::ClockifyClient.Models.CreateRecurringAssignmentRequestV1>(global::ClockifyClient.Models.CreateRecurringAssignmentRequestV1.CreateFromDiscriminatorValue); } },
                 { "start", n => { Start = n.GetStringValue(); } },
                 { "startTime", n => { StartTime = n.GetStringValue(); } },
                 { "taskId", n => { TaskId = n.GetStringValue(); } },
@@ -135,7 +137,7 @@ namespace ClockifyClient.Models
             writer.WriteBoolValue("includeNonWorkingDays", IncludeNonWorkingDays);
             writer.WriteStringValue("note", Note);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteObjectValue<global::ClockifyClient.Models.RecurringAssignmentRequestV1>("recurringAssignment", RecurringAssignment);
+            writer.WriteObjectValue<global::ClockifyClient.Models.CreateRecurringAssignmentRequestV1>("recurringAssignment", RecurringAssignment);
             writer.WriteStringValue("start", Start);
             writer.WriteStringValue("startTime", StartTime);
             writer.WriteStringValue("taskId", TaskId);

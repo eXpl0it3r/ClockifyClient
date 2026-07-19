@@ -168,6 +168,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         KIOSK_SESSION,
         #pragma warning restore CS1591
+        [EnumMember(Value = "KIOSK_PHOTO_CAPTURE")]
+        #pragma warning disable CS1591
+        KIOSK_PHOTO_CAPTURE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MARKETPLACE_ADDON")]
         #pragma warning disable CS1591
         MARKETPLACE_ADDON,

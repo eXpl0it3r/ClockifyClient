@@ -111,6 +111,25 @@ namespace ClockifyClient.Models
         public UserSettingsDtoV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Alerts = false;
+            Approval = false;
+            CollapseAllProjectLists = false;
+            DashboardPinToTop = false;
+            GroupSimilarEntriesDisabled = false;
+            InvoiceReminders = false;
+            IsCompactViewOn = false;
+            LongRunning = false;
+            MultiFactorEnabled = false;
+            Onboarding = false;
+            ProjectPickerTaskFilter = false;
+            Pto = false;
+            Reminders = false;
+            ScheduledReports = false;
+            Scheduling = false;
+            SendNewsletter = false;
+            ShowOnlyWorkingDays = false;
+            TimeTrackingManual = false;
+            WeeklyUpdates = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

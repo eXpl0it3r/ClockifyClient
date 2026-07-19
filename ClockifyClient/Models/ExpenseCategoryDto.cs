@@ -59,6 +59,8 @@ namespace ClockifyClient.Models
         public ExpenseCategoryDto()
         {
             AdditionalData = new Dictionary<string, object>();
+            Archived = false;
+            HasUnitPrice = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

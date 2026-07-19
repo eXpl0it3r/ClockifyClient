@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using ClockifyClient.Models;
 using ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Logs;
+using ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Statuses;
 using ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Token;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -23,6 +24,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Webhooks.Item
         public global::ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Logs.LogsRequestBuilder Logs
         {
             get => new global::ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The statuses property</summary>
+        public global::ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Statuses.StatusesRequestBuilder Statuses
+        {
+            get => new global::ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Statuses.StatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The token property</summary>
         public global::ClockifyClient.V1.Workspaces.Item.Webhooks.Item.Token.TokenRequestBuilder Token

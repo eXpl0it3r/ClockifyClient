@@ -31,6 +31,8 @@ namespace ClockifyClient.Models
         public EstimateWithOptionsRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Active = false;
+            IncludeExpenses = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

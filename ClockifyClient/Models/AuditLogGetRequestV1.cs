@@ -56,6 +56,8 @@ namespace ClockifyClient.Models
         public AuditLogGetRequestV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Page = 1;
+            PageSize = 20;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

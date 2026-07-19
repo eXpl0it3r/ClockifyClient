@@ -1597,7 +1597,7 @@
             }
           },
           {
-            "description": "Specifies the type of document to be retrieved. Expected values are CLIENTS, PROJECTS, TAGS, TASKS, SCHEDULED_ASSIGNMENT, TIME_ENTRY, TIME_ENTRY_RATE, TIME_ENTRY_CUSTOM_FIELD_VALUE.This parameter can accept multiple values, and at least one option must be provided. Based on the input, the application will return results corresponding to the selected document types.",
+            "description": "Specifies the type of document to be retrieved. Expected values are CLIENTS, PROJECTS, TAGS, TASKS, SCHEDULED_ASSIGNMENT, TIME_ENTRY, TIME_ENTRY_RATE, TIME_ENTRY_CUSTOM_FIELD_VALUE, CUSTOM_FIELDS, USER, USER_GROUPS, INVOICES, APPROVAL_REQUESTS, BALANCE, HOLIDAYS, PTO_POLICY, TIME_OFF_REQUEST.This parameter can accept multiple values, and at least one option must be provided. Based on the input, the application will return results corresponding to the selected document types.",
             "example": "TIME_ENTRY",
             "in": "query",
             "name": "type",
@@ -1706,7 +1706,7 @@
             }
           },
           {
-            "description": "Specifies the type of document to be retrieved. Expected values are CLIENTS, PROJECTS, TAGS, TASKS, SCHEDULED_ASSIGNMENT, TIME_ENTRY, TIME_ENTRY_RATE, TIME_ENTRY_CUSTOM_FIELD_VALUE.This parameter can accept multiple values, and at least one option must be provided. Based on the input, the application will return results corresponding to the selected document types.",
+            "description": "Specifies the type of document to be retrieved. Expected values are CLIENTS, PROJECTS, TAGS, TASKS, SCHEDULED_ASSIGNMENT, TIME_ENTRY, TIME_ENTRY_RATE, TIME_ENTRY_CUSTOM_FIELD_VALUE, CUSTOM_FIELDS, USER, USER_GROUPS, INVOICES, APPROVAL_REQUESTS, BALANCE, HOLIDAYS, PTO_POLICY, TIME_OFF_REQUEST.This parameter can accept multiple values, and at least one option must be provided. Based on the input, the application will return results corresponding to the selected document types.",
             "example": "TIME_ENTRY",
             "in": "query",
             "name": "type",
@@ -1814,7 +1814,7 @@
             }
           },
           {
-            "description": "Specifies the type of document to be retrieved. Expected values are CLIENTS, PROJECTS, TAGS, TASKS, SCHEDULED_ASSIGNMENT, TIME_ENTRY, TIME_ENTRY_RATE, TIME_ENTRY_CUSTOM_FIELD_VALUE.This parameter can accept multiple values, and at least one option must be provided. Based on the input, the application will return results corresponding to the selected document types.",
+            "description": "Specifies the type of document to be retrieved. Expected values are CLIENTS, PROJECTS, TAGS, TASKS, SCHEDULED_ASSIGNMENT, TIME_ENTRY, TIME_ENTRY_RATE, TIME_ENTRY_CUSTOM_FIELD_VALUE, CUSTOM_FIELDS, USER, USER_GROUPS, INVOICES, APPROVAL_REQUESTS, BALANCE, HOLIDAYS, PTO_POLICY, TIME_OFF_REQUEST.This parameter can accept multiple values, and at least one option must be provided. Based on the input, the application will return results corresponding to the selected document types.",
             "example": "TIME_ENTRY",
             "in": "query",
             "name": "type",
@@ -4152,6 +4152,64 @@
         "summary": "Change an invoice status",
         "tags": [
           "Invoice"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "AddonKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/workspaces/{workspaceId}/limited-users": {
+      "servers": [
+        {
+          "url": "https://api.clockify.me/api"
+        }
+      ],
+      "post": {
+        "operationId": "addLimitedUsers",
+        "parameters": [
+          {
+            "description": "Represents a workspace identifier across the system.",
+            "example": "64a687e29ae1f428e7ebe303",
+            "in": "path",
+            "name": "workspaceId",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Represents a workspace identifier across the system.",
+              "example": "64a687e29ae1f428e7ebe303"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddLimitedUsersRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkspaceDtoV1"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "summary": "Add limited users",
+        "tags": [
+          "Workspace"
         ],
         "security": [
           {
@@ -6779,7 +6837,7 @@
             "description": "Created"
           }
         },
-        "summary": "Create a recurring assignment",
+        "summary": "Create assignment",
         "tags": [
           "Scheduling"
         ],
@@ -6857,7 +6915,7 @@
             "description": "OK"
           }
         },
-        "summary": "Delete a recurring assignment",
+        "summary": "Delete assignment",
         "tags": [
           "Scheduling"
         ],
@@ -6923,7 +6981,7 @@
             "description": "OK"
           }
         },
-        "summary": "Update a recurring assignment",
+        "summary": "Update assignment",
         "tags": [
           "Scheduling"
         ],
@@ -11776,6 +11834,113 @@
         ]
       }
     },
+    "/v1/workspaces/{workspaceId}/webhooks/{webhookId}/statuses": {
+      "servers": [
+        {
+          "url": "https://api.clockify.me/api"
+        }
+      ],
+      "get": {
+        "operationId": "getWebhookEventStatusesWithLatestLog",
+        "parameters": [
+          {
+            "description": "Represents a workspace identifier across the system.",
+            "example": "64a687e29ae1f428e7ebe303",
+            "in": "path",
+            "name": "workspaceId",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Represents a workspace identifier across the system.",
+              "example": "64a687e29ae1f428e7ebe303"
+            }
+          },
+          {
+            "description": "Represents a webhook identifier across the system.",
+            "example": "6973710805e44c5a46763239",
+            "in": "path",
+            "name": "webhookId",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Represents a webhook identifier across the system.",
+              "example": "6973710805e44c5a46763239"
+            }
+          },
+          {
+            "description": "Page number.",
+            "example": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number.",
+              "format": "int32",
+              "example": 1,
+              "default": 0
+            }
+          },
+          {
+            "description": "Page size.",
+            "example": 50,
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "schema": {
+              "minimum": 1,
+              "type": "integer",
+              "description": "Page size.",
+              "format": "int32",
+              "example": 50,
+              "default": 50
+            }
+          },
+          {
+            "description": "Represents a filter for webhook event status.",
+            "example": "FAILED",
+            "in": "query",
+            "name": "statuses",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "SUCCEEDED",
+                "RETRYING",
+                "FAILED"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WebhookEventStatusWithLatestLogDtoV1"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "summary": "Get webhook event statuses for a webhook",
+        "tags": [
+          "Webhooks"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "AddonKeyAuth": []
+          }
+        ]
+      }
+    },
     "/v1/workspaces/{workspaceId}/webhooks/{webhookId}/token": {
       "servers": [
         {
@@ -12277,6 +12442,7 @@
               "description": "Filters shared reports by origin.",
               "enum": [
                 "ALL",
+                "ALL_ADMIN",
                 "CREATED_BY_ME",
                 "SHARED_WITH_ME"
               ],
@@ -12487,7 +12653,8 @@
             "schema": {
               "type": "string",
               "description": "Represents a workspace identifier across the system.",
-              "example": "64a687e29ae1f428e7ebe303"
+              "example": "64a687e29ae1f428e7ebe303",
+              "default": ""
             }
           }
         ],
@@ -12619,6 +12786,22 @@
           },
           "notRegistered": {
             "type": "boolean"
+          }
+        }
+      },
+      "AddLimitedUsersRequest": {
+        "required": [
+          "users"
+        ],
+        "type": "object",
+        "properties": {
+          "users": {
+            "maxItems": 250,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LimitedUserRequest"
+            }
           }
         }
       },
@@ -12951,7 +13134,7 @@
             "example": "56b687e29ae1f428e7ebe504"
           },
           "recurringAssignment": {
-            "$ref": "#/components/schemas/RecurringAssignmentRequestV1"
+            "$ref": "#/components/schemas/CreateRecurringAssignmentRequestV1"
           },
           "start": {
             "type": "string",
@@ -14500,6 +14683,28 @@
           }
         }
       },
+      "CreateRecurringAssignmentRequestV1": {
+        "required": [
+          "weeks"
+        ],
+        "type": "object",
+        "properties": {
+          "repeat": {
+            "type": "boolean",
+            "description": "Indicates whether assignment is recurring or not.",
+            "default": false
+          },
+          "weeks": {
+            "maximum": 99,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Indicates number of weeks for assignment.",
+            "format": "int32",
+            "example": 5
+          }
+        },
+        "description": "Represents a recurring assignment object. This parameter is optional."
+      },
       "CreateTimeEntryRequest": {
         "type": "object",
         "properties": {
@@ -16044,10 +16249,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16130,10 +16338,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16214,10 +16425,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16298,10 +16512,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16382,10 +16599,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16466,10 +16686,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16550,10 +16773,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16634,10 +16860,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16718,10 +16947,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16802,10 +17034,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16886,10 +17121,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -16970,10 +17208,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17054,10 +17295,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17138,10 +17382,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17222,10 +17469,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17306,10 +17556,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17390,10 +17643,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17474,10 +17730,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17558,10 +17817,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17642,10 +17904,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17726,10 +17991,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17810,10 +18078,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17894,10 +18165,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -17978,10 +18252,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18062,10 +18339,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18146,10 +18426,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18230,10 +18513,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18314,10 +18600,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18398,10 +18687,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18482,10 +18774,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18566,10 +18861,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18650,10 +18948,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18734,10 +19035,100 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
+              "WORKSPACE_TRANSFER",
+              "FAVORITE_ENTRIES",
+              "SPLIT_TIME_ENTRY",
+              "CLIENT_CURRENCY",
+              "SCHEDULING_FORECASTING",
+              "SCIM",
+              "UNLIMITED_USER_SEATS",
+              "BILLABLE_HOURS",
+              "PROJECT_ESTIMATE",
+              "CSV_EXPORT",
+              "XLSX_EXPORT",
+              "ONE_MONTH_RANGE_REPORTS",
+              "ONE_YEAR_RANGE_REPORTS",
+              "SHARED_REPORTS"
+            ]
+          },
+          "KIOSK_PHOTO_CAPTURE": {
+            "type": "string",
+            "enum": [
+              "ADD_TIME_FOR_OTHERS",
+              "ADMIN_PANEL",
+              "ALERTS",
+              "APPROVAL",
+              "AUDIT_LOG",
+              "AUTOMATIC_LOCK",
+              "BRANDED_REPORTS",
+              "BULK_EDIT",
+              "CUSTOM_FIELDS",
+              "CUSTOM_REPORTING",
+              "CUSTOM_SUBDOMAIN",
+              "CREATION_PERMISSIONS",
+              "DECIMAL_FORMAT",
+              "DISABLE_MANUAL_MODE",
+              "EDIT_MEMBER_PROFILE",
+              "EXCLUDE_NON_BILLABLE_FROM_ESTIMATE",
+              "EXPENSES",
+              "FILE_IMPORT",
+              "TIMESHEET_IMPORT",
+              "USER_IMPORT",
+              "HIDE_PAGES",
+              "HISTORIC_RATES",
+              "INVOICING",
+              "INVOICE_EMAILS",
+              "INVOICE_REMINDERS",
+              "LABOR_COST",
+              "LOCATIONS",
+              "MANAGER_ROLE",
+              "MULTI_FACTOR_AUTHENTICATION",
+              "PROJECT_BUDGET",
+              "PROJECT_TEMPLATES",
+              "GRANT_PROJECT_MANAGER_ROLE",
+              "PRIVATE_PROJECT_ACCESS",
+              "QUICKBOOKS_INTEGRATION",
+              "RECURRING_ESTIMATES",
+              "RECURRING_INVOICES",
+              "REQUIRED_FIELDS",
+              "SCHEDULED_REPORTS",
+              "SCHEDULING",
+              "SCREENSHOTS",
+              "SSO",
+              "SUMMARY_ESTIMATE",
+              "TARGETS_AND_REMINDERS",
+              "TASK_RATES",
+              "TIME_OFF",
+              "UNLIMITED_REPORTS",
+              "USER_CUSTOM_FIELDS",
+              "WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY",
+              "BREAKS",
+              "KIOSK_SESSION_DURATION",
+              "KIOSK_PIN_REQUIRED",
+              "WHO_CAN_SEE_ALL_TIME_ENTRIES",
+              "WHO_CAN_SEE_PROJECT_STATUS",
+              "WHO_CAN_SEE_PUBLIC_PROJECTS_ENTRIES",
+              "WHO_CAN_SEE_TEAMS_DASHBOARD",
+              "WORKSPACE_LOCK_TIMEENTRIES",
+              "WORKSPACE_TIME_AUDIT",
+              "WORKSPACE_TIME_ROUNDING",
+              "KIOSK",
+              "KIOSK_SIX_DIGIT_PIN",
+              "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
+              "LIMITED_USERS",
+              "FORECASTING",
+              "TIME_TRACKING",
+              "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18818,10 +19209,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18902,10 +19296,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -18986,10 +19383,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19070,10 +19470,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19154,10 +19557,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19238,10 +19644,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19322,10 +19731,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19406,10 +19818,100 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
+              "WORKSPACE_TRANSFER",
+              "FAVORITE_ENTRIES",
+              "SPLIT_TIME_ENTRY",
+              "CLIENT_CURRENCY",
+              "SCHEDULING_FORECASTING",
+              "SCIM",
+              "UNLIMITED_USER_SEATS",
+              "BILLABLE_HOURS",
+              "PROJECT_ESTIMATE",
+              "CSV_EXPORT",
+              "XLSX_EXPORT",
+              "ONE_MONTH_RANGE_REPORTS",
+              "ONE_YEAR_RANGE_REPORTS",
+              "SHARED_REPORTS"
+            ]
+          },
+          "MONTHLY_OVERTIME_CALCULATION_PERIOD": {
+            "type": "string",
+            "enum": [
+              "ADD_TIME_FOR_OTHERS",
+              "ADMIN_PANEL",
+              "ALERTS",
+              "APPROVAL",
+              "AUDIT_LOG",
+              "AUTOMATIC_LOCK",
+              "BRANDED_REPORTS",
+              "BULK_EDIT",
+              "CUSTOM_FIELDS",
+              "CUSTOM_REPORTING",
+              "CUSTOM_SUBDOMAIN",
+              "CREATION_PERMISSIONS",
+              "DECIMAL_FORMAT",
+              "DISABLE_MANUAL_MODE",
+              "EDIT_MEMBER_PROFILE",
+              "EXCLUDE_NON_BILLABLE_FROM_ESTIMATE",
+              "EXPENSES",
+              "FILE_IMPORT",
+              "TIMESHEET_IMPORT",
+              "USER_IMPORT",
+              "HIDE_PAGES",
+              "HISTORIC_RATES",
+              "INVOICING",
+              "INVOICE_EMAILS",
+              "INVOICE_REMINDERS",
+              "LABOR_COST",
+              "LOCATIONS",
+              "MANAGER_ROLE",
+              "MULTI_FACTOR_AUTHENTICATION",
+              "PROJECT_BUDGET",
+              "PROJECT_TEMPLATES",
+              "GRANT_PROJECT_MANAGER_ROLE",
+              "PRIVATE_PROJECT_ACCESS",
+              "QUICKBOOKS_INTEGRATION",
+              "RECURRING_ESTIMATES",
+              "RECURRING_INVOICES",
+              "REQUIRED_FIELDS",
+              "SCHEDULED_REPORTS",
+              "SCHEDULING",
+              "SCREENSHOTS",
+              "SSO",
+              "SUMMARY_ESTIMATE",
+              "TARGETS_AND_REMINDERS",
+              "TASK_RATES",
+              "TIME_OFF",
+              "UNLIMITED_REPORTS",
+              "USER_CUSTOM_FIELDS",
+              "WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY",
+              "BREAKS",
+              "KIOSK_SESSION_DURATION",
+              "KIOSK_PIN_REQUIRED",
+              "WHO_CAN_SEE_ALL_TIME_ENTRIES",
+              "WHO_CAN_SEE_PROJECT_STATUS",
+              "WHO_CAN_SEE_PUBLIC_PROJECTS_ENTRIES",
+              "WHO_CAN_SEE_TEAMS_DASHBOARD",
+              "WORKSPACE_LOCK_TIMEENTRIES",
+              "WORKSPACE_TIME_AUDIT",
+              "WORKSPACE_TIME_ROUNDING",
+              "KIOSK",
+              "KIOSK_SIX_DIGIT_PIN",
+              "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
+              "LIMITED_USERS",
+              "FORECASTING",
+              "TIME_TRACKING",
+              "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19490,10 +19992,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19574,10 +20079,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19658,10 +20166,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19742,10 +20253,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19826,10 +20340,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19910,10 +20427,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -19994,10 +20514,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20078,10 +20601,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20162,10 +20688,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20246,10 +20775,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20330,10 +20862,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20414,10 +20949,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20498,10 +21036,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20582,10 +21123,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20666,10 +21210,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20750,10 +21297,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20834,10 +21384,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -20918,10 +21471,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21002,10 +21558,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21086,10 +21645,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21170,10 +21732,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21254,10 +21819,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21338,10 +21906,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21422,10 +21993,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21506,10 +22080,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21590,10 +22167,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21674,10 +22254,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21758,10 +22341,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21842,10 +22428,100 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
+              "WORKSPACE_TRANSFER",
+              "FAVORITE_ENTRIES",
+              "SPLIT_TIME_ENTRY",
+              "CLIENT_CURRENCY",
+              "SCHEDULING_FORECASTING",
+              "SCIM",
+              "UNLIMITED_USER_SEATS",
+              "BILLABLE_HOURS",
+              "PROJECT_ESTIMATE",
+              "CSV_EXPORT",
+              "XLSX_EXPORT",
+              "ONE_MONTH_RANGE_REPORTS",
+              "ONE_YEAR_RANGE_REPORTS",
+              "SHARED_REPORTS"
+            ]
+          },
+          "WEEKLY_OVERTIME_CALCULATION_PERIOD": {
+            "type": "string",
+            "enum": [
+              "ADD_TIME_FOR_OTHERS",
+              "ADMIN_PANEL",
+              "ALERTS",
+              "APPROVAL",
+              "AUDIT_LOG",
+              "AUTOMATIC_LOCK",
+              "BRANDED_REPORTS",
+              "BULK_EDIT",
+              "CUSTOM_FIELDS",
+              "CUSTOM_REPORTING",
+              "CUSTOM_SUBDOMAIN",
+              "CREATION_PERMISSIONS",
+              "DECIMAL_FORMAT",
+              "DISABLE_MANUAL_MODE",
+              "EDIT_MEMBER_PROFILE",
+              "EXCLUDE_NON_BILLABLE_FROM_ESTIMATE",
+              "EXPENSES",
+              "FILE_IMPORT",
+              "TIMESHEET_IMPORT",
+              "USER_IMPORT",
+              "HIDE_PAGES",
+              "HISTORIC_RATES",
+              "INVOICING",
+              "INVOICE_EMAILS",
+              "INVOICE_REMINDERS",
+              "LABOR_COST",
+              "LOCATIONS",
+              "MANAGER_ROLE",
+              "MULTI_FACTOR_AUTHENTICATION",
+              "PROJECT_BUDGET",
+              "PROJECT_TEMPLATES",
+              "GRANT_PROJECT_MANAGER_ROLE",
+              "PRIVATE_PROJECT_ACCESS",
+              "QUICKBOOKS_INTEGRATION",
+              "RECURRING_ESTIMATES",
+              "RECURRING_INVOICES",
+              "REQUIRED_FIELDS",
+              "SCHEDULED_REPORTS",
+              "SCHEDULING",
+              "SCREENSHOTS",
+              "SSO",
+              "SUMMARY_ESTIMATE",
+              "TARGETS_AND_REMINDERS",
+              "TASK_RATES",
+              "TIME_OFF",
+              "UNLIMITED_REPORTS",
+              "USER_CUSTOM_FIELDS",
+              "WHO_CAN_CHANGE_TIMEENTRY_BILLABILITY",
+              "BREAKS",
+              "KIOSK_SESSION_DURATION",
+              "KIOSK_PIN_REQUIRED",
+              "WHO_CAN_SEE_ALL_TIME_ENTRIES",
+              "WHO_CAN_SEE_PROJECT_STATUS",
+              "WHO_CAN_SEE_PUBLIC_PROJECTS_ENTRIES",
+              "WHO_CAN_SEE_TEAMS_DASHBOARD",
+              "WORKSPACE_LOCK_TIMEENTRIES",
+              "WORKSPACE_TIME_AUDIT",
+              "WORKSPACE_TIME_ROUNDING",
+              "KIOSK",
+              "KIOSK_SIX_DIGIT_PIN",
+              "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
+              "LIMITED_USERS",
+              "FORECASTING",
+              "TIME_TRACKING",
+              "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -21926,10 +22602,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -22010,10 +22689,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -22094,10 +22776,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -22178,10 +22863,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -22262,10 +22950,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -22346,10 +23037,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -22430,10 +23124,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -22514,10 +23211,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -22598,10 +23298,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -22682,10 +23385,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -22786,10 +23492,13 @@
                 "KIOSK",
                 "KIOSK_SIX_DIGIT_PIN",
                 "KIOSK_QR_CODE",
+                "KIOSK_PHOTO_CAPTURE",
                 "LIMITED_USERS",
                 "FORECASTING",
                 "TIME_TRACKING",
                 "ATTENDANCE_REPORT",
+                "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+                "MONTHLY_OVERTIME_CALCULATION_PERIOD",
                 "WORKSPACE_TRANSFER",
                 "FAVORITE_ENTRIES",
                 "SPLIT_TIME_ENTRY",
@@ -22827,7 +23536,7 @@
         "properties": {
           "end": {
             "type": "string",
-            "description": "Return time off requests created before the specified time in requester's time zone. Provide end in format YYYY-MM-DDTHH:MM:SS.ssssssZ",
+            "description": "Provide the end of the filtering period. Used with `start` to filter for time-off requests periods that occur (fully or partially) within this range. Both parameters must be provided for filtering to take effect. Provide end in format YYYY-MM-DDTHH:MM:SS.ssssssZ",
             "format": "date-time",
             "example": "2022-08-26T23:55:06.281873Z"
           },
@@ -22850,7 +23559,7 @@
           },
           "start": {
             "type": "string",
-            "description": "Return time off requests created after the specified time in requester's time zone. Provide start in format YYYY-MM-DDTHH:MM:SS.ssssssZ",
+            "description": "Provide the beginning of the filtering period. Used with `end` to filter for time-off requests periods that occur (fully or partially) within this range. Both parameters must be provided for filtering to take effect. Provide start in format YYYY-MM-DDTHH:MM:SS.ssssssZ",
             "format": "date-time",
             "example": "2022-08-26T08:00:06.281873Z"
           },
@@ -24493,6 +25202,87 @@
         },
         "description": "Represents a label customization object."
       },
+      "LimitedUserRequest": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "costRate": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Represents cost rate of user. Example: 12300 for 123",
+            "format": "int32"
+          },
+          "hourlyRate": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Represents hourly rate of user. Example: 12300 for 123",
+            "format": "int32"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Represents name of the user.",
+            "example": "John Doe"
+          },
+          "userCustomFields": {
+            "type": "array",
+            "description": "Represents a list of upsert user custom field request.",
+            "items": {
+              "$ref": "#/components/schemas/UpsertUserCustomFieldRequest"
+            }
+          },
+          "userGroups": {
+            "uniqueItems": true,
+            "type": "array",
+            "description": "Represents the user group names of the user",
+            "example": [
+              "Team One",
+              "Team Two"
+            ],
+            "items": {
+              "minLength": 1,
+              "type": "string",
+              "description": "Represents the user group names of the user",
+              "example": "[\"Team One\",\"Team Two\"]"
+            }
+          },
+          "weekStart": {
+            "type": "string",
+            "description": "Represents a day of the week.",
+            "example": "MONDAY",
+            "enum": [
+              "MONDAY",
+              "TUESDAY",
+              "WEDNESDAY",
+              "THURSDAY",
+              "FRIDAY",
+              "SATURDAY",
+              "SUNDAY"
+            ]
+          },
+          "workCapacity": {
+            "type": "string",
+            "description": "Represents work capacity as a time duration in the ISO-8601 format.",
+            "example": "PT7H"
+          },
+          "workingDays": {
+            "type": "string",
+            "description": "Represents a list of days of the week.",
+            "example": "[\"MONDAY\",\"TUESDAY\",\"WEDNESDAY\",\"THURSDAY\",\"FRIDAY\"]",
+            "enum": [
+              "MONDAY",
+              "TUESDAY",
+              "WEDNESDAY",
+              "THURSDAY",
+              "FRIDAY",
+              "SATURDAY",
+              "SUNDAY"
+            ]
+          }
+        }
+      },
       "LogBinDocumentDto": {
         "type": "object",
         "properties": {
@@ -24794,9 +25584,6 @@
             "format": "double",
             "example": 2
           },
-          "amountValidForTimeUnit": {
-            "type": "boolean"
-          },
           "period": {
             "type": "string",
             "description": "Represents negative balance period.",
@@ -24811,15 +25598,6 @@
             "description": "Indicates whether negative balance should be reset at the end of the negative balance period.",
             "example": true,
             "default": false
-          },
-          "timeUnit": {
-            "type": "string",
-            "description": "Represents negative balance time unit.",
-            "example": "DAYS",
-            "enum": [
-              "DAYS",
-              "HOURS"
-            ]
           }
         },
         "description": "Provide the negative balance data you would like to use for updating the policy."
@@ -28250,7 +29028,7 @@
             "example": "20231211-12345"
           }
         },
-        "description": "Represents a list of upsert user custom field objects."
+        "description": "Represents a list of upsert user custom field request."
       },
       "UpsertUserCustomFieldRequestV1": {
         "type": "object",
@@ -28878,6 +29656,58 @@
           }
         }
       },
+      "WebhookEventStatusWithLatestLogDtoV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Represents log identifier across the system.",
+            "example": "69807d47b209426e67302a42"
+          },
+          "requestBody": {
+            "type": "string",
+            "description": "Represents request body.",
+            "example": "{\"id\":\"65df50f5d2dd8f23a685374e\",\"name\":\"Webhook\"}"
+          },
+          "respondedAt": {
+            "type": "string",
+            "description": "Represents date and time of response.",
+            "example": "2025-02-02T12:02:28.125+00:00"
+          },
+          "responseBody": {
+            "type": "string",
+            "description": "Represents response body.",
+            "example": "{\"id\":\"h73210f5d2dd8f23685374e\",\"response\":\"Webhook response\"}"
+          },
+          "retryCount": {
+            "type": "integer",
+            "description": "Represents how many times we tried to deliver the webhook event.",
+            "format": "int32",
+            "example": 2
+          },
+          "status": {
+            "type": "string",
+            "description": "Represents delivery status of the webhook event.",
+            "example": "FAILED"
+          },
+          "statusCode": {
+            "type": "integer",
+            "description": "Represents response status code.",
+            "format": "int32",
+            "example": 400
+          },
+          "webhookId": {
+            "type": "string",
+            "description": "Represents log identifier across the system.",
+            "example": "6973710805e44c5a46763239"
+          },
+          "webhookLogId": {
+            "type": "string",
+            "description": "Represents log identifier across the system.",
+            "example": "69807e04b209426e67302a57"
+          }
+        }
+      },
       "WebhookEventTriggerSourceType": {
         "type": "object",
         "description": "Represents a webhook event trigger source type.",
@@ -29024,6 +29854,7 @@
               "KIOSK_PIN_CODE",
               "KIOSK",
               "KIOSK_SESSION",
+              "KIOSK_PHOTO_CAPTURE",
               "MARKETPLACE_ADDON",
               "INVOICE_PAYMENT",
               "DELETION_DOCUMENT",
@@ -32028,10 +32859,13 @@
               "KIOSK",
               "KIOSK_SIX_DIGIT_PIN",
               "KIOSK_QR_CODE",
+              "KIOSK_PHOTO_CAPTURE",
               "LIMITED_USERS",
               "FORECASTING",
               "TIME_TRACKING",
               "ATTENDANCE_REPORT",
+              "WEEKLY_OVERTIME_CALCULATION_PERIOD",
+              "MONTHLY_OVERTIME_CALCULATION_PERIOD",
               "WORKSPACE_TRANSFER",
               "FAVORITE_ENTRIES",
               "SPLIT_TIME_ENTRY",
@@ -32561,6 +33395,12 @@
         "type": "object",
         "description": "Represents an attendance report filter.",
         "properties": {
+          "balanceFilters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompareBalanceFilter"
+            }
+          },
           "breakFilters": {
             "type": "array",
             "items": {
@@ -32578,6 +33418,13 @@
             "items": {
               "$ref": "#/components/schemas/CompareEndFilter"
             }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "writeOnly": true
           },
           "hasTimeOff": {
             "type": "boolean",
@@ -32606,6 +33453,7 @@
           "sortColumn": {
             "type": "string",
             "enum": [
+              "GROUP",
               "USER",
               "DATE",
               "START",
@@ -32614,6 +33462,8 @@
               "WORK",
               "CAPACITY",
               "OVERTIME",
+              "UNDERTIME",
+              "BALANCE",
               "TIME_OFF"
             ]
           },
@@ -32621,6 +33471,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CompareStartFilter"
+            }
+          },
+          "undertimeFilters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompareUndertimeFilter"
             }
           },
           "workFilters": {
@@ -32885,6 +33741,24 @@
           }
         }
       },
+      "CompareBalanceFilter": {
+        "type": "object",
+        "properties": {
+          "filtrationType": {
+            "type": "string",
+            "enum": [
+              "EXACTLY",
+              "LARGER_THAN",
+              "SMALLER_THAN"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "description": "Represents balance of work (difference between overtime and undertime) in hours, multiplied by 100. For example, if desired value is 1.5h, input should be 150.",
+            "example": "150"
+          }
+        }
+      },
       "CompareBreakFilter": {
         "type": "object",
         "properties": {
@@ -32952,7 +33826,7 @@
           },
           "value": {
             "type": "string",
-            "description": "Represents duration of overtime work (difference between work and capacity) in hours, multiplied by 100. For example, if desired value is 1.5h, input should be 150.",
+            "description": "Represents duration of overtime work (difference between work and capacity - if positive) in hours, multiplied by 100. For example, if desired value is 1.5h, input should be 150.",
             "example": "150"
           }
         }
@@ -32972,6 +33846,24 @@
             "type": "string",
             "description": "Represents start time in 24-hour notation.",
             "example": "15:00"
+          }
+        }
+      },
+      "CompareUndertimeFilter": {
+        "type": "object",
+        "properties": {
+          "filtrationType": {
+            "type": "string",
+            "enum": [
+              "EXACTLY",
+              "LARGER_THAN",
+              "SMALLER_THAN"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "description": "Represents duration of undertime work (difference between work and capacity - if negative) in hours, multiplied by 100. For example, if desired value is 1.5h, input should be 150.",
+            "example": "150"
           }
         }
       },
@@ -33590,6 +34482,10 @@
                 "BILLABLE_RATE",
                 "COST_RATE",
                 "APPROVAL",
+                "APPROVAL_SUBMISSION_DATE",
+                "APPROVAL_SUBMISSION_TIME",
+                "APPROVAL_DATE",
+                "APPROVAL_TIME",
                 "BAR_CHART",
                 "PIE_CHART_1",
                 "PIE_CHART_2",
@@ -35330,6 +36226,7 @@
             "type": "string",
             "description": "Represents an audit log action type.",
             "example": "CREATE_PROJECT",
+            "default": "",
             "enum": [
               "CREATE_TIME_PERSONAL_TIMER",
               "CREATE_TIME_PERSONAL_MANUAL",
@@ -35373,37 +36270,44 @@
           "content": {
             "type": "string",
             "description": "Represents the current value of the modified entity",
-            "example": "{\"projectName\":\"New Project\",\"client\":\"\",\"archived\":false,\"visibility\":true,\"members\":[\"John Doe\"],\"billableByDefault\":true,\"note\":\"\",\"billableRate\":0,\"costRate\":null,\"currency\":\"USD\",\"activeEstimate\":\"NONE\",\"estimateType\":null,\"estimate\":null,\"recurringEstimate\":false,\"interval\":null,\"month\":null,\"dayOfWeek\":null,\"dayOfMonth\":null,\"hour\":null}"
+            "example": "{\"projectName\":\"New Project\",\"client\":\"\",\"archived\":false,\"visibility\":true,\"members\":[\"John Doe\"],\"billableByDefault\":true,\"note\":\"\",\"billableRate\":0,\"costRate\":null,\"currency\":\"USD\",\"activeEstimate\":\"NONE\",\"estimateType\":null,\"estimate\":null,\"recurringEstimate\":false,\"interval\":null,\"month\":null,\"dayOfWeek\":null,\"dayOfMonth\":null,\"hour\":null}",
+            "default": ""
           },
           "previousContent": {
             "type": "string",
             "description": "Represents the previous value of the modified entity.",
-            "example": "null"
+            "example": "null",
+            "default": ""
           },
           "timestamp": {
             "type": "string",
             "description": "Represents a timestamp of when the audit log entry was created.",
-            "example": "2025-05-01T11:15:00Z"
+            "example": "2025-05-01T11:15:00Z",
+            "default": ""
           },
           "userEmail": {
             "type": "string",
             "description": "Represents the email address of the user.",
-            "example": "johndoe@example.com"
+            "example": "johndoe@example.com",
+            "default": ""
           },
           "userId": {
             "type": "string",
             "description": "Represents a user identifier across the system.",
-            "example": "45b687e29ae1f428e7ebe123"
+            "example": "45b687e29ae1f428e7ebe123",
+            "default": ""
           },
           "userName": {
             "type": "string",
             "description": "Represents the name of the user.",
-            "example": "John Doe"
+            "example": "John Doe",
+            "default": ""
           },
           "workspaceId": {
             "type": "string",
             "description": "Represents a workspace identifier across the system.",
-            "example": "64a687e29ae1f428e7ebe303"
+            "example": "64a687e29ae1f428e7ebe303",
+            "default": ""
           }
         }
       },
@@ -35430,6 +36334,7 @@
               "type": "string",
               "description": "Represents a set of audit log actions.",
               "example": "[\"CREATE_TIME_PERSONAL_MANUAL\",\"CREATE_TIME_PERSONAL_TIMER\",\"CREATE_PROJECT\"]",
+              "default": "",
               "enum": [
                 "CREATE_TIME_PERSONAL_TIMER",
                 "CREATE_TIME_PERSONAL_MANUAL",
@@ -35469,7 +36374,8 @@
                 "DELETE_EXPENSE",
                 "DELETE_EXPENSE_FOR_OTHER"
               ]
-            }
+            },
+            "default": null
           },
           "authors": {
             "$ref": "#/components/schemas/authors"
@@ -35477,7 +36383,8 @@
           "end": {
             "type": "string",
             "description": "Represents an end date in the yyyy-MM-ddThh:mm:ssZ format.",
-            "example": "2025-05-01T23:59:59Z"
+            "example": "2025-05-01T23:59:59Z",
+            "default": ""
           },
           "page": {
             "minimum": 0,
@@ -35499,7 +36406,8 @@
           "start": {
             "type": "string",
             "description": "Represents a start date in the yyyy-MM-ddThh:mm:ssZ format.",
-            "example": "2025-05-01T00:00:00Z"
+            "example": "2025-05-01T00:00:00Z",
+            "default": ""
           }
         }
       },
@@ -35533,20 +36441,24 @@
             "items": {
               "type": "string",
               "description": "Represents a set of author user ids. Include \"SYSTEM\" in this set to retrieve system related audit logs.",
-              "example": "[\"45b687e29ae1f428e7ebe123\",\"67s687e29ae1f428e7ebe678\",\"SYSTEM\"]"
-            }
+              "example": "[\"45b687e29ae1f428e7ebe123\",\"67s687e29ae1f428e7ebe678\",\"SYSTEM\"]",
+              "default": ""
+            },
+            "default": null
           },
           "contains": {
             "minLength": 1,
             "type": "string",
             "example": "CONTAINS",
+            "default": "",
             "enum": [
               "CONTAINS",
               "DOES_NOT_CONTAIN"
             ]
           }
         },
-        "description": "Represents the audit log author filter."
+        "description": "Represents the audit log author filter.",
+        "default": null
       }
     },
     "securitySchemes": {

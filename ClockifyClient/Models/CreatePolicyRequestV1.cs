@@ -98,6 +98,11 @@ namespace ClockifyClient.Models
         public CreatePolicyRequestV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            AllowHalfDay = false;
+            AllowNegativeBalance = false;
+            Archived = false;
+            EveryoneIncludingNew = false;
+            HasExpiration = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

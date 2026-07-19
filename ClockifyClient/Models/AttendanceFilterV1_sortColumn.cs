@@ -8,6 +8,10 @@ namespace ClockifyClient.Models
     public enum AttendanceFilterV1_sortColumn
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "GROUP")]
+        #pragma warning disable CS1591
+        GROUP,
+        #pragma warning restore CS1591
         [EnumMember(Value = "USER")]
         #pragma warning disable CS1591
         USER,
@@ -39,6 +43,14 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "OVERTIME")]
         #pragma warning disable CS1591
         OVERTIME,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UNDERTIME")]
+        #pragma warning disable CS1591
+        UNDERTIME,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BALANCE")]
+        #pragma warning disable CS1591
+        BALANCE,
         #pragma warning restore CS1591
         [EnumMember(Value = "TIME_OFF")]
         #pragma warning disable CS1591

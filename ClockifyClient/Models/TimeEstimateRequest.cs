@@ -37,6 +37,8 @@ namespace ClockifyClient.Models
         public TimeEstimateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Active = false;
+            IncludeNonBillable = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

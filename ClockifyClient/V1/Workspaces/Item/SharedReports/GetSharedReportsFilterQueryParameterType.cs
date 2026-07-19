@@ -11,6 +11,10 @@ namespace ClockifyClient.V1.Workspaces.Item.SharedReports
         #pragma warning disable CS1591
         ALL,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ALL_ADMIN")]
+        #pragma warning disable CS1591
+        ALL_ADMIN,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CREATED_BY_ME")]
         #pragma warning disable CS1591
         CREATED_BY_ME,

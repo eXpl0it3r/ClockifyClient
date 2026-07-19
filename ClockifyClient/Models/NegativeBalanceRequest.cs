@@ -17,20 +17,17 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents negative balance amount.</summary>
         public double? Amount { get; set; }
-        /// <summary>The amountValidForTimeUnit property</summary>
-        public bool? AmountValidForTimeUnit { get; set; }
         /// <summary>Represents negative balance period.</summary>
         public global::ClockifyClient.Models.NegativeBalanceRequest_period? Period { get; set; }
         /// <summary>Indicates whether negative balance should be reset at the end of the negative balance period.</summary>
         public bool? ShouldReset { get; set; }
-        /// <summary>Represents negative balance time unit.</summary>
-        public global::ClockifyClient.Models.NegativeBalanceRequest_timeUnit? TimeUnit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.NegativeBalanceRequest"/> and sets the default values.
         /// </summary>
         public NegativeBalanceRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            ShouldReset = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,10 +48,8 @@ namespace ClockifyClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
-                { "amountValidForTimeUnit", n => { AmountValidForTimeUnit = n.GetBoolValue(); } },
                 { "period", n => { Period = n.GetEnumValue<global::ClockifyClient.Models.NegativeBalanceRequest_period>(); } },
                 { "shouldReset", n => { ShouldReset = n.GetBoolValue(); } },
-                { "timeUnit", n => { TimeUnit = n.GetEnumValue<global::ClockifyClient.Models.NegativeBalanceRequest_timeUnit>(); } },
             };
         }
         /// <summary>
@@ -65,10 +60,8 @@ namespace ClockifyClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
-            writer.WriteBoolValue("amountValidForTimeUnit", AmountValidForTimeUnit);
             writer.WriteEnumValue<global::ClockifyClient.Models.NegativeBalanceRequest_period>("period", Period);
             writer.WriteBoolValue("shouldReset", ShouldReset);
-            writer.WriteEnumValue<global::ClockifyClient.Models.NegativeBalanceRequest_timeUnit>("timeUnit", TimeUnit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

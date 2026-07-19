@@ -152,6 +152,10 @@ namespace ClockifyClient.Models
         public ProjectDtoImplV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Archived = false;
+            Billable = false;
+            Public = false;
+            Template = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

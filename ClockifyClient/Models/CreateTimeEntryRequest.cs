@@ -76,6 +76,7 @@ namespace ClockifyClient.Models
         public CreateTimeEntryRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Billable = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

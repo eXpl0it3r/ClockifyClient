@@ -16,7 +16,7 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The filtrationType property</summary>
         public global::ClockifyClient.Models.CompareOvertimeFilter_filtrationType? FiltrationType { get; set; }
-        /// <summary>Represents duration of overtime work (difference between work and capacity) in hours, multiplied by 100. For example, if desired value is 1.5h, input should be 150.</summary>
+        /// <summary>Represents duration of overtime work (difference between work and capacity - if positive) in hours, multiplied by 100. For example, if desired value is 1.5h, input should be 150.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

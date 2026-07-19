@@ -31,6 +31,7 @@ public class ClockifyCommands
             await GetUserInfoAsync(client);
             await GetWorkspacesInfoAsync(client);
             await GetTimersInfoAsync(client);
+            await GetActiveProjectInfoAsync(client);
         }
         catch (Exception ex)
         {
@@ -74,6 +75,37 @@ public class ClockifyCommands
         }
     }
 
+    private static async Task GetActiveProjectInfoAsync(ClockifyApiClient client)
+    {
+        var workspaces = await client.V1.Workspaces.GetAsync();
+        if (workspaces != null)
+        {
+            Console.WriteLine("Projects:");
+            foreach (var workspace in workspaces)
+            {
+                Console.WriteLine($"- {workspace.Name} ({workspace.Id})");
+
+                var projects = await client.V1.Workspaces[workspace.Id].Projects.GetAsync(configuration => configuration.QueryParameters.Archived = false);
+
+                if (projects != null)
+                {
+                    foreach (var project in projects)
+                    {
+                        Console.WriteLine($"  - {project.Name} ({project.Id})");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("  No projects found");
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("⚠️ API returned no workspaces");
+        }
+    }
+
     private static async Task GetTimersInfoAsync(ClockifyApiClient client)
     {
         var user = await client.V1.User.GetAsync();
@@ -93,7 +125,7 @@ public class ClockifyCommands
             if (timers.Count > 0)
             {
                 var projects = await client.V1.Workspaces[user.ActiveWorkspace].Projects.GetAsync();
-                
+
                 foreach (var timer in timers)
                 {
                     var projectName = string.Empty;

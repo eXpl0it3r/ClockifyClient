@@ -30,6 +30,7 @@ namespace ClockifyClient.Models
         public UpdateInvoicedStatusRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Invoiced = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

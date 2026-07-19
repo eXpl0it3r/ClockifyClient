@@ -83,6 +83,8 @@ namespace ClockifyClient.Models
         public BalanceDtoV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            NegativeBalanceLimit = false;
+            PolicyArchived = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

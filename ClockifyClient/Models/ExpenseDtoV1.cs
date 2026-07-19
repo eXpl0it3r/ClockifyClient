@@ -102,6 +102,7 @@ namespace ClockifyClient.Models
         public ExpenseDtoV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Billable = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

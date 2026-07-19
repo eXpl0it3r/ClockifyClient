@@ -68,6 +68,8 @@ namespace ClockifyClient.Models
         public UpdateCustomFieldRequestV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            OnlyAdminCanEdit = false;
+            Required = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
