@@ -2,11 +2,18 @@ name: Build and Publish
 
 on: [push, pull_request, workflow_dispatch]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
   DOTNET_NOLOGO: true
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
-  NuGetDirectory: ${{ github.workspace }}/nuget
+  NUGET_DIRECTORY: ${{ github.workspace }}/nuget
 
 defaults:
   run:
@@ -17,15 +24,16 @@ jobs:
     name: ${{ matrix.platform.name }} ${{ matrix.dotnet.name }}
     runs-on: ${{ matrix.platform.os }}
     permissions:
-      id-token: write
+      contents: read
+      id-token: write # Required for NuGet trusted publishing
 
     strategy:
       fail-fast: false
       matrix:
         platform:
         - { name: Windows x64, os: windows-2025 }
-        - { name: Ubuntu x64, os: ubuntu-24.04 }
-        - { name: macOS arm64, os: macos-15 }
+        - { name: Ubuntu x64, os: ubuntu-26.04 }
+        - { name: macOS arm64, os: macos-26 }
         dotnet:
         - { name: .NET 9, version: '9.0.x' }
         - { name: .NET 10, version: '10.0.x' }
@@ -34,6 +42,7 @@ jobs:
     - name: Checkout ClockifyClient
       uses: actions/checkout@v7
       with:
+        persist-credentials: false
         fetch-depth: 0 # Required for Nerdbank.GitVersioning
 
     - name: Setup .NET ${{ matrix.dotnet.version }} SDK
@@ -42,7 +51,9 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet.version }}
     - name: Enforce SDK Version
-      run: dotnet new globaljson --sdk-version ${{ steps.setup-dotnet.outputs.dotnet-version }} --force
+      env:
+        DOTNET_VERSION: ${{ steps.setup-dotnet.outputs.dotnet-version }}
+      run: dotnet new globaljson --sdk-version ${env:DOTNET_VERSION} --force
     - name: Verify SDK Installation
       run: dotnet --info
 
@@ -53,13 +64,13 @@ jobs:
       run: dotnet build ClockifyClient.sln --configuration Release --no-restore
 
     - name: Create NuGet package
-      run: dotnet pack ClockifyClient/ClockifyClient.csproj --configuration Release --no-build --verbosity normal --output ${{ env.NuGetDirectory }}
+      run: dotnet pack ClockifyClient/ClockifyClient.csproj --configuration Release --no-build --verbosity normal --output ${env:NUGET_DIRECTORY}
 
     - name: Upload NuGet package artifacts
       uses: actions/upload-artifact@v7
       with:
         name: "ClockifyClient (${{ matrix.platform.name }} ${{ matrix.dotnet.name }})"
-        path: ${{ env.NuGetDirectory }}/*.*nupkg
+        path: ${{ env.NUGET_DIRECTORY }}/*.*nupkg
 
     - name: NuGet Login
       if: github.ref == 'refs/heads/master' && matrix.dotnet.name == '.NET 9' && runner.os == 'Windows'
@@ -70,7 +81,9 @@ jobs:
 
     - name: Publish to NuGet
       if: github.ref == 'refs/heads/master' && matrix.dotnet.name == '.NET 9' && runner.os == 'Windows'
+      env:
+        NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
       run: |
-        foreach($file in (Get-ChildItem ${{ env.NuGetDirectory }} -Recurse -Include *.nupkg)) {
-          dotnet nuget push $file --api-key "${{steps.login.outputs.NUGET_API_KEY}}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+        foreach($file in (Get-ChildItem ${env:NUGET_DIRECTORY} -Recurse -Include *.nupkg)) {
+          dotnet nuget push $file --api-key ${env:NUGET_API_KEY} --source https://api.nuget.org/v3/index.json --skip-duplicate
         }
