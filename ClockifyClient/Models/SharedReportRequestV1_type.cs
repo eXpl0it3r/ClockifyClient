@@ -35,6 +35,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         PTO_REQUESTS,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOIL_REQUESTS")]
+        #pragma warning disable CS1591
+        TOIL_REQUESTS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PTO_BALANCE")]
         #pragma warning disable CS1591
         PTO_BALANCE,

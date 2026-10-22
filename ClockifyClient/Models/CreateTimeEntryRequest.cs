@@ -24,7 +24,7 @@ namespace ClockifyClient.Models
 #else
         public List<global::ClockifyClient.Models.CreateCustomAttributeRequest> CustomAttributes { get; set; }
 #endif
-        /// <summary>Represents a list of value objects for user’s custom fields.</summary>
+        /// <summary>Represents a list of values for time entry custom fields defined in the workspace settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::ClockifyClient.Models.UpdateCustomFieldRequest>? CustomFields { get; set; }

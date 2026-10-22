@@ -347,5 +347,9 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         BALANCE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "FOUR_DECIMALS")]
+        #pragma warning disable CS1591
+        FOUR_DECIMALS,
+        #pragma warning restore CS1591
     }
 }

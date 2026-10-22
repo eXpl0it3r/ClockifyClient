@@ -125,10 +125,14 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Balance.Policy.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPolicyItemRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page%2Dsize")]
             public int? PageSize { get; set; }
+            #pragma warning restore CS1591
             /// <summary>If provided, you&apos;ll get result sorted by sort column.</summary>
             [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

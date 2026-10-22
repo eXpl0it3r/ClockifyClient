@@ -3,8 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace ClockifyClient.Models
 {
-    /// <summary>Represents a custom field type.</summary>
+    /// <summary>Represents a custom field type. This field is now deprecated and it&apos;s value will be ignored by the server. It will be removed entirely in a future release. Please stop including it in your payloads. To change a custom field type, please create a new object with the desired type instead.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    [Obsolete("")]
     public enum UpdateCustomFieldRequestV1_type
     {
         [EnumMember(Value = "TXT")]

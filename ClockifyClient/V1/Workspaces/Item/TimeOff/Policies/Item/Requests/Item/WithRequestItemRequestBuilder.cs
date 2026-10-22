@@ -22,7 +22,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRequestItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies/{%2Did}/requests/{requestId}", pathParameters)
+        public WithRequestItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies/{%2Did}/requests/{requestId}{?timeViewMode*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRequestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies/{%2Did}/requests/{requestId}", rawUrl)
+        public WithRequestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies/{%2Did}/requests/{requestId}{?timeViewMode*}", rawUrl)
         {
         }
         /// <summary>
@@ -41,11 +41,11 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ClockifyClient.Models.TimeOffRequestV1Dto?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.TimeOffRequestV1Dto?> DeleteAsync(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder.WithRequestItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ClockifyClient.Models.TimeOffRequestV1Dto> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.TimeOffRequestV1Dto> DeleteAsync(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder.WithRequestItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -60,11 +60,11 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ClockifyClient.Models.TimeOffRequestV1Dto?> PatchAsync(global::ClockifyClient.Models.StatusTimeOffRequestV1Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.TimeOffRequestV1Dto?> PatchAsync(global::ClockifyClient.Models.StatusTimeOffRequestV1Request body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder.WithRequestItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ClockifyClient.Models.TimeOffRequestV1Dto> PatchAsync(global::ClockifyClient.Models.StatusTimeOffRequestV1Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.TimeOffRequestV1Dto> PatchAsync(global::ClockifyClient.Models.StatusTimeOffRequestV1Request body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder.WithRequestItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -78,11 +78,11 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder.WithRequestItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder.WithRequestItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -98,11 +98,11 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.StatusTimeOffRequestV1Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.StatusTimeOffRequestV1Request body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder.WithRequestItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.StatusTimeOffRequestV1Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::ClockifyClient.Models.StatusTimeOffRequestV1Request body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder.WithRequestItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -122,19 +122,61 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item
             return new global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// Delete a time off request
         /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithRequestItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithRequestItemRequestBuilderDeleteQueryParameters 
         {
+            /// <summary>Represents time view mode used to display dates.</summary>
+            [Obsolete("This property is deprecated, use TimeViewModeAsDeleteTimeViewModeQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("timeViewMode")]
+            public string? TimeViewMode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("timeViewMode")]
+            public string TimeViewMode { get; set; }
+#endif
+            /// <summary>Represents time view mode used to display dates.</summary>
+            [QueryParameter("timeViewMode")]
+            public global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.DeleteTimeViewModeQueryParameterType? TimeViewModeAsDeleteTimeViewModeQueryParameterType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithRequestItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithRequestItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder.WithRequestItemRequestBuilderDeleteQueryParameters>
+        {
+        }
+        /// <summary>
+        /// Change a time off request status
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithRequestItemRequestBuilderPatchQueryParameters 
+        {
+            /// <summary>Represents time view mode used to display dates.</summary>
+            [Obsolete("This property is deprecated, use TimeViewModeAsPatchTimeViewModeQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("timeViewMode")]
+            public string? TimeViewMode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("timeViewMode")]
+            public string TimeViewMode { get; set; }
+#endif
+            /// <summary>Represents time view mode used to display dates.</summary>
+            [QueryParameter("timeViewMode")]
+            public global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.PatchTimeViewModeQueryParameterType? TimeViewModeAsPatchTimeViewModeQueryParameterType { get; set; }
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithRequestItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.Item.WithRequestItemRequestBuilder.WithRequestItemRequestBuilderPatchQueryParameters>
         {
         }
     }

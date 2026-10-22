@@ -24,6 +24,8 @@ namespace ClockifyClient.Models
 #else
         public string Currency { get; set; }
 #endif
+        /// <summary>Represents if approved time entries&apos; rates should be updated.</summary>
+        public bool? IncludeApproved { get; set; }
         /// <summary>Represents a date and time in yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,7 @@ namespace ClockifyClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Currency = "USD";
+            IncludeApproved = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +63,7 @@ namespace ClockifyClient.Models
             {
                 { "amount", n => { Amount = n.GetIntValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "includeApproved", n => { IncludeApproved = n.GetBoolValue(); } },
                 { "since", n => { Since = n.GetStringValue(); } },
             };
         }
@@ -72,6 +76,7 @@ namespace ClockifyClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("amount", Amount);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteBoolValue("includeApproved", IncludeApproved);
             writer.WriteStringValue("since", Since);
             writer.WriteAdditionalData(AdditionalData);
         }

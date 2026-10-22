@@ -44,7 +44,7 @@ namespace ClockifyClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>Represents a recurring assignment object. This parameter is optional.</summary>
+        /// <summary>The recurringAssignment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.CreateRecurringAssignmentRequestV1? RecurringAssignment { get; set; }

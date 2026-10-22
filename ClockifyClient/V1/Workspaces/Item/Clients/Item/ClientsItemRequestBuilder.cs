@@ -180,10 +180,14 @@ namespace ClockifyClient.V1.Workspaces.Item.Clients.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ClientsItemRequestBuilderPutQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("archive%2Dprojects")]
             public bool? ArchiveProjects { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("mark%2Dtasks%2Das%2Ddone")]
             public bool? MarkTasksAsDone { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

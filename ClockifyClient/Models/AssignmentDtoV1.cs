@@ -65,10 +65,10 @@ namespace ClockifyClient.Models
         /// <summary>Represents recurring assignment object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::ClockifyClient.Models.RecurringAssignmentDto? Recurring { get; set; }
+        public global::ClockifyClient.Models.RecurringAssignmentDtoV1? Recurring { get; set; }
 #nullable restore
 #else
-        public global::ClockifyClient.Models.RecurringAssignmentDto Recurring { get; set; }
+        public global::ClockifyClient.Models.RecurringAssignmentDtoV1 Recurring { get; set; }
 #endif
         /// <summary>Represents start time in hh:mm:ss format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +139,7 @@ namespace ClockifyClient.Models
                 { "period", n => { Period = n.GetObjectValue<global::ClockifyClient.Models.DateRangeDto>(global::ClockifyClient.Models.DateRangeDto.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "published", n => { Published = n.GetBoolValue(); } },
-                { "recurring", n => { Recurring = n.GetObjectValue<global::ClockifyClient.Models.RecurringAssignmentDto>(global::ClockifyClient.Models.RecurringAssignmentDto.CreateFromDiscriminatorValue); } },
+                { "recurring", n => { Recurring = n.GetObjectValue<global::ClockifyClient.Models.RecurringAssignmentDtoV1>(global::ClockifyClient.Models.RecurringAssignmentDtoV1.CreateFromDiscriminatorValue); } },
                 { "startTime", n => { StartTime = n.GetStringValue(); } },
                 { "taskId", n => { TaskId = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
@@ -162,7 +162,7 @@ namespace ClockifyClient.Models
             writer.WriteObjectValue<global::ClockifyClient.Models.DateRangeDto>("period", Period);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteBoolValue("published", Published);
-            writer.WriteObjectValue<global::ClockifyClient.Models.RecurringAssignmentDto>("recurring", Recurring);
+            writer.WriteObjectValue<global::ClockifyClient.Models.RecurringAssignmentDtoV1>("recurring", Recurring);
             writer.WriteStringValue("startTime", StartTime);
             writer.WriteStringValue("taskId", TaskId);
             writer.WriteStringValue("userId", UserId);

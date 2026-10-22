@@ -35,6 +35,8 @@ namespace ClockifyClient.Models
         public global::ClockifyClient.Models.WebhookEventType_CLIENT_UPDATED? CLIENTUPDATED { get; set; }
         /// <summary>The COST_RATE_UPDATED property</summary>
         public global::ClockifyClient.Models.WebhookEventType_COST_RATE_UPDATED? COSTRATEUPDATED { get; set; }
+        /// <summary>The delayedDelete property</summary>
+        public bool? DelayedDelete { get; set; }
         /// <summary>The EXPENSE_CREATED property</summary>
         public global::ClockifyClient.Models.WebhookEventType_EXPENSE_CREATED? EXPENSECREATED { get; set; }
         /// <summary>The EXPENSE_DELETED property</summary>
@@ -164,6 +166,7 @@ namespace ClockifyClient.Models
                 { "CLIENT_DELETED", n => { CLIENTDELETED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_CLIENT_DELETED>(); } },
                 { "CLIENT_UPDATED", n => { CLIENTUPDATED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_CLIENT_UPDATED>(); } },
                 { "COST_RATE_UPDATED", n => { COSTRATEUPDATED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_COST_RATE_UPDATED>(); } },
+                { "delayedDelete", n => { DelayedDelete = n.GetBoolValue(); } },
                 { "EXPENSE_CREATED", n => { EXPENSECREATED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_EXPENSE_CREATED>(); } },
                 { "EXPENSE_DELETED", n => { EXPENSEDELETED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_EXPENSE_DELETED>(); } },
                 { "EXPENSE_RESTORED", n => { EXPENSERESTORED = n.GetEnumValue<global::ClockifyClient.Models.WebhookEventType_EXPENSE_RESTORED>(); } },
@@ -227,6 +230,7 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_CLIENT_DELETED>("CLIENT_DELETED", CLIENTDELETED);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_CLIENT_UPDATED>("CLIENT_UPDATED", CLIENTUPDATED);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_COST_RATE_UPDATED>("COST_RATE_UPDATED", COSTRATEUPDATED);
+            writer.WriteBoolValue("delayedDelete", DelayedDelete);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_EXPENSE_CREATED>("EXPENSE_CREATED", EXPENSECREATED);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_EXPENSE_DELETED>("EXPENSE_DELETED", EXPENSEDELETED);
             writer.WriteEnumValue<global::ClockifyClient.Models.WebhookEventType_EXPENSE_RESTORED>("EXPENSE_RESTORED", EXPENSERESTORED);

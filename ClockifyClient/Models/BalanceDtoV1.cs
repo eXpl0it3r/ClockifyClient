@@ -29,6 +29,8 @@ namespace ClockifyClient.Models
         public double? NegativeBalanceAmount { get; set; }
         /// <summary>Indicates whether the negative balance limit is allowed.</summary>
         public bool? NegativeBalanceLimit { get; set; }
+        /// <summary>Represents the amount of balance used outside of existing balance and validity period</summary>
+        public double? NegativeBalanceUsed { get; set; }
         /// <summary>Indicates whether the policy is archived.</summary>
         public bool? PolicyArchived { get; set; }
         /// <summary>Represent policy identifier across the system.</summary>
@@ -108,6 +110,7 @@ namespace ClockifyClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "negativeBalanceAmount", n => { NegativeBalanceAmount = n.GetDoubleValue(); } },
                 { "negativeBalanceLimit", n => { NegativeBalanceLimit = n.GetBoolValue(); } },
+                { "negativeBalanceUsed", n => { NegativeBalanceUsed = n.GetDoubleValue(); } },
                 { "policyArchived", n => { PolicyArchived = n.GetBoolValue(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "policyName", n => { PolicyName = n.GetStringValue(); } },
@@ -130,6 +133,7 @@ namespace ClockifyClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("negativeBalanceAmount", NegativeBalanceAmount);
             writer.WriteBoolValue("negativeBalanceLimit", NegativeBalanceLimit);
+            writer.WriteDoubleValue("negativeBalanceUsed", NegativeBalanceUsed);
             writer.WriteBoolValue("policyArchived", PolicyArchived);
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteStringValue("policyName", PolicyName);

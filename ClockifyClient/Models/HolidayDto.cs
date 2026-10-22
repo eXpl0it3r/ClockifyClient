@@ -14,6 +14,14 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents holiday auto import settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.AutoImportHolidaySettingDto? AutoImportHolidaySettingDto { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.AutoImportHolidaySettingDto AutoImportHolidaySettingDto { get; set; }
+#endif
         /// <summary>Represents automatic time entry creation settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +37,14 @@ namespace ClockifyClient.Models
 #nullable restore
 #else
         public string Color { get; set; }
+#endif
+        /// <summary>Represents imported public holiday country name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CountryName { get; set; }
+#nullable restore
+#else
+        public string CountryName { get; set; }
 #endif
         /// <summary>Represents startDate and endDate of the holiday. Date is in format yyyy-mm-dd</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,6 +64,8 @@ namespace ClockifyClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The imported property</summary>
+        public bool? Imported { get; set; }
         /// <summary>Represents the name of the holiday.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,11 +143,14 @@ namespace ClockifyClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "autoImportHolidaySettingDto", n => { AutoImportHolidaySettingDto = n.GetObjectValue<global::ClockifyClient.Models.AutoImportHolidaySettingDto>(global::ClockifyClient.Models.AutoImportHolidaySettingDto.CreateFromDiscriminatorValue); } },
                 { "automaticTimeEntryCreation", n => { AutomaticTimeEntryCreation = n.GetObjectValue<global::ClockifyClient.Models.AutomaticTimeEntryCreationDto>(global::ClockifyClient.Models.AutomaticTimeEntryCreationDto.CreateFromDiscriminatorValue); } },
                 { "color", n => { Color = n.GetStringValue(); } },
+                { "countryName", n => { CountryName = n.GetStringValue(); } },
                 { "datePeriod", n => { DatePeriod = n.GetObjectValue<global::ClockifyClient.Models.DatePeriod>(global::ClockifyClient.Models.DatePeriod.CreateFromDiscriminatorValue); } },
                 { "everyoneIncludingNew", n => { EveryoneIncludingNew = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "imported", n => { Imported = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "occursAnnually", n => { OccursAnnually = n.GetBoolValue(); } },
                 { "userGroupIds", n => { UserGroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -146,11 +167,14 @@ namespace ClockifyClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::ClockifyClient.Models.AutoImportHolidaySettingDto>("autoImportHolidaySettingDto", AutoImportHolidaySettingDto);
             writer.WriteObjectValue<global::ClockifyClient.Models.AutomaticTimeEntryCreationDto>("automaticTimeEntryCreation", AutomaticTimeEntryCreation);
             writer.WriteStringValue("color", Color);
+            writer.WriteStringValue("countryName", CountryName);
             writer.WriteObjectValue<global::ClockifyClient.Models.DatePeriod>("datePeriod", DatePeriod);
             writer.WriteBoolValue("everyoneIncludingNew", EveryoneIncludingNew);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("imported", Imported);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("occursAnnually", OccursAnnually);
             writer.WriteCollectionOfPrimitiveValues<string>("userGroupIds", UserGroupIds);

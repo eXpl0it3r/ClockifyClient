@@ -22,7 +22,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DuplicateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries/{id}/duplicate", pathParameters)
+        public DuplicateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries/{id}/duplicate{?timeViewMode*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DuplicateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries/{id}/duplicate", rawUrl)
+        public DuplicateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries/{id}/duplicate{?timeViewMode*}", rawUrl)
         {
         }
         /// <summary>
@@ -41,11 +41,11 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ClockifyClient.Models.TimeEntryDtoImplV1?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.TimeEntryDtoImplV1?> PostAsync(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate.DuplicateRequestBuilder.DuplicateRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ClockifyClient.Models.TimeEntryDtoImplV1> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.TimeEntryDtoImplV1> PostAsync(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate.DuplicateRequestBuilder.DuplicateRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -58,11 +58,11 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate.DuplicateRequestBuilder.DuplicateRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate.DuplicateRequestBuilder.DuplicateRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -80,11 +80,28 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate
             return new global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate.DuplicateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Duplicate a time entry
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class DuplicateRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Represents time view mode used to display time entries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("timeViewMode")]
+            public string? TimeViewMode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("timeViewMode")]
+            public string TimeViewMode { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DuplicateRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class DuplicateRequestBuilderPostRequestConfiguration : RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.Item.Duplicate.DuplicateRequestBuilder.DuplicateRequestBuilderPostQueryParameters>
         {
         }
     }

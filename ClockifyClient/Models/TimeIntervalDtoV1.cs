@@ -27,6 +27,18 @@ namespace ClockifyClient.Models
         public DateTimeOffset? End { get; set; }
         /// <summary>Represents a start date in yyyy-MM-ddThh:mm:ssZ format.</summary>
         public DateTimeOffset? Start { get; set; }
+        /// <summary>Represents the user&apos;s timezone.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZone { get; set; }
+#nullable restore
+#else
+        public string TimeZone { get; set; }
+#endif
+        /// <summary>Represents the end time in the user&apos;s timezone.</summary>
+        public DateTimeOffset? ZonedEnd { get; set; }
+        /// <summary>Represents the start time in the user&apos;s timezone.</summary>
+        public DateTimeOffset? ZonedStart { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.TimeIntervalDtoV1"/> and sets the default values.
         /// </summary>
@@ -55,6 +67,9 @@ namespace ClockifyClient.Models
                 { "duration", n => { Duration = n.GetStringValue(); } },
                 { "end", n => { End = n.GetDateTimeOffsetValue(); } },
                 { "start", n => { Start = n.GetDateTimeOffsetValue(); } },
+                { "timeZone", n => { TimeZone = n.GetStringValue(); } },
+                { "zonedEnd", n => { ZonedEnd = n.GetDateTimeOffsetValue(); } },
+                { "zonedStart", n => { ZonedStart = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -67,6 +82,9 @@ namespace ClockifyClient.Models
             writer.WriteStringValue("duration", Duration);
             writer.WriteDateTimeOffsetValue("end", End);
             writer.WriteDateTimeOffsetValue("start", Start);
+            writer.WriteStringValue("timeZone", TimeZone);
+            writer.WriteDateTimeOffsetValue("zonedEnd", ZonedEnd);
+            writer.WriteDateTimeOffsetValue("zonedStart", ZonedStart);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

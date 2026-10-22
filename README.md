@@ -188,6 +188,41 @@ For example, like this:
 "responses": { "200": { "content": { "application/json": { "schema": { "$ref": "#/components/schemas/TimeEntrySummaryReportDto" } } }, "description": "OK" } },
 ```
 
+#### Fixing Workspace Plan Types
+
+The API returns the plan of a workspace as a string (e.g. `"FREE_2026"`) and the features as a list of strings, but the specification describes both as objects, so they always end up empty.
+
+Replace `featureSubscriptionType` and `features` in `WorkspaceDtoV1`
+
+```json
+"featureSubscriptionType": {
+  "$ref": "#/components/schemas/FeaturePlan"
+},
+"features": {
+  "$ref": "#/components/schemas/Feature"
+},
+```
+
+with
+
+```json
+"featureSubscriptionType": {
+  "type": "string",
+  "description": "Represents a feature plan type enum.",
+  "example": "FREE_2026"
+},
+"features": {
+  "type": "array",
+  "description": "Represents a list of features.",
+  "items": {
+    "type": "string"
+  },
+  "example": ["TIME_TRACKING", "ONE_MONTH_RANGE_REPORTS"]
+},
+```
+
+Kiota doesn't remove files it no longer generates, so delete `Feature.cs`, `Feature_*.cs`, `FeaturePlan.cs` and `FeaturePlan_*.cs` from `ClockifyClient/Models` afterwards.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

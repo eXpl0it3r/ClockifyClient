@@ -42,6 +42,8 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.CostRateRequestV1 CostRate { get; set; }
 #endif
+        /// <summary>The costRateSet property</summary>
+        public bool? CostRateSet { get; set; }
         /// <summary>The hourlyRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +52,9 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.HourlyRateRequestV1 HourlyRate { get; set; }
 #endif
-        /// <summary>Indicates whether project is public or not.</summary>
+        /// <summary>The hourlyRateSet property</summary>
+        public bool? HourlyRateSet { get; set; }
+        /// <summary>Indicates whether project is public or not.**Important note:** setting a project to private requires at least a Basic plan. If you are on a Free plan, you must explicitly set this value to `true`. You can upgrade your current plan to unlock private projects.</summary>
         public bool? IsPublic { get; set; }
         /// <summary>Represents a project name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +105,9 @@ namespace ClockifyClient.Models
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "costRate", n => { CostRate = n.GetObjectValue<global::ClockifyClient.Models.CostRateRequestV1>(global::ClockifyClient.Models.CostRateRequestV1.CreateFromDiscriminatorValue); } },
+                { "costRateSet", n => { CostRateSet = n.GetBoolValue(); } },
                 { "hourlyRate", n => { HourlyRate = n.GetObjectValue<global::ClockifyClient.Models.HourlyRateRequestV1>(global::ClockifyClient.Models.HourlyRateRequestV1.CreateFromDiscriminatorValue); } },
+                { "hourlyRateSet", n => { HourlyRateSet = n.GetBoolValue(); } },
                 { "isPublic", n => { IsPublic = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "note", n => { Note = n.GetStringValue(); } },
@@ -119,7 +125,9 @@ namespace ClockifyClient.Models
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("color", Color);
             writer.WriteObjectValue<global::ClockifyClient.Models.CostRateRequestV1>("costRate", CostRate);
+            writer.WriteBoolValue("costRateSet", CostRateSet);
             writer.WriteObjectValue<global::ClockifyClient.Models.HourlyRateRequestV1>("hourlyRate", HourlyRate);
+            writer.WriteBoolValue("hourlyRateSet", HourlyRateSet);
             writer.WriteBoolValue("isPublic", IsPublic);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("note", Note);

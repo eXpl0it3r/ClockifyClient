@@ -32,14 +32,14 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests
         }
         /// <summary>Gets an item from the ClockifyClient.v1.workspaces.item.approvalRequests.item collection</summary>
         /// <param name="position">Represents an approval request identifier across the system.</param>
-        /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Item.WithApprovalRequestItemRequestBuilder"/></returns>
-        public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Item.WithApprovalRequestItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Item.ApprovalRequestItemRequestBuilder"/></returns>
+        public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Item.ApprovalRequestItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("approvalRequestId", position);
-                return new global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Item.WithApprovalRequestItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("approvalRequest%2Did", position);
+                return new global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.Item.ApprovalRequestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApprovalRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/approval-requests{?page*,page%2Dsize*,sort%2Dcolumn*,sort%2Dorder*,status*}", pathParameters)
+        public ApprovalRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/approval-requests{?page*,page%2Dsize*,sort%2Dcolumn*,sort%2Dorder*,status*,timeViewMode*,types*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApprovalRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/approval-requests{?page*,page%2Dsize*,sort%2Dcolumn*,sort%2Dorder*,status*}", rawUrl)
+        public ApprovalRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/approval-requests{?page*,page%2Dsize*,sort%2Dcolumn*,sort%2Dorder*,status*,timeViewMode*,types*}", rawUrl)
         {
         }
         /// <summary>
@@ -84,13 +84,14 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ClockifyClient.Models.ApprovalRequestDtoV1?> PostAsync(global::ClockifyClient.Models.CreateApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.ApprovalRequestDtoV1?> PostAsync(global::ClockifyClient.Models.CreateApprovalRequest body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ApprovalRequestsRequestBuilder.ApprovalRequestsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ClockifyClient.Models.ApprovalRequestDtoV1> PostAsync(global::ClockifyClient.Models.CreateApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.ApprovalRequestDtoV1> PostAsync(global::ClockifyClient.Models.CreateApprovalRequest body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ApprovalRequestsRequestBuilder.ApprovalRequestsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -122,13 +123,14 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateApprovalRequest body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ApprovalRequestsRequestBuilder.ApprovalRequestsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateApprovalRequest body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ApprovalRequestsRequestBuilder.ApprovalRequestsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -201,6 +203,33 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests
             /// <summary>Filters results based on the provided approval state.</summary>
             [QueryParameter("status")]
             public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.GetStatusQueryParameterType? StatusAsGetStatusQueryParameterType { get; set; }
+            [Obsolete("This property is deprecated, use TypesAsGetTypesQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("types")]
+            public string[]? Types { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("types")]
+            public string[] Types { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("types")]
+            public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.GetTypesQueryParameterType[]? TypesAsGetTypesQueryParameterType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("types")]
+            public global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.GetTypesQueryParameterType[] TypesAsGetTypesQueryParameterType { get; set; }
+            #pragma warning restore CS1591
+#endif
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -211,11 +240,28 @@ namespace ClockifyClient.V1.Workspaces.Item.ApprovalRequests
         {
         }
         /// <summary>
+        /// Submit approval request
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ApprovalRequestsRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Represents time view mode used to display time entries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("timeViewMode")]
+            public string? TimeViewMode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("timeViewMode")]
+            public string TimeViewMode { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ApprovalRequestsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ApprovalRequestsRequestBuilderPostRequestConfiguration : RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.ApprovalRequests.ApprovalRequestsRequestBuilder.ApprovalRequestsRequestBuilderPostQueryParameters>
         {
         }
     }

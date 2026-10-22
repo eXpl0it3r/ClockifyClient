@@ -22,9 +22,19 @@ namespace ClockifyClient.Models
 #else
         public string AuthToken { get; set; }
 #endif
-        /// <summary>Indicates whether webhook delivery is enabled or not. It can be disabled if delivery failed for too many times.</summary>
+        /// <summary>Indicates whether webhook delivery is enabled or not. It can be disabled if delivery failed for too many times. Deprecated: use disabledReasons.</summary>
+        [Obsolete("")]
         public bool? DeliveryEnabled { get; set; }
-        /// <summary>Indicates whether webhook is enabled or not.</summary>
+        /// <summary>A list of reasons why the webhook is disabled. If empty, the webhook is fully enabled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::ClockifyClient.Models.WebhookDtoV1_disabledReasons?>? DisabledReasons { get; set; }
+#nullable restore
+#else
+        public List<global::ClockifyClient.Models.WebhookDtoV1_disabledReasons?> DisabledReasons { get; set; }
+#endif
+        /// <summary>Indicates whether webhook is enabled or not. Deprecated: use disabledReasons.</summary>
+        [Obsolete("")]
         public bool? Enabled { get; set; }
         /// <summary>Represents webhook identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,7 +52,8 @@ namespace ClockifyClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Indicates whether webhook is supported by current plan. It can be disabled if number of webhooks exceeds plan limit or if the feature is not supported on current plan.</summary>
+        /// <summary>Indicates whether webhook is supported by current plan. It can be disabled if number of webhooks exceeds plan limit or if the feature is not supported on current plan. Deprecated: use disabledReasons.</summary>
+        [Obsolete("")]
         public bool? PlanEnabled { get; set; }
         /// <summary>Represents a list of trigger sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,6 +133,7 @@ namespace ClockifyClient.Models
             {
                 { "authToken", n => { AuthToken = n.GetStringValue(); } },
                 { "deliveryEnabled", n => { DeliveryEnabled = n.GetBoolValue(); } },
+                { "disabledReasons", n => { DisabledReasons = n.GetCollectionOfEnumValues<global::ClockifyClient.Models.WebhookDtoV1_disabledReasons>()?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -143,6 +155,7 @@ namespace ClockifyClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authToken", AuthToken);
             writer.WriteBoolValue("deliveryEnabled", DeliveryEnabled);
+            writer.WriteCollectionOfEnumValues<global::ClockifyClient.Models.WebhookDtoV1_disabledReasons>("disabledReasons", DisabledReasons);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

@@ -44,8 +44,18 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.AutomaticTimeEntryCreationDto AutomaticTimeEntryCreation { get; set; }
 #endif
+        /// <summary>Represents the color assigned to the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Color { get; set; }
+#nullable restore
+#else
+        public string Color { get; set; }
+#endif
         /// <summary>Indicates whether the policy is applied to future new users.</summary>
         public bool? EveryoneIncludingNew { get; set; }
+        /// <summary>Represents the icon assigned to the policy.</summary>
+        public global::ClockifyClient.Models.PolicyDtoV1_icon? Icon { get; set; }
         /// <summary>Represents policy identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,7 +149,9 @@ namespace ClockifyClient.Models
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "automaticAccrual", n => { AutomaticAccrual = n.GetObjectValue<global::ClockifyClient.Models.AutomaticAccrualDto>(global::ClockifyClient.Models.AutomaticAccrualDto.CreateFromDiscriminatorValue); } },
                 { "automaticTimeEntryCreation", n => { AutomaticTimeEntryCreation = n.GetObjectValue<global::ClockifyClient.Models.AutomaticTimeEntryCreationDto>(global::ClockifyClient.Models.AutomaticTimeEntryCreationDto.CreateFromDiscriminatorValue); } },
+                { "color", n => { Color = n.GetStringValue(); } },
                 { "everyoneIncludingNew", n => { EveryoneIncludingNew = n.GetBoolValue(); } },
+                { "icon", n => { Icon = n.GetEnumValue<global::ClockifyClient.Models.PolicyDtoV1_icon>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "negativeBalance", n => { NegativeBalance = n.GetObjectValue<global::ClockifyClient.Models.NegativeBalanceDto>(global::ClockifyClient.Models.NegativeBalanceDto.CreateFromDiscriminatorValue); } },
@@ -163,7 +175,9 @@ namespace ClockifyClient.Models
             writer.WriteBoolValue("archived", Archived);
             writer.WriteObjectValue<global::ClockifyClient.Models.AutomaticAccrualDto>("automaticAccrual", AutomaticAccrual);
             writer.WriteObjectValue<global::ClockifyClient.Models.AutomaticTimeEntryCreationDto>("automaticTimeEntryCreation", AutomaticTimeEntryCreation);
+            writer.WriteStringValue("color", Color);
             writer.WriteBoolValue("everyoneIncludingNew", EveryoneIncludingNew);
+            writer.WriteEnumValue<global::ClockifyClient.Models.PolicyDtoV1_icon>("icon", Icon);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::ClockifyClient.Models.NegativeBalanceDto>("negativeBalance", NegativeBalance);
