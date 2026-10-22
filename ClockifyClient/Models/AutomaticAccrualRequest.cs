@@ -19,8 +19,6 @@ namespace ClockifyClient.Models
         public double? Amount { get; set; }
         /// <summary>Represents automatic accrual period.</summary>
         public global::ClockifyClient.Models.AutomaticAccrualRequest_period? Period { get; set; }
-        /// <summary>Represents automatic accrual time unit.</summary>
-        public global::ClockifyClient.Models.AutomaticAccrualRequest_timeUnit? TimeUnit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.AutomaticAccrualRequest"/> and sets the default values.
         /// </summary>
@@ -48,7 +46,6 @@ namespace ClockifyClient.Models
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "period", n => { Period = n.GetEnumValue<global::ClockifyClient.Models.AutomaticAccrualRequest_period>(); } },
-                { "timeUnit", n => { TimeUnit = n.GetEnumValue<global::ClockifyClient.Models.AutomaticAccrualRequest_timeUnit>(); } },
             };
         }
         /// <summary>
@@ -60,7 +57,6 @@ namespace ClockifyClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteEnumValue<global::ClockifyClient.Models.AutomaticAccrualRequest_period>("period", Period);
-            writer.WriteEnumValue<global::ClockifyClient.Models.AutomaticAccrualRequest_timeUnit>("timeUnit", TimeUnit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

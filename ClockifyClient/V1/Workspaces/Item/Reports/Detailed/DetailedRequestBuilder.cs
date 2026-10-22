@@ -22,7 +22,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Detailed
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetailedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/reports/detailed", pathParameters)
+        public DetailedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/reports/detailed{?timeViewMode*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Detailed
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetailedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/reports/detailed", rawUrl)
+        public DetailedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/reports/detailed{?timeViewMode*}", rawUrl)
         {
         }
         /// <summary>
@@ -42,11 +42,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Detailed
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ClockifyClient.Models.TimeEntryDetailedReportDto?> PostAsync(global::ClockifyClient.Models.DetailedReportFilterV1 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.TimeEntryDetailedReportDto?> PostAsync(global::ClockifyClient.Models.DetailedReportFilterV1 body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Reports.Detailed.DetailedRequestBuilder.DetailedRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ClockifyClient.Models.TimeEntryDetailedReportDto> PostAsync(global::ClockifyClient.Models.DetailedReportFilterV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.TimeEntryDetailedReportDto> PostAsync(global::ClockifyClient.Models.DetailedReportFilterV1 body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Reports.Detailed.DetailedRequestBuilder.DetailedRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -61,11 +61,11 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Detailed
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.DetailedReportFilterV1 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.DetailedReportFilterV1 body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Reports.Detailed.DetailedRequestBuilder.DetailedRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.DetailedReportFilterV1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.DetailedReportFilterV1 body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Reports.Detailed.DetailedRequestBuilder.DetailedRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -85,11 +85,31 @@ namespace ClockifyClient.V1.Workspaces.Item.Reports.Detailed
             return new global::ClockifyClient.V1.Workspaces.Item.Reports.Detailed.DetailedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Detailed report data on FREE subscription plan is limited to a maximum interval length of one month (31 days).
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class DetailedRequestBuilderPostQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("timeViewMode")]
+            public string? TimeViewMode { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("timeViewMode")]
+            public string TimeViewMode { get; set; }
+            #pragma warning restore CS1591
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DetailedRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class DetailedRequestBuilderPostRequestConfiguration : RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.Reports.Detailed.DetailedRequestBuilder.DetailedRequestBuilderPostQueryParameters>
         {
         }
     }

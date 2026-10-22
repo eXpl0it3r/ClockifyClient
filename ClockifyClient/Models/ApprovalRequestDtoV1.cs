@@ -55,6 +55,14 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.ApprovalRequestStatusDtoV1 Status { get; set; }
 #endif
+        /// <summary>Represents approval request type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>Represents workspace identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +101,7 @@ namespace ClockifyClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::ClockifyClient.Models.ApprovalRequestOwnerDtoV1>(global::ClockifyClient.Models.ApprovalRequestOwnerDtoV1.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::ClockifyClient.Models.ApprovalRequestStatusDtoV1>(global::ClockifyClient.Models.ApprovalRequestStatusDtoV1.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetStringValue(); } },
                 { "workspaceId", n => { WorkspaceId = n.GetStringValue(); } },
             };
         }
@@ -108,6 +117,7 @@ namespace ClockifyClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::ClockifyClient.Models.ApprovalRequestOwnerDtoV1>("owner", Owner);
             writer.WriteObjectValue<global::ClockifyClient.Models.ApprovalRequestStatusDtoV1>("status", Status);
+            writer.WriteStringValue("type", Type);
             writer.WriteStringValue("workspaceId", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
         }

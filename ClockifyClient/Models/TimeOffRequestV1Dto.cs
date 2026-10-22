@@ -42,7 +42,7 @@ namespace ClockifyClient.Models
 #else
         public string PolicyId { get; set; }
 #endif
-        /// <summary>Represents the status the time off request.</summary>
+        /// <summary>Represents the status of the time off request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.TimeOffRequestStatus? Status { get; set; }
@@ -50,7 +50,7 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.TimeOffRequestStatus Status { get; set; }
 #endif
-        /// <summary>Represents the period the time off request.</summary>
+        /// <summary>Represents the period of the time off request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.TimeOffRequestPeriodDto? TimeOffPeriod { get; set; }

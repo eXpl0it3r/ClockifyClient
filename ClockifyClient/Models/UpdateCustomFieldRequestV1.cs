@@ -14,7 +14,7 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents a list of custom field&apos;s allowed values.</summary>
+        /// <summary>Represents a list of custom field&apos;s allowed values. If field type is not `DROPDOWN_SINGLE` or `DROPDOWN_MULTIPLE`, the values provided will be ignored by the server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedValues { get; set; }
@@ -22,7 +22,7 @@ namespace ClockifyClient.Models
 #else
         public List<string> AllowedValues { get; set; }
 #endif
-        /// <summary>Represents a custom field description.</summary>
+        /// <summary>Represents a custom field description.&lt;br/&gt;If this field is not included in the payload,it will automatically be set to `null`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -40,7 +40,7 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Flag to set whether custom field is modifiable only by admin users.</summary>
         public bool? OnlyAdminCanEdit { get; set; }
-        /// <summary>Represents a custom field placeholder value.</summary>
+        /// <summary>Represents a custom field placeholder value.&lt;br/&gt;If this field is not included in the payload,it will automatically be set to `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Placeholder { get; set; }
@@ -50,11 +50,12 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Flag to set whether custom field is mandatory or not.</summary>
         public bool? Required { get; set; }
-        /// <summary>Represents a custom field status</summary>
+        /// <summary>Represents a custom field status.&lt;br/&gt;If this field is not included in the payload,it will automatically be set to default `INACTIVE`.</summary>
         public global::ClockifyClient.Models.UpdateCustomFieldRequestV1_status? Status { get; set; }
-        /// <summary>Represents a custom field type.</summary>
+        /// <summary>Represents a custom field type. This field is now deprecated and it&apos;s value will be ignored by the server. It will be removed entirely in a future release. Please stop including it in your payloads. To change a custom field type, please create a new object with the desired type instead.</summary>
+        [Obsolete("")]
         public global::ClockifyClient.Models.UpdateCustomFieldRequestV1_type? Type { get; set; }
-        /// <summary>Represents a custom field&apos;s default value in the workspace.</summary>
+        /// <summary>Represents a custom field&apos;s default value in the workspace.&lt;li&gt;if type = NUMBER, then value must be a number&lt;/li&gt;&lt;li&gt;if type = DROPDOWN_MULTIPLE, value must be a list&lt;/li&gt;&lt;li&gt;if type = CHECKBOX, value must be true/false&lt;/li&gt;&lt;li&gt;otherwise any string&lt;/li&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.UpdateCustomFieldRequestV1_workspaceDefaultValue? WorkspaceDefaultValue { get; set; }

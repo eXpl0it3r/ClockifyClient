@@ -35,7 +35,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies/{%2Did}/requests", pathParameters)
+        public RequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies/{%2Did}/requests{?timeViewMode*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies/{%2Did}/requests", rawUrl)
+        public RequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/time-off/policies/{%2Did}/requests{?timeViewMode*}", rawUrl)
         {
         }
         /// <summary>
@@ -55,11 +55,11 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::ClockifyClient.Models.TimeOffRequestFullV1Dto?> PostAsync(global::ClockifyClient.Models.CreateTimeOffRequestV1Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.TimeOffRequestFullV1Dto?> PostAsync(global::ClockifyClient.Models.CreateTimeOffRequestV1Request body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::ClockifyClient.Models.TimeOffRequestFullV1Dto> PostAsync(global::ClockifyClient.Models.CreateTimeOffRequestV1Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::ClockifyClient.Models.TimeOffRequestFullV1Dto> PostAsync(global::ClockifyClient.Models.CreateTimeOffRequestV1Request body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -74,11 +74,11 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateTimeOffRequestV1Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateTimeOffRequestV1Request body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateTimeOffRequestV1Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::ClockifyClient.Models.CreateTimeOffRequestV1Request body, Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -98,11 +98,32 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests
             return new global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.RequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Create a time off request
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class RequestsRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Represents time view mode used to display dates.</summary>
+            [Obsolete("This property is deprecated, use TimeViewModeAsPostTimeViewModeQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("timeViewMode")]
+            public string? TimeViewMode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("timeViewMode")]
+            public string TimeViewMode { get; set; }
+#endif
+            /// <summary>Represents time view mode used to display dates.</summary>
+            [QueryParameter("timeViewMode")]
+            public global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.PostTimeViewModeQueryParameterType? TimeViewModeAsPostTimeViewModeQueryParameterType { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RequestsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class RequestsRequestBuilderPostRequestConfiguration : RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.TimeOff.Policies.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderPostQueryParameters>
         {
         }
     }

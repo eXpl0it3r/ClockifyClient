@@ -15,6 +15,8 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents an approval request current approval level.</summary>
+        public int? CurrentApprovalLevel { get; set; }
         /// <summary>Represents an approval requesst note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +70,7 @@ namespace ClockifyClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "currentApprovalLevel", n => { CurrentApprovalLevel = n.GetIntValue(); } },
                 { "note", n => { Note = n.GetStringValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::ClockifyClient.Models.ApprovalRequestStatusDtoV1_state>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -82,6 +85,7 @@ namespace ClockifyClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("currentApprovalLevel", CurrentApprovalLevel);
             writer.WriteStringValue("note", Note);
             writer.WriteEnumValue<global::ClockifyClient.Models.ApprovalRequestStatusDtoV1_state>("state", State);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);

@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents a custom field&apos;s default value in the workspace.
+    /// Represents a custom field&apos;s default value in the workspace.&lt;li&gt;if type = NUMBER, then value must be a number&lt;/li&gt;&lt;li&gt;if type = DROPDOWN_MULTIPLE, value must be a list&lt;/li&gt;&lt;li&gt;if type = CHECKBOX, value must be true/false&lt;/li&gt;&lt;li&gt;otherwise any string&lt;/li&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateCustomFieldRequestV1_workspaceDefaultValue : IAdditionalDataHolder, IParsable

@@ -21,6 +21,8 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The DELETED property</summary>
         public global::ClockifyClient.Models.AccountStatus_DELETED? DELETED { get; set; }
+        /// <summary>The eligibleForPendingMembership property</summary>
+        public bool? EligibleForPendingMembership { get; set; }
         /// <summary>The LIMITED property</summary>
         public global::ClockifyClient.Models.AccountStatus_LIMITED? LIMITED { get; set; }
         /// <summary>The limitedAccount property</summary>
@@ -61,6 +63,7 @@ namespace ClockifyClient.Models
                 { "ACTIVE", n => { ACTIVE = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_ACTIVE>(); } },
                 { "active", n => { AccountStatusActive = n.GetBoolValue(); } },
                 { "DELETED", n => { DELETED = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_DELETED>(); } },
+                { "eligibleForPendingMembership", n => { EligibleForPendingMembership = n.GetBoolValue(); } },
                 { "LIMITED", n => { LIMITED = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_LIMITED>(); } },
                 { "LIMITED_DELETED", n => { LIMITEDDELETED = n.GetEnumValue<global::ClockifyClient.Models.AccountStatus_LIMITED_DELETED>(); } },
                 { "limitedAccount", n => { LimitedAccount = n.GetBoolValue(); } },
@@ -79,6 +82,7 @@ namespace ClockifyClient.Models
             writer.WriteBoolValue("active", AccountStatusActive);
             writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_ACTIVE>("ACTIVE", ACTIVE);
             writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_DELETED>("DELETED", DELETED);
+            writer.WriteBoolValue("eligibleForPendingMembership", EligibleForPendingMembership);
             writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_LIMITED>("LIMITED", LIMITED);
             writer.WriteBoolValue("limitedAccount", LimitedAccount);
             writer.WriteEnumValue<global::ClockifyClient.Models.AccountStatus_LIMITED_DELETED>("LIMITED_DELETED", LIMITEDDELETED);

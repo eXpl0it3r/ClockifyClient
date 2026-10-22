@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents the status the time off request.
+    /// Represents the status of the time off request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TimeOffRequestStatus : IAdditionalDataHolder, IParsable
@@ -17,6 +17,14 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The changedAt property</summary>
         public DateTimeOffset? ChangedAt { get; set; }
+        /// <summary>The changedAtTimeZone property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChangedAtTimeZone { get; set; }
+#nullable restore
+#else
+        public string ChangedAtTimeZone { get; set; }
+#endif
         /// <summary>The changedByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +85,7 @@ namespace ClockifyClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "changedAt", n => { ChangedAt = n.GetDateTimeOffsetValue(); } },
+                { "changedAtTimeZone", n => { ChangedAtTimeZone = n.GetStringValue(); } },
                 { "changedByUserId", n => { ChangedByUserId = n.GetStringValue(); } },
                 { "changedByUserName", n => { ChangedByUserName = n.GetStringValue(); } },
                 { "changedForUserName", n => { ChangedForUserName = n.GetStringValue(); } },
@@ -92,6 +101,7 @@ namespace ClockifyClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("changedAt", ChangedAt);
+            writer.WriteStringValue("changedAtTimeZone", ChangedAtTimeZone);
             writer.WriteStringValue("changedByUserId", ChangedByUserId);
             writer.WriteStringValue("changedByUserName", ChangedByUserName);
             writer.WriteStringValue("changedForUserName", ChangedForUserName);

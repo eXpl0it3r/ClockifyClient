@@ -7,14 +7,6 @@ namespace ClockifyClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateApprovalRequest_state
     {
-        [EnumMember(Value = "PENDING")]
-        #pragma warning disable CS1591
-        PENDING,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "APPROVED")]
-        #pragma warning disable CS1591
-        APPROVED,
-        #pragma warning restore CS1591
         [EnumMember(Value = "WITHDRAWN_SUBMISSION")]
         #pragma warning disable CS1591
         WITHDRAWN_SUBMISSION,
@@ -26,6 +18,14 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "REJECTED")]
         #pragma warning disable CS1591
         REJECTED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "APPROVED")]
+        #pragma warning disable CS1591
+        APPROVED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PENDING")]
+        #pragma warning disable CS1591
+        PENDING,
         #pragma warning restore CS1591
     }
 }

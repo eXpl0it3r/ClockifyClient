@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Contains names of user groups that are assigned to holiday.
+    /// Contains names of users that are assigned to holiday.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntityIdNameDto : IAdditionalDataHolder, IParsable

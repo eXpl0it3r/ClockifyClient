@@ -8,7 +8,7 @@ using System;
 namespace ClockifyClient.Models
 {
     /// <summary>
-    /// Represents the period the time off request.
+    /// Represents the period of the time off request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TimeOffRequestPeriodDto : IAdditionalDataHolder, IParsable

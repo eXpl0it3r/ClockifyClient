@@ -25,6 +25,22 @@ namespace ClockifyClient.Models
 #else
         public List<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_adminOnlyPages?> AdminOnlyPages { get; set; }
 #endif
+        /// <summary>Represents the settings for time approval.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.TimeApprovalSettingsDtoV1? ApprovalSettings { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.TimeApprovalSettingsDtoV1 ApprovalSettings { get; set; }
+#endif
+        /// <summary>Represents the settings for audit log.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.AuditLogSettingsDtoV1? AuditLogSettings { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.AuditLogSettingsDtoV1 AuditLogSettings { get; set; }
+#endif
         /// <summary>Represents an automatic lock object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,12 +49,43 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.AutomaticLockDtoV1 AutomaticLock { get; set; }
 #endif
+        /// <summary>Represents the settings for breaks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.BreakSettingsDtoV1? BreakSettings { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.BreakSettingsDtoV1 BreakSettings { get; set; }
+#endif
+        /// <summary>Indicates whether manager can edit user&apos;s time.</summary>
+        public bool? CanManagerEditUsersTime { get; set; }
+        /// <summary>Indicates whether manager can launch kiosk.</summary>
+        public bool? CanManagerLaunchKiosk { get; set; }
         /// <summary>Indicates whether timesheets are visible or not.</summary>
         public bool? CanSeeTimeSheet { get; set; }
         /// <summary>Indicates whether time trackers are visible or not.</summary>
         public bool? CanSeeTracker { get; set; }
+        /// <summary>Represents the company address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CompanyAddress { get; set; }
+#nullable restore
+#else
+        public string CompanyAddress { get; set; }
+#endif
         /// <summary>Represents a clockify currency format enum.</summary>
         public global::ClockifyClient.Models.WorkspaceSettingsDtoV1_currencyFormat? CurrencyFormat { get; set; }
+        /// <summary>Represents the custom labels.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.CustomLabelsDtoV1? CustomLabels { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.CustomLabelsDtoV1 CustomLabels { get; set; }
+#endif
+        /// <summary>Set decimalFormat alongside trackTimeDownToSecond to manage Time Duration Format as explained in class description</summary>
+        [Obsolete("")]
+        public bool? DecimalFormat { get; set; }
         /// <summary>Indicates whether projects are billable by default.</summary>
         public bool? DefaultBillableProjects { get; set; }
         /// <summary>Represents a clockify duration format enum. Used to set Duration format instead of setting decimalFormat and trackTimeDownToSecond.</summary>
@@ -51,6 +98,18 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.EntityCreationPermissionsDtoV1 EntityCreationPermissions { get; set; }
 #endif
+        /// <summary>Represents the settings for expense approval.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.ExpenseApprovalSettingsDtoV1? ExpenseApprovalSettings { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.ExpenseApprovalSettingsDtoV1 ExpenseApprovalSettings { get; set; }
+#endif
+        /// <summary>Indicates whether expenses is enabled.</summary>
+        public bool? ExpensesEnabled { get; set; }
+        /// <summary>Indicates whether favorite entries is enabled.</summary>
+        public bool? FavoriteEntriesEnabled { get; set; }
         /// <summary>Indicates whether description are forced or not.</summary>
         public bool? ForceDescription { get; set; }
         /// <summary>Indicates whether projects are forced or not.</summary>
@@ -59,8 +118,26 @@ namespace ClockifyClient.Models
         public bool? ForceTags { get; set; }
         /// <summary>Indicates whether tasks are forced or not.</summary>
         public bool? ForceTasks { get; set; }
+        /// <summary>Indicates whether high resolution screenshots is enabled.</summary>
+        public bool? HighResolutionScreenshots { get; set; }
+        /// <summary>Indicates whether invoicing is enabled.</summary>
+        public bool? InvoicingEnabled { get; set; }
+        /// <summary>Indicates whether cost rate is active.</summary>
+        public bool? IsCostRateActive { get; set; }
         /// <summary>The isProjectPublicByDefault property</summary>
         public bool? IsProjectPublicByDefault { get; set; }
+        /// <summary>Represents a kiosk authentication type enum.</summary>
+        public global::ClockifyClient.Models.WorkspaceSettingsDtoV1_kioskAuthType? KioskAuthType { get; set; }
+        /// <summary>Indicates whether auto login in kiosk is enabled.</summary>
+        public bool? KioskAutologinEnabled { get; set; }
+        /// <summary>Indicates whether kiosk is enabled.</summary>
+        public bool? KioskEnabled { get; set; }
+        /// <summary>Indicates whether photo capture in kiosk is enabled.</summary>
+        public bool? KioskPhotoCaptureEnabled { get; set; }
+        /// <summary>Indicates whether projects and tasks in kiosk is enabled.</summary>
+        public bool? KioskProjectsAndTasksEnabled { get; set; }
+        /// <summary>Indicates whether locations is enabled.</summary>
+        public bool? LocationsEnabled { get; set; }
         /// <summary>The lockTimeEntries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,8 +172,12 @@ namespace ClockifyClient.Models
         public bool? OnlyAdminsSeeBillableRates { get; set; }
         /// <summary>Indicates whether only admins can see dashboard.</summary>
         public bool? OnlyAdminsSeeDashboard { get; set; }
+        /// <summary>Indicates whether only admins can see project status.</summary>
+        public bool? OnlyAdminsSeeProjectStatus { get; set; }
         /// <summary>Indicates whether only admins can see public project entries.</summary>
         public bool? OnlyAdminsSeePublicProjectsEntries { get; set; }
+        /// <summary>Represents the overtime calculation period.</summary>
+        public global::ClockifyClient.Models.WorkspaceSettingsDtoV1_overtimeCalculationPeriod? OvertimeCalculationPeriod { get; set; }
         /// <summary>Indicates whether project favorites are allowed.</summary>
         public bool? ProjectFavorites { get; set; }
         /// <summary>Represents a project grouping label.</summary>
@@ -125,6 +206,20 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.RoundDto Round { get; set; }
 #endif
+        /// <summary>Indicates whether scheduling is enabled.</summary>
+        public bool? SchedulingEnabled { get; set; }
+        /// <summary>Represents the settings for scheduling.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.SchedulingSettingsDtoV1? SchedulingSettings { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.SchedulingSettingsDtoV1 SchedulingSettings { get; set; }
+#endif
+        /// <summary>Indicates whether screenshots is enabled.</summary>
+        public bool? ScreenshotsEnabled { get; set; }
+        /// <summary>Indicates whether task billable is enabled.</summary>
+        public bool? TaskBillableEnabled { get; set; }
         /// <summary>Represents a task label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,13 +228,40 @@ namespace ClockifyClient.Models
 #else
         public string TaskLabel { get; set; }
 #endif
+        /// <summary>Indicates whether task rate is enabled.</summary>
+        public bool? TaskRateEnabled { get; set; }
+        /// <summary>Indicates whether time approval is enabled.</summary>
+        [Obsolete("")]
+        public bool? TimeApprovalEnabled { get; set; }
+        /// <summary>Represents the settings for time-off.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.TimeOffDtoV1? TimeOff { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.TimeOffDtoV1 TimeOff { get; set; }
+#endif
         /// <summary>Indicates whether time rounding is enabled in reports.</summary>
         public bool? TimeRoundingInReports { get; set; }
         /// <summary>Represents a time tracking mode enum.</summary>
         public global::ClockifyClient.Models.WorkspaceSettingsDtoV1_timeTrackingMode? TimeTrackingMode { get; set; }
+        /// <summary>Represents the time view mode.</summary>
+        public global::ClockifyClient.Models.WorkspaceSettingsDtoV1_timeViewMode? TimeViewMode { get; set; }
         /// <summary>Indicates whether time tracking is seconds-accurate. This is now deprecated and durationFormat can now be used to manage Time Duration Format.</summary>
         [Obsolete("")]
         public bool? TrackTimeDownToSecond { get; set; }
+        /// <summary>Represents a day of the week.</summary>
+        public global::ClockifyClient.Models.WorkspaceSettingsDtoV1_weekStart? WeekStart { get; set; }
+        /// <summary>Indicates whether whitelisted for aggregate view.</summary>
+        public bool? WhitelistedForAggregateView { get; set; }
+        /// <summary>ISO 8601 duration format</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkCapacity { get; set; }
+#nullable restore
+#else
+        public string WorkCapacity { get; set; }
+#endif
         /// <summary>Represents a list of working days.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,13 +277,26 @@ namespace ClockifyClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             ActiveBillableHours = false;
+            CanManagerEditUsersTime = false;
+            CanManagerLaunchKiosk = false;
             CanSeeTimeSheet = false;
             CanSeeTracker = false;
+            DecimalFormat = false;
             DefaultBillableProjects = false;
+            ExpensesEnabled = false;
+            FavoriteEntriesEnabled = false;
             ForceDescription = false;
             ForceProjects = false;
             ForceTags = false;
             ForceTasks = false;
+            HighResolutionScreenshots = false;
+            InvoicingEnabled = false;
+            IsCostRateActive = false;
+            KioskAutologinEnabled = false;
+            KioskEnabled = false;
+            KioskPhotoCaptureEnabled = false;
+            KioskProjectsAndTasksEnabled = false;
+            LocationsEnabled = false;
             MultiFactorEnabled = false;
             OnlyAdminsCanChangeBillableStatus = false;
             OnlyAdminsCreateProject = false;
@@ -170,11 +305,18 @@ namespace ClockifyClient.Models
             OnlyAdminsSeeAllTimeEntries = false;
             OnlyAdminsSeeBillableRates = false;
             OnlyAdminsSeeDashboard = false;
+            OnlyAdminsSeeProjectStatus = false;
             OnlyAdminsSeePublicProjectsEntries = false;
             ProjectFavorites = false;
             ProjectPickerSpecialFilter = false;
+            SchedulingEnabled = false;
+            ScreenshotsEnabled = false;
+            TaskBillableEnabled = false;
+            TaskRateEnabled = false;
+            TimeApprovalEnabled = false;
             TimeRoundingInReports = false;
             TrackTimeDownToSecond = false;
+            WhitelistedForAggregateView = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -196,18 +338,38 @@ namespace ClockifyClient.Models
             {
                 { "activeBillableHours", n => { ActiveBillableHours = n.GetBoolValue(); } },
                 { "adminOnlyPages", n => { AdminOnlyPages = n.GetCollectionOfEnumValues<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_adminOnlyPages>()?.AsList(); } },
+                { "approvalSettings", n => { ApprovalSettings = n.GetObjectValue<global::ClockifyClient.Models.TimeApprovalSettingsDtoV1>(global::ClockifyClient.Models.TimeApprovalSettingsDtoV1.CreateFromDiscriminatorValue); } },
+                { "auditLogSettings", n => { AuditLogSettings = n.GetObjectValue<global::ClockifyClient.Models.AuditLogSettingsDtoV1>(global::ClockifyClient.Models.AuditLogSettingsDtoV1.CreateFromDiscriminatorValue); } },
                 { "automaticLock", n => { AutomaticLock = n.GetObjectValue<global::ClockifyClient.Models.AutomaticLockDtoV1>(global::ClockifyClient.Models.AutomaticLockDtoV1.CreateFromDiscriminatorValue); } },
+                { "breakSettings", n => { BreakSettings = n.GetObjectValue<global::ClockifyClient.Models.BreakSettingsDtoV1>(global::ClockifyClient.Models.BreakSettingsDtoV1.CreateFromDiscriminatorValue); } },
+                { "canManagerEditUsersTime", n => { CanManagerEditUsersTime = n.GetBoolValue(); } },
+                { "canManagerLaunchKiosk", n => { CanManagerLaunchKiosk = n.GetBoolValue(); } },
                 { "canSeeTimeSheet", n => { CanSeeTimeSheet = n.GetBoolValue(); } },
                 { "canSeeTracker", n => { CanSeeTracker = n.GetBoolValue(); } },
+                { "companyAddress", n => { CompanyAddress = n.GetStringValue(); } },
                 { "currencyFormat", n => { CurrencyFormat = n.GetEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_currencyFormat>(); } },
+                { "customLabels", n => { CustomLabels = n.GetObjectValue<global::ClockifyClient.Models.CustomLabelsDtoV1>(global::ClockifyClient.Models.CustomLabelsDtoV1.CreateFromDiscriminatorValue); } },
+                { "decimalFormat", n => { DecimalFormat = n.GetBoolValue(); } },
                 { "defaultBillableProjects", n => { DefaultBillableProjects = n.GetBoolValue(); } },
                 { "durationFormat", n => { DurationFormat = n.GetEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_durationFormat>(); } },
                 { "entityCreationPermissions", n => { EntityCreationPermissions = n.GetObjectValue<global::ClockifyClient.Models.EntityCreationPermissionsDtoV1>(global::ClockifyClient.Models.EntityCreationPermissionsDtoV1.CreateFromDiscriminatorValue); } },
+                { "expenseApprovalSettings", n => { ExpenseApprovalSettings = n.GetObjectValue<global::ClockifyClient.Models.ExpenseApprovalSettingsDtoV1>(global::ClockifyClient.Models.ExpenseApprovalSettingsDtoV1.CreateFromDiscriminatorValue); } },
+                { "expensesEnabled", n => { ExpensesEnabled = n.GetBoolValue(); } },
+                { "favoriteEntriesEnabled", n => { FavoriteEntriesEnabled = n.GetBoolValue(); } },
                 { "forceDescription", n => { ForceDescription = n.GetBoolValue(); } },
                 { "forceProjects", n => { ForceProjects = n.GetBoolValue(); } },
                 { "forceTags", n => { ForceTags = n.GetBoolValue(); } },
                 { "forceTasks", n => { ForceTasks = n.GetBoolValue(); } },
+                { "highResolutionScreenshots", n => { HighResolutionScreenshots = n.GetBoolValue(); } },
+                { "invoicingEnabled", n => { InvoicingEnabled = n.GetBoolValue(); } },
+                { "isCostRateActive", n => { IsCostRateActive = n.GetBoolValue(); } },
                 { "isProjectPublicByDefault", n => { IsProjectPublicByDefault = n.GetBoolValue(); } },
+                { "kioskAuthType", n => { KioskAuthType = n.GetEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_kioskAuthType>(); } },
+                { "kioskAutologinEnabled", n => { KioskAutologinEnabled = n.GetBoolValue(); } },
+                { "kioskEnabled", n => { KioskEnabled = n.GetBoolValue(); } },
+                { "kioskPhotoCaptureEnabled", n => { KioskPhotoCaptureEnabled = n.GetBoolValue(); } },
+                { "kioskProjectsAndTasksEnabled", n => { KioskProjectsAndTasksEnabled = n.GetBoolValue(); } },
+                { "locationsEnabled", n => { LocationsEnabled = n.GetBoolValue(); } },
                 { "lockTimeEntries", n => { LockTimeEntries = n.GetStringValue(); } },
                 { "lockTimeZone", n => { LockTimeZone = n.GetStringValue(); } },
                 { "multiFactorEnabled", n => { MultiFactorEnabled = n.GetBoolValue(); } },
@@ -219,16 +381,29 @@ namespace ClockifyClient.Models
                 { "onlyAdminsSeeAllTimeEntries", n => { OnlyAdminsSeeAllTimeEntries = n.GetBoolValue(); } },
                 { "onlyAdminsSeeBillableRates", n => { OnlyAdminsSeeBillableRates = n.GetBoolValue(); } },
                 { "onlyAdminsSeeDashboard", n => { OnlyAdminsSeeDashboard = n.GetBoolValue(); } },
+                { "onlyAdminsSeeProjectStatus", n => { OnlyAdminsSeeProjectStatus = n.GetBoolValue(); } },
                 { "onlyAdminsSeePublicProjectsEntries", n => { OnlyAdminsSeePublicProjectsEntries = n.GetBoolValue(); } },
+                { "overtimeCalculationPeriod", n => { OvertimeCalculationPeriod = n.GetEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_overtimeCalculationPeriod>(); } },
                 { "projectFavorites", n => { ProjectFavorites = n.GetBoolValue(); } },
                 { "projectGroupingLabel", n => { ProjectGroupingLabel = n.GetStringValue(); } },
                 { "projectLabel", n => { ProjectLabel = n.GetStringValue(); } },
                 { "projectPickerSpecialFilter", n => { ProjectPickerSpecialFilter = n.GetBoolValue(); } },
                 { "round", n => { Round = n.GetObjectValue<global::ClockifyClient.Models.RoundDto>(global::ClockifyClient.Models.RoundDto.CreateFromDiscriminatorValue); } },
+                { "schedulingEnabled", n => { SchedulingEnabled = n.GetBoolValue(); } },
+                { "schedulingSettings", n => { SchedulingSettings = n.GetObjectValue<global::ClockifyClient.Models.SchedulingSettingsDtoV1>(global::ClockifyClient.Models.SchedulingSettingsDtoV1.CreateFromDiscriminatorValue); } },
+                { "screenshotsEnabled", n => { ScreenshotsEnabled = n.GetBoolValue(); } },
+                { "taskBillableEnabled", n => { TaskBillableEnabled = n.GetBoolValue(); } },
                 { "taskLabel", n => { TaskLabel = n.GetStringValue(); } },
+                { "taskRateEnabled", n => { TaskRateEnabled = n.GetBoolValue(); } },
+                { "timeApprovalEnabled", n => { TimeApprovalEnabled = n.GetBoolValue(); } },
+                { "timeOff", n => { TimeOff = n.GetObjectValue<global::ClockifyClient.Models.TimeOffDtoV1>(global::ClockifyClient.Models.TimeOffDtoV1.CreateFromDiscriminatorValue); } },
                 { "timeRoundingInReports", n => { TimeRoundingInReports = n.GetBoolValue(); } },
                 { "timeTrackingMode", n => { TimeTrackingMode = n.GetEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_timeTrackingMode>(); } },
+                { "timeViewMode", n => { TimeViewMode = n.GetEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_timeViewMode>(); } },
                 { "trackTimeDownToSecond", n => { TrackTimeDownToSecond = n.GetBoolValue(); } },
+                { "weekStart", n => { WeekStart = n.GetEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_weekStart>(); } },
+                { "whitelistedForAggregateView", n => { WhitelistedForAggregateView = n.GetBoolValue(); } },
+                { "workCapacity", n => { WorkCapacity = n.GetStringValue(); } },
                 { "workingDays", n => { WorkingDays = n.GetCollectionOfEnumValues<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_workingDays>()?.AsList(); } },
             };
         }
@@ -241,18 +416,38 @@ namespace ClockifyClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("activeBillableHours", ActiveBillableHours);
             writer.WriteCollectionOfEnumValues<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_adminOnlyPages>("adminOnlyPages", AdminOnlyPages);
+            writer.WriteObjectValue<global::ClockifyClient.Models.TimeApprovalSettingsDtoV1>("approvalSettings", ApprovalSettings);
+            writer.WriteObjectValue<global::ClockifyClient.Models.AuditLogSettingsDtoV1>("auditLogSettings", AuditLogSettings);
             writer.WriteObjectValue<global::ClockifyClient.Models.AutomaticLockDtoV1>("automaticLock", AutomaticLock);
+            writer.WriteObjectValue<global::ClockifyClient.Models.BreakSettingsDtoV1>("breakSettings", BreakSettings);
+            writer.WriteBoolValue("canManagerEditUsersTime", CanManagerEditUsersTime);
+            writer.WriteBoolValue("canManagerLaunchKiosk", CanManagerLaunchKiosk);
             writer.WriteBoolValue("canSeeTimeSheet", CanSeeTimeSheet);
             writer.WriteBoolValue("canSeeTracker", CanSeeTracker);
+            writer.WriteStringValue("companyAddress", CompanyAddress);
             writer.WriteEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_currencyFormat>("currencyFormat", CurrencyFormat);
+            writer.WriteObjectValue<global::ClockifyClient.Models.CustomLabelsDtoV1>("customLabels", CustomLabels);
+            writer.WriteBoolValue("decimalFormat", DecimalFormat);
             writer.WriteBoolValue("defaultBillableProjects", DefaultBillableProjects);
             writer.WriteEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_durationFormat>("durationFormat", DurationFormat);
             writer.WriteObjectValue<global::ClockifyClient.Models.EntityCreationPermissionsDtoV1>("entityCreationPermissions", EntityCreationPermissions);
+            writer.WriteObjectValue<global::ClockifyClient.Models.ExpenseApprovalSettingsDtoV1>("expenseApprovalSettings", ExpenseApprovalSettings);
+            writer.WriteBoolValue("expensesEnabled", ExpensesEnabled);
+            writer.WriteBoolValue("favoriteEntriesEnabled", FavoriteEntriesEnabled);
             writer.WriteBoolValue("forceDescription", ForceDescription);
             writer.WriteBoolValue("forceProjects", ForceProjects);
             writer.WriteBoolValue("forceTags", ForceTags);
             writer.WriteBoolValue("forceTasks", ForceTasks);
+            writer.WriteBoolValue("highResolutionScreenshots", HighResolutionScreenshots);
+            writer.WriteBoolValue("invoicingEnabled", InvoicingEnabled);
+            writer.WriteBoolValue("isCostRateActive", IsCostRateActive);
             writer.WriteBoolValue("isProjectPublicByDefault", IsProjectPublicByDefault);
+            writer.WriteEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_kioskAuthType>("kioskAuthType", KioskAuthType);
+            writer.WriteBoolValue("kioskAutologinEnabled", KioskAutologinEnabled);
+            writer.WriteBoolValue("kioskEnabled", KioskEnabled);
+            writer.WriteBoolValue("kioskPhotoCaptureEnabled", KioskPhotoCaptureEnabled);
+            writer.WriteBoolValue("kioskProjectsAndTasksEnabled", KioskProjectsAndTasksEnabled);
+            writer.WriteBoolValue("locationsEnabled", LocationsEnabled);
             writer.WriteStringValue("lockTimeEntries", LockTimeEntries);
             writer.WriteStringValue("lockTimeZone", LockTimeZone);
             writer.WriteBoolValue("multiFactorEnabled", MultiFactorEnabled);
@@ -264,16 +459,29 @@ namespace ClockifyClient.Models
             writer.WriteBoolValue("onlyAdminsSeeAllTimeEntries", OnlyAdminsSeeAllTimeEntries);
             writer.WriteBoolValue("onlyAdminsSeeBillableRates", OnlyAdminsSeeBillableRates);
             writer.WriteBoolValue("onlyAdminsSeeDashboard", OnlyAdminsSeeDashboard);
+            writer.WriteBoolValue("onlyAdminsSeeProjectStatus", OnlyAdminsSeeProjectStatus);
             writer.WriteBoolValue("onlyAdminsSeePublicProjectsEntries", OnlyAdminsSeePublicProjectsEntries);
+            writer.WriteEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_overtimeCalculationPeriod>("overtimeCalculationPeriod", OvertimeCalculationPeriod);
             writer.WriteBoolValue("projectFavorites", ProjectFavorites);
             writer.WriteStringValue("projectGroupingLabel", ProjectGroupingLabel);
             writer.WriteStringValue("projectLabel", ProjectLabel);
             writer.WriteBoolValue("projectPickerSpecialFilter", ProjectPickerSpecialFilter);
             writer.WriteObjectValue<global::ClockifyClient.Models.RoundDto>("round", Round);
+            writer.WriteBoolValue("schedulingEnabled", SchedulingEnabled);
+            writer.WriteObjectValue<global::ClockifyClient.Models.SchedulingSettingsDtoV1>("schedulingSettings", SchedulingSettings);
+            writer.WriteBoolValue("screenshotsEnabled", ScreenshotsEnabled);
+            writer.WriteBoolValue("taskBillableEnabled", TaskBillableEnabled);
             writer.WriteStringValue("taskLabel", TaskLabel);
+            writer.WriteBoolValue("taskRateEnabled", TaskRateEnabled);
+            writer.WriteBoolValue("timeApprovalEnabled", TimeApprovalEnabled);
+            writer.WriteObjectValue<global::ClockifyClient.Models.TimeOffDtoV1>("timeOff", TimeOff);
             writer.WriteBoolValue("timeRoundingInReports", TimeRoundingInReports);
             writer.WriteEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_timeTrackingMode>("timeTrackingMode", TimeTrackingMode);
+            writer.WriteEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_timeViewMode>("timeViewMode", TimeViewMode);
             writer.WriteBoolValue("trackTimeDownToSecond", TrackTimeDownToSecond);
+            writer.WriteEnumValue<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_weekStart>("weekStart", WeekStart);
+            writer.WriteBoolValue("whitelistedForAggregateView", WhitelistedForAggregateView);
+            writer.WriteStringValue("workCapacity", WorkCapacity);
             writer.WriteCollectionOfEnumValues<global::ClockifyClient.Models.WorkspaceSettingsDtoV1_workingDays>("workingDays", WorkingDays);
             writer.WriteAdditionalData(AdditionalData);
         }

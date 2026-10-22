@@ -20,6 +20,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         APPROVAL_REQUEST,
         #pragma warning restore CS1591
+        [EnumMember(Value = "APPROVAL_REQUEST_HISTORY")]
+        #pragma warning disable CS1591
+        APPROVAL_REQUEST_HISTORY,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ASSIGNMENT")]
         #pragma warning disable CS1591
         ASSIGNMENT,
@@ -168,10 +172,6 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         KIOSK_SESSION,
         #pragma warning restore CS1591
-        [EnumMember(Value = "KIOSK_PHOTO_CAPTURE")]
-        #pragma warning disable CS1591
-        KIOSK_PHOTO_CAPTURE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "MARKETPLACE_ADDON")]
         #pragma warning disable CS1591
         MARKETPLACE_ADDON,
@@ -216,6 +216,14 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         TIME_OFF_REQUEST,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOIL_REQUEST")]
+        #pragma warning disable CS1591
+        TOIL_REQUEST,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOIL_POLICY")]
+        #pragma warning disable CS1591
+        TOIL_POLICY,
+        #pragma warning restore CS1591
         [EnumMember(Value = "LOG_BIN")]
         #pragma warning disable CS1591
         LOG_BIN,
@@ -227,6 +235,10 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "CUSTOM_COLOR")]
         #pragma warning disable CS1591
         CUSTOM_COLOR,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "KIOSK_PHOTO_CAPTURE")]
+        #pragma warning disable CS1591
+        KIOSK_PHOTO_CAPTURE,
         #pragma warning restore CS1591
         [EnumMember(Value = "CUSTOM_COLORS_INDEX")]
         #pragma warning disable CS1591

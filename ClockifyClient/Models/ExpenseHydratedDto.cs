@@ -43,6 +43,8 @@ namespace ClockifyClient.Models
 #else
         public string Currency { get; set; }
 #endif
+        /// <summary>Represents the approval level the expense is currently in</summary>
+        public int? CurrentApprovalLevel { get; set; }
         /// <summary>Represents a date in yyyy-MM-dd format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,6 +166,7 @@ namespace ClockifyClient.Models
                 { "billable", n => { Billable = n.GetBoolValue(); } },
                 { "category", n => { Category = n.GetObjectValue<global::ClockifyClient.Models.ExpenseCategoryDto>(global::ClockifyClient.Models.ExpenseCategoryDto.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "currentApprovalLevel", n => { CurrentApprovalLevel = n.GetIntValue(); } },
                 { "date", n => { Date = n.GetStringValue(); } },
                 { "detailedApprovalStatus", n => { DetailedApprovalStatus = n.GetEnumValue<global::ClockifyClient.Models.ExpenseHydratedDto_detailedApprovalStatus>(); } },
                 { "fileId", n => { FileId = n.GetStringValue(); } },
@@ -193,6 +196,7 @@ namespace ClockifyClient.Models
             writer.WriteBoolValue("billable", Billable);
             writer.WriteObjectValue<global::ClockifyClient.Models.ExpenseCategoryDto>("category", Category);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteIntValue("currentApprovalLevel", CurrentApprovalLevel);
             writer.WriteStringValue("date", Date);
             writer.WriteEnumValue<global::ClockifyClient.Models.ExpenseHydratedDto_detailedApprovalStatus>("detailedApprovalStatus", DetailedApprovalStatus);
             writer.WriteStringValue("fileId", FileId);

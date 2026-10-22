@@ -15,6 +15,8 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates billable amount.</summary>
+        public double? Amount { get; set; }
         /// <summary>Represents approval identifier across the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +27,7 @@ namespace ClockifyClient.Models
 #endif
         /// <summary>Indicates whether time entry is billable or not.</summary>
         public bool? Billable { get; set; }
-        /// <summary>Represents cost rate object.</summary>
+        /// <summary>Represents hourly rate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.RateDto? CostRate { get; set; }
@@ -49,7 +51,7 @@ namespace ClockifyClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Represents cost rate object.</summary>
+        /// <summary>Represents hourly rate object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::ClockifyClient.Models.RateDto? HourlyRate { get; set; }
@@ -128,6 +130,7 @@ namespace ClockifyClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "approvalRequestId", n => { ApprovalRequestId = n.GetStringValue(); } },
                 { "billable", n => { Billable = n.GetBoolValue(); } },
                 { "costRate", n => { CostRate = n.GetObjectValue<global::ClockifyClient.Models.RateDto>(global::ClockifyClient.Models.RateDto.CreateFromDiscriminatorValue); } },
@@ -150,6 +153,7 @@ namespace ClockifyClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("amount", Amount);
             writer.WriteStringValue("approvalRequestId", ApprovalRequestId);
             writer.WriteBoolValue("billable", Billable);
             writer.WriteObjectValue<global::ClockifyClient.Models.RateDto>("costRate", CostRate);

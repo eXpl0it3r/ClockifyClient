@@ -39,6 +39,14 @@ namespace ClockifyClient.Models
 #else
         public List<string> TimeEntryIds { get; set; }
 #endif
+        /// <summary>The timeViewMode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeViewMode { get; set; }
+#nullable restore
+#else
+        public string TimeViewMode { get; set; }
+#endif
         /// <summary>Represents a date of the starting day of the week in the yyyy-MM-dd format.</summary>
         public Date? WeekStart { get; set; }
         /// <summary>
@@ -69,6 +77,7 @@ namespace ClockifyClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectsAndTasks", n => { ProjectsAndTasks = n.GetCollectionOfObjectValues<global::ClockifyClient.Models.ProjectTaskTupleRequest>(global::ClockifyClient.Models.ProjectTaskTupleRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timeEntryIds", n => { TimeEntryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "timeViewMode", n => { TimeViewMode = n.GetStringValue(); } },
                 { "weekStart", n => { WeekStart = n.GetDateValue(); } },
             };
         }
@@ -82,6 +91,7 @@ namespace ClockifyClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::ClockifyClient.Models.ProjectTaskTupleRequest>("projectsAndTasks", ProjectsAndTasks);
             writer.WriteCollectionOfPrimitiveValues<string>("timeEntryIds", TimeEntryIds);
+            writer.WriteStringValue("timeViewMode", TimeViewMode);
             writer.WriteDateValue("weekStart", WeekStart);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -164,10 +164,14 @@ namespace ClockifyClient.V1.Workspaces.Item.Templates
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page%2Dsize")]
             public int? PageSize { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

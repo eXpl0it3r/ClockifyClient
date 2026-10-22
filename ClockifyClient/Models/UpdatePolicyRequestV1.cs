@@ -74,6 +74,14 @@ namespace ClockifyClient.Models
 #else
         public global::ClockifyClient.Models.NegativeBalanceRequest NegativeBalance { get; set; }
 #endif
+        /// <summary>Indicates how changes to users and user groups should also affect related TOIL Policy users and user groups. This defaults to `ADD_NEW_USERS`, which means that when we find new users, we also just add them to the related TOIL Policies.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ToilSyncMethod { get; set; }
+#nullable restore
+#else
+        public string ToilSyncMethod { get; set; }
+#endif
         /// <summary>Provide list with user group ids and corresponding status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,6 +140,7 @@ namespace ClockifyClient.Models
                 { "icon", n => { Icon = n.GetEnumValue<global::ClockifyClient.Models.UpdatePolicyRequestV1_icon>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "negativeBalance", n => { NegativeBalance = n.GetObjectValue<global::ClockifyClient.Models.NegativeBalanceRequest>(global::ClockifyClient.Models.NegativeBalanceRequest.CreateFromDiscriminatorValue); } },
+                { "toilSyncMethod", n => { ToilSyncMethod = n.GetStringValue(); } },
                 { "userGroups", n => { UserGroups = n.GetObjectValue<global::ClockifyClient.Models.UserGroupIdsSchema>(global::ClockifyClient.Models.UserGroupIdsSchema.CreateFromDiscriminatorValue); } },
                 { "users", n => { Users = n.GetObjectValue<global::ClockifyClient.Models.UserIdsSchema>(global::ClockifyClient.Models.UserIdsSchema.CreateFromDiscriminatorValue); } },
             };
@@ -155,6 +164,7 @@ namespace ClockifyClient.Models
             writer.WriteEnumValue<global::ClockifyClient.Models.UpdatePolicyRequestV1_icon>("icon", Icon);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::ClockifyClient.Models.NegativeBalanceRequest>("negativeBalance", NegativeBalance);
+            writer.WriteStringValue("toilSyncMethod", ToilSyncMethod);
             writer.WriteObjectValue<global::ClockifyClient.Models.UserGroupIdsSchema>("userGroups", UserGroups);
             writer.WriteObjectValue<global::ClockifyClient.Models.UserIdsSchema>("users", Users);
             writer.WriteAdditionalData(AdditionalData);

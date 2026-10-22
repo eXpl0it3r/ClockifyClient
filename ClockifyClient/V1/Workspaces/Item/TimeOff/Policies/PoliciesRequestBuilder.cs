@@ -166,21 +166,29 @@ namespace ClockifyClient.V1.Workspaces.Item.TimeOff.Policies
             public int? PageSize { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sort%2Dcolumn")]
             public string? SortColumn { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sort%2Dcolumn")]
             public string SortColumn { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sort%2Dorder")]
             public string? SortOrder { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sort%2Dorder")]
             public string SortOrder { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>If provided, you&apos;ll get a filtered list of policies with the corresponding status.</summary>
             [Obsolete("This property is deprecated, use StatusAsGetStatusQueryParameterType instead")]

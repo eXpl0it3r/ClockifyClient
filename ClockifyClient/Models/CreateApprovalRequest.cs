@@ -24,6 +24,14 @@ namespace ClockifyClient.Models
 #else
         public string PeriodStart { get; set; }
 #endif
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.CreateApprovalRequest"/> and sets the default values.
         /// </summary>
@@ -51,6 +59,7 @@ namespace ClockifyClient.Models
             {
                 { "period", n => { Period = n.GetEnumValue<global::ClockifyClient.Models.CreateApprovalRequest_period>(); } },
                 { "periodStart", n => { PeriodStart = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +71,7 @@ namespace ClockifyClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::ClockifyClient.Models.CreateApprovalRequest_period>("period", Period);
             writer.WriteStringValue("periodStart", PeriodStart);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

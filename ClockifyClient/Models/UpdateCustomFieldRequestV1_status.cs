@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace ClockifyClient.Models
 {
-    /// <summary>Represents a custom field status</summary>
+    /// <summary>Represents a custom field status.&lt;br/&gt;If this field is not included in the payload,it will automatically be set to default `INACTIVE`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateCustomFieldRequestV1_status
     {

@@ -14,6 +14,14 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the date range when the new balance will be usable. If null, this will default to the current day until the same day next year.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.DateRangeV1Request? DateRange { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.DateRangeV1Request DateRange { get; set; }
+#endif
         /// <summary>Represents a new balance note value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +30,8 @@ namespace ClockifyClient.Models
 #else
         public string Note { get; set; }
 #endif
+        /// <summary>Indicates whether the call should be executed synchronously. By default, call is done asynchronously</summary>
+        public bool? Sync { get; set; }
         /// <summary>Represents the list of users&apos; identifiers whose balance is to be updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,7 +40,7 @@ namespace ClockifyClient.Models
 #else
         public List<string> UserIds { get; set; }
 #endif
-        /// <summary>Represents a new balance value.</summary>
+        /// <summary>Represents the change in balance value.</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.UpdateBalanceRequestV1"/> and sets the default values.
@@ -38,6 +48,7 @@ namespace ClockifyClient.Models
         public UpdateBalanceRequestV1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Sync = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +68,9 @@ namespace ClockifyClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "dateRange", n => { DateRange = n.GetObjectValue<global::ClockifyClient.Models.DateRangeV1Request>(global::ClockifyClient.Models.DateRangeV1Request.CreateFromDiscriminatorValue); } },
                 { "note", n => { Note = n.GetStringValue(); } },
+                { "sync", n => { Sync = n.GetBoolValue(); } },
                 { "userIds", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "value", n => { Value = n.GetDoubleValue(); } },
             };
@@ -69,7 +82,9 @@ namespace ClockifyClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::ClockifyClient.Models.DateRangeV1Request>("dateRange", DateRange);
             writer.WriteStringValue("note", Note);
+            writer.WriteBoolValue("sync", Sync);
             writer.WriteCollectionOfPrimitiveValues<string>("userIds", UserIds);
             writer.WriteDoubleValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

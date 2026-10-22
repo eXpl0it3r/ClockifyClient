@@ -14,9 +14,41 @@ namespace ClockifyClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates whether assignment is recurring or not.</summary>
+        /// <summary>Represents recurring frequency type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.RecurringFrequency? Frequency { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.RecurringFrequency Frequency { get; set; }
+#endif
+        /// <summary>Represents interval for recurring (1 - every week/month, 2 - biweekly).</summary>
+        public int? Interval { get; set; }
+        /// <summary>Represents monthly recurring type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.MonthlyRecurringType? MonthlyRecurringType { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.MonthlyRecurringType MonthlyRecurringType { get; set; }
+#endif
+        /// <summary>Indicates number of occurrences for assignment.</summary>
+        public int? Occurrences { get; set; }
+        /// <summary>Represents recurring end type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::ClockifyClient.Models.RecurringEndType? RecurringEndType { get; set; }
+#nullable restore
+#else
+        public global::ClockifyClient.Models.RecurringEndType RecurringEndType { get; set; }
+#endif
+        /// <summary>Indicates whether the assignment is recurring. This field is deprecated in favor of a more flexible recurrence model. To define recurrence, use the following fields instead: `frequency`, `interval`, `monthlyRecurringType`, `recurringEndType`, `until`, and `occurrences`.</summary>
+        [Obsolete("")]
         public bool? Repeat { get; set; }
-        /// <summary>Indicates number of weeks for assignment.</summary>
+        /// <summary>Date by which recurring assignments will be created</summary>
+        public DateTimeOffset? Until { get; set; }
+        /// <summary>Represents number of weeks for this assignment. This field is deprecated in favor of a more flexible recurrence model. To define recurrence, use the following fields instead: `frequency`, `interval`, `monthlyRecurringType`, `recurringEndType`, `until`, and `occurrences`.</summary>
+        [Obsolete("")]
         public int? Weeks { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::ClockifyClient.Models.RecurringAssignmentRequestV1"/> and sets the default values.
@@ -44,7 +76,13 @@ namespace ClockifyClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "frequency", n => { Frequency = n.GetObjectValue<global::ClockifyClient.Models.RecurringFrequency>(global::ClockifyClient.Models.RecurringFrequency.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetIntValue(); } },
+                { "monthlyRecurringType", n => { MonthlyRecurringType = n.GetObjectValue<global::ClockifyClient.Models.MonthlyRecurringType>(global::ClockifyClient.Models.MonthlyRecurringType.CreateFromDiscriminatorValue); } },
+                { "occurrences", n => { Occurrences = n.GetIntValue(); } },
+                { "recurringEndType", n => { RecurringEndType = n.GetObjectValue<global::ClockifyClient.Models.RecurringEndType>(global::ClockifyClient.Models.RecurringEndType.CreateFromDiscriminatorValue); } },
                 { "repeat", n => { Repeat = n.GetBoolValue(); } },
+                { "until", n => { Until = n.GetDateTimeOffsetValue(); } },
                 { "weeks", n => { Weeks = n.GetIntValue(); } },
             };
         }
@@ -55,7 +93,13 @@ namespace ClockifyClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::ClockifyClient.Models.RecurringFrequency>("frequency", Frequency);
+            writer.WriteIntValue("interval", Interval);
+            writer.WriteObjectValue<global::ClockifyClient.Models.MonthlyRecurringType>("monthlyRecurringType", MonthlyRecurringType);
+            writer.WriteIntValue("occurrences", Occurrences);
+            writer.WriteObjectValue<global::ClockifyClient.Models.RecurringEndType>("recurringEndType", RecurringEndType);
             writer.WriteBoolValue("repeat", Repeat);
+            writer.WriteDateTimeOffsetValue("until", Until);
             writer.WriteIntValue("weeks", Weeks);
             writer.WriteAdditionalData(AdditionalData);
         }

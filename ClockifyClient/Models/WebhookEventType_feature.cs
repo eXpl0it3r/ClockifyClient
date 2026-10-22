@@ -8,6 +8,10 @@ namespace ClockifyClient.Models
     public enum WebhookEventType_feature
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "ACTIVITY_MONITORING")]
+        #pragma warning disable CS1591
+        ACTIVITY_MONITORING,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ADD_TIME_FOR_OTHERS")]
         #pragma warning disable CS1591
         ADD_TIME_FOR_OTHERS,
@@ -140,6 +144,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         PRIVATE_PROJECT_ACCESS,
         #pragma warning restore CS1591
+        [EnumMember(Value = "DEFAULT_BILLABLE_PROJECT")]
+        #pragma warning disable CS1591
+        DEFAULT_BILLABLE_PROJECT,
+        #pragma warning restore CS1591
         [EnumMember(Value = "QUICKBOOKS_INTEGRATION")]
         #pragma warning disable CS1591
         QUICKBOOKS_INTEGRATION,
@@ -164,6 +172,10 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         SCHEDULING,
         #pragma warning restore CS1591
+        [EnumMember(Value = "SCHEDULING_BILLABLE_AND_COST_AMOUNT")]
+        #pragma warning disable CS1591
+        SCHEDULING_BILLABLE_AND_COST_AMOUNT,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SCREENSHOTS")]
         #pragma warning disable CS1591
         SCREENSHOTS,
@@ -184,9 +196,21 @@ namespace ClockifyClient.Models
         #pragma warning disable CS1591
         TASK_RATES,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TASK_COST_RATES")]
+        #pragma warning disable CS1591
+        TASK_COST_RATES,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TASK_HOURLY_RATES")]
+        #pragma warning disable CS1591
+        TASK_HOURLY_RATES,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TIME_OFF")]
         #pragma warning disable CS1591
         TIME_OFF,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOIL")]
+        #pragma warning disable CS1591
+        TOIL,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNLIMITED_REPORTS")]
         #pragma warning disable CS1591
@@ -335,6 +359,10 @@ namespace ClockifyClient.Models
         [EnumMember(Value = "SHARED_REPORTS")]
         #pragma warning disable CS1591
         SHARED_REPORTS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TIME_ENTRY_ROUNDING")]
+        #pragma warning disable CS1591
+        TIME_ENTRY_ROUNDING,
         #pragma warning restore CS1591
     }
 }

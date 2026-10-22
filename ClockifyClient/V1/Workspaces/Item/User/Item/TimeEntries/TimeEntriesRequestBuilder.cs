@@ -35,7 +35,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeEntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?description*,end*,from%2Dentry*,get%2Dweek%2Dbefore*,hydrated*,in%2Dprogress*,page*,page%2Dsize*,project*,project%2Drequired*,start*,tags*,task*,task%2Drequired*}", pathParameters)
+        public TimeEntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?description*,end*,from%2Dentry*,get%2Dweek%2Dbefore*,hydrated*,in%2Dprogress*,page*,page%2Dsize*,project*,project%2Drequired*,start*,tags*,task*,task%2Drequired*,timeViewMode*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeEntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?description*,end*,from%2Dentry*,get%2Dweek%2Dbefore*,hydrated*,in%2Dprogress*,page*,page%2Dsize*,project*,project%2Drequired*,start*,tags*,task*,task%2Drequired*}", rawUrl)
+        public TimeEntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?description*,end*,from%2Dentry*,get%2Dweek%2Dbefore*,hydrated*,in%2Dprogress*,page*,page%2Dsize*,project*,project%2Drequired*,start*,tags*,task*,task%2Drequired*,timeViewMode*}", rawUrl)
         {
         }
         /// <summary>
@@ -159,7 +159,7 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.TimeEntriesRequestBuilder.TimeEntriesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries?time-entry-ids={time%2Dentry%2Dids}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/v1/workspaces/{workspaceId}/user/{userId}/time-entries{?time%2Dentry%2Dids*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -384,6 +384,16 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             /// <summary>Flag to set whether to only get time entries which have tasks.</summary>
             [QueryParameter("task%2Drequired")]
             public bool? TaskRequired { get; set; }
+            /// <summary>Represents time view mode used to display time entries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("timeViewMode")]
+            public string? TimeViewMode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("timeViewMode")]
+            public string TimeViewMode { get; set; }
+#endif
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -417,6 +427,24 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             [QueryParameter("from%2Dentry")]
             public string FromEntry { get; set; }
 #endif
+            [Obsolete("This property is deprecated, use TimeViewModeAsPostTimeViewModeQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("timeViewMode")]
+            public string? TimeViewMode { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("timeViewMode")]
+            public string TimeViewMode { get; set; }
+            #pragma warning restore CS1591
+#endif
+            #pragma warning disable CS1591
+            [QueryParameter("timeViewMode")]
+            public global::ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries.PostTimeViewModeQueryParameterType? TimeViewModeAsPostTimeViewModeQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -435,6 +463,16 @@ namespace ClockifyClient.V1.Workspaces.Item.User.Item.TimeEntries
             /// <summary>If set to true, results will contain additional information about the time entry.</summary>
             [QueryParameter("hydrated")]
             public bool? Hydrated { get; set; }
+            /// <summary>Represents time view mode used to display time entries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("timeViewMode")]
+            public string? TimeViewMode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("timeViewMode")]
+            public string TimeViewMode { get; set; }
+#endif
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

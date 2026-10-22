@@ -140,22 +140,32 @@ namespace ClockifyClient.V1.Workspaces.Item.SharedReports
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharedReportsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("pageSize")]
             public int? PageSize { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("This property is deprecated, use SharedReportsFilterAsGetSharedReportsFilterQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sharedReportsFilter")]
             public string? SharedReportsFilter { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sharedReportsFilter")]
             public string SharedReportsFilter { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("sharedReportsFilter")]
             public global::ClockifyClient.V1.Workspaces.Item.SharedReports.GetSharedReportsFilterQueryParameterType? SharedReportsFilterAsGetSharedReportsFilterQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

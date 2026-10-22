@@ -17,6 +17,8 @@ namespace ClockifyClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents a cost rate amount as integer.</summary>
         public int? Amount { get; set; }
+        /// <summary>The includeApproved property</summary>
+        public bool? IncludeApproved { get; set; }
         /// <summary>Represents a datetime in yyyy-MM-ddThh:mm:ssZ format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +53,7 @@ namespace ClockifyClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetIntValue(); } },
+                { "includeApproved", n => { IncludeApproved = n.GetBoolValue(); } },
                 { "since", n => { Since = n.GetStringValue(); } },
             };
         }
@@ -62,6 +65,7 @@ namespace ClockifyClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("amount", Amount);
+            writer.WriteBoolValue("includeApproved", IncludeApproved);
             writer.WriteStringValue("since", Since);
             writer.WriteAdditionalData(AdditionalData);
         }

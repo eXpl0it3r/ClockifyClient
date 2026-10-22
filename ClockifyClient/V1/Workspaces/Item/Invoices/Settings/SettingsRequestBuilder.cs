@@ -34,7 +34,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Settings
         {
         }
         /// <summary>
-        /// Get an invoice in another language
+        /// Get invoice settings
         /// </summary>
         /// <returns>A <see cref="global::ClockifyClient.Models.InvoiceSettingsDtoV1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Settings
             return await RequestAdapter.SendAsync<global::ClockifyClient.Models.InvoiceSettingsDtoV1>(requestInfo, global::ClockifyClient.Models.InvoiceSettingsDtoV1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change an invoice language
+        /// To update settings, first perform a `GET` request to ``/v1/workspaces/{workspaceId}/invoices/settings`` to retrieve the object&apos;s current state. Next, modify only the specific fields you wish to change while leaving the rest of the structure intact. Finally, send that modified payload back to the server using a PUT request to overwrite and update the resource. Important: You must echo back the full payload returned by the initial `GET` request; Because PUT replaces the entire resource, any omitted fields will be overwritten with default values or cleared entirely.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Settings
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an invoice in another language
+        /// Get invoice settings
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace ClockifyClient.V1.Workspaces.Item.Invoices.Settings
             return requestInfo;
         }
         /// <summary>
-        /// Change an invoice language
+        /// To update settings, first perform a `GET` request to ``/v1/workspaces/{workspaceId}/invoices/settings`` to retrieve the object&apos;s current state. Next, modify only the specific fields you wish to change while leaving the rest of the structure intact. Finally, send that modified payload back to the server using a PUT request to overwrite and update the resource. Important: You must echo back the full payload returned by the initial `GET` request; Because PUT replaces the entire resource, any omitted fields will be overwritten with default values or cleared entirely.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
